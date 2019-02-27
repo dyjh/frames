@@ -1,0 +1,58 @@
+<!-- Paper Dashboard Core javascript and methods for Demo purpose -->
+<script src="__ASSETS__/js/paper-dashboard.js"></script>
+
+<div class="sidebar" data-background-color="white" data-active-color="danger">
+    <div class="sidebar-wrapper">
+        <div class="logo">
+            <a href="{:U('Index/index')}"  class="simple-text">凯撒农场</a>
+        </div>
+
+        <ul class="nav">
+
+            <li <if condition="$nav_titels eq '首页' " > class="active" </if> >
+                <a href="{:U('Index/index')}">
+                    <i class="ti-home"></i>
+                    <p>首页</p>
+                </a>
+            </li>
+            <li <if condition="$nav_titels eq '游戏公告'" > class="active" </if>>
+            <a href="{:U('Content/index')}">
+                <!--<i class="ti-view-list-alt"></i>-->
+                <i class="ti-text"></i>
+                <p>游戏公告</p>
+            </a>
+            </li>
+			<li <if condition="$nav_titels eq '游戏介绍'" > class="active" </if> >
+            <a href="{:U('Introduce/index')}">
+                <i class="ti-map"></i>
+                <p>游戏介绍</p>
+            </a>
+            </li>
+            
+            <li <if condition="$nav_titels eq '攻略资料'" > class="active" </if> >
+            <a href="{:U('Game/raiders')}">
+                <i class="ti-pencil-alt"></i>
+                <p>攻略资料</p>
+            </a>
+            </li>
+			<!-- <li <if condition="$nav_titels eq '交易中心' ">  class="active" </if> > -->
+                <!-- <a href="{:U('Matching/index')}"> -->
+                    <!-- <i class="ti-money"></i> -->
+                    <!-- <p>交易中心</p> -->
+                <!-- </a> -->
+            <!-- </li> -->
+            <li <if condition="$nav_titels eq '好友邀请'" > class="active" </if> >
+            <a href="{:U('User/promote')}">
+                <i class="ti-share"></i>
+                <p>好友邀请</p>
+            </a>
+            </li>
+			<li <if condition="$nav_titels eq '帮助中心'" > class="active" </if> >
+            <a href="{:U('Help/guide')}">
+                <i class="ti-help"></i>
+                <p>帮助中心</p>
+            </a>
+            </li>
+        </ul>
+    </div>
+</div>

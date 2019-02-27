@@ -1,0 +1,10 @@
+.upload{width: 100%; height: 140px; border:1px solid #ddd; background-image:url(../images/beijing.png); background-repeat:no-repeat; background-position:45% 40%;}
+.add a:hover{ color: #888 !important;}
+.submit{width: 60px; margin-top: 3%; height: 30px; background-color: #ffca3f !important;color: #f0f0f0 !important; font-weight: 800;font-size: 16px;}
+.biaoqian{ list-style: none; padding: 0;}
+.start a:hover{ color: #888 !important;}
+.biaoqian li{width: 56px; height: 40px; float: left; cursor: pointer; border: #ddd 1px solid; border-radius: 5px; line-height: 40px; text-align: center; margin-right: 3%;}
+.sel{border: #ff512e 1px solid !important;}
+.add .add_div{ margin-right:2%;border: solid 1px #ddd;width: 90px ;height: 40px;float: left;}
+.add .add_div a {padding: 12px 15px; line-height: 40px; text-align: center;}
+.start_a a { margin-right: 1%;padding: 3px;border: 1px solid;}

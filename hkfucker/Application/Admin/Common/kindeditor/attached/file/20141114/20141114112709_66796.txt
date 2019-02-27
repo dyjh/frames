@@ -1,0 +1,1600 @@
+添加商品属性；
+ecshop二次开发,增加商品属性的方法，添加商品属性的方法
+
+默认分类   2009-09-04 23:22   阅读740   评论1   字号： 大大  中中  小小 本文来自:http://p2pq.cn/thread-1063-1-1.html
+
+ecsho增加商品属性，ecsho添加商品属性，ecshop二次开发
+这里只讲添加一种属性的方法，添加多个自己设置下．以添加＂颜色＂属性为例
+测试版本　ECShop_V2.7.0_UTF8_Release0720.zip
+
+演示截图
+
+后台
+
+ 
+
+前台
+
+ 
+
+步骤如下：
+
+运行mysql命令，修改数据库表！alter table `ecs_goods` add `goods_color` char(15) NOT NULL default '';
+复制代码查到languages\zh_cn\common.php　$_LANG['goods_brand'] = '商品品牌：';
+复制代码其下增加$_LANG['goods_color'] = '颜色：';
+复制代码这个是前台商品信息里显示的属性名称
+－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－
+查到languages\zh_cn\admin\goods.php　 查找$_LANG['lab_goods_brand'] = '商品品牌：';
+复制代码其下增加$_LANG['lab_goods_color'] = '颜色：';
+复制代码这个是后台添加商品时显示的商品属性名称
+－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－
+查到admin\goods.php　从   /* 入库 */　开始　查找warn_number
+在字段处插入goods_color, 　在值处插入$_POST[goods_color],　包括逗号
+如warn_number, goods_color,
+'$warn_number',$_POST[goods_color], 
+
+这里$_POST[goods_color]　表示提交上来的name值为goods_color的值
+
+－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－这里加的是前台
+查到
+themes\mpc_purple\goods.dwt　mpc_purple这个是我的模板的名字，你的名字改你自己的
+里的   <!-- 显示商品品牌 -->
+
+      <span class="font-weight">{$lang.goods_brand}</span><a href="{$goods.goods_brand_url}" >{$goods.goods_brand}</a><br />
+
+   <!--{/if}-->
+复制代码下面加<!-- 测试添加开始 -->
+
+<!-- {if $goods.goods_color neq "" } -->
+
+<span class="font-weight">{$lang.goods_color}</span>{$goods.goods_color}<br />
+
+<!-- {/if} -->
+
+<!-- 测试添加结束 -->
+复制代码－－－－－－－－－－－－－－－－－－这里加的是后台
+查到admin\templates\goods_info.htm　这是后台添加商品的模板  {html_options options=$lang.font_styles selected=$goods_name_style}
+
+            </select>
+
+            {$lang.require_field}</td>
+
+          </tr>
+复制代码在其下加　
+
+<!-- 加数据开始 -->
+
+                      <tr>
+
+            <td class="label"><?php echo $this->_var['lang']['lab_goods_color']; ?> </td>
+
+            <td><input type="text" name="goods_color" value="<?php echo htmlspecialchars($this->_var['goods']['goods_color']); ?>" 
+
+size="20"  />
+
+            <span id="goods_sn_notice"></span><br /> </td>
+复制代码</tr><!-- 加数据结束 -->
+
+
+本文来自:http://p2pq.cn/thread-1063-1-1.html
+
+======================================================================
+======================================================================
+ecshop后台去除版本更新提示2009-12-15 17:05打开，admin/templates/start.htm
+删除以下代码 
+
+   {if $need_check_version}
+
+   <script type="text/javascript" src="http://api.ecshop.com/checkver.php?ver={$ecs_version}&lang={$ecs_lang}&release={$ecs_release}&php_ver={$sys_info.php_ver}&mysql_ver={$sys_info.mysql_ver}&ocount={$order.stats.oCount}&oamount={$order.stats.oAmount}&gcount={$goods.total}&charset={$ecs_charset}"></script>
+
+   {/if}
+ 
+
+==============================================================================================================================================
+
+ECshop文件结构说明
+
+技术资料   2009-11-09 09:42   阅读33   评论0   字号： 大大  中中  小小 ECShop 2.5.1 的结构图及各文件相应功能介绍
+
+
+ECShop2.5.1_Beta upload 的目录
+┣ activity.php 活动列表
+┣ affiche.php 广告处理文件
+┣ affiliate.php 生成商品列表
+┣ article.php 文章内容
+┣ article_cat.php文章分类
+┣ auction.php 拍卖前台文件
+┣ brand.php 品牌列表
+┣ captcha.php 生成验证码
+┣ catalog.php 列出所以分类及品牌
+┣ category.php 商品分类
+┣ comment.php 提交用户评论
+┣ compare.php 商品比较程序
+┣ cycle_image.php 轮播图片程序
+┣ feed.php RSS Feed 生成程序
+┣ flow.php 购物流程
+┣ gallery.php 商品相册
+┣ goods.php 商品详情
+┣ goods_script.php 生成商品列表
+┣ group_buy.php 团购商品前台文件
+┣ index.php 首页文件
+┣ myship.php 支付配送DEMO
+┣ pick_out.php 选购中心
+┣ receive.php 处理收回确认的页面
+┣ region.php 地区切换程序
+┣ respond.php 支付响应页面
+┣ robots.txt
+┣ search.php 搜索程序
+┣ sitemaps.php google sitemap 文件
+┣ snatch.php 夺宝奇兵前台页面
+┣ tag_cloud.php 标签云
+┣ topic.php 专题前台
+┣ user.php 会员中心
+┣ vote.php 调查程序
+┣ wholesale.php 批发前台文件
+┣ admin文件夹
+┃ ┣ account_log.php 管理中心帐户变动记录
+┃ ┣ admin_logs.php 记录管理员操作日志
+┃ ┣ ads.php 广告管理程序
+┃ ┣ adsense.php 站外JS投放的统计程序
+┃ ┣ ad_position.php广告位置管理程序
+┃ ┣ affiliate.php 程序说明
+┃ ┣ affiliate_ck.php 程序说明
+┃ ┣ agency.php 管理中心办事处管理
+┃ ┣ area_manage.php 地区列表管理文件
+┃ ┣ article.php 管理中心文章处理程序文件
+┃ ┣ articlecat.php 文章分类管理程序
+┃ ┣ article_auto.php
+┃ ┣ attention_list.php
+┃ ┣ attribute.php 属性规格管理
+┃ ┣ auction.php 管理中心拍卖活动管理
+┃ ┣ bonus.php 红包类型的处理
+┃ ┣ brand.php管理中心品牌管理
+┃ ┣ captcha_manage.php
+┃ ┣ card.php 贺卡管理程序
+┃ ┣ category.php 商品分类管理程序
+┃ ┣ check_file_priv.php 系统文件检测
+┃ ┣ comment_manage.php 用户评论管理程序
+┃ ┣ convert.php 转换程序
+┃ ┣ cron.php 计划任务
+┃ ┣ database.php 数据库管理
+┃ ┣ ebao_commend.php 易宝推荐
+┃ ┣ edit_languages.php 管理中心语言项编辑(前台语言项)
+┃ ┣ email_list.php 邮件列表管理
+┃ ┣ favourable.php 管理中心优惠活动管理
+
+┃ ┣ flashplay.php
+┃ ┣ flow_stats.php 综合流量统计
+┃ ┣ friend_link.php 友情链接管理
+┃ ┣ gen_goods_script.php 生成显示商品的js代码
+┃ ┣ get_password.php 找回管理员密码
+┃ ┣ goods.php 商品管理程序
+┃ ┣ goods_auto.php
+┃ ┣ goods_batch.php 商品批量上传、修改
+┃ ┣ goods_booking.php 缺货处理管理程序
+┃ ┣ goods_export.php
+┃ ┣ goods_type.php 商品类型管理程序
+┃ ┣ group_buy.php 管理中心团购商品管理
+┃ ┣ guest_stats.php 客户统计
+┃ ┣ index.php 控制台首页
+┃ ┣ integrate.php 第三方程序会员数据整合插件管理程序
+┃ ┣ magazine_list.php
+┃ ┣ mail_template.php 管理中心模版管理程序
+┃ ┣ message.php 管理中心管理员留言程序
+┃ ┣ navigator.php
+
+┃ ┣ order.php 订单管理
+┃ ┣ order_stats.php 订单统计
+┃ ┣ pack.php 包装管理程序
+┃ ┣ payment.php 支付方式管理程序
+┃ ┣ picture_batch.php 图片批量处理程序
+┃ ┣ privilege.php 管理员信息以及权限管理程序
+┃ ┣ sale_general.php 销售概况
+┃ ┣ sale_list.php 销售明细列表程序
+┃ ┣ sale_order.php 商品销售排行
+┃ ┣ searchengine_stats.php 搜索引擎关键字统计
+┃ ┣ search_log.php
+┃ ┣ shipping.php 配送方式管理程序
+┃ ┣ shipping_area.php 配送区域管理程序
+┃ ┣ shophelp.php 帮助信息管理程序
+┃ ┣ shopinfo.php 网店信息管理页面
+┃ ┣ shop_config.php 管理中心商店设置
+┃ ┣ sitemap.php 站点地图生成程序
+┃ ┣ sms.php 短信模块 之 控制器
+┃ ┣ snatch.php 夺宝奇兵管理程序
+┃ ┣ sql.php sql管理程序
+┃ ┣ tag_manage.php 后台标签管理
+┃ ┣ template.php 管理中心模版管理程序
+┃ ┣ topic.php 专题管理
+┃ ┣ users.php 会员管理程序
+┃ ┣ users_order.php 会员排行统计程序
+┃ ┣ user_account.php 会员帐目管理(包括预付款，余额)
+┃ ┣ user_msg.php 客户留言
+┃ ┣ user_rank.php 会员等级管理程序
+┃ ┣ view_sendlist.php
+┃ ┣ virtual_card.php 虚拟卡商品管理程序
+┃ ┣ visit_sold.php 访问购买比例
+┃ ┣ vote.php 调查管理程序
+┃ ┣ wholesale.php 管理中心批发管理
+┃ ┣ help 的目录 后台操作帮助文件
+┃ ┣ images 的目录
+┃ ┣ includes 的目录
+┃ ┃ ┣ cls_exchange.php 后台自动操作数据库的类文件
+┃ ┃ ┣ cls_google_sitemap.php Google sitemap 类
+┃ ┃ ┣ cls_phpzip.php ZIP 处理类
+┃ ┃ ┣ cls_sql_dump.php 数据库导出类
+┃ ┃ ┣ inc_menu.php 管理中心菜单数组
+&
+#160; ┃ ┃ ┣ init.php 管理中心公用文件
+┃ ┃ ┣ lib_goods.php 管理中心商品相关函数
+┃ ┃ ┣ lib_main.php 管理中心公用函数库
+┃ ┃ ┗ lib_template.php 管理中心模版相关公用函数库
+┃ ┣ styles 的目录
+┃ ┣ templates 的目录
+┃ ┗ js 的目录
+┃ ┣ colorselector.js
+┃ ┣ common.js
+┃ ┣ listtable.js
+┃ ┣ md5.js
+┃ ┣ selectzone.js
+┃ ┣ tab.js
+┃ ┣ todolist.js
+┃ ┣ topbar.js
+┃ ┗ validator.js 表单验证类
+┣ api 的目录
+┃ ┣ checkorder.php 检查订单 API
+┃ ┣ cron.php
+┃ ┗ init.php API 公用初始化文件
+┣ cert 的目录
+┣ data 的目录
+┃ ┣ ffiliate.html
+┃ ┣ goods_script.html
+┃ ┣ order_print.html
+┃ ┣ afficheimg 的目录
+┃ ┣ brandlogo 的目录
+┃ ┣ captcha 的目录 验证码背景图片存放位置
+┃ ┣ cardimg 的目录
+┃ ┣ feedbackimg 的目录
+┃ ┣ images 的目录
+┃ ┣ packimg 的目录
+┃ ┗ sqldata 的目录
+┣ images 的目录
+┃ ┗ upload 的目录
+┃ ┣ File 文件上传存放处
+┃ ┣ Flash flash上传存放处
+┃ ┣ Image 图片上传存放处
+┃ ┗ Media 视频上传存放处
+┣ includes 的目录
+┃ ┣ cls_captcha.php 验证码图片类
+┃ ┣ cls_ecshop.php 基础类
+┃ ┣ cls_error.php 用户级错误处理类
+┃ ┣ cls_iconv.php 字符集转换类
+┃ ┣ cls_image.php 后台对上传文件的处理类(实现图片上传，图片缩小， 增加水印)
+┃ ┣ cls_json.php JSON 类
+┃ ┣ cls_mysql.php MYSQL 公用类库
+┃ ┣ cls_rss.php RSS 类
+┃ ┣ cls_session.php SESSION 公用类库
+┃ ┣ cls_sms.php 短信模块 之 模型（类库）
+┃ ┣ cls_smtp.php SMTP 邮件类
+┃ ┣ cls_sql_executor.php SQL语句执行类。
+┃ ┣ cls_template.php 模版类
+┃ ┣ cls_transport.php 服务器之间数据传输器
+┃ ┣ inc_constant.php 常量
+┃ ┣ init.php 前台公用文件
+┃ ┣ lib.debug.php
+┃ ┣ lib_article.php 文章及文章分类相关函数库
+┃ ┣ lib_clips.php ECSHOP 用户相关函数库
+┃ ┣ lib_code.php 加密解密类
+┃ ┣ lib_common.php 公用函数库
+&#
+160; ┃ ┣ lib_goods.php 商品相关函数库
+┃ ┣ lib_insert.php 动态内容函数库
+┃ ┣ lib_main.php 前台公用函数库
+┃ ┣ lib_order.php 购物流程函数库
+┃ ┣ lib_passport.php 用户帐号相关函数库
+┃ ┣ lib_payment.php 支付接口函数库
+┃ ┣ lib_time.php 时间函数
+┃ ┣ lib_transaction.php ECSHOP 用户交易相关函数库
+┃ ┣ codetable 的目录
+┃ ┃ ┣ big5-gb.table
+┃ ┃ ┣ big5_utf8.php
+┃ ┃ ┣ gb-big5.table
+┃ ┃ ┣ gb_utf8.php
+┃ ┃ ┗ ipdata.dat
+┃ ┣ fckeditor 的目录 fckeditor编辑器目录
+┃ ┗ modules 的目录
+┃ ┣ convert 的目录
+┃ ┃ ┣ shopex46.php vshopex4.6转换程序插件
+┃ ┃ ┗ shopex47.php shopex4.7转换程序插件
+┃ ┣ cron 的目录
+┃ ┃ ┣ auto_manage.php 自动上下架管理
+┃ ┃ ┗ ipdel.php 定期删除
+┃ ┣ integrates 的目录
+┃ ┃ ┣ bmforum.php 会员数据处理类
+┃ ┃ ┣ discuz.php
+┃ ┃ ┣ discuz55.php
+┃ ┃ ┣ dvbbs.php
+┃ ┃ ┣ ecshop.php
+┃ ┃ ┣ integrate.php
+┃ ┃ ┣ ipb.php
+┃ ┃ ┣ molyx.php
+┃ ┃ ┣ phpbb.php
+┃ ┃ ┣ phpwind.php
+┃ ┃ ┣ phpwind5.php
+┃ ┃ ┗ vbb.php
+┃ ┣ payment 的目录
+┃ ┃ ┣ alipay.php 支付宝插件
+┃ ┃ ┣ balance.php 余额支付插件
+┃ ┃ ┣ bank.php 银行汇款（转帐）插件
+┃ ┃ ┣ cappay.php 首信易支付插件
+┃ ┃ ┣ chinabank.php 网银在线插件
+┃ ┃ ┣ cncard.php 云网支付插件
+┃ ┃ ┣ cod.php 货到付款插件
+┃ ┃ ┣ ctopay.php Ctopay 支付插件
+┃ ┃ ┣ express.php express支付系统插件
+┃ ┃ ┣ ips.php ips支付系统插件
+┃ ┃ ┣ kuaiqian.php 快钱插件
+┃ ┃ ┣ nps.php NPS支付插件
+┃ ┃ ┣ pay800.php 800pay 支付宝插件
+┃&
+#160; ┃ ┣ paypal.php 贝宝插件
+┃ ┃ ┣ paypalcn.php 贝宝中国插件
+┃ ┃ ┣ post.php 邮局汇款插件
+┃ ┃ ┣ tenpay.php 财付通插件
+┃ ┃ ┣ udpay.php 网汇通插件
+┃ ┃ ┣ xpay.php 易付通插件
+┃ ┃ ┗ yeepay.php YeePay易宝插件
+┃ ┗ shipping 的目录
+┃ ┣ cac.php 上门取货插件
+┃ ┣ city_express.php 城际快递插件
+┃ ┣ ems.php EMS插件
+┃ ┣ flat.php 邮政包裹插件
+┃ ┣ fpd.php 到付运费插件
+┃ ┣ post_express.php 邮政包裹插件
+┃ ┣ post_mail.php 邮局平邮插件
+┃ ┣ presswork.php 挂号印刷品插件
+┃ ┣ sf_express.php 顺丰速运 配送方式插件
+┃ ┣ sto_express.php 申通快递 配送方式插件
+┃ ┣ yto.php 圆通速递插件
+┃ ┗ zto.php 中通速递插件
+┣ install 的目录 安装文件目录
+┣ js 的目录
+┃ ┣ auto_complete.js
+┃ ┣ calendar.php
+┃ ┣ common.js
+┃ ┣ compare.js
+┃ ┣ global.js
+┃ ┣ lefttime.js
+┃ ┣ myship.js
+┃ ┣ region.js
+┃ ┣ shopping_flow.js
+┃ ┣ transport.js
+┃ ┣ user.js
+┃ ┣ utils.js
+┃ ┗ calendar 的目录
+┣ languages 的目录 语言风格文件
+┃ ┣ zh_cn 的目录
+┃ ┃ ┣
+┃ ┃ ┣ admin 的目录
+┃ ┃ ┣ convert 的目录
+┃ ┃ ┣ cron 的目录
+┃ ┃ ┣ payment 的目录
+┃ ┃ ┗ shipping 的目录
+┃ ┗ zh_tw 的目录
+┃ ┣ admin 的目录
+┃ ┣ convert 的目录
+┃ ┣ cron 的目录
+┃ ┣ payment 的目录
+┃ ┗ shipping 的目录
+┣ plugins 的目录
+┣ templates 的目录
+┃ ┣ backup 的目录
+┃ ┃ ┗ ibrary 的目录
+┃ ┣ caches 的目录
+┃ ┗ compiled 的目录
+
+/> ┃ ┗ admin 的目录
+
+┣ themes 的目录
+┃ ┣ default 的目录
+┃ ┃ ┣ images 的目录
+┃ ┃ ┗ library 的目录
+┃ ┗ sport 的目录
+┣ wap 的目录
+┃ ┣ article.php
+┃ ┣ brands.php
+┃ ┣ buy.php
+┃ ┣ category.php
+┃ ┣ comment.php
+┃ ┣ goods.php
+┃ ┣ goods_list.php
+┃ ┣ index.php
+┃ ┣ user.php
+┃ ┣ includes 的目录
+┃ ┃ ┣ init.php
+┃ ┃ ┣ lib_main.php
+┃ ┗ templates 的目录
+┃ ┣ article.wml
+┃ ┣ article_list.wml
+┃ ┣ brands.wml
+┃ ┣ buy.wml
+┃ ┣ category.wml
+┃ ┣ comment.wml
+┃ ┣ goods.wml
+┃ ┣ goods_img.wml
+┃ ┣ goods_list.wml
+┃ ┣ index.wml
+┃ ┣ login.wml
+┃ ┣ order_list.wml
+┃ ┗ user.wml
+┗ widget 的目录
+┣ blog_sohu.php
+┣ blog_sohu.xhtml
+┗ images 的目录
+=======================================
+========================================
+
+ECSHOP修改后台admin目录为任意目录名（版本v2.6.2）
+2009-08-31 12:08
+1.修改data/config.php 
+$admin_dir = "admin"; 
+修改成 
+$admin_dir = "新目录名";
+ 
+2.修改admin/index.php 
+//货号 
+        require_once(ROOT_PATH . 'admin/includes/lib_goods.php'); 
+修改成 
+require_once(ROOT_PATH . $admin_dir.'/includes/lib_goods.php');
+ 
+3.修改admin/database.php 
+require_once(ROOT_PATH . 'admin/includes/cls_sql_dump.php'); 
+修改成 
+require_once(ROOT_PATH . $admin_dir.'/includes/cls_sql_dump.php');
+ 
+4.修改admin/get_password.php 
+$reset_email = $ecs->url() . 'admin/get_password.php?act=reset_pwd&uid='.$admin_id.'&code='.$code; 
+修改成 
+$reset_email = $ecs->url() . $admin_dir.'/get_password.php?act=reset_pwd&uid='.$admin_id.'&code='.$code;
+ 
+5.修改admin/goods.php 
+require_once(ROOT_PATH . '/admin/includes/lib_goods.php'); 
+修改成 
+require_once(ROOT_PATH . $admin_dir.'/includes/lib_goods.php');
+ 
+6.修改admin/check_file_priv.php 
+$dir[]                     = 'admin'; 
+修改成 
+$dir[]                     = $admin_dir;
+ 
+7.修改admin/includes/init.php 
+if (file_exists(ROOT_PATH . 'data/config.php')) 
+{ 
+     include(ROOT_PATH . 'data/config.php'); 
+} 
+else 
+{ 
+     include(ROOT_PATH . 'includes/config.php'); 
+} 
+修改成下面代码，并将代码移至“”注释之前。 
+if (file_exists('../data/config.php')) 
+{ 
+     include('../data/config.php'); 
+} 
+else 
+{ 
+     include('../includes/config.php'); 
+}
+下一步
+define('ROOT_PATH', str_replace('admin/includes/init.php', '', str_replace('\\', '/', __FILE__))); 
+修改成 
+define('ROOT_PATH', str_replace($admin_dir.'/includes/init.php', '', str_replace('\\', '/', __FILE__)));
+下一步
+require(ROOT_PATH . 'admin/includes/lib_main.php'); 
+修改成 
+require(ROOT_PATH . $admin_dir.'/includes/lib_main.php');
+下一步
+require(ROOT_PATH . 'admin/includes/cls_exchange.php'); 
+修改成 
+require(ROOT_PATH . $admin_dir.'/includes/cls_exchange.php');
+下一步
+$smarty->template_dir = ROOT_PATH . 'admin/templates'; 
+修改成 
+$smarty->template_dir = ROOT_PATH . $admin_dir.'/templates';
+下一步
+$admin_path = preg_replace('/:\d+/', '', $ecs->url()) . 'admin'; 
+修改成 
+$admin_path = preg_replace('/:\d+/', '', $ecs->url()) . $admin_dir;
+ 
+8.修改include/lib_main.php 
+include_once(ROOT_PATH . 'admin/includes/lib_template.php'); 
+修改成 
+global $admin_dir; 
+include_once(ROOT_PATH . $admin_dir.'/includes/lib_template.php');
+ 
+9.修改include/cls_ecshop.php 
+$curr = strpos(PHP_SELF, 'admin/') !== false ? 
+preg_replace('/(.*)(admin)(\/?)(.)*/i', '\1', dirname(PHP_SELF)) : 
+dirname(PHP_SELF); 
+修改成 
+global $admin_dir; 
+$curr = strpos(PHP_SELF, $admin_dir.'/') !== false ? 
+preg_replace('/(.*)('.$admin_dir.')(\/?)(.)*/i', '\1', dirname(PHP_SELF)) : 
+dirname(PHP_SELF);
+ 
+10.修改/admin/picture_batch.php
+将 
+include_once(ROOT_PATH . '/admin/includes/lib_goods.php'); 
+修改成 
+include_once(ROOT_PATH .$admin_dir.'/includes/lib_goods.php');
+ 
+11.修改quotation.php 
+include_once(ROOT_PATH . 'admin/includes/lib_main.php'); 
+修改成 
+global $admin_dir; 
+include_once(ROOT_PATH . $admin_dir.'/includes/lib_main.php');
+ 
+12.如果担心$admin_dir变量注入安全问题可以在data/config.php文件中define('EC_CHARSET','utf-8');后增加 
+define('ADMIN_DIR','新目录名'); 
+然后将所有修改的$admin_dir变量修改成ADMIN_DIR，例如： 
+require_once(ROOT_PATH . $admin_dir.'/includes/lib_goods.php'); 
+修改成 
+require_once(ROOT_PATH . ADMIN_DIR.'/includes/lib_goods.php'); 
+
+==============================================================================================================================================
+ECSHOP模板添加库栏目完成2009-08-01 18:03ECSHOP的库项目终于添加完成了，真是累人啊。眼睛都疼了，不过效果还是令人满意的。特别感谢EC论坛上无私奉献。完成后的商品排序本身就是随机的，真是爽。
+
+添加后显示的位置：后台——模板管理——设置模板
+
+1、修改模板中的一些BUG
+
+file:/includes/lib_goods.php
+function:get_category_recommend_goods($type = '', $cats = '', $brand = 0, $min =0,  $max = 0, $ext='')
+函数中的原内容：
+
+$sql .= " AND ( " . $cats . " OR " . get_extension_goods($cats) .")";
+改为：
+
+$sql .= " AND (g.cat_id = " . $cats . " OR g.cat_id = " . get_extension_goods($cats) .")";
+2、添加显示数量，一定要添加，否则不会显示商品。以“index.php”为例，其它页面都在根目录中的PHP文件里类似修改。
+
+$smarty->assign('mylibrary',     get_category_recommend_goods('mylibrary','4'));    //我的库项目名称
+3、最后便是为模板添加库项目。根目录：\admin\includes\lib_template.php
+
+模板库文件声明和定义->\admin\includes\lib_template.php，每个模板允许设置的库项目
+操作:参考修改
+数组：page_libs
+变量：index
+
+原内容：
+
+'/library/member.lbi' => 0,
+'/library/new_articles.lbi' => 0,
+'/library/recommend_guide.lbi' => 0,
+'/library/top10.lbi' => 0,
+'/library/invoice_query.lbi' => 0,
+'/library/recommend_best.lbi' => 3,
+'/library/recommend_new.lbi' => 3,
+'/library/recommend_hot.lbi' => 3,
+'/library/recommend_promotion.lbi' => 3,
+'/library/group_buy.lbi' => 3,
+'/library/auction.lbi' => 3,
+'/library/brands.lbi' => 0,
+'/library/cart.lbi' => 0,
+'/library/vote_list.lbi' => 0
+修改后内容：
+
+'/library/member.lbi' => 0,
+'/library/new_articles.lbi' => 0,
+'/library/recommend_guide.lbi' => 0,
+'/library/mylibrary.lbi' => 3,
+'/library/recommend_best.lbi' => 3,
+'/library/recommend_new.lbi' => 3,
+'/library/recommend_hot.lbi' => 3,
+'/library/recommend_promotion.lbi' => 3,
+'/library/group_buy.lbi' => 3,
+'/library/auction.lbi' => 3
+4、添加一个mylibrary.lbi库文件，文件路径为：\themes\bluesky\library\mylibrary.lbi
+5、给mylibrary.lbi添加后台名称，也就是修改语言包
+文件\languages\zh_cn\admin\template.php
+
+line:93 操作：参考添加
+$_LANG['template_libs']['mylibrary'] = '我的库项目';
+文件\languages\zh_cn\common.php
+line:325 操作：添加
+$_LANG['mylibrary'] = '我的库项目';
+文件\languages\en_us\admin\template.php
+line:96 操作：添加
+$_LANG['template_libs']['mylibrary'] = 'My library';
+文件\languages\en_us\common.php
+line:321 操作：添加
+$_LANG['mylibrary'] = 'My library';
+文件\languages\zh_tw\admin\template.php
+line:93 操作：添加
+$_LANG['template_libs']['mylibrary'] = '我的库项目';//繁体
+文件\languages\zh_tw\common.php
+line:325 操作：添加
+6、添加mylibrary.lbi的CSS，文件：\themes\bluesky\css\component.css，内容自定
+7、添加mylibrary.lbi内容，内容自定
+8、修改includes/lib_goods.php ,跟商品设置的数目有关
+
+function:get_category_recommend_goods($type = '', $cats = '', $brand = 0, $min =0,  $max = 0, $ext='')
+line:250
+原内容:
+
+$type2lib = array('best'=>'recommend_best', 'new'=>'recommend_new', 'hot'=>'recommend_hot', 'promote'=>'recommend_promotion');
+?修改后内容:
+
+$type2lib = array('best'=>'recommend_best', 'new'=>'recommend_new', 'hot'=>'recommend_hot', 'promote'=>'recommend_promotion','mylibrary'=>'mylibrary');
+9、后台“设置模板”中修改位置，前台显示效果可以通过测试，暂时没有出现出错
+
+==============================================================================================================================================
+
+下面这段代码在js/common.js中 作用是以String.fromCharCode函数显示ecshop的版权信息，在页面加载的时候执行。函数写的很巧妙，值得借鉴。（很像某些网马）
+
+onload = function()
+{
+    var link_arr = document.getElementsByTagName(String.fromCharCode(65));
+    var link_str;
+    var link_text;
+    var regg, cc;
+    var rmd, rmd_s, rmd_e, link_eorr = 0;
+    var e = new Array(97, 98, 99,
+                      100, 101, 102, 103, 104, 105, 106, 107, 108, 109,
+                      110, 111, 112, 113, 114, 115, 116, 117, 118, 119,
+                      120, 121, 122
+                      );
+
+try
+{
+    for(var i = 0; i < link_arr.length; i++)
+    { 
+      link_str = link_arr[i].href;
+      if (link_str.indexOf(String.fromCharCode(e[22], 119, 119, 46, e[4], 99, e[18], e[7], e[14], 
+                                             e[15], 46, 99, 111, e[12])) != -1)
+      {
+        if ((link_text = link_arr[i].innerText) == undefined)
+        {
+            throw "noIE";
+        }
+        regg = new RegExp(String.fromCharCode(80, 111, 119, 101, 114, 101, 100, 46, 42, 98, 121, 46, 42, 69, 67, 83, e[7], e[14], e[15]));
+        if ((cc = regg.exec(link_text)) != null)
+        {
+          if (link_arr[i].offsetHeight == 0)
+          {
+            break;
+          }
+          link_eorr = 1;
+          break;
+        }
+      }
+      else
+      {
+        link_eorr = link_eorr ? 0 : link_eorr;
+        continue;
+      }
+    }
+} // IE
+catch(exc)
+{
+    for(var i = 0; i < link_arr.length; i++)
+    {
+      link_str = link_arr[i].href;
+      if (link_str.indexOf(String.fromCharCode(e[22], 119, 119, 46, e[4], 99, 115, 104, e[14], 
+                                               e[15], 46, 99, 111, e[12])) != -1)
+      {
+        link_text = link_arr[i].textContent;
+        regg = new RegExp(String.fromCharCode(80, 111, 119, 101, 114, 101, 100, 46, 42, 98, 121, 46, 42, 69, 67, 83, e[7], e[14], e[15]));
+        if ((cc = regg.exec(link_text)) != null)
+        {
+          if (link_arr[i].offsetHeight == 0)
+          {
+            break;
+          }
+          link_eorr = 1;
+          break;
+        }
+      }
+      else
+      {
+        link_eorr = link_eorr ? 0 : link_eorr;
+        continue;
+      }
+    }
+} // FF
+
+try
+{
+    rmd = Math.random();
+    rmd_s = Math.floor(rmd * 10);
+    if (link_eorr != 1)
+    {
+      rmd_e = i - rmd_s;
+      link_arr[rmd_e].href = String.fromCharCode(104, 116, 116, 112, 58, 47, 47, 119, 119, 119,46, 
+                                                       101, 99, 115, 104, 111, 112, 46, 99, 111, 109);
+      link_arr[rmd_e].innerHTML = String.fromCharCode(
+                                        80, 111, 119, 101, 114, 101, 100,38, 110, 98, 115, 112, 59, 98, 
+                                        121,38, 110, 98, 115, 112, 59,60, 115, 116, 114, 111, 110, 103, 
+                                        62, 60,115, 112, 97, 110, 32, 115, 116, 121,108,101, 61, 34, 99,
+                                        111, 108, 111, 114, 58, 32, 35, 51, 51, 54, 54, 70, 70, 34, 62,
+                                        69, 67, 83, 104, 111, 112, 60, 47, 115, 112, 97, 110, 62,60, 47,
+                                        115, 116, 114, 111, 110, 103, 62);
+    }
+}
+catch(ex)
+{
+}
+}
+
+
+此时alert可以看出其中奥妙
+
+alert(String.fromCharCode(80, 111, 119, 101, 114, 101, 100, 46, 42, 98, 121, 46, 42, 69, 67, 83, e[7], e[14], e[15]));
+
+版权代码二：
+
+languages/zh_cn/common.php
+关键字
+$_LANG['p_y']
+
+$_LANG['p_y']['link_start'] = '<a href="http://www.ecshop.com" target="_blank" style=" font-family:Verdana; font-size:11px;">';
+$_LANG['p_y']['link_p'] = 'Powe';
+$_LANG['p_y']['link_r'] = 'red&nbsp;';
+$_LANG['p_y']['link_b'] = 'by&nbsp;';
+$_LANG['p_y']['main_start'] = '<strong><span style="color: #3366FF">';
+$_LANG['p_y']['main_e'] = 'E';
+$_LANG['p_y']['main_c'] = 'CSho';
+$_LANG['p_y']['main_p'] = 'p</span>&nbsp;';
+$_LANG['p_y']['v_s'] = '<span style="color: #FF9966">';
+$_LANG['p_y']['v'] = VERSION;
+$_LANG['p_y']['link_end'] = '</span></strong></a>&nbsp;';
+
+将版权信息分解，以防别人用搜索字符串方式定位文件。
+
+版权代码三：
+
+在此处我不确定是否达到他们的功能，即调用JavaScript指定页面，将一些网店信息发送给api.eshcop.com/record.php?           （很像某些网马）
+
+文件：admin/shop_config.php
+
+代码：   
+
+    $spt = '<script type="text/javascript" src="http://api.ecshop.com/record.php?';
+    $spt .= "url=" .urlencode($ecs->url());
+    $spt .= "&shop_name=" .urlencode($_CFG['shop_name']);
+    $spt .= "&shop_title=".urlencode($_CFG['shop_title']);
+    $spt .= "&shop_desc=" .urlencode($_CFG['shop_desc']);
+    $spt .= "&shop_keywords=" .urlencode($_CFG['shop_keywords']);
+    $spt .= "&country=".urlencode($shop_country)."&province=".urlencode($shop_province)."&city=".urlencode($shop_city);
+    $spt .= "&address=" .urlencode($_CFG['shop_address']);
+    $spt .= "&qq=$_CFG[qq]&ww=$_CFG[ww]&ym=$_CFG[ym]&msn=$_CFG[msn]";
+    $spt .= "&email=$_CFG[service_email]&phone=$_CFG[service_phone]&icp=".urlencode($_CFG['icp_number']);
+    $spt .= "&version=".VERSION."&language=$_CFG[lang]&php_ver=" .PHP_VERSION. "&mysql_ver=" .$db->version();
+    $spt .= "&charset=".EC_CHARSET;
+    $spt .= '"></script>';
+//此处向ecshop api发送网店信息，在下面 mail_setting中有如下调用 $_LANG['save_success'].$spt 由嵌入JavaScript来调用
+
+    if ($type == 'mail_setting')
+    {
+        $links[] = array('text' => $_LANG['back_mail_settings'], 'href' => 'shop_config.php?act=mail_settings');
+        sys_msg($_LANG['mail_save_success'], 0, $links);
+    }
+    else
+    {
+        $links[] = array('text' => $_LANG['back_shop_config'], 'href' => 'shop_config.php?act=list_edit');
+        sys_msg($_LANG['save_success'], 0, $links);
+    }
+
+ecshop中多处用 http://api.ecshop.com/record.php?mod=login&url={$shop_url}发送信息，有兴趣的同志可以搜一下看看，在此不多叙述。
+
+
+以上是我看ecshop代码过程中发现的一些技巧，仅用于技术交流，请不要用于非法版权，谢谢。
+
+
+==============================================================================================================================================
+
+
+ecshop数据库表结构2009-05-23 22:53ecs_account_log // 用户账目日志表
+ecs_activity // 活动表（代码，名称，开始，结束，描述）
+ecs_ad // 广告表（位置，类型，名称，链接，图片，开始，结束，广告主相关信息，点击，
+是否显示）
+ecs_admin_action // 管理权限分配（父类ID，权限代码）
+ecs_admin_log // 管理日志（登陆时间，登陆管理员ID，操作描述，IP）
+ecs_admin_message // 管理员留言（发送者ID，接收者ID，发送日期，阅读日期，是否
+已读，是否删除，标题，内容）
+ecs_admin_user // 管理员管理（用户名，email ，密码，加入时间，最后登陆时间，最后
+登陆IP，权限等）
+ecs_adsense // 广告相关统计（来源广告，来源位置，点击）
+ecs_ad_position // 广告位（名称，宽，高，描述，样式）
+ecs_area_region // 配送区域关联（配送区域ID，具体地址ID）
+ecs_article // 文章（分类ID，标题，内容，作者，作者email ，关键字，类型，是否显示，
+添加时间，文件地址，打开类型）
+ecs_article_cat // 文章分类（名称，类型，关键字，描述，排序，是否导航显示）
+ecs_attribute // 商品属性（分类，名称，选择样式，类型，值，检索类型，排序，是否关
+联）
+ecs_bonus_type // 红包（名称，金额，发放起始日期，发放结束日期，使用起始日期，使
+用结束日期，发放类型，金额下限（按订单发放），金额上限）
+ecs_booking_goods // 缺货登记（登记用户ID，email ，电话，商品ID，描述，数量，登
+记时间，是否已处理，处理管理员，处理时间，处理备注）
+ecs_brand // 品牌（名称，logo，描述，链接，排序，是否显示）
+ecs_card // 祝福贺卡（名称，图片，费用，免费额度，描述）
+ecs_cart // 购物车（用户ID，session_id ，商品ID，商品编号，商品名称，市场价，购买
+价，数量，属性，是否真实商品，扩展代码，父类ID，类型，是否赠品，能否处理）
+ecs_category // 商品分类（名称，关键字，描述，父类ID，排序，是否有子类，模板文件，
+数量单位，是否导航显示）
+ecs_collect_goods // 收藏（用户ID，商品ID，收藏时间）
+ecs_comment // 评论（类型，类型ID，email ，用户名，内容，评星，添加时间，IP，状
+态，父类ID）
+ecs_feedback // 用户留言（父类ID，用户ID，用户名，email，标题，类型，内容，时间，
+图片，是否回复）
+ecs_friend_link // 友情链接（名称，链接，logo，排序）
+ecs_gift // 赠品（送赠品活动ID，商品ID，赠品价格）
+ecs_gift_type // 送赠品活动（名称，发送类型，相关参数，数量，开始，结束）
+ecs_goods // 商品（分类ID，名称，点击，品牌ID，供应商名称，库存，重量，市场价，
+售价，fitting_price(未知)，促销价，促销开始日期，结束日期，警告数量，关键字，简介，
+描述，缩略图，图，原图，是否真实商品，扩展代码，是否上架，是否单独销售，是否关联，
+配件关联，是否赠品，能否成为赠品，单位，添加时间，排序，是否回收，精品，新品，推
+荐，热销，红包ID，更新日期，商品类型，商品备注，首页轮播）
+ecs_goods_article // 商品文章关联（gid,aid ）
+ecs_goods_attr // 商品属性（商品ID，属性ID，属性值，属性附加价）
+ecs_goods_cat // 未知
+ecs_gallery // 商品相册（商品ID，图片，描述，缩略图，原图）
+ecs_goods_type // 商品类型（名称，状态）
+ecs_group_buy // 团购（商品ID，结束日期，价格阶梯，限购数量，描述，订购量，订单，
+赠送积分数，流程，押金，是否完成）
+ecs_group_goods // 配件（父类ID，商品ID，配件价格）
+ecs_link_goods // 商品关联（商品ID，关联ID，单双向）
+ecs_mail_templates // 邮件样式（代码，是否html，名称，样式，最后修改日期）
+ecs_member_price // 会员价（商品ID，会员等级，会员价）
+ecs_order_action // 订单处理（订单ID，处理用户，订单状态，配送状态，支付状态，处
+理时间，备注）
+ecs_order_goods // 订单－商品（订单ID，商品ID，商品名称，商品编号，商品数量，市
+场价，订单价，商品属性，配送数量，是否真实商品，扩展代码，父类ID，是否赠品）
+ecs_order_info // 订单信息（好多(-_-|||略...）
+ecs_pack // 包装（名称，图片，费用，免费额，描述）
+ecs_payment // 支付工具（代码，名称，费用，描述，排序，配置，状态，is_cod(未知)）
+ecs_pay_log // 支付记录（略）
+ecs_plugins // 插件（代码，版本，库，签名，安装日期）
+ecs_region // 地方数据（没什么好说的）
+ecs_sessions // 保存session 的（也没什么好说的（嗯？为什么要加个“也”呢））
+ecs_shipping // 配送（代码，名称，描述，保价费，support_cod(未知)，状态）
+ecs_shipping_area // 配送区域（序列配置）
+ecs_shop_config // 设置（父类ID，代码，类型，范围，文件夹，值）
+ecs_snatch // 夺宝奇兵（活动ID，商品ID，最小价，最大价，定价，积分消耗）
+ecs_snatch_log // 夺宝奇兵出价记录（还是没什么好说的）
+ecs_stats // 访问记录（时间，IP，访问次数，浏览器，系统，语言，地区，来源域名，来
+源地址，关键字，进入链接）
+ecs_tag // 用户标签（不说）
+ecs_template // 模板区域（文件名，区域，模板库，排序，id，数量，类型，模板）也不
+怎么清楚
+ecs_users // 会员（一些会员信息）
+ecs_user_account // 会员帐户（用户ID，管理员，总额，添加时间，支付时间，管理备注，
+用户备注，处理类型，支付工具，是否支付）
+ecs_user_address // 用户收货地址（略）
+ecs_user_bonus // 用户红包（红包ID，红包编号，用户ID，使用时间，订单ID，是否已
+发邮件）
+ecs_user_rank // 会员等级（名称，积分最小限额，最大限额，折扣，是否显示价格，特
+殊会员）
+ecs_virtual_cart // 虚拟卡（商品ID，卡号，密码，添加时间，失效时间，是否已卖完，
+编号，crc32 校验码）
+ecs_vote // 投票（名称，开始，结束，能否多选，统计）
+ecs_vote_log // 投票记录（投票ID，IP，时间）
+ecs_vote_option // 投票内容（投票ID，条目名称，条目统计） 
+
+
+图片宽：154*205
+
+
+==========================================================================================================================================================================================================================================================================================================================
+
+ECSHOP修改100条2009-11-24 10:241:如何修改网站"欢迎光临本店" 
+    回答:languages\zh_cn\common.php文件中， $_LANG['welcome'] = '欢迎光临本店';将他修改成你需要的字样。
+
+    2:如何修改首页"热门搜索关键字"
+
+     回答:后台->系统设置->网店设置->显示设置->首页搜索关键字，修改他的内容，然后保存
+
+    3:如何修改首页标题 "Powered by ECShop"
+
+    回答：includes/lib_main.php,找到$page_title = $GLOBALS['_CFG']['shop_title'] . ' - ' . 'Powered by ECShop';修改成$page_title = $GLOBALS['_CFG']['shop_title']就可以了。
+
+     4:如何去除cshop底部查询信息的显示
+
+    回答：library/page_footer.lbi中，删除  {insert name='query_info'}
+
+　5:如何发布首页公告
+
+    回答:后台->系统设置->商店设置->网店信息->商店公告.填写你需要的公告就可以了．
+
+    6:如何发布站内新闻
+
+　回答:参考http://www.chinab4c.com/html/shangchengchengxu/ecshopchangjianwenti/2009/0615/42.html
+
+    7:如何修改网站logo
+
+   回答:用你的logo图片替换/themes/default/images/logo.gif中图片就可以了
+
+    8:如何修改产品图片的大小
+
+      回答:在ecshop/themes/default/style.css中，找到.goodsItem .goodsimg{width:100px; height:100px; border:4px solid #eef8ff; margin-bottom:4px;}就可以控制产品图片的大小．
+
+    9:如何管理首页flash播放器
+
+      回答:后台 ->  flash播放器管理 ->  增加自定义，你就可以上传和控制图片的位置  
+
+    10:如何修改首页＂精品推荐＂栏目的more小图片
+
+　回答:模板文件中library/recommend_best.lbi中，<div class="more"><a href="../search.php?intro=best"><img src="images/more.gif" /></a></div>
+中more.gif图片换成你要的图片，或者将图片换成你需要的文字．
+
+   11:如何修改首页"新品上市"栏目的more小图片
+
+   回答：模板文件library/recommend_new.lbi中，<div class="more"><a href="../search.php?intro=new"><img src="images/more.gif" /></a></div>
+more.gif修改成你需要的图片或者是换成你需要的文字．
+
+  12:如何手动修改支付方式排列顺序
+
+   回答：数据库表中，找到payment表，pay_order字段就是用来控制顺序的，你如果想让A支付方式排在第一，那么你需要修改该字段的值稍微大一些。
+
+  
+
+ 
+
+
+图片1
+ 
+
+   13:如何去除ecshop产品详细页产品电击率
+
+　回答：模板文件中，打开goods.dwt，删除<strong>{$lang.goods_click_count}：</strong>{$goods.click_count}
+
+  14:首页模板在哪个文件，头部模板，底部模板个什么文件名称
+
+   回答：首页模板在为index.dwt, 头部模板在library/page_header.lbi,底部文件在library/page_footer.lbi
+
+  15:网站关闭了注册，如何修改“该网店暂停注册”字样
+
+  回答：languages\zh_cn\common.php 中$_LANG['shop_register_closed'] = '该网店暂停注册';修改该文字就可以了
+
+
+  16:收货人详细信息js弹出框的提示脚本在哪个文件
+
+   回答：languages\zh_cn\shopping_flow.php [比如 $_LANG['flow_js']['country_not_null'] = '请您选择收货人所在国家！';]
+
+
+   17:网站公告代码段在那里
+
+    回答: index.php文件中, $smarty->assign('shop_notice',     $_CFG['shop_notice']);       // 商店公告代码段控制公告
+
+   18:网站首页＂精品推荐＂显示数量在那里设置
+
+　回答：请参考http://www.chinab4c.com/html/shangchengchengxu/ecshopchangjianwenti/2009/0613/39.html文章里面第三点
+
+   19:网站首页＂新品上市＂显示数量在那里设置
+
+　回答：参照http://www.chinab4c.com/html/shangchengchengxu/ecshopchangjianwenti/2009/0613/39.html里面第二点
+
+    20:如何修改产品的库存
+
+   回答:商品管理 -> 商品列表 ->  选中(库存),编辑就可以了.
+
+   21:如何修改ecshop表的前缀
+
+  回答:修改data/config.php下的$prefix    = "ecs_";将ecs_修改成你需要的前缀.其次,在数据库中，修改表名比如ecs_goods修改为"xxx_goods";
+
+   22:如何去除首页flash下面的空白区域
+
+  回答:参照http://www.chinab4c.com/html/shangchengchengxu/ecshopchangjianwenti/2009/0616/46.html
+
+  23:如何修改ecshop导航栏目名称
+
+ 回答:后台 -> 系统设置 -> 自定义导航栏 -> 编辑 -> 修改导航栏名称
+
+ 24:如何将最新产品栏目显示在导航栏里面？
+
+　回答：后台 -> 系统设置 -> 自定义导航栏 -> 增加自定义导航,在链接的栏目中输入"search.php?intro=new"
+
+ 25:如何更换ecshop模板
+
+   回答：比如新模板“test”,你将放在themes目录下，形成的路径为themes/test,然后在后台 -> 模板管理 -> 模板选择 ，起用你新加的模板就OK了。
+
+ 26:ecshop产品相关的图片有那几种
+
+  回答：$goods_img        = '';  // 初始化商品图片
+$goods_thumb      = '';  // 初始化商品缩略图
+$original_img     = '';  // 初始化原始图片
+$old_original_img = '';  // 初始化原始图片旧图
+
+ 27：ecshop首页如何设置“新品”，“精品”，“热卖”商品
+
+   回答：参照http://www.chinab4c.com/html/shangchengchengxu/ecshopchangjianwenti/2009/0706/82.html
+
+ 28:如何修改“支付方式”显示顺序
+
+  回答：打开ecs_payment表,如果你想让他显示在前面，你将设置pay_order值小一些，比如想让“支付宝”排第一，“快钱”排第二，你就可以设置支付宝pay_order=1,快钱pay_order=2
+
+  29:详细页面的积分
+
+　回答：详细页面的积分在模板<strong> {$lang.goods_give_integral}</strong><font class="f4">{$goods.give_integral} {$points_name}</font>中来控制的
+
+  30:如何修改产品缩略图大小
+
+   回答：后台 -> 系统设置 -> 网店设置 -> 显示设置 -> 缩略图宽度.,当然你也可以设置缩略图高度
+
+    31:如何设置ecshop货币格式和日期格式。
+
+  回答：后台 -> 系统设置 -> 网店设置 -> 显示设置 -> 货币格式(￥%s元)或者时间格式(Y-m-d H:i:s)
+
+   32:如何开取和关闭ecshop登陆验证码
+
+   回答:后台  -> 系统设置 -> 验证码管理  ,在这里你可以操作各种验证码,开启和关闭
+
+   33:如何修改个人帐户信息里面，出生年月的范围
+
+   {html_select_date field_order=YMD prefix=birthday start_year=-60 end_year=+1 display_days=true month_format=%m day_value_format=%02d time=$profile.birthday}
+
+   start_year=-60意思是从今天开始，推前面60年。 end_year+=1就是今年开始，往后推一年。就是表示这个范围。如果你需要更大的范围，将他们修改的更大一些。比如 start_year=-100,end_year+=100。这样范围够大了把。呵呵
+
+   34:ecshop中的模板中如何包含模板
+
+  回答:查看includes/cls_template.php中，发现php中的include方式在smarty中依然有用. {include file='library/dd.lbi'}所以,你用include方式,就可以在ecshop中的lbi中包含lbi
+
+  35:如何调整ecshop flash播放器播放速度
+
+  回答：// 0xffffff:文字颜色|1:文字位置|0x0066ff:文字背景颜色|60:文字背景透明度|0xffffff:按键文字颜 色|0x0066ff:按键默认颜色|0x000033:按键当前颜色|8:自动播放时间(秒)|2:图片过渡效果|1:是否显示按钮|_blank:打 开窗口
+var swf_config = "|2|||0xFFFFFF|0xFF6600||2|3|1|_blank"
+
+   以上表明，后面的2是控制速度的，如果你感觉他快了。你就把2修改成比2大的数。这样ecshop flash播放器速度就会慢些
+
+  36:ecshop2.7.0首页轮换图片如何管理
+
+   回答：后台  -> 系统设置 -> 首页主广告管理 -> 系统默认，自定义。。。在这里。你可以进行首页flash图片管理 
+
+  37.ecshop订单中，哪个字段是控制折扣的
+
+  回答：order_info表格中，discount字段控制折扣。
+
+ 38:如何显示销售排行:
+
+  回答:显示销售排行，首先你需要有交易的定单,而且该定单已经交易完成,并且该定单中的产品库存不为零.如果库存为零,还是不能显示.
+
+ 39:Notice: Undefined variable: _LANG in D:\cms\new\includes\init.php on line 179错误如何解决
+回答：认真检查语言包require(ROOT_PATH . 'languages/' . $_CFG['lang'] . '/common.php');文件是否存在，或者遗漏
+
+40:ecshop flash播放器文件和图片在哪个文件夹里面
+
+　回答：flash播放器程序在data\flashdata，图片在data\afficheimg里面
+
+50:如果不小心把ecshop 的install.lock文件删除了怎么办
+
+　回答：很简单．在data 目录下，建立一个名字为install.lock的文件就好了。甚至内容都不需要．
+
+ 51:如何设置快递单的打印模板
+
+   回答：系统设置 -> 配送方式 -> 编辑打印模板
+
+ 52:ecshop如何删除“注册用户”，“VIP用户”价格
+
+  回答：会员管理 -> 会员等级 -> 删除或者不显示对应会员等级的价格
+
+  53：如何调整分类列表也分页显示产品的个数。
+
+ 回答：后台 -> 系统设置 -> 商店设置 -> 显示设置 -> 商品分类页列表的数量
+
+ 54:用户中心，产品推荐，分成细节文字在那里修改：
+
+ 回答：languages\zh_cn\user.php 文件中的 $_LANG['affiliate_intro'][0] 内容，进行修改　　
+
+
+55:购物车中的文字信息如何修改“您的购物车中有 0 件商品，总计金额 ￥0.00元”
+
+回答：languages\zh_cn\common.php 文件中，修改$_LANG['cart_info'] = '您的购物车中有 %d 件商品，总计金额 %s。';文字修改成你需要的文字
+56:如何控制ecshop文件的编码。
+
+回答：header("Content-type: text/html; charset=UTF-8"); 
+
+57:如何修改调整ecshop用户中心左侧栏目
+
+回答：模板文件library/user_menu.lbi中。修改和去除一些栏目，就可以了
+
+
+ecshop2.7，现在用加密方法，很难去掉。
+一定要去的话，可以在淘宝上找专业人士帮忙去。不过好像是收费的。
+
+以前的版本只要在下面操作就行了。
+1. 删除顶部标题栏"Powered by Ecshop"信息:
+使用文本编辑器(推荐UltraEdit)打开 ecshop根目录/includes/lib_main.php, 找到如下代码:
+
+/* 初始化“页面标题”和“当前位置” */
+$page_title = $GLOBALS['_CFG']['shop_title'] . ' - ' . 'Powered by ECShop';
+$ur_here    = '<a href="." mce_href=".">' . $GLOBALS['_LANG']['home'] . '</a>';
+
+将蓝色部分删除或修改为自己的网站信息.
+
+2. 修改底部"Powered by Ecshop 2.x.x"
+
+使用文本编辑器打开文件: ecshop根目录/themes/当前模板名/library/page_footer.lbi, 找到如下代码:
+
+{insert name='query_info'}<br />
+<a href="http://www.ecshop.com" target="_blank" style="font-size:10px">Powered by 
+
+<strong><span style="color: #3366FF">ECShop</span> <span style="color: #FF9966">{$ecs_version}
+
+</span></strong></a><br />
+
+将蓝色部分删除或修改加粗部分为自己网站信息.
+
+ 58:如何设置网站首页最新新闻的数量
+
+回答：后台 -> 系统设置　->　网店设置　-> 显示设置 -> 最新文章显示数量
+
+59:ecshop smarty模板中and 语法如何使用
+
+回答：{if $smarty.foreach.table_name.iteration > 1 and ($smarty.foreach.table_name.iteration-1) % 4 eq 0}
+
+60:ecshop积分商城的产品放在哪个表里面？
+
+回答：ecs_exchange_goods里面存储了积分商城的产品信息
+
+61:ecshop后台如何设置产品价格格式
+
+回答:后台->系统设置->网店设置->显示设置->商品价格显示规则
+
+62:如何删除ecshop底部查询
+
+回答：模板文件中library/page_footer.lbi中，删除{insert name='query_info'}
+
+63：如何给网站底部增加第三方统计代码
+
+回答：后台->系统设置->基本设置->统计代码。点保存
+
+ 64:页面标题和中间导航,程序在那里?
+
+回答:includes/lib_main.php中的assign_ur_here()函数中
+
+ 65:如何手动调节一个ecshop会员的等级
+
+回答:后台->会员管理->会员列表->选中某个会员 -> 查看帐目明细 -> 调节会员帐户 -> 等级积分帐户(增加或者减少)相对应的分,调节到需要调节的会员等级的积分。就能达到手动调节会员等级的效果
+
+66:如何改变ecshop首页flash显示的大小
+
+回答：模板文件中，index.dwt.
+
+<script type="text/javascript">
+var swf_width=534;
+var swf_height=218;
+</script>
+
+修改他的值就可以了
+
+67:如何修改网站关闭后的提示信息？
+
+回答：languages\zh_cn\common.php 中，把这句中文，修改成你要的文字$_LANG['shop_closed'] = '本店盘点中，请您稍后再来...';
+68:js如何取select的值
+
+回答：var t = document.getElementById("typeController"); 
+alert(t.options[t.selectedIndex].value);
+
+69:让ecshop属性下拉格式显示
+
+回答：后台－系统设置－商店设置－商品显示设置    第六行  商品属性显示样式:  单选按钮 下拉列表
+
+ 70:如何控制评论的审核状态
+
+回答：后台->系统设置->商店设置->基本设置->用户评论是否需要审核
+
+71:ecshop中奇兵夺宝的时间和信息在哪个表
+
+回答：ecs_snatch_log里面装着出价的时间和价格。还有用户ID,出价时间是bid_time
+
+71:ecshop模板如何控制字符长度
+
+回答：{$article.short_title|truncate:10:"...":true}这样就可以截取字符串长度了
+
+好忙啊。。。。。待叙。。。。争取早日完成100条。。。
+
+72:如何编辑“ecshop用户协议”
+
+回答：后台->文章管理->文章列表->编辑“用户协议”那篇文章。
+
+73:如何修改后台操作栏目条
+
+回答：languages\zh_cn\admin\common.php中修改
+
+74:如何在ecshop自定义导航栏增加ecshop积分商城
+
+回答：exchange.php增加进去，就可以了。  
+
+75:ecshop数据库备份的文件放在哪个目录
+
+回答：data\sqldata目录下面
+
+76L如何加强ecshop搜索
+
+回答:
+
+   word_list = explode(' ', $keyword);
+foreach ($word_list as $word)
+{
+$conditions .= " AND (g.goods_name LIKE '%" . trim($word) . "%')";
+}
+
+ 根据ecmall论坛上朋友的思路，可以更加方便搜索.
+
+77:如何增加在ecshop中增加和"中国"同一级别的地区地址。
+
+回答：insert into ecs_region values('','0','美国','0','0');在根据该region_id.插入不同级别地区。
+
+78:如何修改ur_here.lbi中的信息
+
+回答：includes/lib_main.php函数中，修改assign_ur_here()函数
+
+79:如何修复mysql的myd文件。
+
+回答：执行REPAIR TABLE 命令
+
+ 80:如何控制ECSHOP商品浏览历史数量
+
+回答：系统设置->商店设置->显示设置->浏览历史数量设置
+
+81：如何删除用户评论
+
+答案是：进入\themes\default\library\comments_list.lbi 把这个页面的整个源码注释掉，在开头加上 <!-- 在最后尾部加上 -->
+
+82、在首面的最上面的logo边添加banner 的方法
+
+修改模板文件里的page_header.lbi文件，在里面添加相关的代码文件即可，如下演示：
+
+<p id="logo"><a href="../index.php"><img src="../images/logo.gif" alt="logo" /></a>　　<img src="../images/banner.gif" alt="banner广告" /></p>  
+
+红色的地方就是添加的banner图片代码。至于大小，大家根据情况自己再调整下吧。
+
+83、如何在文件里加入JS代码，如果按一般平常添加方法，会出错，解决的方法：
+
+把script套在{literal}{/literal}之间试试看，例如：
+
+{literal}
+<script type="text/javascript">
+....
+</script>
+{/literal}
+
+
+==========================================================================================================================================================================================================================================================================================================================
+
+ecshop首页调用最新评论
+已有 94 次阅读  2009-08-16 20:42   标签:  ecshop  首页  评论  
+转载：
+
+昨天自己到百度搜了一些关于smart的一些文章，还有一个smart开发文章，现在分享给大家，并且就首页显示评论的功能教大家怎么去做，怎么个思维。
+
+在这之前，请大家看看这篇文章
+http://linux.chinaitlab.com/PHP/38324.html
+
+smart手册我附件里下载
+
+现在开始教大家这个功能的实现过程
+
+首先大家要明白ecshop的目录结构
+
+includes 【程序库文件，直观理解就是首页的php文件是直接调用功能函数的，而这些函数都在includes下集中保存了，方便调用】
+themes   【模板目录】
+
+功能要在 index.php 页面实现 html布局要写在 index.dwt 模板文件里
+
+记住一个重要的思想：“index.php里我们把要显示的内容都保存到一个变量，，在到index.dwt显示出这个变量”
+
+理论上，我们在index.php加入php代码就可以了，但是为了程序结构清晰，我们把稍微复杂的程序写到includes函数库中。
+
+下面我们怎么做呢，我们目前要考虑的是，把要调用的内容存在变量里，内容在哪呢，mysql数据库，对。
+
+我选择了修改 lib_goods.php 这个库函数文件，主要参考了 调用最新商品的函数也在这里，所以就选择了这个文件，具体includes下的文件结构，我还不懂。
+
+在任意位置，当然不要加到其他函数里面去了，添加如下代码：
+
+【代码我也不太会写，主要参考了admin目录下的，comment_manage.php】
+
+ps：//后面的注释可以都删掉，我只是想给大家说明白为什么这样写
+
+/** 
+* 获得首页评论列表 
+*/ 
+function get_comment_index()     //函数名 index.php我们要调用的 
+{ 
+$sql = “SELECT * FROM ” .$GLOBALS['ecs']->table(’comment’). ” WHERE parent_id = 0 and status = 1 ORDER BY comment_id DESC LIMIT 5 “;   // 查询数据库，parent_id 0是用户的评论，屏蔽掉了管理员的回复；status 是允许显示的评论，limit 5 限制只显示5条，大家可以随意改 
+$result = $GLOBALS['db']->getAll($sql);     // 执行这个查询 
+$comment = array();                                //建立一个数组 
+foreach ($result AS $idx => $row)           //建立循环，循环所有查询的条数 
+{ 
+    
+   $comment[$idx]['id']       = $row['comment_id'];                            // 评论id ,,一般用不上，但这里调用了备用 
+       $comment[$idx]['name']        = $row['user_name'];                         // 评论人 
+       $comment[$idx]['content']     = $row['content'];                            //评论内容 
+       $comment[$idx]['rank']        = $row['comment_rank'];                   //评论分数 
+       $comment[$idx]['time']        = local_date($GLOBALS['_CFG']['time_format'], $row['add_time']);    //评论时间   [这个我没测试，结果不一定对] 
+      if ($row['comment_type'] == 0)       //comment_type 区别了是文章调用，还是商品调用 
+{ 
+       $sql = “SELECT goods_name FROM ” .$GLOBALS['ecs']->table(’goods’). ” WHERE goods_id = ‘$row[id_value]‘”; //查询商品表，id_value 是评论表里的数据，指定了评论对象的id 
+       $comment[$idx]['title'] = $GLOBALS['db']->getOne($sql);    //取得评论对象          
+       $img= “SELECT goods_imgs FROM ” .$GLOBALS['ecs']->table(’goods’). ” WHERE goods_id = ‘$row[id_value]‘”; //查询商品表，id_value 是评论表里的数据，指定了评论对象的id 
+       $comment[$idx]['img'] = $GLOBALS['db']->getOne($img);    //取得评论对象的图片         
+       $comment[$idx]['url'] = “goods.php?id=$row[id_value]“; //取得评论对象的url 
+} 
+else 
+{ 
+       $sql = “SELECT title FROM ” .$GLOBALS['ecs']->table(’article’). ” WHERE article_id=’$row[id_value]‘”;   //查询文章表 id_value 共用的 
+       $comment[$idx]['title'] = $GLOBALS['db']->getOne($sql);    //取得评论对象 
+       $comment[$idx]['url'] = “article.php?id=$row[id_value]“;     //取得评论对象的url 
+} 
+} 
+return $comment; 
+} 
+复制代码
+
+index.php :
+
+88 行下面加上
+
+   $smarty->assign(’comment’, get_comment_index());    // 评论列表 
+复制代码
+
+大概理解为，get_comment_index() 函数取得的内容，送到comment 变量，在模板中调用
+
+index.dwt:   大家自己分析吧，，能看懂这篇文章的，模板部分肯定没问题。回应功能还没做，日后需要加上。
+
+<!————————–评论调用 START ———————–> 
+<!–{foreach from=$comment item=comment}–> 
+<UL class=”tlst”> 
+   <LI class=”ilst” style=”CLEAR: both”><A title=國產凌凌漆 
+   href=”http://www.douban.com/subject/1307739/”><IMG class=fil alt=國產凌凌漆 
+   src=”images/s2865043.jpg”></A> </LI> 
+   <LI class=”clst”><SPAN class=”pl ll obss”><SPAN class=starb><A 
+   href=”http://url”>{$comment.name}</A> 评论: <A 
+   href=”{$comment.url}”>{$comment.title}</A> </SPAN><SPAN 
+   class=”stars{$comment.rank} stars”></SPAN></SPAN><BR><BR> 
+   <DIV class=”pl”>{$comment.content|truncate:90:”…”}<A class=pl href=”http://url”>(48回应)</A></DIV> 
+</LI></UL> 
+<DIV class=clear></DIV> 
+<!–{/foreach}–> 
+<!————————–评论调用 END—————————> 
+
+
+==========================================================================================================================================================================================================================================================================================================================
+
+
+调用最新评论
+<?php
+if(!function_exists("get_comments")){
+function get_comments($num)
+{
+$sql = 'SELECT * FROM ecs_comment '.
+         ' WHERE status = 1 AND parent_id = 0 and comment_type=0 '.
+         ' ORDER BY add_time DESC';
+   if ($num > 0)
+   {
+$sql .= ' LIMIT ' . $num;
+   }
+   //echo $sql;       
+   $res = $GLOBALS['db']->getAll($sql);
+   $comments = array();
+   foreach ($res AS $idx => $row)
+   {
+$comments[$idx]['user_name']    = $row['user_name'];
+$comments[$idx]['content']    = $row['content'];
+$comments[$idx]['id_value']    = $row['id_value'];
+   }
+   return $comments;
+}
+}
+?>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+   <!--数据调用-最新评论开始 -->    
+<?php
+       $this->assign('my_comments',get_comments(6)); // 6代表会条数据
+?>       
+<div id="promotion">
+   <div class="sortbg">
+<div id="comments_left"></div>
+<div id="comments_right"></div>
+   </div>
+   <div class="sort">
+<ul style="padding-left:8px">
+   <!--{foreach from=$my_comments item=comments}-->
+   <li><a href="goods.php?id={$comments.id_value}" target="_blank">{$comments.content|truncate:10:""}</a></li>
+   <!--{/foreach}-->
+</ul>
+   </div>
+</div>
+
+
+首页调用这个库文件就OK了.
+<!-- #BeginLibraryItem "/library/index_comments.lbi" --><!-- #EndLibraryItem -->
+
+样式大家自己根据网店的风格调整下！
+
+
+==========================================================================================================================================================================================================================================================================================================================
+
+
+1、首先修改程序部分
+打开includes/lib_goods.php
+找到get_promote_goods()函数部分
+在 
+$goods[$idx]['url']          = build_uri('goods', array('gid' => $row['goods_id']), $row['goods_name']);
+复制代码
+下面增加代码 
+/* 促销时间倒计时 */
+
+
+        $time = gmtime();
+
+        if ($time >= $row['promote_start_date'] && $time <= $row['promote_end_date'])
+
+        {
+
+             $goods[$idx]['gmt_end_time']  = local_date('M d, Y H:i:s',$row['promote_end_date']);
+
+        }
+
+        else
+
+        {
+
+            $goods[$idx]['gmt_end_time'] = 0;
+
+        }
+复制代码
+2、
+然后将 library/recommend_promotion.lbi
+全部替换为下面代码： 
+<meta http-equiv="Content-Type" content="text/html; charset=gbk">
+
+<!-- {if $promotion_goods} -->
+
+<script >
+
+var Tday = new Array();
+
+var daysms = 24 * 60 * 60 * 1000
+
+var hoursms = 60 * 60 * 1000
+
+var Secondms = 60 * 1000
+
+var microsecond = 1000
+
+var DifferHour = -1
+
+var DifferMinute = -1
+
+var DifferSecond = -1
+
+function clock(key)
+
+  {
+
+   var time = new Date()
+
+   var hour = time.getHours()
+
+   var minute = time.getMinutes()
+
+   var second = time.getSeconds()
+
+   var timevalue = ""+((hour > 12) ? hour-12:hour)
+
+   timevalue +=((minute < 10) ? ":0":":")+minute
+
+   timevalue +=((second < 10) ? ":0":":")+second
+
+   timevalue +=((hour >12 ) ? " PM":" AM")
+
+   var convertHour = DifferHour
+
+   var convertMinute = DifferMinute
+
+   var convertSecond = DifferSecond
+
+   var Diffms = Tday[key].getTime() - time.getTime()
+
+   DifferHour = Math.floor(Diffms / daysms)
+
+   Diffms -= DifferHour * daysms
+
+   DifferMinute = Math.floor(Diffms / hoursms)
+
+   Diffms -= DifferMinute * hoursms
+
+   DifferSecond = Math.floor(Diffms / Secondms)
+
+   Diffms -= DifferSecond * Secondms
+
+   var dSecs = Math.floor(Diffms / microsecond)
+
+   
+
+   if(convertHour != DifferHour) a="<font color=red>"+DifferHour+"</font>天";
+
+   if(convertMinute != DifferMinute) b="<font color=red>"+DifferMinute+"</font>时";
+
+   if(convertSecond != DifferSecond) c="<font color=red>"+DifferSecond+"</font>分"
+
+     d="<font color=red>"+dSecs+"</font>秒"
+
+     if (DifferHour>0) {a=a} 
+
+     else {a=''}
+
+   document.getElementById("leftTime"+key).innerHTML = a + b + c + d; //显示倒计时信息
+
+  
+
+  }
+
+</script>
+
+<div id="sales" class="f_l clearfix">
+
+      <h1><a href="../search.php?intro=promotion"><img src="images/more.gif" /></a></h1>
+
+       <div class="clearfix goodBox">
+
+         <!--{foreach from=$promotion_goods key=key item=goods name="promotion_foreach"}-->
+
+         {if $smarty.foreach.promotion_foreach.index <= 3}
+
+           <div class="goodList">
+
+           <a href="{$goods.url}"><img src="{$goods.thumb}" border="0" alt="{$goods.name|escape:html}"/></a><br />
+
+      <p><a href="{$goods.url}" title="{$goods.name|escape:html}">{$goods.short_name|escape:html}</a></p>
+
+           {$lang.promote_price}<font class="f1">{$goods.promote_price}</font><br><font class="f4" id="leftTime{$key}">{$lang.please_waiting}</font>
+
+           </div>
+
+         {/if}
+
+<script>
+
+Tday[{$key}] = new Date("{$goods.gmt_end_time}");   
+
+window.setInterval(function()     
+
+{clock({$key});}, 1000);     
+
+</script>
+
+         <!--{/foreach}-->
+
+       </div>
+
+      </div>
+
+     
+
+<!-- {/if} -->
+
+
+==========================================================================================================================================================================================================================================================================================================================
+如何在ecshop中实现商品属性的调用1.在category.php文件中约425行
+
+$arr[$row['goods_id']]['url'] = build_uri('goods', array('gid'=>$row['goods_id']), $row['goods_name']);
+
+后加入代码：
+
+$arr[$row['goods_id']]['spec']   = get_goods_attr($row['goods_id']);
+
+
+2.在goods_list.lbi模板库文件中相应位置加入代码：
+
+<!--{foreach from=$goods.spec item=spec}-->
+<p>{$spec.attr_name}:<!--{foreach from=$spec.goods_attr_list item=spec_list}-->
+{$spec_list}/<!--{/foreach}--></p>
+<!--{/foreach}-->
+
+
+
+
+
+

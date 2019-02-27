@@ -1,0 +1,158 @@
+<extend name="Public/index" />
+
+<block name="banner">
+   <div class="height_60"></div>
+    <div class="subbanner-small" onclick="LinkTo();">
+        <div class="subbanner-inner">
+            <div class="container">
+                <!--<h1>攻略资料</h1>-->
+                <h1></h1>
+                <!--<h2>Strategy</h2>-->
+                <h2></h2>
+                <img class="col-md-4 col-md-offset-1 col-xs-10 col-xs-offset-1" src="__FILEADD__/content/images/translation.png" style="margin-top: 1%;"/>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+        var banners = [];
+        {:W('Banner/Index')}
+        if (banners.length > 0) {
+            $(".subbanner-inner").hide();
+            $(".subbanner-small").attr("style", "cursor:pointer;");
+            images = [];
+            for (i = 0; i < banners.length; i++) {
+                images.push(banners[i]["img"]);
+            }
+        }
+
+        $(function () {
+            $('.subbanner-small').backstretch(images, { fade: 750, duration: 3000 });
+        });
+
+
+    </script>
+</block>
+<style>
+	
+</style>
+
+<block name="content">
+    <div class="main">
+
+        <dl class="main-farm-menu">
+            <dd><a href="{:U('Introduce/index')}">游戏介绍</a></dd>
+            <dd><a href="{:U('Introduce/fruit')}">果实介绍</a></dd>
+            <dd><a href="{:U('Introduce/porp')}" >道具介绍</a></dd>
+						<dd><a href="{:U('Introduce/guardian')}">守护介绍</a></dd>
+            <dd><a href="{:U('Introduce/listing')}" class="select">升级清单</a></dd>
+			<dd><a href="{:U('Introduce/reborn')}">重生介绍</a></dd>
+        </dl>
+
+        <div class="main-farm">
+            <div class="tablebox">
+                <table>
+                    <tr>
+                        <th></th>
+                        <th></th>
+                        <th>需求</th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                    </tr>
+                    <tr>
+                        <td style="width:15%;">1级→2级</td>
+                        <td style="width:10%;"><img src="__FILEADD__/content/images/gongneng.png" width="30" /> x 1</td>
+                        <td style="width:10%;"></td>
+						<td style="width:10%;"></td>
+						<td style="width:10%;"></td>
+                        <td style="width:10%;"><img src="__FILEADD__/content/images/baoshi.png" width="30" /> x 100</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td style="width:15%;">2级→3级</td>
+                        <td style="width:10%;"><img src="__FILEADD__/content/images/gongneng.png" width="30" /> x 3</td>
+                        <td style="width:10%;"></td>
+						<td style="width:10%;"></td>
+						<td style="width:10%;"></td>
+                        <td style="width:10%;"><img src="__FILEADD__/content/images/baoshi.png" width="30" /> x 200</td>
+                        <td></td>
+                    </tr>
+
+                    <tr>
+                        <td style="width:15%;">3级→4级</td>
+                        <td style="width:10%;"><img src="__FILEADD__/content/images/gongneng.png" width="30" /> x 6</td>
+                        <td style="width:10%;"><img src="__FILEADD__/content/images/shuini.png" width="30" /> x 1</td>
+						<td style="width:10%;"></td>
+						<td style="width:10%;"></td>
+                        <td style="width:10%;"><img src="__FILEADD__/content/images/baoshi.png" width="30" /> x 300</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td style="width:15%;">4级→5级</td>
+                        <td style="width:10%;"><img src="__FILEADD__/content/images/gongneng.png" width="30" /> x 12</td>
+                        <td style="width:10%;"><img src="__FILEADD__/content/images/shuini.png" width="30" /> x 6</td>
+						<td style="width:10%;"></td>
+						<td style="width:10%;"></td>
+                        <td style="width:10%;"><img src="__FILEADD__/content/images/baoshi.png" width="30" /> x 500</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td style="width:15%;">5级→6级</td>
+                        <td style="width:10%;"><img src="__FILEADD__/content/images/gongneng.png" width="30" /> x 100</td>
+                        <td style="width:10%;"><img src="__FILEADD__/content/images/shuini.png" width="30" /> x 15</td>
+                        <td style="width:10%;"></td>
+                        <td style="width:10%;"></td>
+                        <td style="width:10%;"><img src="__FILEADD__/content/images/baoshi.png" width="30" /> x 2000</td>
+                        <td></td>
+                    </tr>
+					<tr>
+                        <td style="width:15%;">6级→7级</td>
+                        <td style="width:10%;"><img src="__FILEADD__/content/images/gongneng.png" width="30" /> x 200</td>
+                        <td style="width:10%;"><img src="__FILEADD__/content/images/shuini.png" width="30" /> x 30</td>
+                        <td style="width:10%;"><img src="__FILEADD__/content/images/gangcai.png" width="30" /> x 10</td>
+						<td style="width:10%;"></td>
+                        <td style="width:10%;"><img src="__FILEADD__/content/images/baoshi.png" width="30" /> x 12000</td>
+                        <td></td>
+                    </tr>
+					<tr>
+                        <td style="width:15%;">7级→8级</td>
+                        <td style="width:10%;"><img src="__FILEADD__/content/images/gongneng.png" width="30" /> x 500</td>
+                        <td style="width:10%;"><img src="__FILEADD__/content/images/shuini.png" width="30" /> x 30</td>
+                        <td style="width:10%;"><img src="__FILEADD__/content/images/gangcai.png" width="30" /> x 10</td>
+						<td style="width:10%;"><img src="__FILEADD__/content/images/ciliao.png" width="30" /> x 10</td>
+                        <td style="width:10%;"><img src="__FILEADD__/content/images/baoshi.png" width="30" /> x 72000</td>
+                        <td></td>
+                    </tr>
+                    <!--<tr>
+                        <td></td>
+                        <td>材料</td>
+                        <td><img src="__FILEADD__/content/images/功能图标.png" width="30" />（100x土豆 + 100x草莓）</td>
+                        <td><img src="__FILEADD__/content/images/水泥.png" width="30" />（200x樱桃 + 200x稻米）</td>
+                        <td></td>
+                    </tr>-->
+                </table>
+                <br /><br />
+                <p class="color-3">
+                    <b>材料兑换</b>
+                </p>
+                <img src="__FILEADD__/content/images/gongneng.png" width="30" />
+                （100x<img src="__COMMON__/img/土豆.png" width="30" /> + 100x<img src="__COMMON__/img/草莓.png" width="30" />）
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+                <img src="__FILEADD__/content/images/shuini.png" width="30" />
+                （200x<img src="__COMMON__/img/樱桃.png" width="30" /> + 200x<img src="__COMMON__/img/稻米.png" width="30" />）
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+                <img src="__FILEADD__/content/images/gangcai.png" width="30" />
+                （300x<img src="__COMMON__/img/葡萄.png" width="30" /> + 300x<img src="__COMMON__/img/番茄.png" width="30" />）
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+				<img src="__FILEADD__/content/images/ciliao.png" width="30" />
+                （100x<img src="__COMMON__/img/葡萄.png" width="30" /> + 100x<img src="__COMMON__/img/番茄.png" width="30" /> + 300x<img src="__COMMON__/img/菠萝.png" width="30" />）
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+            </div>
+
+        </div>
+    </div>
+    </div>
+
+
+</block>

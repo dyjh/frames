@@ -1,0 +1,218 @@
+<extend name="Public/index" />
+<block name="banner">
+    <div class="height_60"></div>
+    <div class="subbanner-small" onclick="LinkTo();">
+        <div class="subbanner-inner">
+            <div class="container">
+                <!--<h1>攻略资料</h1>-->
+                <h1></h1>
+                <!--<h2>Strategy</h2>-->
+                <h2></h2>
+                <img class="col-md-4 col-md-offset-1 col-xs-10 col-xs-offset-1" src="__FILEADD__/content/images/user.png" style="margin-top: 1%;"/>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+        var banners = [];
+        {:W('Banner/Index')}
+        if (banners.length > 0) {
+            $(".subbanner-inner").hide();
+            $(".subbanner-small").attr("style", "cursor:pointer;");
+            images = [];
+            for (i = 0; i < banners.length; i++) {
+                images.push(banners[i]["img"]);
+            }
+        }
+
+        $(function () {
+            $('.subbanner-small').backstretch(images, { fade: 750, duration: 3000 });
+        });
+
+
+    </script>
+</block>
+
+<block name="content">
+    <div class="content">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-4 col-md-5">
+                    <div class="card card-user">
+                        <div class="image">
+                            <img src="__ASSETS__/img/background.png" alt="..."/>
+                        </div>
+                        <div class="content">
+                            <div class="author">
+                                <img class="avatar border-white" src="<if condition='$user_info[headimg]'> {$user_info.headimg}<else/> __ASSETS__/img/faces/face-2.jpg </if>" alt="..."/>
+                                <h4 class="title">
+                                    {$user_info.name}<br />
+                                    <!--<a href="#"><small>@chetfaker</small></a>-->
+                                </h4>
+                            </div>
+                            <script>
+                                $(function () {
+                                    Hello();
+                                });
+                            </script>
+                            <p class="description text-center" id="Hello"></p>
+                            <p class="description text-center">登录：{$user_info.login_time|date="Y-m-d",###}</p>
+                        </div>
+                        <hr>
+                        <div class="text-center">
+                            <div class="row">
+                                <div class="col-md-3 col-md-offset-1">
+                                    <h5> {$user_info.diamond}<br /><small>钻石</small></h5>
+                                </div>
+                                <div class="col-md-4">
+                                    <h5> {$user_info.coin}<br /><small>金币</small></h5>
+                                </div>
+                                <div class="col-md-3">
+                                    <h5> {$user_info.coin_freeze}<br /><small>冻结金币</small></h5>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="header">
+                            <h4 class="title"></h4>
+                        </div>
+                        <div class="content">
+                            <ul class="list-unstyled team-members">
+                              
+                                <li>
+                                    <div class="row">
+                                        <div class="col-xs-6">
+                                            上级用户ID
+                                        </div>
+                                        <div class="col-xs-6 text-right">
+                                            <!-- <a  href="javascript:;" class="btn btn-sm btn-success btn-icon"> -->
+											<if condition='$referees_info'>{$referees_info.num_id}<else/>无</if>
+											<!-- </a> -->
+                                        </div>
+                                    </div>
+                                </li>
+								<li>
+									<div class="row">
+                                        <div class="col-xs-6">
+                                            团队人数
+                                        </div>
+                                        <div class="col-xs-6 text-right">
+                                            {$team_num}
+                                        </div>
+                                    </div>
+                                </li>
+								<if condition='$HighLevel'>
+								<li>
+									<div class="row">
+                                        <div class="col-xs-6">
+                                            团队{$HighLevel.first_key}级人数
+                                        </div>
+                                        <div class="col-xs-6 text-right">
+                                            {$HighLevel.first_count}
+                                        </div>
+                                    </div>
+                                </li>
+								</if>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-8 col-md-7">
+                    <div class="card">
+                        <div class="">
+                            <h4 class="title">我的团队<a href="{:U('User/user_info','reflush=1')}">刷新团队</a> </h4>
+                        </div>
+                        <div class="card">
+                            <div class="content table-responsive table-full-width table-upgrade">
+                                <table class="table">
+                                    <thead>
+                                    <th>用户名</th>
+                                    <th class="text-center">用户ID</th>
+                                    <th class="text-center">用户等级</th>
+                                    </thead>
+					
+                                    <tbody>
+									<if condition='$Direct_drive_list'>
+										<volist name="Direct_drive_list" id="val">
+											<tr>
+												<td><if condition="$val['nickname']">{$val.nickname}<else/>农场用户</if></td>
+												<td>{$val.num_id}</td>
+												<td>{$val.level}</td>
+											</tr>
+										</volist>
+									<else/>
+										<tr>
+											<td rows='2' cols='2'><p>您暂未推荐用户加入我们</p></td>
+										</tr>
+									</if>
+                                    </tbody>
+									
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+				
+		
+                <div class="col-lg-4 col-md-offset-2 col-md-3 col-md-offset-2">
+                    <div class="card">
+                        <div class="">
+                            <h4 class="title">资产<a href="{:U('User/user_info','reflush=1')}">刷新资产</a> </h4>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="content">
+                            <ul class="list-unstyled team-members">
+								
+                            <li>
+                                <div class="row">
+                                    <div class="col-xs-6">
+                                        总资产
+                                    </div>
+                                    <div class="col-xs-6 text-right">
+										{$money} 
+										<img src="__FILEADD__/content/images/coin.png" style="width:20px; height:20px;"/>    
+                                    </div>
+                                </div>
+                            </li>
+                                <volist name="fruit" id="val">
+                                    <li>
+                                        <div class="row">
+                                            <div class="col-xs-6">
+                                                {$val.seed}
+                                            </div>
+                                            <div class="col-xs-6 text-right">
+                                                {$val.total} 
+												<img src="__FILEADD__/content/images/coin.png" style="width:20px; height:20px;"/>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </volist>
+								
+							
+							<li>
+                                <div class="row">
+                                    <div class="col-xs-4">
+                                        种子
+                                    </div>
+									
+                                    <div class="col-xs-8 text-right">
+									<if condition="$user_info.user eq '18780164595'">
+									</if>
+                                        {$prop_info.all_price} 
+										<img src="__FILEADD__/content/images/coin.png" style="width:20px; height:20px;"/>
+                                    </div>
+									
+                                </div>
+                            </li>
+							
+							
+							
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</block>

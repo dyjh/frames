@@ -1,0 +1,315 @@
+<extend name="Public/index" />
+
+<block name="banner">
+    <include file="Game/banner" />
+</block>
+
+<block name="content">
+    <style type="text/css">
+        *{  padding:0;margin:0;}
+        #bg{ display: none;  position: absolute;  top: 0%;  left: 0%;  width: 100%;  height: 100%;  background-color: black;  z-index:1001;  -moz-opacity: 0.7;  opacity:.70;  filter: alpha(opacity=70);}
+        #show{display: none;  position: absolute;  top: 25%;  left:0;  width: 100%;  max-height: 60%;  padding: 8px;   background-color: white;  z-index:1002;  overflow: auto;}
+        #show input{margin-left:30px;}
+        #show ul{wight:80%;height:80%;border:3px solid pink;margin-top: 20px;overflow: auto;}
+        #show ul li{font-size: 20px;line-height: 40px;text-indent: 30px;width:80%;}
+        #show ul li label{float:right;}
+        .mv{}
+        .p1{width:990px;text-indent:30px;}
+    </style>
+
+    <div class="container clear">
+
+        <div class="main">
+
+            <div class="newsitem">
+                <div class="newsitem-head">{$tip[0]['title']}</div>
+                <div class="newsitem-info">
+                <span>
+                    游戏ID：
+					<if condition="$tip[0]['num_id'] neq 0">
+					{$tip[0]['num_id']}
+					<else/>
+					农场用户
+					</if>
+                    <span id="source" style="display:none;">{$tip[0]['mname']}</span>
+                    <span id="rid" style="display:none;">{$tip[0]['rid']}</span>
+                    <img src="__FILEADD__/content/images/coppericon.png">
+                    <i class="icon color-1"></i>
+                    <i class="icon color-1"></i>
+                    <i class="icon color-1"></i>
+                    <i class="icon color-1"></i>
+                </span>
+                    <span>发表日期：<?php echo date("Y-m-d H:i:s",$tip[0]['addtime']) ?></span>
+                    <span>阅读：{$tip[0]['readtime']}</span>
+                    <span>打赏：<em id="count">{$tip[0]['reward']}</em></span>
+                    <span style="padding-right: 5px;">标签：</span>
+                    <span style="padding-right: 5px;">{$tip[0]['lablelist']}</span>
+
+                </div>
+
+
+                <div class="newsitem-text">
+                    <foreach name="cont" item="cont">
+                        <if condition="$cont['content'] neq ''">
+                            <pre class="p1" style="max-width:100%">{$cont['content']}</pre>
+                        <elseif condition="$cont['img'] neq ''"/>
+                            <p style="text-align:center;">
+                                <img src="__PUBLIC__/Home/Upload/{$cont['day']}/{$cont['img']}" alt="">
+                            </p>
+                        </if>
+                    </foreach>
+					<if condition="$tip[0]['video'] neq ''">
+                    <a onclick="show();" id="video_show">>>>视频</a><hr/>
+					<else/>
+					</if>
+                    <span class="color-2">温馨提示：此攻略仅代作者个人观点，不代表官方立场。</span>
+                </div>
+                <!--弹框开始-->
+                <div id="bg">
+                </div>
+                <div id="show">
+                   
+                    <video id="mv" width="100%" height="100%" controls>
+                        <source src="__PUBLIC__/Home/Upload/{$tip[0]['day']}/{$tip[0]['video']}" type="video/ogg">
+                        您的浏览器不支持 HTML5 video 标签。
+                    </video>
+                </div>
+                <!--弹框结束-->
+
+            </div>
+
+            <dl class="sothers clear">
+                <dt>该作者相关攻略</dt>
+                <foreach name="mname" item="mname">
+                    <dd>
+                        <a href="{:U('Game/raiders_content?rid='.$mname['rid'].'&mname='.$mname['mname'].'')}">
+                            {$mname['title']}
+                        </a>
+                    </dd>
+                </foreach>
+            </dl>
+
+            <!--    <dl class="likes clear">
+                    <dd class="clear" onclick="Likes(1)">
+                        <i class="i1"></i>
+                        <cite>
+                            <span id="t1">好评</span>
+                            <span><b id="i1">1601</b>次 (98%)</span>
+                        </cite>
+                    </dd>
+                    <dd class="clear" onclick="Likes(2)">
+                        <i class="i2"></i>
+                        <cite>
+                            <span id="t2">中评</span>
+                            <span><b id="i2">16</b>次 (0%)</span>
+                        </cite>
+                    </dd>
+                    <dd class="clear" onclick="Likes(3)">
+                        <i class="i3"></i>
+                        <cite>
+                            <span id="t3">差评</span>
+                            <span><b id="i3">4</b>次 (0%)</span>
+                        </cite>
+                    </dd>
+                    <dd class="clear" onclick="ShowReport()">
+                        <i class="i4"></i>
+                        <cite>
+                            <span id="t4">举报</span>
+                            <span><b id="i4">0</b>次 (0%)</span>
+                        </cite>
+                    </dd>
+
+                </dl>-->
+            <!--<div class="contributes hide" id="report_div">
+
+                <dl class="reasons clear">
+                    <dt>举报原因</dt>
+                    <dd>疑似抄袭</dd>
+                    <dd>审核不负责</dd>
+                    <dd>与事实不符</dd>
+                    <dd>涉嫌广告</dd>
+                </dl>
+                <div class="cbox">
+                    <textarea id="reson_describe" placeholder="请具体说明问题，我们将尽快处理"></textarea>
+                    <dl class="edit clear">
+                        <dd onclick="$(&#39;#report_div&#39;).addClass(&#39;hide&#39;);">关闭</dd>
+                        <dd onclick="Report()">发送</dd>
+                    </dl>
+                </div>
+            </div>-->
+            <div class="reward">
+                <!--<dl class="fruits clear">
+                    <dt>打赏物品</dt>
+                    <foreach name="fruit" item="fruit">
+                        <dd code="{$fruit['id']}" name="{$fruit['varieties']}">
+                            <img src="__FILEADD__/content/images/800001.png" title="{$fruit['varieties']}">
+                        </dd>
+                    </foreach>
+                </dl>-->
+                <dl class="numbers clear">
+                    <dt>打赏钻石</dt>
+                    <dd id="0" number="10">10个</dd>
+                    <dd id="1" number="100">100个</dd>
+                    <dd id="2" number="1000">1000个</dd>
+                </dl>
+
+                <div class="form-group" style="margin-bottom:20px;">
+                    <div class="form-group-addon no-right-border">电话号码</div>
+                    <div class="form-group-input stretch">
+                        <input class="stretch" id="Pwd" name="Pwd" placeholder="输入注册手机号进行打赏" type="password" value="">
+                    </div>
+                </div>
+
+                <input type="button" class="button button-color-1 button-stretch" onclick="Reward();" value="打赏作者">
+            </div>
+
+
+            <ul class="hd-switch">
+                <li target="rewards">打赏记录</li>
+            </ul>
+            <div id="rewards">
+                <div class="tablebox">
+                    <table>
+                        <thead>
+                        <tr>
+                            <th></th>
+                            <th>用户ID</th>
+                            <th>打赏数量</th>
+                            <th>打赏时间</th>
+                        </tr>
+                        </thead>
+                        <tbody id="GratuityList">
+                        <foreach name="record" item="record">
+                            <if condition="$record neq ''">
+                                <tr>
+									<if condition="$record['top_pic'] neq ''">
+									<td><img src="{$record['top_pic']}" width="40" class="potrait"></td>
+									<else/>
+									<td><img src="__FILEADD__/content/images/user.Png" width="40" class="potrait"></td>
+									</if>                                                            
+									<if condition="$record['raward_num_id'] neq ''">
+                                    <td>{$record['raward_num_id']}</td>
+									<else/>
+									<td>农场用户</td>
+									</if>
+                                    <td>{$record['money']}</td>
+                                    <td><?php echo date("Y-m-d H:i:s",$record['addtime']) ?></td>
+                                </tr>
+                                <else/>
+                                <tr>
+                                    暂无内容
+                                </tr>
+                            </if>
+                        </foreach>
+                    </table>
+                </div>
+                <div class="pager">
+                    {$page}
+                </div>
+            </div>
+
+
+
+
+
+
+        </div>
+    </div>
+
+
+    <script>
+        /*$("#glpl").click(function(){
+         $("#comments").show();
+         $("#rewards").hide();
+         });*/
+		 $(function(){
+			$(document).click(function(){
+				document.getElementById("bg").style.display ='none';
+				document.getElementById("show").style.display ='none';
+				document.getElementById("mv").pause();
+			});
+			$("#video_show").click(function(event){
+				event.stopPropagation();
+			});
+			$("#mv").click(function(event){
+				event.stopPropagation();
+			});
+		 })
+        function hide(){
+            document.getElementById("bg").style.display ='none';
+            document.getElementById("show").style.display ='none';
+            document.getElementById("mv").pause();
+        }
+        function show(){
+            document.getElementById("bg").style.display ='block';
+            document.getElementById("show").style.display ='block';
+        }
+
+
+        $(".fruits dd").click(function(){
+            $(".fruits dd").removeClass("select");
+            $(this).addClass("select");
+        });
+
+        $(".numbers dd").click(function(){
+            $(".numbers dd").removeClass("select");
+            $(this).addClass("select");
+        });
+
+        $(".comments dd").click(function(){
+            $(".comments dd").removeClass("select");
+            $(this).addClass("select");
+        });
+
+        function Reward() {
+            var source = $("#source").text();
+            var rid = $("#rid").text();
+            var Pwd = $("#Pwd").val()
+
+            var NumberId = $(".numbers").find(".select").attr("id");
+            var Number = $(".numbers").find(".select").attr("number");
+
+            if(typeof(NumberId) == "undefined"){
+                alert("请选择打赏数量!");
+                return false;
+            }
+
+            if ($("#Pwd").val()=='') {
+                alert("请输入手机号码确认打赏");
+                return false;
+            }
+
+            if (confirm('您确定打赏' + Number + "个给本文作者?")){
+                $.ajax({
+                    type: "post",
+                    url: "{:U('Game/reward')}",
+                    datatype: "json",
+                    data: { source: source,rid:rid,Number:Number,Pwd:Pwd},
+                    beforeSend: function () {
+                    },
+                    complete: function () {
+                    },
+                    success: function (result) {
+                        if(result==200){
+                            alert("打赏成功!");
+                            window.location.reload();
+                        }else if(result==300){
+                            alert("号码错误!");
+                            window.location.reload();
+                        }else if(result==400){
+                            alert("打赏失败!")//;
+                        }else{
+                            alert("宝石不足！");
+                        }
+                    }
+                });
+
+            }
+        }
+
+
+    </script>
+
+
+
+</block>

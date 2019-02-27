@@ -1,0 +1,218 @@
+<extend name="Public/index" />
+
+
+<block name="banner">
+	
+</block>
+
+<block name="content">
+
+	<style>
+		.tutorial{ display:none;}
+		.uc-form .paymode { padding:10px 0; }
+		.uc-form .paymode dd { background:url("__FILEADD__/content/images/check-01.png") right bottom no-repeat; float:left; margin-bottom:20px; margin-right:20px; padding:2px 24px 2px 5px; border:1px solid #EFEFEF; cursor:pointer; }
+		.uc-form .paymode dd:hover { background:url("__FILEADD__/content/images/check-02.png") right bottom no-repeat; border:1px solid #FF6600; }
+		.uc-form .paymode .select { background:url("__FILEADD__/content/images/check-02.png")right bottom no-repeat; border:1px solid #FF6600; }
+		.uc-form .paymode dd cite { display:block; float:left; width:120px; height:35px; background:url("__FILEADD__/content/images/pay.png") no-repeat; }
+		.uc-form .paymode dt { height:45px; position:relative; }
+		.uc-form .paymode dt i { position:absolute; display:block; width:100%; height:20px; border-bottom:1px solid #EFEFEF; }
+		.uc-form .paymode dt b { position:absolute; display:block; height:20px; line-height:20px; padding:0 10px; background:#FFF; top:10px; left:20px; }
+		.uc-form .paymode dt em { display:none;}
+		.uc-form .paymode dd .wechatpay { background-position:0 0; }
+		.uc-form .paymode dd .cmb { background-position:0 -35px; }
+		.uc-form .paymode dd .ccb { background-position:0 -70px; }
+		.uc-form .paymode dd .abc { background-position:0 -105px; }
+		.uc-form .paymode dd .boc { background-position:0 -140px; }
+		.uc-form .paymode dd .icbc { background-position:0 -175px; }
+		.uc-form .paymode dd .psbc { background-position:0 -210px; }
+		.uc-form .paymode dd .comm { background-position:0 -245px; }
+		.uc-form .paymode dd .cmbc { background-position:0 -280px; }
+		.uc-form .paymode dd .citic { background-position:0 -315px; }
+		.uc-form .paymode dd .cib { background-position:0 -350px; }
+		.uc-form .paymode dd .alipay { background-position:0 -385px; }
+		.uc-form .paymode .hidebank  {display:block; }
+		.uc-form .paymode dd img {display:block; width: 100%; }
+		.uc-form .paymode .select { background:url("__FILEADD__/content/images/check-02.png") right bottom no-repeat; border:1px solid #FF6600; }
+		.uc-form .paymode dd:hover { background:url("__FILEADD__/content/images/check-02.png")right bottom no-repeat; border:1px solid #FF6600; }
+
+		@media (max-width: 767px) {
+			.uc-form .paymode { padding:0; }
+
+			.uc-form .paymode dt em { position:absolute; display:block; height:20px; line-height:20px; padding:0 10px; background:#FFF; top:10px; right:20px; }
+			.uc-form .paymode dd { float:left; margin-bottom:20px; margin-right:10px; cursor:pointer; }
+			.uc-form .paymode .hidebank  {display:none; }
+		}
+
+	</style>
+
+	<!-- <form method="post" action="{:U('Pay/pay_go')}"  name="pay" id="pay" onsubmit="alert('通道维护中，请您稍候!');return false;return PaySubmit()"> -->
+	
+		
+		<div class="content">
+
+			<section class="newsblock">
+
+				<div class="container clear">
+					<div class="clearfix">
+					<form method="post" action="{:U('Pay/pay_go')}"  name="pay" id="pay" enctype="multipart/form-data" onsubmit="return PaySubmit()">
+						{__TOKEN__}
+						<input data-val="true" data-val-number=" 必须是一个数字。" data-val-required="选择支付方式" id="ChannelId" name="bankType" type="hidden" value="">
+						<input type="hidden" name="payType" id="payType_bank" class="payType" value="bank" checked="checked">
+						<div class="message message-info">
+							温馨提示：<br>
+							<span class="color-1">1. 最低充值11金币，且单笔低于2000金币</span><br>
+							2. 充值比例：1元=1金币<br>
+							<span class="color-1">3. 不能充值0结尾的数额，如20金币，100金币等</span><br>			
+							4. 如遇金币未到账账单，点击查看，请勿撤销<br>							
+						</div>
+
+						<div class="uc-form">
+
+							<input type="hidden" name="account" id="account" value="{$user_info.user}"/>
+
+							<div class="form-group">
+								<div class="form-group-addon no-right-border">充值金额</div>
+								<div class="form-group-input stretch">
+									<input class="stretch" data-val="true" data-val-number="充值金额 必须是一个数字。" data-val-range="最低充值11金币，单笔低于2000金币, 不能充值0结尾的数额" data-val-range-max="1999" data-val-range-min="11" data-val-required="请填写金额" id="amount" name="amount" placeholder="充值金额" type="text" value="">
+								</div>
+								<div class="form-group-addon form-group-addon-white no-left-border">金币</div>
+							</div>
+							
+							<!-- <div class="form-group"> -->
+								<!-- <div class="form-group-addon no-right-border">转入账户</div> -->
+								<!-- <div class="form-group-input stretch"> -->
+									<!-- 四川撸游科技有限公司 -->
+									<!-- <input class="stretch"   type="text" value="lyoogame@163.com" > -->
+								<!-- </div> -->
+							<!-- </div> -->
+
+
+							<div class="color-1" style="text-align:center;"></div>														
+									
+							<span class="field-validation-valid" data-valmsg-for="Amount" data-valmsg-replace="true"></span>
+								
+							<dl class="paymode clear">
+								<dt><i></i><b>选择支付方式</b></dt> 
+								
+								 <if condition="$Is_MicroMessenger">
+									 <dd class=""  for="bankType_1004" cid="1004">
+										 <cite class="psbc" title="微信"> 
+											 <img src="__FILEADD__/content/images/pay_1004.png "> 
+										</cite> 
+									 </dd> 
+								 
+								  <else/>
+									 <if condition="$Is_Wap_App">
+										 <dd class=""  for="bankType_992" cid="992" > 
+											<cite class="psbc" title="支付宝">
+												<img src="__FILEADD__/content/images/pay_992.png ">
+											</cite>
+										</dd>
+									 <else/>
+										<dd class=""  for="bankType_9999" cid="9999"> 
+											<cite class="psbc" title="扫码支付">
+												<img src="__FILEADD__/content/images/pay_9999.png ">
+											</cite>
+										</dd>
+									 </if>							
+								</if>
+							</dl>							
+
+							    <if condition="$PayApiIsOpen">
+								<div class="form-group">
+									<input type="submit" class="button button-color-1 button-stretch" value="确认充值">
+								</div>
+								</if>
+						 
+											
+						</div>
+					</form>
+						<div class="uc-head">最近10笔充值记录</div>
+						<div class="tablebox">
+							<table>
+								<thead>
+								<tr>
+									<th>操作</th>
+									<th>充值时间</th>
+									<th>充值金额</th>
+									<th>充值渠道</th>
+									<th>充值状态</th>
+								</tr>
+								</thead>
+								<tbody>
+								<if condition="$All_Entrust">
+
+									<volist name="All_Entrust" id="entrust">
+									
+										<tr id="order_{$entrust.id}">
+											<td>
+											
+											<button class="revoke_{$entrust.id}" onclick="Agian('{$entrust.id}')"> 查看 </button>
+												<if condition="$entrust.state eq '未完成'">													
+													<if condition="$entrust.add_time gt time()-3600">													
+													</if>
+												<!-- <button class="revoke_{$entrust.id}" onclick="Cancel('{$entrust.id}')"> 撤销</button> -->
+												</if>
+											</td>
+											<td>{$entrust.add_time|date="Y-m-d H:i",###}</td>
+											<td>{$entrust.money}</td>
+											<td>{$shunfoo_banktype_support[$entrust['pay_bank']]}</td>
+											<td>{$entrust.state}</td>
+										</tr>
+
+									</volist>
+
+									<else/>
+									<tr>
+										<td class="algin" colspan="7">没有找到相关记录</td>
+									</tr>
+								</if>
+
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</div>
+
+			</section>
+
+		</div>
+	
+
+	<script type="text/javascript">
+		$(".paymode dd").click(function () {
+			$(".paymode dd").removeClass("select");
+			$(this).addClass("select");
+			$("#ChannelId").val($(this).attr("cid"))
+		});
+		
+		function Cancel(OrderId) {
+			if (confirm('您确定撤消本次支付申请?')) {
+				$.ajax({
+					type: "post",
+					data: { OrderId: OrderId },
+					url: "{:U('Pay/cancel_pay')}",
+					beforeSend: function () {
+					},
+					complete: function () {
+					},
+					success: function (result) {
+						if (result == 1) {
+							alert("撤销订单成功");						
+							$("#order_"+OrderId).remove();
+						} else {
+							alert("未知错误,请重试");
+						}
+						
+					}
+				});
+			}
+		}		
+		function Agian(OrderId) {
+			window.location = "{:U('Pay/pay_again')}" + URL_PATHINFO_DEPR + "OrderId" + URL_PATHINFO_DEPR  + OrderId;
+		}		
+		
+		
+		
+	</script>
+</block>

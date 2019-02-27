@@ -1,0 +1,191 @@
+<extend name="Public/index" />
+
+<block name="banner">
+	<script src="__FILEADD__/content/js/md5.js"></script>
+	<div class="height_60"></div>
+	<div class="subbanner-small" onclick="LinkTo();">
+		<div class="subbanner-inner">
+			<div class="container">
+				<!--<h1>攻略资料</h1>-->
+				<h1></h1>
+				<!--<h2>Strategy</h2>-->
+				<h2></h2>
+				<img class="col-md-4 col-md-offset-1 col-xs-10 col-xs-offset-1" src="__FILEADD__/content/images/pay.png" style="margin-top: 1%;"/>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript">
+        var banners = [];
+        {:W('Banner/Index')}
+        if (banners.length > 0) {
+            $(".subbanner-inner").hide();
+            $(".subbanner-small").attr("style", "cursor:pointer;");
+            images = [];
+            for (i = 0; i < banners.length; i++) {
+                images.push(banners[i]["img"]);
+            }
+        }
+
+        $(function () {
+            $('.subbanner-small').backstretch(images, { fade: 750, duration: 3000 });
+        });
+
+
+	</script>
+</block>
+
+<block name="content">
+
+	<style>
+		.main { padding: 5px;}
+		.uc-form .togglebox { min-width:100px; max-height: 200px; overflow: auto;}
+		.uc-form .togglebox dl { overflow:hidden; }
+		.uc-form .togglebox dl dd { height:35px; line-height:35px; padding:0 10px; cursor:pointer; }
+		.uc-form .togglebox dl dd:hover { background:#EFEFEF; color:#FF6600; }
+		.uc-form .togglebox dl dd i { font-size:16px; padding-right:5px; }
+	</style>
+
+	<script>
+		$("html").click(function (event) {
+			//toggle
+			var target = $(event.target);
+			var toggle = target.attr('toggle');
+			if (typeof (toggle) == 'undefined') {
+				$('.togglebox').hide();
+			} else {
+				$('.togglebox').each(function (index, element) {
+					if (toggle != '#' + $(this).attr('id')) {
+						$(this).hide();
+					}
+				});
+				$(toggle).toggle();
+			}
+		});
+	</script>
+
+	<form action="{:U('Pay/security')}" method="post">
+		<div class="container clear">
+			<div class="main">
+				<div class="uc-head uc-head-border">安全中心</div>
+				<div class="message message-info">
+
+					温馨提示：<br />
+					<a href="{:U('Pay/usercash')}">前往提现</a><br/>
+					1. 最低限额100金币，且为整数，提现100~500(不含)金币手续费2.9%，500~1000(不含)金币手续费2.5%，1000金币及以上手续费2%。<br />
+					2. 为了您的帐户安全，每次金币提现的最高限额为50000金币、如果您有更高的需求，请与客服联系。<br />
+					3. 提交申请后，我们会马上（不含节假日）审核，审核通过后交由银行转账，实际到帐时间根据提现银行可能会有所延时。<br />
+
+				</div>
+				<!-- uc-form start -->
+				<div class="uc-form">
+					<div class="form-group">
+						<div class="form-group">
+						<div class="form-group-addon no-right-border">设置支付密码</div>
+						<div class="form-group-input stretch">
+							<if condition="$update eq 'true' or $UserList['pay_password'] eq ''">
+								<input class="stretch" id="Pwd" name="Pwd" placeholder="请输入6位支付密码" type="password" value="" maxlength="6"  style="width: 200px;" onkeyup="this.value=this.value.replace(/\D/g,'')"  onafterpaste="this.value=this.value.replace(/\D/g,'')" />
+								<else />
+								<div class="form-group-addon form-group-addon-disabled stretch" id="Balance"><span  style="color: #FF0000;">已设置支付密码</span></div>
+							</if>
+						</div>
+
+					</div>
+						<div class="form-group">
+							<div class="form-group-input stretch" >
+									<div class=" stretch"><span style="color: #FF0000;">PS：请输入6位纯数字密码</span></div>
+							</div>
+
+						</div>
+
+
+						<if condition="$update eq 'true' or $UserList['pay_password'] eq '' ">
+							<div class="form-group">
+								<input type="button" class="button button-color-1 button-stretch" value="提交" onclick="return PreSubmit()" />
+							</div>
+						<else />
+							<div class="form-group">
+								<a  class="button button-color-1 button-stretch"  href="{:U('Pay/security','update=true')}" > 修改密码 </a>
+							</div>
+						</if>
+
+					</div>
+					<!-- uc-form end -->
+				</div>
+			</div>
+		</div>
+	</form>
+
+	<script type="text/javascript">
+	function FormatIntValue(value) {
+		value = value.replace(/[^\d]/g, "");
+		return value;
+	}
+
+	$("#Amount").keyup(function () {
+		$(this).val(FormatIntValue($(this).val()));
+
+		if ($(this).val() - $("#Balance").html() > 0) {
+			$(this).css('color', '#FF0000');
+			$(this).val(parseInt($("#Balance").html()));
+		} else {
+			$(this).css('color', '#888');
+		}
+	});
+
+	function PreSubmit() {
+		if ($("#Pwd").val() == '') {
+			alert("请输入支付密码");
+			return false;
+		}
+
+		var names = $("#Pwd").val().trim();
+		var len = names.length;
+
+		if(len < 6){
+			alert("支付密码不足6位");
+			return false;
+		}
+
+
+		$("#Pwd").val(hex_md5($('#Pwd').val()));
+
+//		$("#PayPwd").val(md5($("#Pwd").val() + $("#Pwd").val()));
+
+		$('form').submit();
+	}
+
+	function Cancel(OrderId) {
+		if (confirm('您确定撤消本次提现申请?')) {
+			$.ajax({
+				type: "post",
+				data: { OrderId: OrderId },
+				url: "/User/CancelWithdraw",
+				datatype: "json",
+				beforeSend: function () {
+				},
+				complete: function () {
+				},
+				success: function (result) {
+					if (result.success) {
+						alert(result.message);
+						window.location.href = '/User/Withdraw';
+					} else {
+						alert(result.message);
+					}
+				},
+				error: function (XMLHttpRequest, textStatus, errorThrown) {
+					alert("操作失败，请稍候再试！")
+				}
+			});
+		}
+	}
+</script>
+
+	<script type="text/javascript">
+		$(".paymode dd").click(function () {
+			$(".paymode dd").removeClass("select");
+			$(this).addClass("select");
+			$("#ChannelId").val($(this).attr("cid"))
+		});
+	</script>
+</block>

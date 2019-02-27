@@ -1,0 +1,51 @@
+<extend name="Public/index" />
+<block name="banner">
+    <include file="Content/banner" />
+</block>
+<block name="content">
+
+    <script>
+        $(document).ready(function() {
+            $("#calendar2").bootstrapDatepickr({date_format: "Y-m-d"});
+            $("#calendar1").bootstrapDatepickr({date_format: "Y-m-d"});
+        });
+    </script>
+
+
+    <div class="container clear">
+        <div class="main">
+            <div class="newsitem">
+                <div class="newsitem-head">{$data.title}</div>
+                <div class="newsitem-info">
+                    <span>来源：{$data.source}</span>
+                    <span>日期：{$data.time|date="Y-m-d H:i:s",###}</span>
+                </div>
+                <if condition="$data['mv'] eq ''">
+                    <else/>
+                    <div class="col-md-8 col-md-offset-2 col-xs-10 col-xs-offset-1">
+                        <if condition="substr($data['mv'],0,4) eq 'http'">
+                            <video width="100%"  controls>
+                                <source src="{$data['mv']}" type="video/ogg">
+                                您的浏览器不支持 HTML5 video 标签。
+                            </video>
+                            <!--<p><a href="<{$notice[0]['mv']}>">>>>视屏</a></p>--->
+                            <else/>
+                            <video width="100%"" controls>
+                            <source src="__UPLOAD__/{$data['day']}/{$data['mv']}" type="video/ogg">
+                            您的浏览器不支持 HTML5 video 标签。
+                            </video>
+                        </if>
+                    </div>
+                    <div style="clear: both;"></div>
+                </if>
+                <div class="newsitem-text" style="min-height:400px; margin-bottom: 200px;">
+                    <?php echo htmlspecialchars_decode(htmlspecialchars_decode($data['content']))?>
+					 <if condition="$data['pic'] neq ''">
+                    <img width="400px" src="__UPLOAD__/{$data['day']}/{$data['pic']}" class="col-md-8 col-md-offset-2  col-xs-10 col-xs-offset-1">
+					</if>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</block>

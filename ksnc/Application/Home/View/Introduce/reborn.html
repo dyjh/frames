@@ -1,0 +1,87 @@
+<extend name="Public/index" />
+
+<block name="banner">
+    <div class="height_60"></div>
+    <div class="subbanner-small" onclick="LinkTo();">
+        <div class="subbanner-inner">
+            <div class="container">
+                <!--<h1>攻略资料</h1>-->
+                <h1></h1>
+                <!--<h2>Strategy</h2>-->
+                <h2></h2>
+                <img class="col-md-4 col-md-offset-1 col-xs-10 col-xs-offset-1" src="__FILEADD__/content/images/translation.png" style="margin-top: 1%;"/>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+        var banners = [];
+        {:W('Banner/Index')}
+        if (banners.length > 0) {
+            $(".subbanner-inner").hide();
+            $(".subbanner-small").attr("style", "cursor:pointer;");
+            images = [];
+            for (i = 0; i < banners.length; i++) {
+                images.push(banners[i]["img"]);
+            }
+        }
+
+        $(function () {
+            $('.subbanner-small').backstretch(images, { fade: 750, duration: 3000 });
+        });
+
+
+    </script>
+</block>
+
+
+<block name="content">
+    <div class="main">
+       
+
+        <dl class="main-farm-menu">
+            <dd><a href="{:U('Introduce/index')}">游戏介绍</a></dd>
+            <dd><a href="{:U('Introduce/fruit')}">果实介绍</a></dd>
+            <dd><a href="{:U('Introduce/porp')}">道具介绍</a></dd>
+            <dd><a href="{:U('Introduce/guardian')}">守护介绍</a></dd>
+            <dd><a href="{:U('Introduce/listing')}">升级清单</a></dd>
+			<dd><a href="{:U('Introduce/listing')}"  class="select">重生介绍</a></dd>
+        </dl>
+<style>
+.tablebox img{}
+ /*
+ .tablebox{
+	background-image:url("__FILEADD__/content/images/reborn_stove.png");
+	background-size:100% 100%;
+	background-repeat:no-repeat;
+ }
+ */
+</style>
+        <div class="main-farm">
+            <div class="tablebox">
+			
+			
+            <p style="text-indent:2px;">
+				重生步骤： 点击仓库，进入果实页面。点击果实，之后点击重生种子即可使用该果实重生种子。
+			</p>
+			 <p style="text-indent:2px;">
+				果实重生数量： 1000 个或 10000 个，先点击暴击再点击重生可以重生更多种子。
+			</p>
+			<p style="text-indent:2px;">
+				重生手续费：果实数量 * 果实现价 * 5%。
+			</p>
+			<p style="text-indent:2px;">
+				暴击手续费：1000 个果实需要 100 钻石，10000 个果实需要 600 钻石。
+			</p>
+		
+			<center>
+				<img src="__FILEADD__/content/images/reborn_stove.png" style="width:70%;margin:0 auto !important;margin-top:-15px !important;" />
+			</center>
+			</div>
+
+
+        </div>
+    </div>
+    </div>
+
+
+</block>

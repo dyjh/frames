@@ -1,0 +1,24 @@
+<?php
+return array(
+	//'配置项'=>'配置值'
+	'TMPL_TEMPLATE_SUFFIX' => '.tpl',
+	'SHOW_PAGE_TRACE'=>false,
+	//开启调试
+	'DB_TYPE'=>'mysql',
+	'DB_HOST'=>'localhost',
+
+	//'DB_HOST'=>'localhost',
+	'DB_POPT'=>'3306',
+	'DB_NAME'=>'sclyo',
+	'DB_USER'=>'sclyo',
+	'DB_PWD'=>'sichuanglyo',
+	  /*'DB_PREFIX'=>'amd_',
+
+
+
+  'DB_TYPE'=>'pdo',
+	'DB_USER'=>'root',
+	'DB_PWD'=>'root',
+	'DB_PREFIX'=>'sc_',
+	'DB_DNS'=>'mysql:local=host;dbname=user,charset=utf8'*/
+);

@@ -1,0 +1,9 @@
+.t_content{ width: 100%; height: 100% ;position:fixed;top: 0px;left: 0px; z-index: 30;background:rgba(0,0,0,0.8);filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#7F000000,endColorstr=#7F000000);}
+.tcontent{ width:300px; height:300px; margin: 100px auto; border:1px solid #000; background:#fff;overflow:auto;}
+.tcontent span{display:block; width:36px; height:36px; border-radius:18px; background:#ccc;line-height: 36px; font-size: 30px; text-align:center;cursor: pointer; position: fixed;  right:10px; top:50px;}
+.tcontent p{margin-top:20px; margin-left:15px; margin-right:15px; text-align: center;}
+.ccc{max-width: 50%;  overflow: hidden;  text-overflow: ellipsis;  white-space: nowrap; margin: 0 0;float: left;}
+.infor{ margin-left: 5%;}
+#input_title{width: 90%;margin-left: 5%;margin-bottom: 20px; margin-top: 10px;}
+#btn{margin-left: 5%; margin-top: 10px; background-color: #0d6aad;color: #FFFFFF;}
+.add{float: right; margin-right: 5%;}

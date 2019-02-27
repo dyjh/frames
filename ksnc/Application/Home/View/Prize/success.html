@@ -1,0 +1,103 @@
+<extend name="Public/index" />
+
+<block name="banner">
+	<script src="__FILEADD__/content/js/md5.js"></script>
+	<div class="height_60"></div>
+	<div class="subbanner-small" onclick="LinkTo();">
+		<div class="subbanner-inner">
+			<div class="container">
+				<!--<h1>攻略资料</h1>-->
+				<h1></h1>
+				<!--<h2>Strategy</h2>-->
+				<h2></h2>
+				<img class="col-md-4 col-md-offset-1 col-xs-10 col-xs-offset-1" src="__FILEADD__/content/images/pay.png" style="margin-top: 1%;"/>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript">
+        var banners = [];
+        {:W('Banner/Index')}
+        if (banners.length > 0) {
+            $(".subbanner-inner").hide();
+            $(".subbanner-small").attr("style", "cursor:pointer;");
+            images = [];
+            for (i = 0; i < banners.length; i++) {
+                images.push(banners[i]["img"]);
+            }
+        }
+
+        $(function () {
+            $('.subbanner-small').backstretch(images, { fade: 750, duration: 3000 });
+        });
+
+
+	</script>
+</block>
+
+<block name="content">
+
+	<style>
+		.main { padding: 5px;}
+		.uc-form .togglebox { min-width:100px; max-height: 200px; overflow: auto;}
+		.uc-form .togglebox dl { overflow:hidden; }
+		.uc-form .togglebox dl dd { height:35px; line-height:35px; padding:0 10px; cursor:pointer; }
+		.uc-form .togglebox dl dd:hover { background:#EFEFEF; color:#FF6600; }
+		.uc-form .togglebox dl dd i { font-size:16px; padding-right:5px; }
+	</style>
+
+	<div class="container clear">
+		<div class="main">
+			<div class="uc-head uc-head-border">支付成功</div>
+			<center>
+			<div class="message message-info">
+
+				<br />
+				<br />
+				
+				<img src="__FILEADD__/content/images/gama_logo.png "><br />
+				
+				<h2>支付成功</h2>
+				
+				<h2>￥{$order_info.money|number_format=###,2}</h2>
+				
+				充值时间：{$order_info.add_time|date="Y-m-d H:i",###}<br />
+				
+				<if condition='$order_info.get_gift eq 0 && $order_info.is_gift eq 1'>
+					点击 <a class="color-1" href="{:U('Prize/get_packpage','order_id='.$order_info[id])}"> 领取 </a>  , 对应充值礼包<br />
+				<else/>	
+					<img class="teach_img" src="__FILEADD__/content/images/packpage_{$order_info.pay_money|number_format=###,0,'.',''}.png "><br />
+					
+				<div class="main-farm">
+				<div class="tablebox">
+					<table>
+						<tr>
+							<th></th>
+							<th>名称</th>
+							<th>    </th>
+							<th>数量</th>
+						</tr>
+						
+						<volist name='material_list' id='val'>
+						
+						 <tr>
+							<td><img src="__COMMON__/img/{$val.name}.png" width="30" /></td>
+							<td>{$val.name}</td>
+							<td>    </td>
+							<td>{$val.number}</td>
+						</tr>
+						
+						</volist>
+						
+					</table>
+				</div>
+			</div>
+   
+   
+				</if>
+				
+			</div>
+		</center>
+		</div>
+	</div>
+
+</block>

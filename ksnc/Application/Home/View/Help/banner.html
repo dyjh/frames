@@ -1,0 +1,28 @@
+<div class="height_60"></div>
+<div class="subbanner-small" onclick="LinkTo();">
+    <div class="subbanner-inner">
+        <div class="container">
+            <!--<h1>攻略资料</h1>-->
+            <h1></h1>
+            <!--<h2>Strategy</h2>-->
+            <h2></h2>
+            <img class="col-md-4 col-md-offset-1 col-xs-10 col-xs-offset-1" src="__FILEADD__/content/images/help.png" style="margin-top: 1%;"/>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+    var banners = [];
+    {:W('Banner/Index')}
+    if (banners.length > 0) {
+        $(".subbanner-inner").hide();
+        $(".subbanner-small").attr("style", "cursor:pointer;");
+        images = [];
+        for (i = 0; i < banners.length; i++) {
+            images.push(banners[i]["img"]);
+        }
+    }
+    $(function () {
+        $('.subbanner-small').backstretch(images, { fade: 750, duration: 3000 });
+    });
+
+</script>

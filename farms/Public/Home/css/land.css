@@ -1,0 +1,140 @@
+/* CSS Document*/
+*{
+  margin:0;
+  padding:0;
+}
+
+/*五层共有css*/
+.land_sum_layer,.land_available_layer,.planting_state_layer,.interaction_layer,.seeds_layer,.disaster_layer{
+    width: 100%;
+    height: 50%;
+    position: absolute;
+    top: 48.4%;
+    left: 14.5%;
+    transform: rotate(-32.6deg);
+    -ms-transform: rotate(-32.6deg);
+    -webkit-transform: rotate(-32.6deg);
+    -o-transform: rotate(-32.6deg);
+    -moz-transform: rotate(-32.6deg);
+ }
+
+.land_sum_list,.land_available_list,.planting_state_list,.interaction_list,.seeds_list,.disaster_list{
+    float: left;
+    width: 25%;
+    height: 83%;
+}
+
+.land_sum,.land_available,.planting_state,.interaction,.disaster_state,.seeds_state{
+    width: 25%;
+    height: 21%;}
+
+.land_sum img,.land_available img,.disaster_state img{
+    width: 400%;
+    height: 100%;
+    transform: rotate(35deg);
+    -ms-transform: rotate(35deg);
+    -webkit-transform: rotate(33deg);
+    -o-transform: rotate(35deg);
+    -moz-transform: rotate(35deg);}
+
+.planting_state img,.seeds_state img{
+    width: 350%;
+    height: 150%;
+    margin: -120% 0px 0px -15%;
+    transform: rotate(35deg);
+    -ms-transform: rotate(35deg);
+    -webkit-transform: rotate(35deg);
+    -o-transform: rotate(35deg);
+    -moz-transform: rotate(35deg);
+}
+
+
+/*各层的优先级*/
+.land_sum_layer{z-index:1;}
+.land_available_layer{z-index:2;}
+.disaster_layer{z-index:3;}
+.planting_state_layer{z-index:4;}
+.seeds_layer{z-index:5}
+.interaction_layer{z-index:6;outline: none;}
+
+
+/*交互层单独css处理*/
+.interaction_list{
+  margin-left:30px;}
+
+.interaction{
+    width: 60%;
+    height: 20%;
+    /*margin-top: 5%;
+    margin-left: -9%;*/
+    transform: skew(30deg,20deg);
+    -ms-transform: skew(30deg,5deg);
+    -o-transform: skew(30deg,5deg);
+    -moz-transform: skew(30deg,5deg);
+    -webkit-transform: skew(30deg,0deg);
+}
+/*各种弹窗*/
+.upgrade_window{
+   display:none;
+   width: 20%;
+   height: 20%;
+   z-index: 5;
+   position: absolute;
+   top: 20%;
+   left: 20%;
+   background:#CCC;
+}
+.planting_window{
+    display: none;
+    width: 30%;
+    height: 8%;
+    z-index: 10;
+    position: absolute;
+    top: 45%;
+    left: 36%;
+}
+.planting_window img{
+    float: left;
+    height: 99%;
+    width: 47%;
+    z-index: 8;
+}
+.other_window{
+    display: none;
+    width: 32%;
+    height: 9.9%;
+    z-index: 15;
+    position: absolute;
+    top: 45%;
+    left: 34%;
+}
+.other_window img{
+    float: left;
+    height: 80%;
+    width: 44%;
+    z-index: 15;
+    margin-left: 5%;
+}
+.harvest_window{
+    display: none;
+    width: 32%;
+    height: 9.9%;
+    z-index: 15;
+    position: absolute;
+    top: 45%;
+    left: 34%;
+}
+.harvest_window img{
+    float: left;
+    height: 80%;
+    width: 44%;
+    z-index: 15;
+    margin-left: 5%;
+}
+.ui-loader{
+  display: none;
+}
+
+#pageone{
+	min-height:0 !important;
+}

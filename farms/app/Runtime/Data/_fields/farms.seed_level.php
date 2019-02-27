@@ -1,0 +1,1 @@
+a:6:{i:0;s:2:"id";i:1;s:10:"seed_level";i:2;s:5:"level";i:3;s:4:"note";s:3:"_pk";s:2:"id";s:5:"_type";a:4:{s:2:"id";s:16:"int(11) unsigned";s:10:"seed_level";s:9:"char(255)";s:5:"level";s:16:"int(10) unsigned";s:4:"note";s:9:"char(255)";}}

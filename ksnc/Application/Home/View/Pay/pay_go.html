@@ -1,0 +1,147 @@
+<extend name="Public/index" />
+
+
+<block name="banner">
+
+</block>
+
+
+<block name="content">
+
+	<style>
+		.main { padding: 5px;}
+		.uc-form .togglebox { min-width:100px; max-height: 200px; overflow: auto;}
+		.uc-form .togglebox dl { overflow:hidden; }
+		.uc-form .togglebox dl dd { height:35px; line-height:35px; padding:0 10px; cursor:pointer; }
+		.uc-form .togglebox dl dd:hover { background:#EFEFEF; color:#FF6600; }
+		.uc-form .togglebox dl dd i { font-size:16px; padding-right:5px; }
+		.prcode {width:250px;height:250px;border-radius:0; margin:0; padding:0;}
+		.content{ padding:0 !important; margin:0 !important;}
+		.author{ padding:0 !important; margin:0 !important;}
+		.card-user .image{height:auto;}
+	</style>
+
+	<script>
+		$("html").click(function (event) {
+			//toggle
+			var target = $(event.target);
+			var toggle = target.attr('toggle');
+			if (typeof (toggle) == 'undefined') {
+				$('.togglebox').hide();
+			} else {
+				$('.togglebox').each(function (index, element) {
+					if (toggle != '#' + $(this).attr('id')) {
+						$(this).hide();
+					}
+				});
+				$(toggle).toggle();
+			}
+		});
+	</script>
+
+		<div class="container clear">
+			<div class="main">
+				<div class="uc-head uc-head-border">{$Pay_name}支付</div>
+				<div class="message message-info">
+					温馨提示：<br />
+					1. 请仔细核对金额及收款人<br />
+					2. 公共场合请注意保护个人隐私<br />	
+					3. 支付有效期为1个小时<br />
+					<if condition="$Pay_name eq '扫码'">	
+					4. 使用微信或支付宝支付<br />	
+					</if>
+					<if condition="$Pay_name eq '支付宝'">	
+					5. 如遇已支付账单，请点击已完成付款。<br />	
+					</if>
+					<if condition="$user_info.user eq '18780164595'">
+						<!-- {$Order_id} -->
+					</if>
+				</div>
+				
+				
+			<if condition="$Pay_name eq '微信'">
+				<div class="uc-form">
+					<div class="form-group">									
+						<div class="message message-info" style="position: relative;">
+								<p class="" style=" width:70%; margin: 0 auto;">														
+									<img class="teach_img_pay" src="__FILEADD__/content/images/{$Pay_name_img}.png">																	
+									<img class="" src="{$Pay_img}" style="position: absolute; height: 32%; width: 38%;top: 39.5%; left: 31%;">									
+								</p>
+							</div>						
+					</div>
+				</div>		
+				
+				<else/>
+				
+				<div class="row"  style="margin: 0 auto">
+					<center>
+					<div class="col-lg-4 col-md-5" style="float:none;">
+					
+						<div class="card card-user">
+							<div class="image">
+							   <img class="teach_img_pay" src="__FILEADD__/content/images/ScanPayBack_1.png">
+							</div>		
+							<hr>
+							<hr>
+							<hr>
+							<div class="content">
+								<div class="author">
+									<img class=" border-white prcode" src="{$Pay_img}" alt="..."/>
+								</div>
+							</div>
+							<div class="image">
+							   <img class="teach_img_pay" src="__FILEADD__/content/images/ScanPayBack_2.png">
+							</div>	
+						</div>
+					</div>
+					</center>
+				</div>						
+			
+			</if>
+			</div>
+		</div>
+
+	<script type="text/javascript">
+
+		//  定时轮询
+		//  返回充值是否成功
+
+		GetOrderState();
+				
+		setInterval("GetOrderState()", 1000);
+		
+		function GetOrderState(){
+		
+			var url 	  = "{:U('Pay/ordertate')}";
+			var Order_id  = "{$Order_id}";
+			
+			$.post(
+				url,
+				{order_id:Order_id},
+				function(result){
+					
+					if(result.success){
+						window.location = result.url;
+					}
+					
+				},"json"
+			);
+		
+		}
+		
+	</script>
+	
+	<if condition="$pay_bank eq '1004'">
+		<script type="text/javascript">
+			window.location = "{$Pay_url}";
+		</script>
+	</if>
+
+	<script type="text/javascript">
+		$(".paymode dd").click(function () {
+			$(".paymode dd").removeClass("select");
+			$(this).addClass("select");
+			$("#ChannelId").val($(this).attr("cid"))
+		});
+	</script>
+</block>

@@ -1,0 +1,114 @@
+<extend name="Public/index" />
+
+<block name="banner">
+    <div class="height_60"></div>
+    <div class="subbanner-small" onclick="LinkTo();">
+        <div class="subbanner-inner">
+            <div class="container">
+                <!--<h1>攻略资料</h1>-->
+                <h1></h1>
+                <!--<h2>Strategy</h2>-->
+                <h2></h2>
+                <img class="col-md-4 col-md-offset-1 col-xs-10 col-xs-offset-1" src="__FILEADD__/content/images/translation.png" style="margin-top: 1%;"/>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+        var banners = [];
+        {:W('Banner/Index')}
+        if (banners.length > 0) {
+            $(".subbanner-inner").hide();
+            $(".subbanner-small").attr("style", "cursor:pointer;");
+            images = [];
+            for (i = 0; i < banners.length; i++) {
+                images.push(banners[i]["img"]);
+            }
+        }
+
+        $(function () {
+            $('.subbanner-small').backstretch(images, { fade: 750, duration: 3000 });
+        });
+
+
+    </script>
+</block>
+
+
+<block name="content">
+    <div class="main">
+       
+
+        <dl class="main-farm-menu">
+            <dd><a href="{:U('Introduce/index')}">游戏介绍</a></dd>
+            <dd><a href="{:U('Introduce/fruit')}">果实介绍</a></dd>
+            <dd><a href="{:U('Introduce/porp')}" class="select">道具介绍</a></dd>
+            <dd><a href="{:U('Introduce/guardian')}">守护介绍</a></dd>
+            <dd><a href="{:U('Introduce/listing')}">升级清单</a></dd>
+			<dd><a href="{:U('Introduce/reborn')}">重生介绍</a></dd>
+        </dl>
+
+        <div class="main-farm">
+            <div class="tablebox">
+                <table>
+                    <tr>
+                        <th></th>
+                        <th>名称</th>
+                        <th>介绍</th>
+                    </tr>
+                    <tr>
+                        <td><img src="__FILEADD__/content/images/800001.png" width="30" /></td>
+                        <td>种子</td>
+                        <td>神秘的种子。</td>
+                    </tr>
+                    <tr>
+                        <td><img src="__FILEADD__/content/images/jiaoshuihu.png" width="30" /></td>
+                        <td>洒水壶</td>
+                        <td>用来给土地浇水，对付干旱。</td>
+                    </tr>
+                    <tr>
+                        <td><img src="__FILEADD__/content/images/liandao.png" width="30" /></td>
+                        <td>除草镰</td>
+                        <td>清除地里杂草。</td>
+                    </tr>
+                    <tr>
+                        <td><img src="__FILEADD__/content/images/chuchongji.png" width="20"  height="27.7" /></td>
+                        <td>除虫剂</td>
+                        <td>清除地里害虫。</td>
+                    </tr>
+                    <tr>
+                        <td><img src="__FILEADD__/content/images/huafei.png" width="30" /></td>
+                        <td>化肥</td>
+                        <td>减少生长时间2小时，每个阶段仅限施肥一次。</td>
+                    </tr>
+
+                    <tr>
+                        <td><img src="__FILEADD__/content/images/tong.png" width="30" /></td>
+                        <td>黄铜宝箱</td>
+                        <td>黄铜宝箱虽然便宜，但是也能开出不少好东西！</td>
+                    </tr>
+                    <tr>
+                        <td><img src="__FILEADD__/content/images/ying.png" width="30" /></td>
+                        <td>白银宝箱</td>
+                        <td>连箱子都是白银做的，里面的东西当然更好！</td>
+                    </tr>
+                    <tr>
+                        <td><img src="__FILEADD__/content/images/jin.png" width="30" /></td>
+                        <td>黄金宝箱</td>
+                        <td>搏一搏，单车变摩托；拼一拼，石头变黄金！</td>
+                    </tr>
+                    <tr>
+                        <td><img src="__FILEADD__/content/images/zhuan.png" width="30" /></td>
+                        <td>钻石宝箱</td>
+                        <td>话不多说，给你一个胜天半子的机会！</td>
+                    </tr>
+
+                </table>
+            </div>
+
+
+        </div>
+    </div>
+    </div>
+
+
+</block>

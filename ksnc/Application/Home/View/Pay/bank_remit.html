@@ -1,0 +1,200 @@
+<extend name="Public/index" />
+
+
+<block name="banner">
+	<div class="banner banner-index" onclick="LinkTo()"></div>
+
+	<script type="text/javascript">
+		var banners=[];
+		{:W('Banner/Index')}
+		if (banners.length > 0) {
+			$(".banner-index").attr("style", "cursor:pointer;");
+			images = [];
+			for (i = 0; i < banners.length; i++) {
+				images.push(banners[i]["img"]);
+			}
+		}
+
+		$(function () {
+			$('.banner-index').backstretch(images, { fade: 750, duration: 3000 });
+		});
+
+	</script>
+</block>
+
+<block name="content">
+
+	<form method="post" action="{:U('Pay/pay_go')}"  name="pay" id="pay" onsubmit="return PaySubmit()">
+		<div class="content">
+
+			<section class="newsblock">
+
+				<div class="container clear">
+					<div class="clearfix">
+
+						<input data-val="true" data-val-number=" 必须是一个数字。" data-val-required="选择支付方式" id="ChannelId" name="bankType" type="hidden" value="2001">
+
+						<input type="hidden" name="payType" id="payType_bank" class="payType" value="bank" checked="checked">
+						<div class="message message-info">
+							温馨提示：<br>
+							<span class="color-1">1. 最低充值11金币，且单笔低于20000金币</span><br>
+							2. 充值比例：1元=1金币<br>
+							<span class="color-1">3. 不能充值0结尾的数额，如20金币，100金币等</span><br/>
+							4.仅限您实名并且已绑定的银行卡汇款充值，请您直接转账您要充值的金额，我们在收到款项后30分钟内会为您完成充值。<br/><br/>
+							<span class="color-1">******使用银行卡汇款充值时，在 附言（备注栏）填入充值账户绑定手机号码******</span><a href="__FILEADD__/content/images/recharge.png">查看示例</a>
+						</div>
+
+						<div class="uc-form">
+
+							<input type="hidden" name="account" id="account" value="{$user_info.user}"/>
+
+							<div class="form-group">
+								<div class="form-group-addon no-right-border">充值账户</div>
+								<div class="form-group-input stretch">
+									<input class="stretch"  id="user"  type="text" value="{$BankInfoIsExists.name}" disabled="disabled">
+								</div>
+							</div>
+
+
+
+							<div class="form-group">
+								<div class="form-group-addon no-right-border">收款账户</div>
+								<div class="form-group-input stretch">
+									<!--四川撸游科技有限公司-->
+									<input class="stretch"   type="text" value="四川撸游科技有限公司" disabled="disabled">
+								</div>
+							</div>
+
+							<div class="form-group">
+								<div class="form-group-addon no-right-border">汇入帐号</div>
+								<div class="form-group-input stretch">
+									<!--4402202209100012410-->
+									<input class="stretch"   type="text" value="4402202209100012410" disabled="disabled">
+								</div>
+							</div>
+
+							<div class="form-group">
+								<div class="form-group-addon no-right-border">汇入银行</div>
+								<div class="form-group-input stretch">
+									<!--中国工商银行成都盐市口支行-->
+									<input class="stretch"   type="text" value="中国工商银行成都盐市口支行" disabled="disabled">
+								</div>
+							</div>
+
+							<div class="message message-info">
+								充值教程：<br>
+								<span class="color-1">
+									您可用您已绑定银行卡的手机银行、网银或柜台转账到 撸游科技有限公司 的收款账户。转账后，如信息无误，您的资金将在半小时内入账。
+								</span><br><br>
+							</div>
+
+							<div class="message message-info ">
+								1.手机银行转账示意<br>
+								<p class="">
+									<img class="teach_img" src="__FILEADD__/content/images/recharge_phone.png">
+								</p>
+							</div>
+
+							<div class="message message-info ">
+								2.网银转账示意<br>
+								<p class="">
+									<img class="teach_img" src="__FILEADD__/content/images/recharge_web.png">
+								</p>
+							</div>
+
+							<div class="message message-info">
+								充值须知：<br>
+								<span class="color-1">
+									汇款方式:仅限您实名并且已绑定的银行卡汇款充值，请您直接转账您要充值的金额，我们在收到款项后30分钟内会为您完成充值。
+								</span><br/>
+								<span class="color-2">
+									支持金额:最低充值11金币，且单笔低于20000金币
+								</span><br/>
+								<span class="color-1">
+									温馨提示:充值成功后，您的金币将在30分钟内入账。
+								</span><br/>
+								<span class="color-2">
+									注意事项:非绑定银行卡的充值或低于11金币，高于20000金币的充值将在10个工作日内原路退回，如果您的资金超过10个工作日尚未退回，请联系客服。
+								</span><br/>
+								<span class="color-2">使用银行卡汇款充值时，在备注栏填入充值账户绑定手机号码。</span><br/>
+							</div>
+
+
+							<div class="form-group">
+								<div class="form-group-addon no-right-border">绑定手机</div>
+								<div class="form-group-input stretch">
+									<input class="stretch"   type="text" value="{$user_info.user}" disabled="disabled">
+								</div>
+							</div>
+
+							<div class="form-group">
+								<div class="form-group-addon no-right-border">充值金额</div>
+								<div class="form-group-input stretch">
+									<input class="stretch" data-val="true" data-val-number="充值金额 必须是一个数字。" data-val-range="最低充值11金币，单笔低于20000金币, 不能充值0结尾的数额" data-val-range-max="19999" data-val-range-min="11" data-val-required="请填写金额" id="amount" name="amount" placeholder="充值金额" type="text" value="">
+								</div>
+							</div>
+
+							<span class="field-validation-valid" data-valmsg-for="Amount" data-valmsg-replace="true"></span>
+
+							<div class="color-1" style="text-align:center;"></div>
+
+							<div class="form-group">
+								<input type="submit" class="button button-color-1 button-stretch" value="确认充值">
+							</div>
+
+							<div class="form-group">
+								<a target="_blank"  href="{:U('Pay/paygotogame')}" class="button button-color-1 button-stretch" >进入游戏</a>
+							</div>
+
+						</div>
+
+						<div class="uc-head">最近10笔充值记录</div>
+						<div class="tablebox">
+							<table>
+								<thead>
+								<tr>
+									<th>充值时间</th>
+									<th>充值金额</th>
+									<th>充值渠道</th>
+									<th>充值状态</th>
+								</tr>
+								</thead>
+								<tbody>
+								<if condition="$All_Entrust">
+
+									<volist name="All_Entrust" id="entrust">
+
+										<tr>
+											<td>{$entrust.add_time|date="Y-m-d H:i",###}</td>
+											<td>{$entrust.money}</td>
+											<td>{$shunfoo_banktype_support[$entrust['pay_bank']]}</td>
+											<td>{$entrust.state}</td>
+										</tr>
+
+									</volist>
+
+									<else/>
+									<tr>
+										<td class="algin" colspan="7">没有找到相关记录</td>
+									</tr>
+								</if>
+
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</div>
+
+			</section>
+
+		</div>
+	</form>
+
+	<script type="text/javascript">
+		$(".paymode dd").click(function () {
+			$(".paymode dd").removeClass("select");
+			$(this).addClass("select");
+			$("#ChannelId").val($(this).attr("cid"))
+		});
+	</script>
+</block>

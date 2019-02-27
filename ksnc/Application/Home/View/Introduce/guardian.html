@@ -1,0 +1,120 @@
+<extend name="Public/index" />
+
+<block name="banner">
+    <div class="height_60"></div>
+    <div class="subbanner-small" onclick="LinkTo();">
+        <div class="subbanner-inner">
+            <div class="container">
+                <!--<h1>攻略资料</h1>-->
+                <h1></h1>
+                <!--<h2>Strategy</h2>-->
+                <h2></h2>
+                <img class="col-md-4 col-md-offset-1 col-xs-10 col-xs-offset-1" src="__FILEADD__/content/images/translation.png" style="margin-top: 1%;"/>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+        var banners = [];
+        {:W('Banner/Index')}
+        if (banners.length > 0) {
+            $(".subbanner-inner").hide();
+            $(".subbanner-small").attr("style", "cursor:pointer;");
+            images = [];
+            for (i = 0; i < banners.length; i++) {
+                images.push(banners[i]["img"]);
+            }
+        }
+
+        $(function () {
+            $('.subbanner-small').backstretch(images, { fade: 750, duration: 3000 });
+        });
+
+
+    </script>
+</block>
+
+
+<block name="content">
+    <div class="main">
+        
+
+        <dl class="main-farm-menu">
+            <dd><a href="{:U('Introduce/index')}">游戏介绍</a></dd>
+            <dd><a href="{:U('Introduce/fruit')}">果实介绍</a></dd>
+            <dd><a href="{:U('Introduce/porp')}">道具介绍</a></dd>
+            <dd><a href="{:U('Introduce/guardian')}" class="select">守护介绍</a></dd>
+            <dd><a href="{:U('Introduce/listing')}">升级清单</a></dd>
+			<dd><a href="{:U('Introduce/reborn')}">重生介绍</a></dd>
+        </dl>
+
+        <div class="main-farm">
+            <p>
+                   守护用于保护您的农作物不被自然灾害而影响到产量。如果您没有时间时刻关注您的农场，没有关系，我们都给你想到了。有了这些守护，什么土地长草、土地干旱、作物长虫等等都是浮云。
+            </p>
+            <dl class="main-farm-joss clear">
+                <dd class="clear">
+                    <div class="img">
+                        <img style="width:120px;" src="__FILEADD__/content/images/sh3.png" />
+                    </div>
+                    <div class="txt">
+                        <span>名称：<b>草灾守护</b></span>
+                        <span>介绍：保护所有土地不受杂草危害。</span>
+                        <span>兑换：钻石x500(有效期48个小时)</span>
+                    </div>
+                </dd>
+
+                <dd class="clear">
+                    <div class="img">
+												<img style="width:120px;" src="__FILEADD__/content/images/sh4.png" />
+                    </div>
+                    <div class="txt">
+                        <span>名称：<b>虫灾守护</b></span>
+                        <span>介绍：保护所有土地不受虫灾危害。</span>
+                        <span>兑换：钻石x500(有效期48个小时)</span>
+                    </div>
+                </dd>
+
+                <dd class="clear">
+                    <div class="img">
+												<img style="width:120px;" src="__FILEADD__/content/images/sh2.png" />
+                    </div>
+                    <div class="txt">
+                        <span>名称：<b>旱灾守护</b></span>
+                        <span>介绍：保护所有土地不受干旱危害。</span>
+                        <span>兑换：钻石x500(有效期48个小时)</span>
+                    </div>
+                </dd>
+
+                <dd class="clear">
+                    <div class="img">
+                        <img style="width:120px;" src="__FILEADD__/content/images/sh1.png" />
+                    </div>
+                    <div class="txt">
+                        <span>名称：<b>丰收之心</b></span>
+                        <span>介绍：果实收成总数+7个。</span>
+                        <span>兑换：钻石x700(有效期48个小时)</span>
+                    </div>
+                </dd>
+				
+				<dd class="clear">
+                    <div class="img">
+                        <img style="width:120px;" src="__COMMON__/img/稻草222444.png" />
+                    </div>
+                    <div class="txt">
+                        <span>名称：<b>稻草人</b></span>
+                        <span>介绍：48小时内自动播种、收获。可手动施肥，除灾。</span>
+                        <span>兑换：钻石x2000、番茄x30、樱桃x30(有效期48个小时)<br/></span>
+                    </div>
+                </dd>
+
+
+
+            </dl>
+
+        </div>
+
+    </div>
+    </div>
+
+
+</block>

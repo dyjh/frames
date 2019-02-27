@@ -1,0 +1,1 @@
+a:8:{i:0;s:2:"id";i:1;s:4:"user";i:2;s:8:"fromuser";i:3;s:9:"pay_money";i:4;s:8:"pay_time";i:5;s:4:"type";s:3:"_pk";s:2:"id";s:5:"_type";a:6:{s:2:"id";s:16:"int(11) unsigned";s:4:"user";s:8:"char(11)";s:8:"fromuser";s:8:"char(11)";s:9:"pay_money";s:12:"double(20,5)";s:8:"pay_time";s:7:"int(11)";s:4:"type";s:19:"tinyint(1) unsigned";}}

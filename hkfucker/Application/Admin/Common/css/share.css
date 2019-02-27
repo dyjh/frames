@@ -1,0 +1,16 @@
+.t_content{ width: 100%; height: 100% ;position:fixed;top: 0px;left: 0px; z-index: 30;background:rgba(0,0,0,0.8);filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#7F000000,endColorstr=#7F000000);}
+.tcontent{ width:500px; height:auto; margin: 200px auto; border:1px solid #000; background:#fff;overflow:auto;}
+#span{display:block; width:36px; height:36px; border-radius:18px; background:#ccc;line-height: 36px; font-size: 30px; text-align:center;cursor: pointer; position: fixed;  right:10px; top:50px;}
+
+#more_meterial input ,#table_user input  {
+    width: 80%;
+    min-width: 80px;
+    float: left;
+}
+
+.notice_span {
+    color: red;
+    display: none;
+    float: left;
+}
+

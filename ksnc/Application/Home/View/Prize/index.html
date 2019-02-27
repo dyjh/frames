@@ -1,0 +1,184 @@
+<extend name="Public/index" />
+
+
+<block name="banner">
+	
+</block>
+
+<block name="content">
+
+	<style>
+		.tutorial{ display:none;}
+		.uc-form .paymode { padding:10px 0; }
+		.uc-form .paymode dd { background:url("__FILEADD__/content/images/check-01.png") right bottom no-repeat; float:left; margin-bottom:20px; margin-right:20px; padding:2px 24px 2px 5px; border:1px solid #EFEFEF; cursor:pointer; }
+		.uc-form .paymode dd:hover { background:url("__FILEADD__/content/images/check-02.png") right bottom no-repeat; border:1px solid #FF6600; }
+		.uc-form .paymode .select { background:url("__FILEADD__/content/images/check-02.png")right bottom no-repeat; border:1px solid #FF6600; }
+		.uc-form .paymode dd cite { display:block; float:left; width:120px; height:35px; background:url("__FILEADD__/content/images/pay.png") no-repeat; }
+		.uc-form .paymode dt { height:45px; position:relative; }
+		.uc-form .paymode dt i { position:absolute; display:block; width:100%; height:20px; border-bottom:1px solid #EFEFEF; }
+		.uc-form .paymode dt b { position:absolute; display:block; height:20px; line-height:20px; padding:0 10px; background:#FFF; top:10px; left:20px; }
+		.uc-form .paymode dt em { display:none;}
+		.uc-form .paymode dd .wechatpay { background-position:0 0; }
+		.uc-form .paymode dd .cmb { background-position:0 -35px; }
+		.uc-form .paymode dd .ccb { background-position:0 -70px; }
+		.uc-form .paymode dd .abc { background-position:0 -105px; }
+		.uc-form .paymode dd .boc { background-position:0 -140px; }
+		.uc-form .paymode dd .icbc { background-position:0 -175px; }
+		.uc-form .paymode dd .psbc { background-position:0 -210px; }
+		.uc-form .paymode dd .comm { background-position:0 -245px; }
+		.uc-form .paymode dd .cmbc { background-position:0 -280px; }
+		.uc-form .paymode dd .citic { background-position:0 -315px; }
+		.uc-form .paymode dd .cib { background-position:0 -350px; }
+		.uc-form .paymode dd .alipay { background-position:0 -385px; }
+		.uc-form .paymode .hidebank  {display:block; }
+		.uc-form .paymode dd img {display:block; width: 100%; }
+		.uc-form .paymode .select { background:url("__FILEADD__/content/images/check-02.png") right bottom no-repeat; border:1px solid #FF6600; }
+		.uc-form .paymode dd:hover { background:url("__FILEADD__/content/images/check-02.png")right bottom no-repeat; border:1px solid #FF6600; }
+
+		@media (max-width: 767px) {
+			.uc-form .paymode { padding:0; }
+
+			.uc-form .paymode dt em { position:absolute; display:block; height:20px; line-height:20px; padding:0 10px; background:#FFF; top:10px; right:20px; }
+			.uc-form .paymode dd { float:left; margin-bottom:20px; margin-right:10px; cursor:pointer; }
+			.uc-form .paymode .hidebank  {display:none; }
+		}
+
+	</style>
+
+	<!-- <form method="post" action="{:U('Pay/pay_go')}"  name="pay" id="pay" onsubmit="alert('通道维护中，请您稍候!');return false;return PaySubmit()"> -->
+	
+		
+		<div class="content">
+
+			<section class="newsblock">
+
+				<div class="container clear">
+					<div class="clearfix">
+					<form method="post" action="{:U('pay_go')}"  name="pay" id="pay" enctype="multipart/form-data">
+						{__TOKEN__}
+						<input data-val="true" data-val-number=" 必须是一个数字。" data-val-required="选择支付方式" id="ChannelId" name="bankType" type="hidden" value="">
+						<input data-val="true" data-val-number=" 必须是一个数字。" data-val-required="选择充值礼包" id="PrizeId" name="amount" type="hidden" value="">
+						<input type="hidden" name="payType" id="payType_bank" class="payType" value="bank" checked="checked">
+						<div class="message message-info">
+							温馨提示：<br>
+							<span class="color-1">1. 礼包充值有且仅有800元礼包，1500元礼包。</span><br>
+							2. 充值完成后用户将获得对应礼包。<br>
+							<span class="color-1">3. 礼包充值提交后2小时内无法修改礼包种类，请认真选择</span><br>
+							4.每位用户能且仅能选购一次一款礼包。
+						</div>
+
+						<div class="uc-form">
+
+							<div class="form-group">
+								<div class="form-group-addon no-right-border">充值用户</div>
+								<div class="form-group-input stretch">
+									<input class="stretch" data-val="true" id="account" name="account" placeholder="充值用户" type="text" value="{$user_info.user}">
+								</div>							
+							</div>
+
+							<div class="color-1" style="text-align:center;"></div>														
+									
+							<span class="field-validation-valid" data-valmsg-for="Amount" data-valmsg-replace="true"></span>
+								
+								
+							<dl class="prizemode paymode clear">
+								<dt><i></i><b>选择礼包种类</b></dt> 
+								
+								<dd class=""  for="bankType_800" cid="800"> 
+									<cite class="psbc" title="800元大礼包">
+										<img src="__FILEADD__/content/images/gift_800.png ">
+									</cite>
+								</dd>
+								<dd class=""  for="bankType_1500" cid="1500"> 
+									<cite class="psbc" title="1500元大礼包">
+										<img src="__FILEADD__/content/images/gift_1500.png ">
+									</cite>
+								</dd>
+							</dl>		
+								
+								
+							<dl class="paymode pay_mode clear">
+								<dt><i></i><b>选择支付方式</b></dt> 
+								
+								 <if condition="$Is_MicroMessenger">
+									 <dd class=""  for="bankType_1004" cid="1004">
+										 <cite class="psbc" title="微信"> 
+											 <img src="__FILEADD__/content/images/pay_1004.png "> 
+										</cite> 
+									 </dd> 
+								 
+								  <else/>
+									 <if condition="$Is_Wap_App">
+										 <dd class=""  for="bankType_992" cid="992" > 
+											<cite class="psbc" title="支付宝">
+												<img src="__FILEADD__/content/images/pay_992.png ">
+											</cite>
+										</dd>
+									 <else/>
+										<dd class=""  for="bankType_9999" cid="9999"> 
+											<cite class="psbc" title="扫码支付">
+												<img src="__FILEADD__/content/images/pay_9999.png ">
+											</cite>
+										</dd>
+									 </if>							
+								</if>
+							</dl>							
+
+							<if condition="$PayApiIsOpen">
+								<div class="form-group">
+									<input type="submit" class="button button-color-1 button-stretch" value="确认充值">
+								</div>
+							</if>
+						 
+											
+						</div>
+					</form>
+					</div>
+				</div>
+			</section>
+		</div>
+	
+	<script type="text/javascript">
+		
+		$(".pay_mode dd").click(function () {
+			$(".pay_mode dd").removeClass("select");
+			$(this).addClass("select");
+			$("#ChannelId").val($(this).attr("cid"))
+		});
+		
+		$(".prizemode dd").click(function () {
+			$(".prizemode dd").removeClass("select");
+			$(this).addClass("select");
+			$("#PrizeId").val($(this).attr("cid"))
+		});
+		
+		function Cancel(OrderId) {
+			if (confirm('您确定撤消本次支付申请?')) {
+				$.ajax({
+					type: "post",
+					data: { OrderId: OrderId },
+					url: "{:U('Pay/cancel_pay')}",
+					beforeSend: function () {
+					},
+					complete: function () {
+					},
+					success: function (result) {
+						if (result == 1) {
+							alert("撤销订单成功");						
+							$("#order_"+OrderId).remove();
+						} else {
+							alert("未知错误,请重试");
+						}
+						
+					}
+				});
+			}
+		}		
+		function Agian(OrderId) {
+			window.location = "{:U('Pay/pay_again')}" + URL_PATHINFO_DEPR + "OrderId" + URL_PATHINFO_DEPR  + OrderId;
+		}		
+		
+		
+		
+	</script>
+</block>

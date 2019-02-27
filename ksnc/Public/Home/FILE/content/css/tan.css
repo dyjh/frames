@@ -1,0 +1,51 @@
+#t_content{
+    width: 100%; height: 100% ;
+    position:fixed;
+    top: 0px;left: 0px;
+    z-index: 30;
+    display: none;
+    background:rgba(0,0,0,0.8);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#7F000000,endColorstr=#7F000000);
+}
+#tcontent{
+    padding-left: 1%;
+    padding-right: 1%;
+    width: 80%;
+    height: 60%;
+    margin: 100px auto;
+    border: 1px solid #000;
+    background: #fff;
+    overflow: auto;
+    /* margin-top: 10%; */
+    position: absolute;
+    left: 10%;
+}
+#span{
+    display: block;
+    width: 3%;
+    height: 7%;
+    /* border-radius: 18px; */
+    /* background: #ccc; */
+    /* line-height: 36px; */
+    font-size: 3.5rem;
+    text-align: center;
+    cursor: pointer;
+    position: absolute;
+    right: 64px;
+    top: 10%;
+    left: 8%;
+    color: #f00;
+}
+#text{
+    margin-top:20px;
+    margin-left:15px;
+    margin-right:15px;
+    text-align: center;
+}
+#ccc{
+    max-width: 50%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    margin: 0 0;float: left;
+}

@@ -1,0 +1,272 @@
+<extend name="Public/index" />
+
+<block name="banner">
+    <include file="Game/banner" />
+</block>
+
+<block name="content">
+
+    <link href="__FILEADD__/content/css/game.css" rel="stylesheet" />
+
+    <div class="container clear">
+        <div class="main">
+            <div class="main-head">攻略投稿</div>
+            <div style="margin-top: 20px;height: auto">
+
+                <form method="post" action="{:U('Game/upload')}" enctype="multipart/form-data" id="from">
+                  
+				
+					<div class="form-group">
+						<div class="form-group-input stretch" style="display:block;">
+						  <input type="text" name="title" class="form-control form-group-input stretch" placeholder="请输入标题" aria-describedby="basic-addon1" >
+                        </div>
+					</div>
+					
+					
+					<!-- <div class="form-group"> -->
+						<!-- <div class="form-group-addon ">选择视频</div> -->
+						<!-- <div class="form-group-addon stretch"> -->
+						  <!-- <input class="form-control form-group-input stretch"  -->
+						  <!-- placeholder="请用mp4,mkv,WebM,Ogg格式" type="file" name="video"  value=""/> -->
+					   <!-- </div> -->
+					<!-- </div> -->
+					
+					<!-- <div class="form-group"> -->
+						<!-- <div class="form-group-addon stretch"> -->
+						 <!-- 请用mp4,mkv,WebM,Ogg格式 -->
+					   <!-- </div> -->
+					<!-- </div> -->
+					
+					
+					
+					
+                    <!-- <div style="margin-top: 3%;"> -->
+                        <!-- <lable>选择视频</lable> -->
+                        <!-- <input type="file" name="video" style="height: 30px; line-height: 30px; text-align: center;"  value=""/> -->
+						<!-- <span>请用mp4,mkv,WebM,Ogg格式</span> -->
+                    <!-- </div> -->
+					
+					
+					
+                    <div class="start">
+                        <div class="add" style="margin-top: 3%;" id="0">
+                            <div class="add_div">
+                                <a  href="javascript:add(0)">添加文字</a>
+                            </div>
+                            <div class="add_div">
+                                <a  href="javascript:add_img(0)">添加图片</a>
+                            </div>
+                            <div style="clear: both;"></div>
+                        </div>
+                    </div>
+
+
+                    <div style="margin-top: 20px; margin-bottom: 3%;">
+                        <p style="color: #ff703b; font-size: 18px;">标签添加</p>
+                        <ul class="biaoqian">
+                            <foreach name="label" item="label">
+                                <li code="{$label['id']}" name="{$label['label_name']}" onclick="add_bq()">
+                                    <span>{$label['label_name']}</span>
+                                </li>
+                            </foreach>
+                        </ul>
+                    </div>
+                    <div class="clear"></div>
+					 <input type="hidden" name="TOKEN" value="{:session('TOKEN')}"> 
+                    <input name="lablelist" value="" id="lablelist" type="hidden"/>
+                  <br/>
+				  <input type="submit" class="button button-color-1 button-stretch" value="提交"/>
+                </form>
+
+            </div>
+        </div>
+    </div>
+
+    <script>
+        $(".biaoqian li").click(function(){
+
+            var clas=$(this).attr("class");
+            if(clas=='sel'){
+                $(this).attr("class","");
+                var length=$('.sel').length;
+                if(length==0){
+                    var lable=$(this).attr("name");
+                    var zhi=$("#lablelist").val();
+                    zhi=zhi.replace(lable,"")
+                    $("#lablelist").val(zhi);
+                }else {
+                    var lable=$(this).attr("name");
+                    var zhi=$("#lablelist").val();
+                    zhi=zhi.replace(' '+lable,"")
+                    $("#lablelist").val(zhi);
+                }
+            }else {
+                var length=$('.sel').length;
+                if(length==3){
+                    alert('最多只能选择三个');
+                }else {
+                    $(this).attr("class", "sel");
+                    var lable=$(this).attr("name");
+                    var zhi=$("#lablelist").val();
+                    if(length==0){
+                        zhi += lable;
+                    }else{
+                        zhi +=' ';
+                        zhi += lable;
+                    }
+                    $("#lablelist").val(zhi);
+                }
+            }
+
+
+
+        });
+        function add_bq() {
+
+        }
+        function add_img(i) {
+            var length=$('.start').find('header').length;
+            if(length==0){
+                $('.add').css('display', 'none');
+            }
+            var k=i+1;
+            var state=$("#"+k).length;
+            if(state==0){
+
+            }else{
+                var id=k+1;
+                for(var s=k;s<=length;s++){
+                    //var name=$('#'+k).attr('name');
+                    // console.log(name);
+                    //var k_length=k.length;
+                    //name=name.substr(-1,1);
+                    var name='img'+[]+'';
+                    name+=id;
+                    //alert(k_length);
+                    $('.child'+s).attr('name',name);
+                    $('.add'+s).attr('href','javascript:add('+s+')');
+                    $('.del'+s).attr('href','javascript:del('+s+')');
+                    $('.add_img'+s).attr('href','javascript:add_img('+s+')');
+                    $('.child'+s).attr('class','child'+s);
+                    $('.child'+s).attr('name',name);
+                    $('.add'+s).attr('class','add'+s);
+                    $('.del'+s).attr('class','del'+s);
+                    $('.add_img'+s).attr('class','add_img'+s);
+                    $('#'+s).attr('id',s);
+                }
+            }
+            $add_div  = "";
+            $add_div += '<header style="margin-top: 20px;"  id="'+k+'">';
+            $add_div += '<div class="upload'+k+'" onclick="cli('+k+')" style="width: 85%; height: 140px; border:1px solid #ddd; background-image:url(__FILEADD__/content/images/beijing.png); background-repeat:no-repeat; background-position:45% 40%;">';
+            $add_div += '</div>';
+            $add_div += '<div class="imge'+k+'" style="border:1px solid #ddd; display: none; width: 100%; height: 140px;">';
+            $add_div += '<img width="120" height="130" style="margin-left: 40%; margin-top: 5px; display: none;" class="cover_img'+k+'"/>';
+            $add_div += '</div>';
+            $add_div += '<input class="child'+k+'" type="file" name="img'+[k]+'" style="display: none;">';
+            $add_div += '<div class="start_a">';
+            $add_div += ' <a class="add'+k+'"  href="javascript:add('+k+')" style="line-height: 20px; margin-left: 5px;">添加段落</a>';
+            $add_div += '<a  class="add_img'+k+'"  href="javascript:add_img('+k+')">添加图片</a>';
+            $add_div += '<a  class="del'+k+'"  href="javascript:del('+k+')">删除图片</a>';
+            $add_div += '</div>';
+            $add_div += '</header>';
+
+            $('#'+i).after($add_div);
+
+        }
+        function add(i) {
+            var length=$('.start').find('header').length;
+            if(length==0){
+                $('.add').css('display', 'none');
+            }
+            var k=i+1;
+            var state=$("#"+k).length;
+            if(state==0){
+
+            }else{
+                var id=k+1;
+                for(var s=k;s<=length;s++){
+                    //var name=$('#'+k).attr('name');
+                    //var k_length=k.length;
+                    // name=name.substr(-1,k_length);
+                    var name='text'+[]+'';
+                    name+=id;
+                    //alert(k_length);
+                    $('.child'+s).attr('name',name);
+                    $('.add'+s).attr('href','javascript:add('+s+')');
+                    $('.del'+s).attr('href','javascript:del('+s+')');
+                    $('.add_img'+s).attr('href','javascript:add_img('+s+')');
+                    $('.child'+s).attr('class','child'+s);
+                    $('.child'+s).attr('name',name);
+                    $('.add'+s).attr('class','add'+s);
+                    $('.del'+s).attr('class','del'+s);
+                    $('.add_img'+s).attr('class','add_img'+s);
+                    $('#'+s).attr('id',s);
+                }
+            }
+            $add_div  = "";
+            $add_div += ' <header style="width: 100% ;margin-top: 20px;"  id="'+k+'">';
+            $add_div += '<textarea class="child'+k+'" name="text'+[k]+'"  rows="5" style="width: 85%;border:1px solid #ddd;"></textarea>';
+            $add_div += '<div class="start_a">';
+            $add_div += ' <a class="add'+k+'"  href="javascript:add('+k+')">添加段落</a>';
+            $add_div += '<a class="add_img'+k+'"  href="javascript:add_img('+k+')">添加图片</a>';
+            $add_div += '<a class="del'+k+'"  href="javascript:del('+k+')">删除段落</a>';
+            $add_div += '</div>';
+            $add_div += '</header>';
+            $('#'+i).after($add_div);
+        }
+        function del(i) {
+            var lengths=$('.start').find('header').length;
+            if(lengths==1){
+                $('.add').css('display', 'block');
+            }
+            var k=i+1;
+            var k_s=k.toString();
+            var k_length=k_s.length;
+            var state=$("#"+k).length;
+            $("header#"+i).remove();
+            if(state==0){
+            }else{
+                var id=k-1;
+                for(var s=k;s<=lengths;s++){
+                    var name=$('.child'+s).attr('name');
+                    //alert(name);
+                    var k_name=name.length;
+                    k_length=k_name-k_length;
+                    name=name.substr(0,k_length);
+                    name+=id;
+                    //alert(k_length);
+                    $('.child'+s).attr('name',name);
+                    $('.add'+s).attr('href','javascript:add('+s+')');
+                    $('.del'+s).attr('href','javascript:del('+s+')');
+                    $('.add_img'+s).attr('href','javascript:add_img('+s+')');
+                    $('.child'+s).attr('class','child'+s);
+                    $('.child'+s).attr('name',name);
+                    $('.add'+s).attr('class','add'+s);
+                    $('.del'+s).attr('class','del'+s);
+                    $('.add_img'+s).attr('class','add_img'+s);
+                    $('#'+s).attr('id',s);
+                }
+            }
+        }
+        function cli(k) {
+            $(".child"+k).click();
+
+            $(".child"+k).change(function () {
+                var file = this.files[0] ? this.files[0] : null;
+                var file_reader = new FileReader();
+                file_reader.onload = (function () {
+                    var image_url = this.result;     // 这是图片的路径
+                    $('.upload'+k).css('display', 'none');
+                    $('.upload'+k).css('border', 'none');
+                    $('.imge'+k).css('display', 'block');
+                    $('.cover_img'+k).css('display', 'block');
+                    $(".cover_img"+k).attr('src', image_url);
+                });
+                file_reader.readAsDataURL(file);
+            });
+        }
+
+    </script>
+
+</block>
+

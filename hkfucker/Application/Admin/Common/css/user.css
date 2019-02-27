@@ -1,0 +1,48 @@
+.active .current{
+    font-family: 'Source Sans Pro', 'Helvetica Neue', Helvetica, Arial,
+    sans-serif;
+    font-weight: 400;
+    z-index: 3;
+    color: #fff;
+    cursor: default;
+    background-color: #337ab7;
+    border-color: #337ab7;
+    padding: 7px 11px;
+    font-size: 12px;
+    line-height: 1.5;}
+.active .num{
+    font-family: 'Source Sans Pro', 'Helvetica Neue', Helvetica, Arial,
+    sans-serif;
+    font-weight: 400;
+    background: #fafafa;
+    color: #666;
+    padding: 6px 10px;
+    font-size: 12px;
+    line-height: 1.5;
+    text-decoration: none;
+    border: 1px solid #ddd;}
+.active .num:hover{ background:#dddddd;}
+.active .next{
+    font-family: 'Source Sans Pro', 'Helvetica Neue', Helvetica, Arial,
+    sans-serif;
+    font-weight: 400;
+    background: #fafafa;
+    color: #666;
+    padding: 6px 10px;
+    font-size: 12px;
+    line-height: 1.5;
+    text-decoration: none;
+    border: 1px solid #ddd;}
+.active .next:hover{ background:#dddddd;}
+.active .prev{
+    font-family: 'Source Sans Pro', 'Helvetica Neue', Helvetica, Arial,
+    sans-serif;
+    font-weight: 400;
+    background: #fafafa;
+    color: #666;
+    padding: 6px 10px;
+    font-size: 12px;
+    line-height: 1.5;
+    text-decoration: none;
+    border: 1px solid #ddd;}
+.active .prev:hover{ background:#dddddd;}

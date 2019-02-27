@@ -1,0 +1,158 @@
+<extend name="Public/index" />
+
+<block name="banner">
+
+    <div class="height_60"></div>
+    <div class="subbanner-small" onclick="LinkTo();">
+        <div class="subbanner-inner">
+            <div class="container">
+                <!--<h1>攻略资料</h1>-->
+                <h1></h1>
+                <!--<h2>Strategy</h2>-->
+                <h2></h2>
+                <img class="col-md-4 col-md-offset-1 col-xs-10 col-xs-offset-1" src="__FILEADD__/content/images/matching.png" style="margin-top: 1%;"/>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+        var banners = [];
+        {:W('Banner/Index')}
+        if (banners.length > 0) {
+            $(".subbanner-inner").hide();
+            $(".subbanner-small").attr("style", "cursor:pointer;");
+            images = [];
+            for (i = 0; i < banners.length; i++) {
+                images.push(banners[i]["img"]);
+            }
+        }
+
+        $(function () {
+            $('.subbanner-small').backstretch(images, { fade: 750, duration: 3000 });
+        });
+
+
+    </script>
+
+</block>
+
+<block name="content">
+
+    <div class="content">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="card">
+                        <div class="content table-responsive table-full-width">
+                            <table class="table table-striped">
+                                <thead>
+                                <th></th>
+                                <th>名称</th>
+                                <th>现价</th>
+                                <th>涨停</th>
+                                <th>跌停</th>
+                                <th>开盘价</th>
+                                <th>最高</th>
+                                <th>最低</th>
+                                <th>成交量</th>
+                                </thead>
+                                <tbody id="trade_tbody">
+                                <volist name="datalist" id="data">
+                                    <tr onclick="location_href('User'+URL_PATHINFO_DEPR+'Market_Detail','{$data.ProductName}')">
+                                        <td><img class="icon_img" src="__COMMON__/img/{$data.ProductName}.png"></td>
+                                        <td>{$data.ProductName}</td>
+                                        <if condition="$data['Price'] eq ''">
+                                            <td class="td">---</td>
+                                            <else/>
+                                            <td class="td">{$data.Price}</td>
+                                        </if>
+                                        <td class="td">{$data.LimitUp}</td>
+                                        <td class="td">{$data.LimitDown}</td>
+                                        <if condition="$data['OpenPrice'] eq ''">
+                                            <td class="td">---</td>
+                                            <else/>
+                                            <td class="td">{$data.OpenPrice}</td>
+                                        </if>
+                                        <if condition="$data['HighestPrice'] eq ''">
+                                            <td class="td">---</td>
+                                            <else/>
+                                            <td class="td">{$data.HighestPrice}</td>
+                                        </if>
+                                        <if condition="$data['LowestPrice'] eq ''">
+                                            <td class="td">---</td>
+                                            <else/>
+                                            <td class="td">{$data.LowestPrice}</td>
+                                        </if>
+                                        <if condition="$data['Volume'] eq ''">
+                                            <td class="td">---</td>
+                                            <else/>
+                                            <td class="td">{$data.Volume}</td>
+                                        </if>
+                                    </tr>
+                                </volist>
+                                </tbody>
+                            </table>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <script>
+        $(function () {
+            setInterval('FlushMarket()', 5000);
+        });
+
+        function addClass_hover(){
+
+            $("#trade_tbody tr .td").addClass("hover");
+
+            setTimeout('remove_hover()', 500);
+
+        }
+
+        function remove_hover(){
+
+            $("#trade_tbody tr td").removeClass("hover");
+
+        }
+
+        function FlushMarket() {
+            //不在交易时间段不刷新
+            var h = new Date().getHours();
+            if(h<9)
+            {
+                return false;
+            }
+
+
+            $.ajax({
+                type: "post",
+//                url: "__URL__/refresh_trade_data",
+                url: "{:U('Matching/refresh_trade_data')}",
+                datatype: "json",
+                beforeSend: function () {
+
+                },
+                complete: function () {
+
+                },
+                success: function (result) {
+
+                    var intFormatFloat = 4;
+
+                    $("#trade_tbody").html(result);
+
+                    setTimeout('addClass_hover()', 500);
+
+                }
+            });
+        }
+
+    </script>
+
+
+
+</block>

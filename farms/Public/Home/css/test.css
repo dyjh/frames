@@ -1,0 +1,839 @@
+*{
+    padding: 0;
+    margin: 0;
+    font-family: "微软雅黑";
+    text-decoration: none;
+    list-style: none;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+
+html{
+    font-size: 62.5%;
+    -moz-user-select:none;
+-webkit-user-select:none;
+user-select:none;
+}
+body{
+    -webkit-user-select:none;
+    -moz-user-select:none;
+    -ms-user-select:none;
+    user-select:none;
+}
+@-webkit-keyframes imgSmall
+{
+    0%{
+       -webkit-transform:scale(1.05);
+    }
+    25%{
+        -webkit-transform:scale(1);
+    }
+    50%{
+        -webkit-transform:scale(0.9);
+    }
+    75%{
+        -webkit-transform:scale(1.05);
+    }
+    100% {
+        -webkit-transform:scale(1);
+    }
+}
+@keyframes imgSmall
+{
+    0%{
+       transform:scale(1.05);
+    }
+    25%{
+       transform:scale(1);
+    }
+    50%{
+        transform:scale(0.9);
+    }
+    75%{
+        transform:scale(1.05);
+    }
+    100% {
+        transform:scale(1);
+    }
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button{
+    -webkit-appearance: none !important;
+    margin: 0;
+}
+
+input{
+    outline: none;
+    border: 0;
+    background: none;
+}
+
+input[type="number"]{-moz-appearance:textfield;}
+a{
+    -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+    -webkit-user-select: none;
+    -moz-user-focus: none;
+    -moz-user-select: none;
+}
+a:link { 
+text-decoration: none; 
+} 
+a:visited { 
+text-decoration: none; 
+} 
+a:hover {
+text-decoration: underline; 
+}
+.ui-loader{
+  display: none;
+}
+.kj{
+  height: 100%;
+  width: 100%;
+  background: #000;
+}
+.box{
+  height: 100%;
+  width: 100%;
+  margin: auto;
+}
+.box_two{
+  position: absolute;
+  overflow: hidden;
+  background-image: url('http://119.29.168.120/farms/Public/Home/images/ji/m_background.png');
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  display: none;
+}
+.box_hide{
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background: #000;
+  opacity: 0.4;
+  z-index: 99;
+  display: none;
+}
+/*通用弹窗开始*/
+.all_insufficient{
+  position: absolute;
+  width: 70%;
+  height: 30%;
+  top: 35%;
+  left: 15%;
+  background-image: url("../images/ji/prompt_box.png");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  display: none;
+  z-index: 110;
+}
+.all_box{
+  float: left;
+  height: 58%;
+  width: 81%;
+  margin-left: 6%;
+  margin-top: 22%;
+  text-align: center;
+  color: #95521D;
+  font-size:1.5rem;
+}
+.all_box_list{
+  float: left;
+  height: 25%;
+  width: 93%;
+  margin-top: 14%;
+  margin-left: 9%;
+  text-align: center;
+}
+.box_list_img{
+    float: left;
+    height: 100%;
+    width: 50%;
+    background-image: url(../images/index/queren.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    margin-left: 26%;
+    margin-top: -10%;
+}
+/*通用弹窗结束*/
+.return_farm{
+  position: absolute;
+  height: 5%;
+  width: 14%;
+  top: 36%;
+  left: 84%;
+  z-index: 101;
+}
+.donghua{
+  position:absolute;
+  width:100px;
+  height:100px;
+  font-size:12px;
+}
+.Maintain_time{
+  position: absolute;
+  height: 10%;
+  width: 45.5%;
+  text-align: center;
+  color: #DE991E;
+  font-size: 1.3rem;
+  font-weight: bold;
+  top: 24.8%;
+  left: 22.5%;
+  text-shadow:5px 2px 6px #000;
+}
+.donghua span{
+   display:block;
+   height:15px;
+   border:2px solid transparent;
+   border-radius:3px;
+   line-height:15px;
+   text-align:center;
+   margin: -15px;
+   position: absolute;
+   color: #f00;
+   font-weight: bold;
+}
+.header{
+  float: left;
+  height: 20%;
+  width: 100%;
+}
+.ji_pop{
+  position: absolute;
+  height: 45%;
+  width: 80%;
+  top: 30%;
+  left: 10%;
+  z-index: 100;
+  background-image: url("../images/ji/ji_pop_box.png");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  animation: imgSmall 0.3s;
+  -webkit-animation: imgSmall 0.3s;
+  display: none;
+}
+.ji_text{
+  float: left;
+  height: 10%;
+  width: 100%;
+  text-align: center;
+  margin-top: 48%;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+.ji_box{
+  float: left;
+  height: 11%;
+  width: 100%;
+  margin-top: 16%;
+}
+.ji_sure{
+  float: left;
+  height: 100%;
+  width: 18%;
+  text-align: center;
+  margin-left: 25%;
+}
+.ji_return{
+  float: left;
+  height: 100%;
+  width: 18%;
+  text-align: center;
+  margin-left: 15%;
+}
+.body_box{
+  float: left;
+  height:60%;
+  width: 100%;
+}
+.body{
+  float: left;
+  height: 62%;
+  width: 100%;
+  position: relative;
+  margin-top: 35%;
+}
+
+.body img{
+  height: 100%;
+  width: 100%;
+}
+.footer{
+  float: left;
+  height: 20%;
+  width: 100%;
+  z-index: 100;
+}
+.footer_list_box{
+  height: 10%;
+  width: 100%;
+  background-image: url(../images/ji/footer_list_box.png);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  z-index: 98;
+  position: absolute;
+  top: 90%;
+}
+
+.footer_list_box_drop{
+  background-image: url(../images/ji/footer_list_box_drop.png);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  z-index:97;
+}
+.footer_list{
+  float: left;
+  height: 100%;
+  width: 12%;
+  margin-left: 8.5%;
+}
+.footer_list:first-child{
+  margin-left: 3.8%;
+}
+.panic_pop{
+  position: absolute;
+  height: 60%;
+  width: 90%;
+  top: 18%;
+  left: 5%;
+  z-index: 100;
+  animation: imgSmall 0.3s;
+  -webkit-animation: imgSmall 0.3s;
+  background-image: url(../images/ji/panic_pop.png);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  display: none;
+  color: #8C1E19;
+}
+.pop_list_box{
+  float: left;
+  height: 50%;
+  width: 100%;
+  position: relative;
+}
+.pop_list_price{
+  float: left;
+  height: 7%;
+  width: 43%;
+  text-align: center;
+  color: #8C1E19;
+  font-weight: bold;
+  font-size: 1.4rem;
+  margin-top: 11%;
+  margin-left: 39%;
+}
+.pop_list{
+  float: left;
+  height: 70%;
+  width: 15%;
+  text-align: center;
+  font-size: 1.3rem;
+  border: 2px solid transparent;
+  margin-left: 7%;
+  margin-top: 3.5%;
+  position: relative;
+}
+.panic_time,.panic_type,.panic_num{
+  float: left;
+  width: 100%;
+}
+.panic_type{
+  height: 40%;
+}
+.panic_type img{
+  position: absolute;
+  height: 46%;
+  width: 120%;
+  top: 36%;
+  left: -5%;
+}
+.panic_time,.panic_num,.panic_shop{
+  height: 20%;
+  position: absolute;
+  top: 70%;
+  font-size: 1.2rem;
+  font-weight: bold;
+  left: 13%;
+  margin-left: 5%;
+  text-align: center;
+}
+.panic_time{
+  position: absolute;
+  height: 10%;
+  z-index: 100;
+  top: 36%;
+  left: 4%;
+}
+.panic_firult{
+  position: absolute;
+  height: 10%;
+  width: 80%;
+  top: 65%;
+  left: 20%;
+  z-index: 100;
+}
+.panic_firult_list{
+  height: 100%;
+  width: 100%;
+  float: left;
+  margin-top: 1.5%;
+  margin-left: -4%;
+}
+.firult_list{
+  height: 100%;
+  width: 50%;
+  float: left;
+}
+.firult_list img{
+  height: 100%;
+  width: 22%;
+  float: left;
+}
+.firult_list span{
+  display: block;
+  color: #D8CB9F;
+  font-size: 1.5rem;
+  text-align: right;
+  width: 0%;
+  margin-top: 0%;
+  height: 100%;
+  width: 40%;
+  float: right;
+  text-align: left;
+  margin-right: 38%;
+}
+.pop_return{
+  position: absolute;
+  height: 6%;
+  width: 19%;
+  top: 80%;
+  left: 63%;
+}
+.panic_shop_box{
+  position: absolute;
+  height: 13%;
+  width: 72%;
+  top: 62%;
+  text-align: center;
+  left: 13%;
+  font-size: 1.4rem;
+  font-weight: bold;
+}
+.panic_num_box{
+  float: left;
+  height: 62%;
+  width: 100%;
+  margin-top: 10.4%;
+}
+.panic_dorp{
+  float: left;
+  height: 70%;
+  width: 9%;
+  margin-left: 21%;
+  background-image: url(../images/index/drop.png);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+.panic_input{
+  float: left;
+  height: 64%;
+  width: 30%;
+  margin-left: 5%;
+}
+.panic_input input{
+  text-align: center;
+  height: 100%;
+  width: 100%;
+  background: #7C6546;
+  font-weight: bold;
+  font-size: 1.4rem;
+  border-radius: 6px;
+  color: #8C1E19;
+
+}
+.panic_add{
+  float: left;
+  height: 70%;
+  width: 9%;
+  background-image: url(../images/index/add.png);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  margin-left: 6%;
+}
+.panic_ji_num{
+  height: 100%;
+  width: 100%;
+  text-align: center;
+  color: #D8CB9F;
+  font-size: 1.4rem;
+  font-weight: bold;
+  /* margin-top: 1.5%; */
+  /* margin-left: -16%; */
+  position: absolute;
+  top: 115%;
+  left: -2%;
+
+}
+.panic_sure_shop{
+  float: left;
+  height: 50%;
+  width: 26%;
+  margin-left: 7%;
+  margin-top: 8%;
+}
+.maintain_box{
+  position: absolute;
+  height: 45%;
+  width: 80%;
+  top: 30%;
+  left: 10%;
+  z-index: 100;
+  background-image: url(../images/ji/maintain_box.png);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  animation: imgSmall 0.3s;
+  -webkit-animation: imgSmall 0.3s;
+  display: none;
+}
+#ji_buy_box{
+  display: none;
+  background-image: url(../images/ji/ji_buy_box.png);
+
+}
+.maintain_body{
+  float: left;
+  height: 39%;
+  width: 100%;
+  margin-top: 23%;
+}
+.maintain_img{
+  float: left;
+  height: 100%;
+  width: 38%;
+}
+.maintain_list_box{
+  float: left;
+  height: 30%;
+  width: 62%;
+  margin-left: 19%;
+  margin-top: 5%;
+  font-size: 1.4rem;
+  font-weight: bold;
+}
+.maintain_gold{
+  float: left;
+  height: 100%;
+  width: 50%;
+  margin-top: 4%;
+  /* text-align: center; */
+  margin-left: 6%;
+}
+.maintain_img img{
+  height: 65%;
+  width: 50%;
+  margin-top: 6%;
+  margin-left: 60%;
+}
+.maintain_footer{
+  position: absolute;
+  height: 12%;
+  width: 100%;
+  top: 67%;
+}
+.maintain_sure{
+ float: left;
+  height: 94%;
+  width: 28%;
+  margin-left: 15%;
+}
+.maintain_return{
+  float: left;
+  height: 88%;
+  width: 28%;
+  margin-left: 14%;
+}
+.manage_box{
+  position: absolute;
+  height: 80%;
+  width: 90%;
+  top: 7%;
+  left: 5%;
+  background-image: url(../images/ji/manage_box.png);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  display: none;
+  z-index: 100;
+  animation: imgSmall 0.3s;
+  -webkit-animation: imgSmall 0.3s;
+  font-size: 1.5rem;
+}
+.manage{
+  float: left;
+  height: 77%;
+  width: 88%;
+  margin-left: 6%;
+  margin-top: 15%;
+
+}
+.manage_list_box{
+  float: left;
+  height: 87%;
+  width: 100%;
+}
+.manage_list{
+  float: left;
+  height: 10%;
+  width: 100%;
+  background-image: url(../images/ji/manage_list.png);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  margin-top: 6%;
+}
+.manage_list span{
+  display: block;
+  margin-top: 3%;
+  text-indent: 5%;
+} 
+.manage_return{
+  position: absolute;
+  height: 7%;
+  width: 49%;
+  top: 92%;
+  left: 26%;
+}
+.manage_page_box{
+  float: left;
+  height: 7%;
+  width: 100%;
+  margin-top: 11.5%;
+}
+.manage_lastpage{
+  float: left;
+  height: 100%;
+  width: 10%;
+  margin-left: 32%;
+}
+.manage_page_text{
+  float: left;
+  height: 100%; 
+  width: 15%;
+  text-align: center;
+  font-size: 1.4rem;
+  color: #f00;
+}
+.manage_page_text span{
+  display: block;
+  color: #DE991E;
+  margin-top: 11%;
+  font-weight: bold;
+}
+.manage_nextpage{
+  float: left;
+  height: 100%;
+  width: 10%;
+}
+.sell_box{
+  position: absolute;
+  height: 80%;
+  width: 90%;
+  top: 7%;
+  left: 5%;
+  background-image: url(../images/ji/sell_box.png);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  display: none;
+  z-index: 100;
+  animation: imgSmall 0.3s;
+  -webkit-animation: imgSmall 0.3s;
+  font-size: 1.5rem;
+}
+.sell_body_box{
+  float: left;
+  height: 70%;
+  width: 88.8%;
+  margin-top: 19%;
+  margin-left: 6%;
+}
+.sell_list_box{
+  float: left;
+  height: 12%;
+  width: 100%;
+  margin-top: 2.5%;
+  margin-left: 3%;
+}
+.sell_list_left{
+  float: left;
+  height: 100%;
+  width: 70%;
+  background-image: url(../images/ji/sell_list_box.png);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+.chicken_img,.chicken_type,.chicken_state,.chicken_shop{
+  float: left;
+  height: 100%;
+  width: 25%;
+  text-align: center;
+}
+.chicken_shop{
+  background-image: url(../images/ji/chicken_shop.png);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+.chicken_shop span{
+  display: block;
+  margin-top: 16%;
+  color: #fff;
+  font-size: 1.4rem;
+  font-weight: bold;
+}
+.chicken_type,.chicken_state{
+  height: 50%;
+  width: 74%;
+}
+.chicken_img img{
+  height: 100%;
+  width: 100%;
+}
+.sell_page_box{
+  height: 6%;
+  width: 88.5%;
+  position: absolute;
+  top: 84%;
+}
+.sell_lastpage{
+  float: left;
+  height: 100%;
+  width: 9%;
+  margin-left: 32%;
+}
+.sell_page_text{
+  float: left;
+  height: 100%;
+  width: 15%;
+  text-align: center;
+  margin-top: 1%;
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: #DE991E;
+}
+.sell_nextpage{
+  float: left;
+  height: 100%;
+  width: 9%;
+}
+.sell_return{
+  position: absolute;
+  height: 7%;
+  width: 37%;
+  top: 93%;
+  left: 31%;
+}
+.income_box{
+  position: absolute;
+  height: 80%;
+  width: 90%;
+  top: 7%;
+  left: 5%;
+  background-image: url(../images/ji/income_box.png);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  display: none;
+  z-index: 100;
+  animation: imgSmall 0.3s;
+  -webkit-animation: imgSmall 0.3s;
+  font-size: 1.5rem;
+}
+.income_body{
+  float: left;
+  height: 56.5%;
+  width: 100%;
+  margin-top: 30%;
+}
+.income_list_sum{
+  float: left;
+  width: 100%;
+  margin-top: 2%;
+  color: #fff;
+  text-align: center;
+}
+.income_list_sum:nth-child(1){
+  margin-top: 0%; 
+}
+.income_trends,.income_statics,.income_all_sum{
+  float: left;
+  height: 100%;
+  width: 24%;
+  text-align: center;
+  margin-left: 3.5%;
+}
+.income_trends{
+  margin-left: 14%;
+}
+.income_list_box{
+  float: left;
+  height: 15%;
+  width: 100%;
+}
+.income_time{
+  float: left;
+  height: 100%;
+  width: 20%;
+  text-align: center;
+  margin-left: 10%;
+}
+.income_type{
+  float: left;
+  height: 100%;
+  width: 20%;
+  text-align: center;
+}
+.income_num{
+  float: left;
+  height: 100%;
+  width: 20%;
+  text-align: center;
+}
+.income_sum{
+  float: left;
+  height: 100%;
+  width: 20%;
+  text-align: center;
+}
+.income_page_box{
+  height: 6%;
+  width: 100%;
+  /* margin-top: 0%; */
+  position: absolute;
+  top: 82%;
+}
+.income_lastpage{
+  float: left;
+  height: 85%;
+  width: 8%;
+  margin-left: 33%;
+  margin-top: 2%;
+}
+.income_page_text{
+  float: left;
+  height: 100%;
+  width: 18%;
+  text-align: center;
+  /* top: 5%; */
+  margin-top: 2%;
+  color: #DE991E;
+  font-weight: bold;
+}
+.income_nextpage{
+  float: left;
+  height: 91%;
+  width: 8%;
+  margin-top: 2%;
+}
+.income_return{
+  position: absolute;
+  height: 8%;
+  width: 39%;
+  top: 92%;
+  left: 31%;
+}

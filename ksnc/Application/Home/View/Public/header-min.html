@@ -1,0 +1,24 @@
+<div class="header sticky">
+    <div class="container clear">
+        <a href="{:U('Index/index')}"  class="logo"></a>
+
+        <if condition="$user_info" >
+            <div class="link clear">
+                <a href="{:U('User/index')}" >用户中心</a>
+                <a href="{:U('Pay/paygotogame')}" >进入游戏</a>
+                <!--<a href="{:U('User/logout')}" >退出</a>-->
+            </div>
+        <else/>
+            <div class="link clear">
+                <a href="{:U('User/lyologin')}" >登录</a>
+				<if condition="$user eq '' ">
+                <a href="{:U('User/lyoregister')}" >注册</a>
+				</if>
+            </div>
+        </if>
+
+		<div class="switch" id="switch" onclick="history.back(-1)"><i></i></div>
+    </div>
+
+</div>
+

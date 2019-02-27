@@ -1,0 +1,29 @@
+<extend name="Public/index" />
+
+<block name="banner">
+    <include file="Help/banner" />
+</block>
+
+<block name="content">
+
+    <div class="container clear">
+        <div class="main">
+            <ul class="newslist">
+                <volist name="data" id="val">
+                    <div class="typo-line">
+                        <h3>
+                            {$val.title}
+                            <br>
+                            <br>
+                            <small>
+                                {$val.content}
+                            </small>
+                        </h3>
+                    </div>
+
+                </volist>
+            </ul>
+        </div>
+    </div>
+
+</block>

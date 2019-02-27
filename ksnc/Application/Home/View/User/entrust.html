@@ -1,0 +1,237 @@
+<extend name="Public/index" />
+
+<block name="banner">
+	<div class="height_60"></div>
+    <div class="subbanner-small" onclick="LinkTo();">
+        <div class="subbanner-inner">
+            <div class="container">
+                <!--<h1>攻略资料</h1>-->
+                <h1></h1>
+                <!--<h2>Strategy</h2>-->
+                <h2></h2>
+                <img class="col-md-4 col-md-offset-1 col-xs-10 col-xs-offset-1" src="__FILEADD__/content/images/user.png" style="margin-top: 1%;"/>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+        var banners = [];
+        {:W('Banner/Index')}
+        if (banners.length > 0) {
+            $(".subbanner-inner").hide();
+            $(".subbanner-small").attr("style", "cursor:pointer;");
+            images = [];
+            for (i = 0; i < banners.length; i++) {
+                images.push(banners[i]["img"]);
+            }
+        }
+        $(function () {
+            $('.subbanner-small').backstretch(images, { fade: 750, duration: 3000 });
+        });
+    </script>
+</block>
+
+<block name="content">
+
+    <script src="__FILEADD__/content/js/WdatePicker.js"></script>
+
+    <div class="content">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-12 col-md-12">
+                    <div class="message message-info">
+                        温馨提示：<br>
+                        <span class="color-1">查询最多可回溯一个月，结束日期不要超过当前时间</span><br>
+                    </div>
+                    <form method="post" enctype="multipart/form-data" action="" onsubmit="">
+                        <div class="row">
+                            <div class="col-md-2">
+                                <div class="form-group" >
+                                    <div class="form-group-addon no-right-border">产品</div>
+                                    <div class="form-group-addon form-group-addon-white stretch">
+                                        <select name="id" id="id">
+										 <option value="">全部</option>
+                                            <if condition="$id eq ''">
+                                                <volist name="data_seed" id="val">
+                                                    <option value="{$val.id}">{$val.varieties}</option>
+                                                </volist>
+                                                <else/>
+                                                <volist name="data_seed" id="val">
+                                                    <if condition="$val['id'] eq $id">
+                                                        <option value="{$val.id}" selected>{$val.varieties}</option>
+                                                        <else/>
+                                                        <option value="{$val.id}">{$val.varieties}</option>
+                                                    </if>
+                                                </volist>
+                                            </if>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-2">
+                                <div class="form-group" >
+                                    <div class="form-group-addon no-right-border">类型</div>
+                                    <div class="form-group-addon form-group-addon-white stretch">
+                                        <select name="type" id="type">
+                                            <if condition="$type eq ''">
+                                                <option value="">全部</option>
+                                                <option value="1">买入</option>
+                                                <option value="2">卖出</option>
+                                                <elseif condition="$type eq 1" />
+                                                <option value="1">买入</option>
+                                                <option value="">全部</option>
+                                                <option value="2">卖出</option>
+                                                <elseif condition="$type eq 2" />
+                                                <option value="2">卖出</option>
+                                                <option value="">全部</option>
+                                                <option value="1">买入</option>
+                                            </if>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3" >
+                                <div class="form-group">
+                                    <div class="form-group-addon no-right-border">开始</div>
+                                    <div class="form-group-addon form-group-addon-white stretch">
+                                        <input type="text" name="start" id="StartDate" onfocus="WdatePicker();" onblur="check();"  value="{$start}" class="form-control">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3" >
+                                <div class="form-group">
+                                    <div class="form-group-addon no-right-border">结束</div>
+                                    <div class="form-group-addon form-group-addon-white stretch">
+                                        <input type="text" name="end" id="EndDate" onfocus="WdatePicker({dateFmt:&#39;yyyy-MM-dd&#39;});" onblur="check();"  value="{$end}" class="form-control">
+                                        <input type="hidden" id="hidden" value="{$end}"/>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-2">
+                                <div class="form-group">
+                                    <input type="submit" class="form-control border-input" placeholder="Username" style="margin-top: 6px;background-color: #ff512e;color: #fefffd; height: 45px;" value="查询">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="clearfix"></div>
+                    </form>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="card">
+                        <div class="content table-responsive table-full-width">
+                            <table class="table table-striped">
+                                <thead>
+                                <th>产品</th>
+                                <th>名称</th>
+                                <th>委托时间</th>
+                                <th>类型</th>
+                                <th>委托价</th>
+                                <th>委托量</th>
+                                <th>成交量</th>
+                                <th>状态</th>
+                                <th>操作</th>
+                                </thead>
+                                <tbody id="trade_tbody">
+                                <if condition="$state eq 1">
+                                    <volist name="data" id="val">
+                                        <if condition="$data['sstate_t'] eq 1">
+                                            <td colspan="8" align="center">
+                                                <p style="padding: 15px;">超出时间范围</p>
+                                            </td>
+                                            <else/>
+                                            <tr>
+                                                <td><img class="icon_img" width="45" src="__COMMON__/img/{$val.seed}.png"></td>
+                                                <td>{$val.seed}</td>
+                                                <td>{$val.time|date="Y-m-d H:i:s",###}</td>
+                                                <if condition="$val['type'] eq 1">
+                                                    <td style="color: #ff0a09">买入</td>
+                                                    <else/>
+                                                    <td style="color: #ff0a09">卖出</td>
+                                                </if>
+                                                <td>{$val.money}</td>
+                                                <td>{$val.submit_num}</td>
+                                                <td>{$val.num}</td>
+                                                <if condition="$val['state'] eq 2">
+                                                    <td>交易完成</td>
+                                                    <elseif condition="$val['state'] eq 3"/>
+                                                    <td>已撤销</td>
+                                                    <else/>
+                                                    <td>交易中</td>
+                                                </if>
+                                                <if condition="$val['state'] eq 2">
+                                                    <td></td>
+                                                    <elseif condition="$val['state'] eq 3"/>
+                                                    <td></td>
+                                                    <else/>
+                                                    <td><a href="javascript:chexiao({$val.id})">撤销</a></td>
+                                                </if>
+                                            </tr>
+                                        </if>
+                                    </volist>
+                                    <else/>
+                                    <td colspan="8" align="center">
+                                        <p style="padding: 15px;">暂无数据信息</p>
+                                    </td>
+                                </if>
+                                </tbody>
+                            </table>
+                        </div>
+                        <if condition="$state eq 1">
+                            <nav aria-label="Page navigation">
+                                <ul style="margin-left: 35%;" class="pagination">
+                                    <li>
+                                        <a href="{:U('User/entrust',array('o'=>$o-1,'id'=>$id,'type'=>$type,'start'=>$start,'end'=>$end))}" aria-label="Previous">
+                                            <span aria-hidden="true">&laquo;</span>
+                                        </a>
+                                    </li>
+                                    <for start="$start_page" end="$end_page">
+                                        <if condition="$o eq $i">
+                                            <li><a class="active_na" style="background:#337ab7 !important;color:#FFFFFF !important; "  href="{:U('User/entrust',array('o'=>$i,'id'=>$id,'type'=>$type,'start'=>$start,'end'=>$end))}">{$i}</a></li>
+                                            <else />
+                                            <li><a href="{:U('User/entrust',array('o'=>$i,'id'=>$id,'type'=>$type,'start'=>$start,'end'=>$end))}">{$i}</a></li>
+                                        </if>
+                                    </for>
+                                    <li>
+                                        <a href="{:U('User/entrust',array('o'=>$o+1,'id'=>$id,'type'=>$type,'start'=>$start,'end'=>$end))}" aria-label="Next">
+                                            <span aria-hidden="true">&raquo;</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </nav>
+                            <else/>
+                        </if>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function chexiao(id){
+            if(confirm('确定要撤销吗？')){
+                $.post("{:U('User/return_s')}",{id:id},function(msg){
+                    if(msg == 0){
+                        alert('撤销失败');
+                    }else if(msg == -1){
+                        alert('请求错误');
+                    }else if(msg == 1){
+                        alert('撤销成功，请刷新页面');
+                    }
+                })
+            }
+        }
+    </script>
+
+    <script type="text/javascript">
+        function check() {
+            if ($("#StartDate").val() != "" && $("#EndDate").val() != "") {
+                if (new Date($("#StartDate").val().replace(/-/g, "/")) > new Date($("#EndDate").val().replace(/-/g, "/"))) {
+                    alert("开始时间不能大于结束时间");
+                }
+            }
+        }
+    </script>
+
+
+</block>

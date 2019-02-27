@@ -1,0 +1,77 @@
+<extend name="Public/login_base" />
+<block name="content">
+    <link href="__FILEADD__/content/css/style-login.css" rel="stylesheet" />
+    <link href="__FILEADD__/content/css/popup-box.css" rel="stylesheet" />
+    <div class="height_120"></div>
+    <div class="w3layouts">
+        <!-- Sign in -->
+        <div class="col-md-6 col-md-offset-3 col-sm-6 col-sm-offset-3 col-xs-10 col-xs-offset-1" >
+            <div class="signin-agile">
+                <h2>登录</h2>
+                <label class="bar-w3-agile"></label>
+                <form action="{:U('User/lyologin')}" method="post" onsubmit="return PreSubmit()">
+                    {__TOKEN__}
+					 <input type="hidden" name="TOKEN" value="{:session('TOKEN')}"> 
+                    <p>手机</p>
+                    <!--<input type="text" name="Name" class="name" placeholder="" required="" />-->
+                    <input class="name" data-val="true" data-val-regex="手机号格式错误" data-val-regex-pattern="^1[0-9]{10}" required="" data-val-required="请填写手机号" id="user" name="user" type="text" value="" />
+
+                    <p>密码</p>
+                    <input type="password" class="password" id="PasswordText" required="" maxlength="16" />
+                    <input type="hidden" class="password" id="Password" name="password"  />
+
+                    <p>验证码</p>
+                    <input data-val="true"  data-val-regex="验证码错误" required="" data-val-regex-pattern="^[A-Za-z0-9]+$" data-val-required="请填写验证码" id="VCode" maxLength="4" name="VCode" type="text" value="" />
+
+                    <img class="verify"  src="{:U('User/verify')}" alt="验证码" onClick="this.src=this.src+'?'+Math.random()" />
+                    <input type="hidden" id="yzm" value="0"/>
+
+                    <p class="p-12-whole">
+                        <a class="a-1-whole" href="{:U('User/lyoregister')}">注册账户</a>
+                        <a class="a-2-whole" href="{:U('User/retrievepassword')}">忘记密码</a>
+                    </p>
+                    <div class="clear"></div>
+
+                    <span class="field-validation-valid" data-valmsg-for="FormCheck" data-valmsg-replace="true"></span>
+                    <input type="submit" value="Login">
+                </form>
+            </div>
+        </div>
+        <!-- //Sign in -->
+        <div class="clear"></div>
+    </div>
+
+    <script type="text/javascript" src="__FILEADD__/content/js/md5.js"></script>
+    <script>
+
+        function PreSubmit() {
+
+//            if ($("#check").hasClass("ischeck")) {
+//                setCookie("Phone", $("#Phone").val(), 90);
+//            } else {
+//                setCookie("Phone", "", 90);
+//            }
+
+            if ($("#PasswordText").val()!=""){
+
+                var code = $('#VCode').val();
+                if($.trim(code) == ''){
+                    $("span[data-valmsg-for=FormCheck]").html("图形验证码错误");
+                    $('#VCode').focus();
+                    return false;
+                }
+
+                $("#Password").val( hex_md5( $("#PasswordText").val() ) );
+
+            } else {
+                $("span[data-valmsg-for=FormCheck]").html("请输入完整的表单信息");
+                return false;
+            }
+
+        }
+
+    </script>
+
+</block>
+
+

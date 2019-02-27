@@ -1,0 +1,40 @@
+<extend name="Public/index" />
+
+<block name="banner">
+    <include file="Content/banner" />
+</block>
+
+<block name="content">
+
+        <div class="container clear">
+        <div class="main">
+            <ul class="newslist">
+                <volist name="data" id="val">
+                    <li>
+                        <div class="newslist-item-head"><a href="{:U('Content/detail',array('id'=>$val['id']))}">{$val.title}</a></div>
+
+                        <div class="newslist-item-info">
+                            <span>来源：四川撸游</span>
+                            <span>日期：{$val.time|date="Y-m-d H:i:s",###}</span>
+                        </div>
+                        <div >
+                            <?php echo $val['content_title']; ?>
+                        </div>
+                    </li>
+                </volist>
+            </ul>
+            <div class="pager">
+                <a href="{:U('Content/index',array('k'=>$k-1))}" aria-label="Previous">上一页</a>
+                <for start="$start" end="$end">
+                    <if condition="$k eq $i">
+                        <a class="current" href="{:U('Content/index',array('k'=>$i))}">{$i}</a>
+                        <else />
+                        <a href="{:U('Content/index',array('k'=>$i))}">{$i}</a>
+                    </if>
+                </for>
+                <a href="{:U('Content/index',array('k'=>$k+1))}" aria-label="Next">下一页</a>
+            </div>
+        </div>
+    </div>
+
+</block>

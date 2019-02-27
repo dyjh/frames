@@ -1,0 +1,87 @@
+<extend name="Public/index" />
+
+
+<block name="banner">
+    <div class="banner banner-index" onclick="LinkTo()"></div>
+
+    <script type="text/javascript">
+        var banners=[];
+
+        {:W('Banner/Index')}
+        
+        if (banners.length > 0) {
+            $(".banner-index").attr("style", "cursor:pointer;");
+            images = [];
+            for (i = 0; i < banners.length; i++) {
+                images.push(banners[i]["img"]);
+            }
+        }
+
+        $(function () {
+            $('.banner-index').backstretch(images, { fade: 750, duration: 3000 });
+        });
+
+    </script>
+</block>
+
+<block name="content">
+
+    <style>
+        .clearfix:before, .clearfix:after {
+            display:table;
+            content:" ";
+        }
+        .clearfix:after {
+            clear:both;
+        }
+    </style>
+
+    <div class="content">
+        <section class="newsblock">
+
+            <div class="container clear">
+
+                <div class="clearfix">
+                    <div class="row m-b-xl">
+
+                        <div class="col-sm-6 animated fadeInUp">
+                            <section class="panel b-primary text-center">
+                                <header class="panel-heading bg-primary">
+                                    <h3 class="m-t-sm">公告</h3>
+                                </header>
+                                <ul class="list-group">
+                                    <foreach name="notice" item="notices">
+                                        <li class="list-group-item text-center bg-light lt">
+                                            <div class="padder-v"> <a href="{:U('Content/detail',array('id'=>$notices['id']))}">{$notices['title']} </a> </div>
+                                        </li>
+                                    </foreach>
+                                </ul>
+                                <footer class="panel-footer"> <a href="{:U('Game/raiders')}" class="btn btn-primary m-t m-b">查看更多</a> </footer>
+                            </section>
+                        </div>
+
+                        <div class="col-sm-6 animated fadeInUp">
+                            <section class="panel b-primary text-center">
+                                <header class="panel-heading bg-primary bg-primary2">
+                                    <h3 class="m-t-sm">攻略</h3>
+                                </header>
+                                <ul class="list-group">
+                                    <foreach name="tip" item="tips">
+                                        <li class="list-group-item text-center bg-light lt">
+                                            <div class="padder-v">
+                                                <a href="{:U('Game/raiders_content?rid='.$tips['rid'].'&mname='.$tips['mname'].'')}" title="{$tips['title']}">{$tips['title']} </a>
+                                            </div>
+                                        </li>
+                                    </foreach>
+                                </ul>
+                                <footer class="panel-footer"> <a href="{:U('Game/raiders')}" class="btn btn-primary m-t m-b">查看更多</a> </footer>
+                            </section>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+</block>

@@ -1,0 +1,179 @@
+<extend name="Public/index" />
+
+<block name="banner">
+	<div class="height_60"></div>
+	<div class="subbanner-small" onclick="LinkTo();">
+		<div class="subbanner-inner">
+			<div class="container">
+				<!--<h1>攻略资料</h1>-->
+				<h1></h1>
+				<!--<h2>Strategy</h2>-->
+				<h2></h2>
+				<img class="col-md-4 col-md-offset-1 col-xs-10 col-xs-offset-1" src="__FILEADD__/content/images/pay.png" style="margin-top: 1%;"/>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript">
+        var banners = [];
+        {:W('Banner/Index')}
+        if (banners.length > 0) {
+            $(".subbanner-inner").hide();
+            $(".subbanner-small").attr("style", "cursor:pointer;");
+            images = [];
+            for (i = 0; i < banners.length; i++) {
+                images.push(banners[i]["img"]);
+            }
+        }
+
+        $(function () {
+            $('.subbanner-small').backstretch(images, { fade: 750, duration: 3000 });
+        });
+
+
+	</script>
+</block>
+
+
+<block name="content">
+	<div class="content">
+		<style>
+			.main { padding: 5px;}
+			.uc-form .togglebox { min-width:100px; max-height: 200px; overflow: auto;}
+			.uc-form .togglebox dl { overflow:hidden; }
+			.uc-form .togglebox dl dd { height:35px; line-height:35px; padding:0 10px; cursor:pointer; }
+			.uc-form .togglebox dl dd:hover { background:#EFEFEF; color:#FF6600; }
+			.uc-form .togglebox dl dd i { font-size:16px; padding-right:5px; }
+		</style>
+		<script>
+			$("html").click(function (event) {
+				//toggle
+				var target = $(event.target);
+				var toggle = target.attr('toggle');
+				if (typeof (toggle) == 'undefined') {
+					$('.togglebox').hide();
+				} else {
+					$('.togglebox').each(function (index, element) {
+						if (toggle != '#' + $(this).attr('id')) {
+							$(this).hide();
+						}
+					});
+					$(toggle).toggle();
+				}
+			});
+		</script>
+		<form action="{:U('Pay/dobindbank')}" method="post" novalidate="novalidate" onsubmit="return BankSubmit()">
+			<div class="container clear">
+				<div class="main">
+
+					<div class="uc-head uc-head-border">提现账户管理</div>
+
+
+					<if condition="$have_cash_num">
+						<div class="message message-succ">
+							您已绑定提现账户 <a href="{:U('Pay/bindbank','update=true')}" class="color-1">修改账户</a><br>
+							<a href="{:U('Pay/alicash')}">前往提现</a><br/>
+							温馨提示:<br>
+							1.绑定的收款账户开户人需与实名认证姓名一致！<br>
+							2.请仔细确认您的帐号是否填写正确。<br>
+							3.支付宝与银行账户为提现必填项。支付宝栏下请勿填入银行账户。
+							<!--3.收款账户不能重复绑定，且一周只能修改一次。-->
+						</div>
+						<else/>
+						<div class="message message-fail">
+							您还未绑定提现账户<br>
+							温馨提示:<br>
+							1.绑定的收款账户开户人需与实名认证姓名一致！<br>
+							2.请仔细确认您的帐号是否填写正确。<br>
+							3.支付宝与银行账户为提现必填项。支付宝栏下请勿填入银行账户。
+						</div>
+					</if>
+
+
+					<input data-val="true" data-val-number="字段 BankId 必须是一个数字。" data-val-required="BankId 字段是必需的。" id="BankId" name="BankId" type="hidden" value="0">
+					<!-- uc-form start -->
+					<div class="uc-form">
+						<div class="form-group">
+							<div class="form-group-addon no-right-border">开户姓名</div>
+							<div class="form-group-addon form-group-addon-disabled stretch">{$user_info.name}</div>
+						</div>
+
+
+						<div class="form-group">
+							<div class="form-group-addon">收款银行</div>
+							<div class="form-group-addon no-left-border form-group-addon-disabled stretch"   id="BankNameText">{$BankInfoIsExists.bank_name}</div>
+							<input id="BankName" name="bank_name" type="hidden" value="{$BankInfoIsExists.bank_name}" data-val-required="请选择收款银行。">
+
+							<if condition="$can_update_bind eq 1">
+								<div class="form-group-input">
+									<button class="no-left-border" onclick="return false;" toggle="#banktogglebox">选择 <i class="icon"></i></button>
+									<div class="togglebox togglebox-top togglebox-right" id="banktogglebox" style="display: none;">
+										<volist name="shunfoo_banktype" id="shunfoo">
+											<dl>
+												<dd onclick="$('#BankNameText').html($(this).html()); $('#BankName').val($(this).html()); $('#BankId').val($(this).attr('bid'))" bid="{$shunfoo.code}">{$shunfoo.name}</dd>
+											</dl>
+										</volist>
+									</div>
+								</div>
+							</if>
+						</div>
+						
+						<div class="form-group">
+							<div class="form-group-addon no-right-border">开 户 行</div>
+							<div class="form-group-input stretch">
+								<input class="stretch" id="bank_name_branch" name="bank_name_branch" type="text" value="{$user_infomation.bank_subbranch}" placeholder="例如：四川省 成都市 顺城大街支行" data-val-required="请填写银行支行。"  >
+							</div>
+						</div>
+						
+
+
+						<div class="form-group">
+							<div class="form-group-addon no-right-border">银行卡号</div>
+							<div class="form-group-input stretch">
+								<input class="stretch" id="CardNo" name="bank_num" type="text" value="{$BankInfoIsExists.bank_num}" data-val-required="填入正确收款帐号。" data-val-range-min="12" data-val-range-max="21" >
+							</div>
+						</div>
+
+						<div class="form-group">
+							<div class="form-group-addon no-right-border">小额提现需选择使用支付宝</div>
+							<div class="form-group-input stretch">								
+							</div>
+						</div>
+						
+						<div class="form-group">
+							<div class="form-group-addon no-right-border">支付宝账户</div>
+							<div class="form-group-input stretch">
+								<input class="stretch" id="AliPayNum" name="AliPayNum" type="text" value="{$user_infomation.ali_num}"   />
+							</div>
+						</div>
+						
+						<span class="field-validation-valid" data-valmsg-for="Amount" data-valmsg-replace="true"></span>
+						
+						
+
+						<if condition="$can_update_bind eq 1">
+							<div class="form-group">
+								<input type="submit" class="button button-color-1 button-stretch" value="提交">
+							</div>
+						</if>
+						<div class="color-1" style="text-align:center"></div>
+
+					</div>
+					<!-- uc-form end -->
+
+
+
+				</div>
+			</div>
+		</form>
+		<script type="text/javascript">
+			$(".paymode dd").click(function () {
+				$(".paymode dd").removeClass("select");
+				$(this).addClass("select");
+				$("#ChannelId").val($(this).attr("cid"))
+			});
+		</script>
+	</div>
+</block>
+
+
+

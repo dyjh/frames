@@ -1,0 +1,44 @@
+WAMP windows+apache+mysql+php  
+LAMP linux+apache+mysql+php
+
+留言板系统
+1.分析需求---姓名，内容，时间
+2.一个项目就有数据库
+	create database `message_board`;
+  一个功能就要有一个数据表存放数据
+     create table `message`(
+	`id` int(11) auto_increment COMMENT "留言板主键",
+	`name` VARCHAR(20) not null DEFAULT "小静静" COMMENT "留言人",
+	`content` text COMMENT "留言内容",
+	`create_time` datetime COMMENT "留言时间", 
+	PRIMARY KEY(`id`)
+)ENGINE=myisam DEFAULT charset=utf8;
+ 插入数据
+	insert into 表名(字段1,字段2,......) values(值1,值2,....)
+	
+3.form的action表示把数据交给谁 留空表示到当前页面
+get显示在地址里面，很不安全 对长度有限制（255）
+post提交的数据没有显示地址栏，安全 对长度没限制
+
+4.判断提交
+isset()判断变量是否设置的方法 设置了返回true 否则返回false
+empty()判断变量是否为空的方法  为空的话返回true 否则返回false
+
+5.连接数据库
+第一步：连接数据库
+	mysql_connect("ip地址","用户名","密码") or die("数据库连接失败");//连接数据库的方法 本地的话ip地址一般是localhost
+	die() php的中段函数，这个函数后面的代码将不被执行，一般用于出现错误然后中断程序
+	exit() php的中段函数，这个函数后面的代码将不被执行，一般是程序逻辑需要时来中段程序
+第二步：选择数据库
+	mysql_select_db("数据库的名字");//选择数据库的方法
+第三步:设置编码
+	mysql_query("set names utf8");//设置编码为utf8
+	mysql_set_charset("utf8");
+	mysql_query($sql);mysql执行sql语句的方法
+第四步:编写sql
+	time() 返回格林威治时间1970年1月1号 00:00:00到现在的秒数 时间戳
+	date_default_timezone_set("PRC");//设置时区是中国
+	date("Y-m-d H:i:s",time());//获得当前时间
+	$sql = 'insert into message(`name`,`content`,`create_time`) values("'.$_POST['name'].'","'.$_POST['content'].'","'.$date.'")';
+第五步:获取受影响行数
+	mysql_affected_rows($link);//获取受影响的行数

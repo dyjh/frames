@@ -1,0 +1,33 @@
+<volist name="datalist" id="data">
+    <tr onclick="location_href('User'+URL_PATHINFO_DEPR+'Market_Detail','{$data.ProductName}')">
+        <td><img class="icon_img" src="__COMMON__/img/{$data.ProductName}.png"></td>
+        <td>{$data.ProductName}</td>
+        <if condition="$data['Price'] eq ''">
+            <td class="td">---</td>
+            <else/>
+            <td class="td">{$data.Price}</td>
+        </if>
+        <td class="td">{$data.LimitUp}</td>
+        <td class="td">{$data.LimitDown}</td>
+        <if condition="$data['OpenPrice'] eq ''">
+            <td class="td">---</td>
+            <else/>
+            <td class="td">{$data.OpenPrice}</td>
+        </if>
+        <if condition="$data['HighestPrice'] eq ''">
+            <td class="td">---</td>
+            <else/>
+            <td class="td">{$data.HighestPrice}</td>
+        </if>
+        <if condition="$data['LowestPrice'] eq ''">
+            <td class="td">---</td>
+            <else/>
+            <td class="td">{$data.LowestPrice}</td>
+        </if>
+        <if condition="$data['Volume'] eq ''">
+            <td class="td">---</td>
+            <else/>
+            <td class="td">{$data.Volume}</td>
+        </if>
+    </tr>
+</volist>

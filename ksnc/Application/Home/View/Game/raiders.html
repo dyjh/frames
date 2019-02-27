@@ -1,0 +1,173 @@
+<extend name="Public/index" />
+
+<block name="banner">
+    <include file="Game/banner" />
+</block>
+
+<block name="content">
+
+    <style type="text/css">
+        .newslist a:visited {
+            color: #aaa;
+        }
+    </style>
+
+    <div class="container clear">
+
+        <div class="main">
+
+            <div class="main-head">
+                游戏攻略
+                <a href="{:U('Game/upload')}">玩家投稿</a>
+            </div>
+            <form method="get" action="{:U('Game/raiders')}">
+			 <input type="hidden" name="TOKEN" value="{:session('TOKEN')}"> 
+                <div class="row" style="margin-top: 20px;">
+                   
+
+				   <!-- <div class="col-md-3"> -->
+                        <!-- <div class="form-group"> -->
+                            <!-- <div class="form-group-addon no-right-border">类型</div> -->
+                            <!-- <div class="form-group-addon form-group-addon-white stretch"> -->
+                                <!-- <select id="RewardStatus" name="is_free"> -->
+                                    <!-- <option value="0" selected>全部</option> -->
+                                    <!-- <option value="1"  <if condition="$form_where['is_free'] eq 1">selected="selected"</if>  >免费阅读</option> -->
+                                    <!-- <option value="2"  <if condition="$form_where['is_free'] eq 2">selected="selected"</if> >打赏阅读</option> -->
+                                <!-- </select> -->
+                            <!-- </div> -->
+                        <!-- </div> -->
+                    <!-- </div> -->
+
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <div class="form-group-addon no-right-border">作者</div>
+                            <div class="form-group-addon form-group-addon-white stretch">
+                                <select id="AuthorId" name="num_id">
+                                    <option value="0" selected>全部</option>
+                                    <foreach name="num_id" item="num_ids">
+                                        <option value="{$num_ids['num_id']}" <if condition="$form_where['num_id'] eq $num_ids['num_id']">selected="selected"</if> >{$num_ids['num_id']}</option>
+                                    </foreach>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <div class="form-group-addon no-right-border">标签</div>
+                            <div class="form-group-addon form-group-addon-white stretch">
+                                <select id="TagId" name="lablelist">
+                                    <option value="0" selected>全部</option>
+                                    <foreach name="label" item="label">
+                                        <option value="{$label['label_name']}" <if condition="$form_where['label_name'] eq $label['label_name']">selected="selected"</if> >{$label['label_name']}</option>
+                                    </foreach>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <input type="hidden" name="addtime" value="{$NewType}" />
+                    <input type="hidden" name="reward_type" value="{$RewardType}" />
+
+                    <div class="col-md-2">
+                        <div class="form-group">
+                            <div class="form-group-sort">
+                                <if condition="$NewType eq 1">
+                                    <a href="{:U('Game/raiders','addtime=2'.$get_url_str)}">最新▼</a>
+                                    <else/>
+                                    <a href="{:U('Game/raiders','addtime=1'.$get_url_str)}">最新▲</a>
+                                </if>
+                            </div>
+                            <div class="form-group-sort no-left-border">
+                                <if condition="$RewardType eq 1">
+                                    <a href="{:U('Game/raiders','reward_type=2'.$get_url_str)}">打赏▼</a>
+                                    <else/>
+                                    <a href="{:U('Game/raiders','reward_type=1'.$get_url_str)}">打赏▲</a>
+                                </if>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <dd>
+                        <div class="form-group">
+                            <input id="sub" type="submit" class="button button-color-1 button-stretch" value="查询" />
+                        </div>
+                    </dd>
+                </div>
+            </form>
+
+            <if condition="$tip">
+                <ul id="newslist" class="newslist">
+                    <foreach name="tip" item="tips">
+                        <if condition="$tip neq ''">
+                            <li>
+                                <div class="newslist-item-head">
+                                    <a href="{:U('Game/raiders_content?rid='.$tips['rid'].'&mname='.$tips['num_id'].'')}" target="_blank">{$tips['title']}</a>
+                                </div>
+                                <div class="newslist-item-info">
+                        <span>
+                            来源：
+							<if condition="$tips['num_id'] neq 0">
+							{$tips['num_id']}
+							<else/>
+							农场用户
+							</if>
+                        </span>
+
+                                    <span>发表日期：<?php echo date("Y-m-d H:i:s",$tips['addtime']) ?></span>
+
+                                    <span>阅读：{$tips['readtime']}</span>
+
+                                    <span>打赏：{$tips['reward']}</span>
+                                </div>
+                                <div class="newslist-item-text">
+                                    <p style="color:gray;width:500px; white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">
+                                        {$tips['description']}
+                                    </p>
+                                </div>
+                            </li>
+                            <else/>
+                            <li>暂无内容</li>
+                        </if>
+                    </foreach>
+                </ul>
+                <else/>
+                <p style="padding: 15px;"> 暂无内容 </p>
+            </if>
+
+
+
+
+            <div class="pager">
+                <script>
+                    function getLocalTime(nS) {
+                        return new Date(parseInt(nS) * 1000).toLocaleString().replace(/:$/,' ');
+                    }
+
+                    $("#sub").click(function(){
+                        var rewardStatus = $("#rewardStatus").val();
+                        var authorId = $("#authorId").val();
+                        var tagId = $("#tagId").val();
+                    });
+
+                </script>
+
+
+                {$page}
+
+
+            </div>
+
+            <!--<div>
+                <a href="{:U('Game/transform')}">换人</a>
+            </div>-->
+
+        </div>
+
+    </div>
+
+
+</block>

@@ -1,0 +1,56 @@
+<extend name="Public/index" />
+
+<block name="banner">
+    <div class="height_60"></div>
+    <div class="subbanner-small" onclick="LinkTo();">
+        <div class="subbanner-inner">
+            <div class="container">
+                <!--<h1>攻略资料</h1>-->
+                <h1></h1>
+                <!--<h2>Strategy</h2>-->
+                <h2></h2>
+                <img class="col-md-4 col-md-offset-1 col-xs-10 col-xs-offset-1" src="__FILEADD__/content/images/translation.png" style="margin-top: 1%;"/>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+        var banners = [];
+        {:W('Banner/Index')}
+        if (banners.length > 0) {
+            $(".subbanner-inner").hide();
+            $(".subbanner-small").attr("style", "cursor:pointer;");
+            images = [];
+            for (i = 0; i < banners.length; i++) {
+                images.push(banners[i]["img"]);
+            }
+        }
+
+        $(function () {
+            $('.subbanner-small').backstretch(images, { fade: 750, duration: 3000 });
+        });
+
+
+    </script>
+</block>
+
+
+<block name="content">
+    <div class="main">
+        <dl class="main-farm-menu">
+            <dd><a href="{:U('Introduce/index')}" class="select">游戏介绍</a></dd>
+            <dd><a href="{:U('Introduce/fruit')}">果实介绍</a></dd>
+            <dd><a href="{:U('Introduce/porp')}">道具介绍</a></dd>
+            <dd><a href="{:U('Introduce/guardian')}">守护介绍</a></dd>
+            <dd><a href="{:U('Introduce/listing')}">升级清单</a></dd>
+			<dd><a href="{:U('Introduce/reborn')}">重生介绍</a></dd>
+        </dl>
+
+
+        <div class="main-farm">
+            <p style="text-indent:28px;">凯撒农场是四川撸游科技有限公司开发的一款以农场为背景的模拟经营类游戏，游戏于2017年7月24日正式与玩家见面。凯撒农场游戏将创造一个新的游戏体制，主要是以农场土地种植为背景的模拟经营游戏。玩家扮演一个农场主从购买种子到耕种、浇水、施肥、除草、收获果实，再到出售给市场的整个过程。游戏模拟了作物的生长过程，所以玩家在经营农场的同时，可以感受“作物养成”带来的乐趣。游戏中，玩家可以可对土地等进行升级，获得更加强大、高效的农场。</p>
+            <p style="text-indent:28px;">游戏中还有很多其他惊喜等待您的发现！</p>
+        </div>
+
+    </div>
+    </div>
+</block>

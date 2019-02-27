@@ -1,0 +1,1598 @@
+[ 2018-02-12T17:52:42+08:00 ]  
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000159s ]
+NOTIC: [8] Undefined index: REQUEST_URI /home/work/www/html/game/farms/ThinkPHP/Library/Think/Dispatcher.class.php 第 132 行.
+NOTIC: [8] Use of undefined constant __ROOT__ - assumed '__ROOT__' /home/work/www/html/game/farms/app/Home/Conf/config.php 第 6 行.
+NOTIC: [8] Use of undefined constant __ROOT__ - assumed '__ROOT__' /home/work/www/html/game/farms/app/Home/Conf/config.php 第 7 行.
+NOTIC: [8] Use of undefined constant __ROOT__ - assumed '__ROOT__' /home/work/www/html/game/farms/app/Home/Conf/config.php 第 8 行.
+NOTIC: [8] Use of undefined constant _PHP_FILE_ - assumed '_PHP_FILE_' /home/work/www/html/game/farms/ThinkPHP/Library/Think/Dispatcher.class.php 第 173 行.
+NOTIC: [8] Undefined index: REQUEST_METHOD /home/work/www/html/game/farms/ThinkPHP/Library/Think/App.class.php 第 30 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000184s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000205s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /home/work/www/html/game/farms/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+NOTIC: [2] mysql_connect(): Headers and client library minor version mismatch. Headers:50552 Library:50637 /home/work/www/html/game/farms/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `global_conf` [ RunTime:0.000296s ]
+SQL: SELECT * FROM `global_conf` WHERE ( cases="poundage" or cases="LimitPricePostion" )  [ RunTime:0.000108s ]
+SQL: SHOW COLUMNS FROM `seeds` [ RunTime:0.000233s ]
+SQL: SELECT * FROM `seeds` WHERE ( varieties!="摇钱树" AND state=0 ) ORDER BY id  [ RunTime:0.000159s ]
+SQL: SET GLOBAL group_concat_max_len=102400 [ RunTime:0.000067s ]
+SQL: SHOW COLUMNS FROM `2018-02_pay` [ RunTime:0.000268s ]
+NOTIC: [8] Undefined variable: order /home/work/www/html/game/farms/ThinkPHP/Library/Org/Our/Matching.class.php 第 147 行.
+SQL: SELECT GROUP_CONCAT(money ORDER BY money desc ) as desc_money FROM `2018-02_pay` WHERE ( `state` < '2' ) AND ( `type` = 1 ) AND ( `seed` = '土豆' ) AND ( `num` > '0' )  [ RunTime:0.000151s ]
+NOTIC: [8] Undefined variable: buy /home/work/www/html/game/farms/ThinkPHP/Library/Org/Our/Matching.class.php 第 152 行.
+SQL: SELECT * FROM `2018-02_pay` WHERE ( state < 2 AND type =1 AND queue=0 AND num>0 AND seed="土豆" ) ORDER BY money DESC  [ RunTime:0.000168s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `2018-02_pay` WHERE ( state < 2 AND type =1 AND queue=0 AND num>0 AND seed="土豆" ) LIMIT 1   [ RunTime:0.000117s ]
+SQL: SET GLOBAL group_concat_max_len=102400 [ RunTime:0.000078s ]
+NOTIC: [8] Undefined variable: order /home/work/www/html/game/farms/ThinkPHP/Library/Org/Our/Matching.class.php 第 147 行.
+SQL: SELECT GROUP_CONCAT(money ORDER BY money desc ) as desc_money FROM `2018-02_pay` WHERE ( `state` < '2' ) AND ( `type` = 1 ) AND ( `seed` = '草莓' ) AND ( `num` > '0' )  [ RunTime:0.000221s ]
+NOTIC: [8] Undefined offset: 0 /home/work/www/html/game/farms/ThinkPHP/Library/Org/Our/Matching.class.php 第 152 行.
+SQL: SELECT * FROM `2018-02_pay` WHERE ( state < 2 AND type =1 AND queue=0 AND num>0 AND seed="草莓" ) ORDER BY money DESC  [ RunTime:0.000199s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `2018-02_pay` WHERE ( state < 2 AND type =1 AND queue=0 AND num>0 AND seed="草莓" ) LIMIT 1   [ RunTime:0.000162s ]
+SQL: SET GLOBAL group_concat_max_len=102400 [ RunTime:0.000141s ]
+NOTIC: [8] Undefined variable: order /home/work/www/html/game/farms/ThinkPHP/Library/Org/Our/Matching.class.php 第 147 行.
+SQL: SELECT GROUP_CONCAT(money ORDER BY money desc ) as desc_money FROM `2018-02_pay` WHERE ( `state` < '2' ) AND ( `type` = 1 ) AND ( `seed` = '樱桃' ) AND ( `num` > '0' )  [ RunTime:0.000208s ]
+NOTIC: [8] Undefined offset: 0 /home/work/www/html/game/farms/ThinkPHP/Library/Org/Our/Matching.class.php 第 152 行.
+SQL: SELECT * FROM `2018-02_pay` WHERE ( state < 2 AND type =1 AND queue=0 AND num>0 AND seed="樱桃" ) ORDER BY money DESC  [ RunTime:0.000193s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `2018-02_pay` WHERE ( state < 2 AND type =1 AND queue=0 AND num>0 AND seed="樱桃" ) LIMIT 1   [ RunTime:0.000162s ]
+SQL: SET GLOBAL group_concat_max_len=102400 [ RunTime:0.000136s ]
+NOTIC: [8] Undefined variable: order /home/work/www/html/game/farms/ThinkPHP/Library/Org/Our/Matching.class.php 第 147 行.
+SQL: SELECT GROUP_CONCAT(money ORDER BY money desc ) as desc_money FROM `2018-02_pay` WHERE ( `state` < '2' ) AND ( `type` = 1 ) AND ( `seed` = '稻米' ) AND ( `num` > '0' )  [ RunTime:0.000207s ]
+NOTIC: [8] Undefined offset: 0 /home/work/www/html/game/farms/ThinkPHP/Library/Org/Our/Matching.class.php 第 152 行.
+SQL: SELECT * FROM `2018-02_pay` WHERE ( state < 2 AND type =1 AND queue=0 AND num>0 AND seed="稻米" ) ORDER BY money DESC  [ RunTime:0.000174s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `2018-02_pay` WHERE ( state < 2 AND type =1 AND queue=0 AND num>0 AND seed="稻米" ) LIMIT 1   [ RunTime:0.000128s ]
+SQL: SET GLOBAL group_concat_max_len=102400 [ RunTime:0.000071s ]
+NOTIC: [8] Undefined variable: order /home/work/www/html/game/farms/ThinkPHP/Library/Org/Our/Matching.class.php 第 147 行.
+SQL: SELECT GROUP_CONCAT(money ORDER BY money desc ) as desc_money FROM `2018-02_pay` WHERE ( `state` < '2' ) AND ( `type` = 1 ) AND ( `seed` = '葡萄' ) AND ( `num` > '0' )  [ RunTime:0.000144s ]
+NOTIC: [8] Undefined offset: 0 /home/work/www/html/game/farms/ThinkPHP/Library/Org/Our/Matching.class.php 第 152 行.
+SQL: SELECT * FROM `2018-02_pay` WHERE ( state < 2 AND type =1 AND queue=0 AND num>0 AND seed="葡萄" ) ORDER BY money DESC  [ RunTime:0.000147s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `2018-02_pay` WHERE ( state < 2 AND type =1 AND queue=0 AND num>0 AND seed="葡萄" ) LIMIT 1   [ RunTime:0.000147s ]
+SQL: SET GLOBAL group_concat_max_len=102400 [ RunTime:0.000071s ]
+NOTIC: [8] Undefined variable: order /home/work/www/html/game/farms/ThinkPHP/Library/Org/Our/Matching.class.php 第 147 行.
+SQL: SELECT GROUP_CONCAT(money ORDER BY money desc ) as desc_money FROM `2018-02_pay` WHERE ( `state` < '2' ) AND ( `type` = 1 ) AND ( `seed` = '番茄' ) AND ( `num` > '0' )  [ RunTime:0.000154s ]
+NOTIC: [8] Undefined offset: 0 /home/work/www/html/game/farms/ThinkPHP/Library/Org/Our/Matching.class.php 第 152 行.
+SQL: SELECT * FROM `2018-02_pay` WHERE ( state < 2 AND type =1 AND queue=0 AND num>0 AND seed="番茄" ) ORDER BY money DESC  [ RunTime:0.000159s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `2018-02_pay` WHERE ( state < 2 AND type =1 AND queue=0 AND num>0 AND seed="番茄" ) LIMIT 1   [ RunTime:0.000207s ]
+SQL: SET GLOBAL group_concat_max_len=102400 [ RunTime:0.000137s ]
+NOTIC: [8] Undefined variable: order /home/work/www/html/game/farms/ThinkPHP/Library/Org/Our/Matching.class.php 第 147 行.
+SQL: SELECT GROUP_CONCAT(money ORDER BY money desc ) as desc_money FROM `2018-02_pay` WHERE ( `state` < '2' ) AND ( `type` = 1 ) AND ( `seed` = '菠萝' ) AND ( `num` > '0' )  [ RunTime:0.000152s ]
+NOTIC: [8] Undefined offset: 0 /home/work/www/html/game/farms/ThinkPHP/Library/Org/Our/Matching.class.php 第 152 行.
+SQL: SELECT * FROM `2018-02_pay` WHERE ( state < 2 AND type =1 AND queue=0 AND num>0 AND seed="菠萝" ) ORDER BY money DESC  [ RunTime:0.000209s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `2018-02_pay` WHERE ( state < 2 AND type =1 AND queue=0 AND num>0 AND seed="菠萝" ) LIMIT 1   [ RunTime:0.000201s ]
+SQL: SET GLOBAL group_concat_max_len=102400 [ RunTime:0.000136s ]
+NOTIC: [8] Undefined variable: order /home/work/www/html/game/farms/ThinkPHP/Library/Org/Our/Matching.class.php 第 147 行.
+SQL: SELECT GROUP_CONCAT(money ORDER BY money desc ) as desc_money FROM `2018-02_pay` WHERE ( `state` < '2' ) AND ( `type` = 1 ) AND ( `seed` = '种子' ) AND ( `num` > '0' )  [ RunTime:0.000211s ]
+NOTIC: [8] Undefined offset: 0 /home/work/www/html/game/farms/ThinkPHP/Library/Org/Our/Matching.class.php 第 152 行.
+SQL: SELECT * FROM `2018-02_pay` WHERE ( state < 2 AND type =1 AND queue=0 AND num>0 AND seed="种子" ) ORDER BY money DESC  [ RunTime:0.000209s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `2018-02_pay` WHERE ( state < 2 AND type =1 AND queue=0 AND num>0 AND seed="种子" ) LIMIT 1   [ RunTime:0.000135s ]
+NOTIC: [2] unlink(/home/work/www/html/game/farms/app/Runtime/Temp/ea2b2676c28c0db26d39331a336c6b92.php): No such file or directory /home/work/www/html/game/farms/ThinkPHP/Library/Think/Cache/Driver/File.class.php 第 157 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000239s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000263s ]
+
+[ 2018-02-12T17:52:47+08:00 ]  
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000159s ]
+NOTIC: [8] Undefined index: REQUEST_URI /home/work/www/html/game/farms/ThinkPHP/Library/Think/Dispatcher.class.php 第 132 行.
+NOTIC: [8] Use of undefined constant __ROOT__ - assumed '__ROOT__' /home/work/www/html/game/farms/app/Home/Conf/config.php 第 6 行.
+NOTIC: [8] Use of undefined constant __ROOT__ - assumed '__ROOT__' /home/work/www/html/game/farms/app/Home/Conf/config.php 第 7 行.
+NOTIC: [8] Use of undefined constant __ROOT__ - assumed '__ROOT__' /home/work/www/html/game/farms/app/Home/Conf/config.php 第 8 行.
+NOTIC: [8] Use of undefined constant _PHP_FILE_ - assumed '_PHP_FILE_' /home/work/www/html/game/farms/ThinkPHP/Library/Think/Dispatcher.class.php 第 173 行.
+NOTIC: [8] Undefined index: REQUEST_METHOD /home/work/www/html/game/farms/ThinkPHP/Library/Think/App.class.php 第 30 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000210s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000245s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /home/work/www/html/game/farms/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+NOTIC: [2] mysql_connect(): Headers and client library minor version mismatch. Headers:50552 Library:50637 /home/work/www/html/game/farms/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `global_conf` [ RunTime:0.000322s ]
+SQL: SELECT * FROM `global_conf` WHERE ( cases="poundage" or cases="LimitPricePostion" )  [ RunTime:0.000106s ]
+SQL: SHOW COLUMNS FROM `seeds` [ RunTime:0.000232s ]
+SQL: SELECT * FROM `seeds` WHERE ( varieties!="摇钱树" AND state=0 ) ORDER BY id  [ RunTime:0.000157s ]
+SQL: SET GLOBAL group_concat_max_len=102400 [ RunTime:0.000087s ]
+SQL: SHOW COLUMNS FROM `2018-02_pay` [ RunTime:0.000274s ]
+NOTIC: [8] Undefined variable: order /home/work/www/html/game/farms/ThinkPHP/Library/Org/Our/Matching.class.php 第 147 行.
+SQL: SELECT GROUP_CONCAT(money ORDER BY money desc ) as desc_money FROM `2018-02_pay` WHERE ( `state` < '2' ) AND ( `type` = 1 ) AND ( `seed` = '土豆' ) AND ( `num` > '0' )  [ RunTime:0.000150s ]
+NOTIC: [8] Undefined variable: buy /home/work/www/html/game/farms/ThinkPHP/Library/Org/Our/Matching.class.php 第 152 行.
+SQL: SELECT * FROM `2018-02_pay` WHERE ( state < 2 AND type =1 AND queue=0 AND num>0 AND seed="土豆" ) ORDER BY money DESC  [ RunTime:0.000162s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `2018-02_pay` WHERE ( state < 2 AND type =1 AND queue=0 AND num>0 AND seed="土豆" ) LIMIT 1   [ RunTime:0.000136s ]
+SQL: SET GLOBAL group_concat_max_len=102400 [ RunTime:0.000069s ]
+NOTIC: [8] Undefined variable: order /home/work/www/html/game/farms/ThinkPHP/Library/Org/Our/Matching.class.php 第 147 行.
+SQL: SELECT GROUP_CONCAT(money ORDER BY money desc ) as desc_money FROM `2018-02_pay` WHERE ( `state` < '2' ) AND ( `type` = 1 ) AND ( `seed` = '草莓' ) AND ( `num` > '0' )  [ RunTime:0.000205s ]
+NOTIC: [8] Undefined offset: 0 /home/work/www/html/game/farms/ThinkPHP/Library/Org/Our/Matching.class.php 第 152 行.
+SQL: SELECT * FROM `2018-02_pay` WHERE ( state < 2 AND type =1 AND queue=0 AND num>0 AND seed="草莓" ) ORDER BY money DESC  [ RunTime:0.000205s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `2018-02_pay` WHERE ( state < 2 AND type =1 AND queue=0 AND num>0 AND seed="草莓" ) LIMIT 1   [ RunTime:0.000162s ]
+SQL: SET GLOBAL group_concat_max_len=102400 [ RunTime:0.000122s ]
+NOTIC: [8] Undefined variable: order /home/work/www/html/game/farms/ThinkPHP/Library/Org/Our/Matching.class.php 第 147 行.
+SQL: SELECT GROUP_CONCAT(money ORDER BY money desc ) as desc_money FROM `2018-02_pay` WHERE ( `state` < '2' ) AND ( `type` = 1 ) AND ( `seed` = '樱桃' ) AND ( `num` > '0' )  [ RunTime:0.000181s ]
+NOTIC: [8] Undefined offset: 0 /home/work/www/html/game/farms/ThinkPHP/Library/Org/Our/Matching.class.php 第 152 行.
+SQL: SELECT * FROM `2018-02_pay` WHERE ( state < 2 AND type =1 AND queue=0 AND num>0 AND seed="樱桃" ) ORDER BY money DESC  [ RunTime:0.000142s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `2018-02_pay` WHERE ( state < 2 AND type =1 AND queue=0 AND num>0 AND seed="樱桃" ) LIMIT 1   [ RunTime:0.000119s ]
+SQL: SET GLOBAL group_concat_max_len=102400 [ RunTime:0.000117s ]
+NOTIC: [8] Undefined variable: order /home/work/www/html/game/farms/ThinkPHP/Library/Org/Our/Matching.class.php 第 147 行.
+SQL: SELECT GROUP_CONCAT(money ORDER BY money desc ) as desc_money FROM `2018-02_pay` WHERE ( `state` < '2' ) AND ( `type` = 1 ) AND ( `seed` = '稻米' ) AND ( `num` > '0' )  [ RunTime:0.000205s ]
+NOTIC: [8] Undefined offset: 0 /home/work/www/html/game/farms/ThinkPHP/Library/Org/Our/Matching.class.php 第 152 行.
+SQL: SELECT * FROM `2018-02_pay` WHERE ( state < 2 AND type =1 AND queue=0 AND num>0 AND seed="稻米" ) ORDER BY money DESC  [ RunTime:0.000185s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `2018-02_pay` WHERE ( state < 2 AND type =1 AND queue=0 AND num>0 AND seed="稻米" ) LIMIT 1   [ RunTime:0.000162s ]
+SQL: SET GLOBAL group_concat_max_len=102400 [ RunTime:0.000101s ]
+NOTIC: [8] Undefined variable: order /home/work/www/html/game/farms/ThinkPHP/Library/Org/Our/Matching.class.php 第 147 行.
+SQL: SELECT GROUP_CONCAT(money ORDER BY money desc ) as desc_money FROM `2018-02_pay` WHERE ( `state` < '2' ) AND ( `type` = 1 ) AND ( `seed` = '葡萄' ) AND ( `num` > '0' )  [ RunTime:0.000173s ]
+NOTIC: [8] Undefined offset: 0 /home/work/www/html/game/farms/ThinkPHP/Library/Org/Our/Matching.class.php 第 152 行.
+SQL: SELECT * FROM `2018-02_pay` WHERE ( state < 2 AND type =1 AND queue=0 AND num>0 AND seed="葡萄" ) ORDER BY money DESC  [ RunTime:0.000148s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `2018-02_pay` WHERE ( state < 2 AND type =1 AND queue=0 AND num>0 AND seed="葡萄" ) LIMIT 1   [ RunTime:0.000131s ]
+SQL: SET GLOBAL group_concat_max_len=102400 [ RunTime:0.000070s ]
+NOTIC: [8] Undefined variable: order /home/work/www/html/game/farms/ThinkPHP/Library/Org/Our/Matching.class.php 第 147 行.
+SQL: SELECT GROUP_CONCAT(money ORDER BY money desc ) as desc_money FROM `2018-02_pay` WHERE ( `state` < '2' ) AND ( `type` = 1 ) AND ( `seed` = '番茄' ) AND ( `num` > '0' )  [ RunTime:0.000138s ]
+NOTIC: [8] Undefined offset: 0 /home/work/www/html/game/farms/ThinkPHP/Library/Org/Our/Matching.class.php 第 152 行.
+SQL: SELECT * FROM `2018-02_pay` WHERE ( state < 2 AND type =1 AND queue=0 AND num>0 AND seed="番茄" ) ORDER BY money DESC  [ RunTime:0.000141s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `2018-02_pay` WHERE ( state < 2 AND type =1 AND queue=0 AND num>0 AND seed="番茄" ) LIMIT 1   [ RunTime:0.000126s ]
+SQL: SET GLOBAL group_concat_max_len=102400 [ RunTime:0.000086s ]
+NOTIC: [8] Undefined variable: order /home/work/www/html/game/farms/ThinkPHP/Library/Org/Our/Matching.class.php 第 147 行.
+SQL: SELECT GROUP_CONCAT(money ORDER BY money desc ) as desc_money FROM `2018-02_pay` WHERE ( `state` < '2' ) AND ( `type` = 1 ) AND ( `seed` = '菠萝' ) AND ( `num` > '0' )  [ RunTime:0.000141s ]
+NOTIC: [8] Undefined offset: 0 /home/work/www/html/game/farms/ThinkPHP/Library/Org/Our/Matching.class.php 第 152 行.
+SQL: SELECT * FROM `2018-02_pay` WHERE ( state < 2 AND type =1 AND queue=0 AND num>0 AND seed="菠萝" ) ORDER BY money DESC  [ RunTime:0.000140s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `2018-02_pay` WHERE ( state < 2 AND type =1 AND queue=0 AND num>0 AND seed="菠萝" ) LIMIT 1   [ RunTime:0.000126s ]
+SQL: SET GLOBAL group_concat_max_len=102400 [ RunTime:0.000070s ]
+NOTIC: [8] Undefined variable: order /home/work/www/html/game/farms/ThinkPHP/Library/Org/Our/Matching.class.php 第 147 行.
+SQL: SELECT GROUP_CONCAT(money ORDER BY money desc ) as desc_money FROM `2018-02_pay` WHERE ( `state` < '2' ) AND ( `type` = 1 ) AND ( `seed` = '种子' ) AND ( `num` > '0' )  [ RunTime:0.000171s ]
+NOTIC: [8] Undefined offset: 0 /home/work/www/html/game/farms/ThinkPHP/Library/Org/Our/Matching.class.php 第 152 行.
+SQL: SELECT * FROM `2018-02_pay` WHERE ( state < 2 AND type =1 AND queue=0 AND num>0 AND seed="种子" ) ORDER BY money DESC  [ RunTime:0.000177s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `2018-02_pay` WHERE ( state < 2 AND type =1 AND queue=0 AND num>0 AND seed="种子" ) LIMIT 1   [ RunTime:0.000161s ]
+NOTIC: [2] unlink(/home/work/www/html/game/farms/app/Runtime/Temp/ea2b2676c28c0db26d39331a336c6b92.php): No such file or directory /home/work/www/html/game/farms/ThinkPHP/Library/Think/Cache/Driver/File.class.php 第 157 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000256s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000280s ]
+
+[ 2018-02-12T17:52:52+08:00 ]  
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000162s ]
+NOTIC: [8] Undefined index: REQUEST_URI /home/work/www/html/game/farms/ThinkPHP/Library/Think/Dispatcher.class.php 第 132 行.
+NOTIC: [8] Use of undefined constant __ROOT__ - assumed '__ROOT__' /home/work/www/html/game/farms/app/Home/Conf/config.php 第 6 行.
+NOTIC: [8] Use of undefined constant __ROOT__ - assumed '__ROOT__' /home/work/www/html/game/farms/app/Home/Conf/config.php 第 7 行.
+NOTIC: [8] Use of undefined constant __ROOT__ - assumed '__ROOT__' /home/work/www/html/game/farms/app/Home/Conf/config.php 第 8 行.
+NOTIC: [8] Use of undefined constant _PHP_FILE_ - assumed '_PHP_FILE_' /home/work/www/html/game/farms/ThinkPHP/Library/Think/Dispatcher.class.php 第 173 行.
+NOTIC: [8] Undefined index: REQUEST_METHOD /home/work/www/html/game/farms/ThinkPHP/Library/Think/App.class.php 第 30 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000180s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000201s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /home/work/www/html/game/farms/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+NOTIC: [2] mysql_connect(): Headers and client library minor version mismatch. Headers:50552 Library:50637 /home/work/www/html/game/farms/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `global_conf` [ RunTime:0.000378s ]
+SQL: SELECT * FROM `global_conf` WHERE ( cases="poundage" or cases="LimitPricePostion" )  [ RunTime:0.000165s ]
+SQL: SHOW COLUMNS FROM `seeds` [ RunTime:0.000281s ]
+SQL: SELECT * FROM `seeds` WHERE ( varieties!="摇钱树" AND state=0 ) ORDER BY id  [ RunTime:0.000175s ]
+SQL: SET GLOBAL group_concat_max_len=102400 [ RunTime:0.000035s ]
+SQL: SHOW COLUMNS FROM `2018-02_pay` [ RunTime:0.000328s ]
+NOTIC: [8] Undefined variable: order /home/work/www/html/game/farms/ThinkPHP/Library/Org/Our/Matching.class.php 第 147 行.
+SQL: SELECT GROUP_CONCAT(money ORDER BY money desc ) as desc_money FROM `2018-02_pay` WHERE ( `state` < '2' ) AND ( `type` = 1 ) AND ( `seed` = '土豆' ) AND ( `num` > '0' )  [ RunTime:0.000165s ]
+NOTIC: [8] Undefined variable: buy /home/work/www/html/game/farms/ThinkPHP/Library/Org/Our/Matching.class.php 第 152 行.
+SQL: SELECT * FROM `2018-02_pay` WHERE ( state < 2 AND type =1 AND queue=0 AND num>0 AND seed="土豆" ) ORDER BY money DESC  [ RunTime:0.000104s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `2018-02_pay` WHERE ( state < 2 AND type =1 AND queue=0 AND num>0 AND seed="土豆" ) LIMIT 1   [ RunTime:0.000105s ]
+SQL: SET GLOBAL group_concat_max_len=102400 [ RunTime:0.000094s ]
+NOTIC: [8] Undefined variable: order /home/work/www/html/game/farms/ThinkPHP/Library/Org/Our/Matching.class.php 第 147 行.
+SQL: SELECT GROUP_CONCAT(money ORDER BY money desc ) as desc_money FROM `2018-02_pay` WHERE ( `state` < '2' ) AND ( `type` = 1 ) AND ( `seed` = '草莓' ) AND ( `num` > '0' )  [ RunTime:0.000228s ]
+NOTIC: [8] Undefined offset: 0 /home/work/www/html/game/farms/ThinkPHP/Library/Org/Our/Matching.class.php 第 152 行.
+SQL: SELECT * FROM `2018-02_pay` WHERE ( state < 2 AND type =1 AND queue=0 AND num>0 AND seed="草莓" ) ORDER BY money DESC  [ RunTime:0.000204s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `2018-02_pay` WHERE ( state < 2 AND type =1 AND queue=0 AND num>0 AND seed="草莓" ) LIMIT 1   [ RunTime:0.000130s ]
+SQL: SET GLOBAL group_concat_max_len=102400 [ RunTime:0.000034s ]
+NOTIC: [8] Undefined variable: order /home/work/www/html/game/farms/ThinkPHP/Library/Org/Our/Matching.class.php 第 147 行.
+SQL: SELECT GROUP_CONCAT(money ORDER BY money desc ) as desc_money FROM `2018-02_pay` WHERE ( `state` < '2' ) AND ( `type` = 1 ) AND ( `seed` = '樱桃' ) AND ( `num` > '0' )  [ RunTime:0.000093s ]
+NOTIC: [8] Undefined offset: 0 /home/work/www/html/game/farms/ThinkPHP/Library/Org/Our/Matching.class.php 第 152 行.
+SQL: SELECT * FROM `2018-02_pay` WHERE ( state < 2 AND type =1 AND queue=0 AND num>0 AND seed="樱桃" ) ORDER BY money DESC  [ RunTime:0.000094s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `2018-02_pay` WHERE ( state < 2 AND type =1 AND queue=0 AND num>0 AND seed="樱桃" ) LIMIT 1   [ RunTime:0.000079s ]
+SQL: SET GLOBAL group_concat_max_len=102400 [ RunTime:0.000031s ]
+NOTIC: [8] Undefined variable: order /home/work/www/html/game/farms/ThinkPHP/Library/Org/Our/Matching.class.php 第 147 行.
+SQL: SELECT GROUP_CONCAT(money ORDER BY money desc ) as desc_money FROM `2018-02_pay` WHERE ( `state` < '2' ) AND ( `type` = 1 ) AND ( `seed` = '稻米' ) AND ( `num` > '0' )  [ RunTime:0.000090s ]
+NOTIC: [8] Undefined offset: 0 /home/work/www/html/game/farms/ThinkPHP/Library/Org/Our/Matching.class.php 第 152 行.
+SQL: SELECT * FROM `2018-02_pay` WHERE ( state < 2 AND type =1 AND queue=0 AND num>0 AND seed="稻米" ) ORDER BY money DESC  [ RunTime:0.000152s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `2018-02_pay` WHERE ( state < 2 AND type =1 AND queue=0 AND num>0 AND seed="稻米" ) LIMIT 1   [ RunTime:0.000131s ]
+SQL: SET GLOBAL group_concat_max_len=102400 [ RunTime:0.000068s ]
+NOTIC: [8] Undefined variable: order /home/work/www/html/game/farms/ThinkPHP/Library/Org/Our/Matching.class.php 第 147 行.
+SQL: SELECT GROUP_CONCAT(money ORDER BY money desc ) as desc_money FROM `2018-02_pay` WHERE ( `state` < '2' ) AND ( `type` = 1 ) AND ( `seed` = '葡萄' ) AND ( `num` > '0' )  [ RunTime:0.000142s ]
+NOTIC: [8] Undefined offset: 0 /home/work/www/html/game/farms/ThinkPHP/Library/Org/Our/Matching.class.php 第 152 行.
+SQL: SELECT * FROM `2018-02_pay` WHERE ( state < 2 AND type =1 AND queue=0 AND num>0 AND seed="葡萄" ) ORDER BY money DESC  [ RunTime:0.000143s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `2018-02_pay` WHERE ( state < 2 AND type =1 AND queue=0 AND num>0 AND seed="葡萄" ) LIMIT 1   [ RunTime:0.000146s ]
+SQL: SET GLOBAL group_concat_max_len=102400 [ RunTime:0.000139s ]
+NOTIC: [8] Undefined variable: order /home/work/www/html/game/farms/ThinkPHP/Library/Org/Our/Matching.class.php 第 147 行.
+SQL: SELECT GROUP_CONCAT(money ORDER BY money desc ) as desc_money FROM `2018-02_pay` WHERE ( `state` < '2' ) AND ( `type` = 1 ) AND ( `seed` = '番茄' ) AND ( `num` > '0' )  [ RunTime:0.000215s ]
+NOTIC: [8] Undefined offset: 0 /home/work/www/html/game/farms/ThinkPHP/Library/Org/Our/Matching.class.php 第 152 行.
+SQL: SELECT * FROM `2018-02_pay` WHERE ( state < 2 AND type =1 AND queue=0 AND num>0 AND seed="番茄" ) ORDER BY money DESC  [ RunTime:0.000201s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `2018-02_pay` WHERE ( state < 2 AND type =1 AND queue=0 AND num>0 AND seed="番茄" ) LIMIT 1   [ RunTime:0.000169s ]
+SQL: SET GLOBAL group_concat_max_len=102400 [ RunTime:0.000113s ]
+NOTIC: [8] Undefined variable: order /home/work/www/html/game/farms/ThinkPHP/Library/Org/Our/Matching.class.php 第 147 行.
+SQL: SELECT GROUP_CONCAT(money ORDER BY money desc ) as desc_money FROM `2018-02_pay` WHERE ( `state` < '2' ) AND ( `type` = 1 ) AND ( `seed` = '菠萝' ) AND ( `num` > '0' )  [ RunTime:0.000201s ]
+NOTIC: [8] Undefined offset: 0 /home/work/www/html/game/farms/ThinkPHP/Library/Org/Our/Matching.class.php 第 152 行.
+SQL: SELECT * FROM `2018-02_pay` WHERE ( state < 2 AND type =1 AND queue=0 AND num>0 AND seed="菠萝" ) ORDER BY money DESC  [ RunTime:0.000179s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `2018-02_pay` WHERE ( state < 2 AND type =1 AND queue=0 AND num>0 AND seed="菠萝" ) LIMIT 1   [ RunTime:0.000170s ]
+SQL: SET GLOBAL group_concat_max_len=102400 [ RunTime:0.000106s ]
+NOTIC: [8] Undefined variable: order /home/work/www/html/game/farms/ThinkPHP/Library/Org/Our/Matching.class.php 第 147 行.
+SQL: SELECT GROUP_CONCAT(money ORDER BY money desc ) as desc_money FROM `2018-02_pay` WHERE ( `state` < '2' ) AND ( `type` = 1 ) AND ( `seed` = '种子' ) AND ( `num` > '0' )  [ RunTime:0.000179s ]
+NOTIC: [8] Undefined offset: 0 /home/work/www/html/game/farms/ThinkPHP/Library/Org/Our/Matching.class.php 第 152 行.
+SQL: SELECT * FROM `2018-02_pay` WHERE ( state < 2 AND type =1 AND queue=0 AND num>0 AND seed="种子" ) ORDER BY money DESC  [ RunTime:0.000178s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `2018-02_pay` WHERE ( state < 2 AND type =1 AND queue=0 AND num>0 AND seed="种子" ) LIMIT 1   [ RunTime:0.000170s ]
+NOTIC: [2] unlink(/home/work/www/html/game/farms/app/Runtime/Temp/ea2b2676c28c0db26d39331a336c6b92.php): No such file or directory /home/work/www/html/game/farms/ThinkPHP/Library/Think/Cache/Driver/File.class.php 第 157 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000233s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000254s ]
+
+[ 2018-02-12T17:52:57+08:00 ]  
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000165s ]
+NOTIC: [8] Undefined index: REQUEST_URI /home/work/www/html/game/farms/ThinkPHP/Library/Think/Dispatcher.class.php 第 132 行.
+NOTIC: [8] Use of undefined constant __ROOT__ - assumed '__ROOT__' /home/work/www/html/game/farms/app/Home/Conf/config.php 第 6 行.
+NOTIC: [8] Use of undefined constant __ROOT__ - assumed '__ROOT__' /home/work/www/html/game/farms/app/Home/Conf/config.php 第 7 行.
+NOTIC: [8] Use of undefined constant __ROOT__ - assumed '__ROOT__' /home/work/www/html/game/farms/app/Home/Conf/config.php 第 8 行.
+NOTIC: [8] Use of undefined constant _PHP_FILE_ - assumed '_PHP_FILE_' /home/work/www/html/game/farms/ThinkPHP/Library/Think/Dispatcher.class.php 第 173 行.
+NOTIC: [8] Undefined index: REQUEST_METHOD /home/work/www/html/game/farms/ThinkPHP/Library/Think/App.class.php 第 30 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000183s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000204s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /home/work/www/html/game/farms/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+NOTIC: [2] mysql_connect(): Headers and client library minor version mismatch. Headers:50552 Library:50637 /home/work/www/html/game/farms/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `global_conf` [ RunTime:0.000332s ]
+SQL: SELECT * FROM `global_conf` WHERE ( cases="poundage" or cases="LimitPricePostion" )  [ RunTime:0.000160s ]
+SQL: SHOW COLUMNS FROM `seeds` [ RunTime:0.000279s ]
+SQL: SELECT * FROM `seeds` WHERE ( varieties!="摇钱树" AND state=0 ) ORDER BY id  [ RunTime:0.000178s ]
+SQL: SET GLOBAL group_concat_max_len=102400 [ RunTime:0.000035s ]
+SQL: SHOW COLUMNS FROM `2018-02_pay` [ RunTime:0.000346s ]
+NOTIC: [8] Undefined variable: order /home/work/www/html/game/farms/ThinkPHP/Library/Org/Our/Matching.class.php 第 147 行.
+SQL: SELECT GROUP_CONCAT(money ORDER BY money desc ) as desc_money FROM `2018-02_pay` WHERE ( `state` < '2' ) AND ( `type` = 1 ) AND ( `seed` = '土豆' ) AND ( `num` > '0' )  [ RunTime:0.000166s ]
+NOTIC: [8] Undefined variable: buy /home/work/www/html/game/farms/ThinkPHP/Library/Org/Our/Matching.class.php 第 152 行.
+SQL: SELECT * FROM `2018-02_pay` WHERE ( state < 2 AND type =1 AND queue=0 AND num>0 AND seed="土豆" ) ORDER BY money DESC  [ RunTime:0.000145s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `2018-02_pay` WHERE ( state < 2 AND type =1 AND queue=0 AND num>0 AND seed="土豆" ) LIMIT 1   [ RunTime:0.000141s ]
+SQL: SET GLOBAL group_concat_max_len=102400 [ RunTime:0.000088s ]
+NOTIC: [8] Undefined variable: order /home/work/www/html/game/farms/ThinkPHP/Library/Org/Our/Matching.class.php 第 147 行.
+SQL: SELECT GROUP_CONCAT(money ORDER BY money desc ) as desc_money FROM `2018-02_pay` WHERE ( `state` < '2' ) AND ( `type` = 1 ) AND ( `seed` = '草莓' ) AND ( `num` > '0' )  [ RunTime:0.000137s ]
+NOTIC: [8] Undefined offset: 0 /home/work/www/html/game/farms/ThinkPHP/Library/Org/Our/Matching.class.php 第 152 行.
+SQL: SELECT * FROM `2018-02_pay` WHERE ( state < 2 AND type =1 AND queue=0 AND num>0 AND seed="草莓" ) ORDER BY money DESC  [ RunTime:0.000134s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `2018-02_pay` WHERE ( state < 2 AND type =1 AND queue=0 AND num>0 AND seed="草莓" ) LIMIT 1   [ RunTime:0.000087s ]
+SQL: SET GLOBAL group_concat_max_len=102400 [ RunTime:0.000068s ]
+NOTIC: [8] Undefined variable: order /home/work/www/html/game/farms/ThinkPHP/Library/Org/Our/Matching.class.php 第 147 行.
+SQL: SELECT GROUP_CONCAT(money ORDER BY money desc ) as desc_money FROM `2018-02_pay` WHERE ( `state` < '2' ) AND ( `type` = 1 ) AND ( `seed` = '樱桃' ) AND ( `num` > '0' )  [ RunTime:0.000138s ]
+NOTIC: [8] Undefined offset: 0 /home/work/www/html/game/farms/ThinkPHP/Library/Org/Our/Matching.class.php 第 152 行.
+SQL: SELECT * FROM `2018-02_pay` WHERE ( state < 2 AND type =1 AND queue=0 AND num>0 AND seed="樱桃" ) ORDER BY money DESC  [ RunTime:0.000141s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `2018-02_pay` WHERE ( state < 2 AND type =1 AND queue=0 AND num>0 AND seed="樱桃" ) LIMIT 1   [ RunTime:0.000126s ]
+SQL: SET GLOBAL group_concat_max_len=102400 [ RunTime:0.000061s ]
+NOTIC: [8] Undefined variable: order /home/work/www/html/game/farms/ThinkPHP/Library/Org/Our/Matching.class.php 第 147 行.
+SQL: SELECT GROUP_CONCAT(money ORDER BY money desc ) as desc_money FROM `2018-02_pay` WHERE ( `state` < '2' ) AND ( `type` = 1 ) AND ( `seed` = '稻米' ) AND ( `num` > '0' )  [ RunTime:0.000175s ]
+NOTIC: [8] Undefined offset: 0 /home/work/www/html/game/farms/ThinkPHP/Library/Org/Our/Matching.class.php 第 152 行.
+SQL: SELECT * FROM `2018-02_pay` WHERE ( state < 2 AND type =1 AND queue=0 AND num>0 AND seed="稻米" ) ORDER BY money DESC  [ RunTime:0.000139s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `2018-02_pay` WHERE ( state < 2 AND type =1 AND queue=0 AND num>0 AND seed="稻米" ) LIMIT 1   [ RunTime:0.000123s ]
+SQL: SET GLOBAL group_concat_max_len=102400 [ RunTime:0.000071s ]
+NOTIC: [8] Undefined variable: order /home/work/www/html/game/farms/ThinkPHP/Library/Org/Our/Matching.class.php 第 147 行.
+SQL: SELECT GROUP_CONCAT(money ORDER BY money desc ) as desc_money FROM `2018-02_pay` WHERE ( `state` < '2' ) AND ( `type` = 1 ) AND ( `seed` = '葡萄' ) AND ( `num` > '0' )  [ RunTime:0.000122s ]
+NOTIC: [8] Undefined offset: 0 /home/work/www/html/game/farms/ThinkPHP/Library/Org/Our/Matching.class.php 第 152 行.
+SQL: SELECT * FROM `2018-02_pay` WHERE ( state < 2 AND type =1 AND queue=0 AND num>0 AND seed="葡萄" ) ORDER BY money DESC  [ RunTime:0.000159s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `2018-02_pay` WHERE ( state < 2 AND type =1 AND queue=0 AND num>0 AND seed="葡萄" ) LIMIT 1   [ RunTime:0.000118s ]
+SQL: SET GLOBAL group_concat_max_len=102400 [ RunTime:0.000072s ]
+NOTIC: [8] Undefined variable: order /home/work/www/html/game/farms/ThinkPHP/Library/Org/Our/Matching.class.php 第 147 行.
+SQL: SELECT GROUP_CONCAT(money ORDER BY money desc ) as desc_money FROM `2018-02_pay` WHERE ( `state` < '2' ) AND ( `type` = 1 ) AND ( `seed` = '番茄' ) AND ( `num` > '0' )  [ RunTime:0.000129s ]
+NOTIC: [8] Undefined offset: 0 /home/work/www/html/game/farms/ThinkPHP/Library/Org/Our/Matching.class.php 第 152 行.
+SQL: SELECT * FROM `2018-02_pay` WHERE ( state < 2 AND type =1 AND queue=0 AND num>0 AND seed="番茄" ) ORDER BY money DESC  [ RunTime:0.000138s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `2018-02_pay` WHERE ( state < 2 AND type =1 AND queue=0 AND num>0 AND seed="番茄" ) LIMIT 1   [ RunTime:0.000130s ]
+SQL: SET GLOBAL group_concat_max_len=102400 [ RunTime:0.000092s ]
+NOTIC: [8] Undefined variable: order /home/work/www/html/game/farms/ThinkPHP/Library/Org/Our/Matching.class.php 第 147 行.
+SQL: SELECT GROUP_CONCAT(money ORDER BY money desc ) as desc_money FROM `2018-02_pay` WHERE ( `state` < '2' ) AND ( `type` = 1 ) AND ( `seed` = '菠萝' ) AND ( `num` > '0' )  [ RunTime:0.000147s ]
+NOTIC: [8] Undefined offset: 0 /home/work/www/html/game/farms/ThinkPHP/Library/Org/Our/Matching.class.php 第 152 行.
+SQL: SELECT * FROM `2018-02_pay` WHERE ( state < 2 AND type =1 AND queue=0 AND num>0 AND seed="菠萝" ) ORDER BY money DESC  [ RunTime:0.000148s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `2018-02_pay` WHERE ( state < 2 AND type =1 AND queue=0 AND num>0 AND seed="菠萝" ) LIMIT 1   [ RunTime:0.000086s ]
+SQL: SET GLOBAL group_concat_max_len=102400 [ RunTime:0.000102s ]
+NOTIC: [8] Undefined variable: order /home/work/www/html/game/farms/ThinkPHP/Library/Org/Our/Matching.class.php 第 147 行.
+SQL: SELECT GROUP_CONCAT(money ORDER BY money desc ) as desc_money FROM `2018-02_pay` WHERE ( `state` < '2' ) AND ( `type` = 1 ) AND ( `seed` = '种子' ) AND ( `num` > '0' )  [ RunTime:0.000193s ]
+NOTIC: [8] Undefined offset: 0 /home/work/www/html/game/farms/ThinkPHP/Library/Org/Our/Matching.class.php 第 152 行.
+SQL: SELECT * FROM `2018-02_pay` WHERE ( state < 2 AND type =1 AND queue=0 AND num>0 AND seed="种子" ) ORDER BY money DESC  [ RunTime:0.000149s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `2018-02_pay` WHERE ( state < 2 AND type =1 AND queue=0 AND num>0 AND seed="种子" ) LIMIT 1   [ RunTime:0.000130s ]
+NOTIC: [2] unlink(/home/work/www/html/game/farms/app/Runtime/Temp/ea2b2676c28c0db26d39331a336c6b92.php): No such file or directory /home/work/www/html/game/farms/ThinkPHP/Library/Think/Cache/Driver/File.class.php 第 157 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000232s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000254s ]
+
+[ 2018-02-12T17:53:01+08:00 ]  
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000158s ]
+NOTIC: [8] Undefined index: REQUEST_URI /home/work/www/html/game/farms/ThinkPHP/Library/Think/Dispatcher.class.php 第 132 行.
+NOTIC: [8] Use of undefined constant __ROOT__ - assumed '__ROOT__' /home/work/www/html/game/farms/app/Home/Conf/config.php 第 6 行.
+NOTIC: [8] Use of undefined constant __ROOT__ - assumed '__ROOT__' /home/work/www/html/game/farms/app/Home/Conf/config.php 第 7 行.
+NOTIC: [8] Use of undefined constant __ROOT__ - assumed '__ROOT__' /home/work/www/html/game/farms/app/Home/Conf/config.php 第 8 行.
+NOTIC: [8] Use of undefined constant _PHP_FILE_ - assumed '_PHP_FILE_' /home/work/www/html/game/farms/ThinkPHP/Library/Think/Dispatcher.class.php 第 173 行.
+NOTIC: [8] Undefined index: REQUEST_METHOD /home/work/www/html/game/farms/ThinkPHP/Library/Think/App.class.php 第 30 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000181s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000201s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /home/work/www/html/game/farms/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+NOTIC: [2] mysql_connect(): Headers and client library minor version mismatch. Headers:50552 Library:50637 /home/work/www/html/game/farms/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `seeds` [ RunTime:0.000372s ]
+SQL: SHOW COLUMNS FROM `statistical` [ RunTime:0.000312s ]
+SQL: SELECT `name` FROM `statistical`  [ RunTime:0.000121s ]
+SQL: SELECT `varieties`,`first_time`,`second_time`,`third_time` FROM `seeds` WHERE ( varieties!="种子" )  [ RunTime:0.000133s ]
+SQL: SHOW COLUMNS FROM `150_planting_record` [ RunTime:0.000292s ]
+SQL: SELECT * FROM `150_planting_record` WHERE ( seed_type="土豆" and seed_state<3 )  [ RunTime:0.000253s ]
+SQL: SELECT * FROM `150_planting_record` WHERE ( seed_type="草莓" and seed_state<3 )  [ RunTime:0.000176s ]
+SQL: SELECT * FROM `150_planting_record` WHERE ( seed_type="樱桃" and seed_state<3 )  [ RunTime:0.000166s ]
+SQL: SELECT * FROM `150_planting_record` WHERE ( seed_type="稻米" and seed_state<3 )  [ RunTime:0.000148s ]
+SQL: SELECT * FROM `150_planting_record` WHERE ( seed_type="葡萄" and seed_state<3 )  [ RunTime:0.000205s ]
+SQL: SELECT * FROM `150_planting_record` WHERE ( seed_type="番茄" and seed_state<3 )  [ RunTime:0.000159s ]
+SQL: SELECT * FROM `150_planting_record` WHERE ( seed_type="摇钱树" and seed_state<3 )  [ RunTime:0.000143s ]
+SQL: SELECT * FROM `150_planting_record` WHERE ( seed_type="菠萝" and seed_state<3 )  [ RunTime:0.000151s ]
+SQL: SELECT * FROM `150_planting_record` WHERE ( seed_type="蓝莓" and seed_state<3 )  [ RunTime:0.000122s ]
+SQL: SELECT * FROM `150_planting_record` WHERE ( seed_type="榴莲" and seed_state<3 )  [ RunTime:0.000196s ]
+SQL: SHOW COLUMNS FROM `176_planting_record` [ RunTime:0.000288s ]
+SQL: SELECT * FROM `176_planting_record` WHERE ( seed_type="土豆" and seed_state<3 )  [ RunTime:0.000170s ]
+SQL: SELECT * FROM `176_planting_record` WHERE ( seed_type="草莓" and seed_state<3 )  [ RunTime:0.000151s ]
+SQL: SELECT * FROM `176_planting_record` WHERE ( seed_type="樱桃" and seed_state<3 )  [ RunTime:0.000170s ]
+SQL: SELECT * FROM `176_planting_record` WHERE ( seed_type="稻米" and seed_state<3 )  [ RunTime:0.000109s ]
+SQL: SELECT * FROM `176_planting_record` WHERE ( seed_type="葡萄" and seed_state<3 )  [ RunTime:0.000101s ]
+SQL: SELECT * FROM `176_planting_record` WHERE ( seed_type="番茄" and seed_state<3 )  [ RunTime:0.000101s ]
+SQL: SELECT * FROM `176_planting_record` WHERE ( seed_type="摇钱树" and seed_state<3 )  [ RunTime:0.000086s ]
+SQL: SELECT * FROM `176_planting_record` WHERE ( seed_type="菠萝" and seed_state<3 )  [ RunTime:0.000096s ]
+SQL: SELECT * FROM `176_planting_record` WHERE ( seed_type="蓝莓" and seed_state<3 )  [ RunTime:0.000145s ]
+SQL: SELECT * FROM `176_planting_record` WHERE ( seed_type="榴莲" and seed_state<3 )  [ RunTime:0.000161s ]
+SQL: SHOW COLUMNS FROM `138_planting_record` [ RunTime:0.000304s ]
+SQL: SELECT * FROM `138_planting_record` WHERE ( seed_type="土豆" and seed_state<3 )  [ RunTime:0.000179s ]
+SQL: SELECT * FROM `138_planting_record` WHERE ( seed_type="草莓" and seed_state<3 )  [ RunTime:0.000256s ]
+SQL: SELECT * FROM `138_planting_record` WHERE ( seed_type="樱桃" and seed_state<3 )  [ RunTime:0.000167s ]
+SQL: SELECT * FROM `138_planting_record` WHERE ( seed_type="稻米" and seed_state<3 )  [ RunTime:0.000164s ]
+SQL: SELECT * FROM `138_planting_record` WHERE ( seed_type="葡萄" and seed_state<3 )  [ RunTime:0.000164s ]
+SQL: SELECT * FROM `138_planting_record` WHERE ( seed_type="番茄" and seed_state<3 )  [ RunTime:0.000176s ]
+SQL: SELECT * FROM `138_planting_record` WHERE ( seed_type="摇钱树" and seed_state<3 )  [ RunTime:0.000168s ]
+SQL: SELECT * FROM `138_planting_record` WHERE ( seed_type="菠萝" and seed_state<3 )  [ RunTime:0.000159s ]
+SQL: SELECT * FROM `138_planting_record` WHERE ( seed_type="蓝莓" and seed_state<3 )  [ RunTime:0.000140s ]
+SQL: SELECT * FROM `138_planting_record` WHERE ( seed_type="榴莲" and seed_state<3 )  [ RunTime:0.000138s ]
+SQL: SHOW COLUMNS FROM `173_planting_record` [ RunTime:0.000304s ]
+SQL: SELECT * FROM `173_planting_record` WHERE ( seed_type="土豆" and seed_state<3 )  [ RunTime:0.000174s ]
+SQL: SELECT * FROM `173_planting_record` WHERE ( seed_type="草莓" and seed_state<3 )  [ RunTime:0.000160s ]
+SQL: SELECT * FROM `173_planting_record` WHERE ( seed_type="樱桃" and seed_state<3 )  [ RunTime:0.000156s ]
+SQL: SELECT * FROM `173_planting_record` WHERE ( seed_type="稻米" and seed_state<3 )  [ RunTime:0.000198s ]
+SQL: SELECT * FROM `173_planting_record` WHERE ( seed_type="葡萄" and seed_state<3 )  [ RunTime:0.000191s ]
+SQL: SELECT * FROM `173_planting_record` WHERE ( seed_type="番茄" and seed_state<3 )  [ RunTime:0.000190s ]
+SQL: SELECT * FROM `173_planting_record` WHERE ( seed_type="摇钱树" and seed_state<3 )  [ RunTime:0.000173s ]
+SQL: SELECT * FROM `173_planting_record` WHERE ( seed_type="菠萝" and seed_state<3 )  [ RunTime:0.000184s ]
+SQL: SELECT * FROM `173_planting_record` WHERE ( seed_type="蓝莓" and seed_state<3 )  [ RunTime:0.000171s ]
+SQL: SELECT * FROM `173_planting_record` WHERE ( seed_type="榴莲" and seed_state<3 )  [ RunTime:0.000178s ]
+SQL: SHOW COLUMNS FROM `130_planting_record` [ RunTime:0.000322s ]
+SQL: SELECT * FROM `130_planting_record` WHERE ( seed_type="土豆" and seed_state<3 )  [ RunTime:0.000196s ]
+SQL: SELECT * FROM `130_planting_record` WHERE ( seed_type="草莓" and seed_state<3 )  [ RunTime:0.000164s ]
+SQL: SELECT * FROM `130_planting_record` WHERE ( seed_type="樱桃" and seed_state<3 )  [ RunTime:0.000150s ]
+SQL: SELECT * FROM `130_planting_record` WHERE ( seed_type="稻米" and seed_state<3 )  [ RunTime:0.000146s ]
+SQL: SELECT * FROM `130_planting_record` WHERE ( seed_type="葡萄" and seed_state<3 )  [ RunTime:0.000193s ]
+SQL: SELECT * FROM `130_planting_record` WHERE ( seed_type="番茄" and seed_state<3 )  [ RunTime:0.000195s ]
+SQL: SELECT * FROM `130_planting_record` WHERE ( seed_type="摇钱树" and seed_state<3 )  [ RunTime:0.000172s ]
+SQL: SELECT * FROM `130_planting_record` WHERE ( seed_type="菠萝" and seed_state<3 )  [ RunTime:0.000185s ]
+SQL: SELECT * FROM `130_planting_record` WHERE ( seed_type="蓝莓" and seed_state<3 )  [ RunTime:0.000173s ]
+SQL: SELECT * FROM `130_planting_record` WHERE ( seed_type="榴莲" and seed_state<3 )  [ RunTime:0.000176s ]
+SQL: SHOW COLUMNS FROM `188_planting_record` [ RunTime:0.000325s ]
+SQL: SELECT * FROM `188_planting_record` WHERE ( seed_type="土豆" and seed_state<3 )  [ RunTime:0.000205s ]
+SQL: SELECT * FROM `188_planting_record` WHERE ( seed_type="草莓" and seed_state<3 )  [ RunTime:0.000155s ]
+SQL: SELECT * FROM `188_planting_record` WHERE ( seed_type="樱桃" and seed_state<3 )  [ RunTime:0.000147s ]
+SQL: SELECT * FROM `188_planting_record` WHERE ( seed_type="稻米" and seed_state<3 )  [ RunTime:0.000143s ]
+SQL: SELECT * FROM `188_planting_record` WHERE ( seed_type="葡萄" and seed_state<3 )  [ RunTime:0.000125s ]
+SQL: SELECT * FROM `188_planting_record` WHERE ( seed_type="番茄" and seed_state<3 )  [ RunTime:0.000135s ]
+SQL: SELECT * FROM `188_planting_record` WHERE ( seed_type="摇钱树" and seed_state<3 )  [ RunTime:0.000153s ]
+SQL: SELECT * FROM `188_planting_record` WHERE ( seed_type="菠萝" and seed_state<3 )  [ RunTime:0.000134s ]
+SQL: SELECT * FROM `188_planting_record` WHERE ( seed_type="蓝莓" and seed_state<3 )  [ RunTime:0.000125s ]
+SQL: SELECT * FROM `188_planting_record` WHERE ( seed_type="榴莲" and seed_state<3 )  [ RunTime:0.000123s ]
+SQL: SHOW COLUMNS FROM `186_planting_record` [ RunTime:0.000288s ]
+SQL: SELECT * FROM `186_planting_record` WHERE ( seed_type="土豆" and seed_state<3 )  [ RunTime:0.000170s ]
+SQL: SELECT * FROM `186_planting_record` WHERE ( seed_type="草莓" and seed_state<3 )  [ RunTime:0.000154s ]
+SQL: SELECT * FROM `186_planting_record` WHERE ( seed_type="樱桃" and seed_state<3 )  [ RunTime:0.000143s ]
+SQL: SELECT * FROM `186_planting_record` WHERE ( seed_type="稻米" and seed_state<3 )  [ RunTime:0.000148s ]
+SQL: SELECT * FROM `186_planting_record` WHERE ( seed_type="葡萄" and seed_state<3 )  [ RunTime:0.000172s ]
+SQL: SELECT * FROM `186_planting_record` WHERE ( seed_type="番茄" and seed_state<3 )  [ RunTime:0.000137s ]
+SQL: SELECT * FROM `186_planting_record` WHERE ( seed_type="摇钱树" and seed_state<3 )  [ RunTime:0.000124s ]
+SQL: SELECT * FROM `186_planting_record` WHERE ( seed_type="菠萝" and seed_state<3 )  [ RunTime:0.000124s ]
+SQL: SELECT * FROM `186_planting_record` WHERE ( seed_type="蓝莓" and seed_state<3 )  [ RunTime:0.000123s ]
+SQL: SELECT * FROM `186_planting_record` WHERE ( seed_type="榴莲" and seed_state<3 )  [ RunTime:0.000150s ]
+SQL: SHOW COLUMNS FROM `156_planting_record` [ RunTime:0.000280s ]
+SQL: SELECT * FROM `156_planting_record` WHERE ( seed_type="土豆" and seed_state<3 )  [ RunTime:0.000161s ]
+SQL: SELECT * FROM `156_planting_record` WHERE ( seed_type="草莓" and seed_state<3 )  [ RunTime:0.000156s ]
+SQL: SELECT * FROM `156_planting_record` WHERE ( seed_type="樱桃" and seed_state<3 )  [ RunTime:0.000166s ]
+SQL: SELECT * FROM `156_planting_record` WHERE ( seed_type="稻米" and seed_state<3 )  [ RunTime:0.000146s ]
+SQL: SELECT * FROM `156_planting_record` WHERE ( seed_type="葡萄" and seed_state<3 )  [ RunTime:0.000139s ]
+SQL: SELECT * FROM `156_planting_record` WHERE ( seed_type="番茄" and seed_state<3 )  [ RunTime:0.000138s ]
+SQL: SELECT * FROM `156_planting_record` WHERE ( seed_type="摇钱树" and seed_state<3 )  [ RunTime:0.000128s ]
+SQL: SELECT * FROM `156_planting_record` WHERE ( seed_type="菠萝" and seed_state<3 )  [ RunTime:0.000221s ]
+SQL: SELECT * FROM `156_planting_record` WHERE ( seed_type="蓝莓" and seed_state<3 )  [ RunTime:0.000185s ]
+SQL: SELECT * FROM `156_planting_record` WHERE ( seed_type="榴莲" and seed_state<3 )  [ RunTime:0.000181s ]
+SQL: SHOW COLUMNS FROM `158_planting_record` [ RunTime:0.000340s ]
+SQL: SELECT * FROM `158_planting_record` WHERE ( seed_type="土豆" and seed_state<3 )  [ RunTime:0.000181s ]
+SQL: SELECT * FROM `158_planting_record` WHERE ( seed_type="草莓" and seed_state<3 )  [ RunTime:0.000155s ]
+SQL: SELECT * FROM `158_planting_record` WHERE ( seed_type="樱桃" and seed_state<3 )  [ RunTime:0.000148s ]
+SQL: SELECT * FROM `158_planting_record` WHERE ( seed_type="稻米" and seed_state<3 )  [ RunTime:0.000215s ]
+SQL: SELECT * FROM `158_planting_record` WHERE ( seed_type="葡萄" and seed_state<3 )  [ RunTime:0.000200s ]
+SQL: SELECT * FROM `158_planting_record` WHERE ( seed_type="番茄" and seed_state<3 )  [ RunTime:0.000197s ]
+SQL: SELECT * FROM `158_planting_record` WHERE ( seed_type="摇钱树" and seed_state<3 )  [ RunTime:0.000179s ]
+SQL: SELECT * FROM `158_planting_record` WHERE ( seed_type="菠萝" and seed_state<3 )  [ RunTime:0.000192s ]
+SQL: SELECT * FROM `158_planting_record` WHERE ( seed_type="蓝莓" and seed_state<3 )  [ RunTime:0.000178s ]
+SQL: SELECT * FROM `158_planting_record` WHERE ( seed_type="榴莲" and seed_state<3 )  [ RunTime:0.000177s ]
+SQL: SHOW COLUMNS FROM `139_planting_record` [ RunTime:0.000326s ]
+SQL: SELECT * FROM `139_planting_record` WHERE ( seed_type="土豆" and seed_state<3 )  [ RunTime:0.000202s ]
+SQL: SELECT * FROM `139_planting_record` WHERE ( seed_type="草莓" and seed_state<3 )  [ RunTime:0.000163s ]
+SQL: SELECT * FROM `139_planting_record` WHERE ( seed_type="樱桃" and seed_state<3 )  [ RunTime:0.000154s ]
+SQL: SELECT * FROM `139_planting_record` WHERE ( seed_type="稻米" and seed_state<3 )  [ RunTime:0.000152s ]
+SQL: SELECT * FROM `139_planting_record` WHERE ( seed_type="葡萄" and seed_state<3 )  [ RunTime:0.000196s ]
+SQL: SELECT * FROM `139_planting_record` WHERE ( seed_type="番茄" and seed_state<3 )  [ RunTime:0.000193s ]
+SQL: SELECT * FROM `139_planting_record` WHERE ( seed_type="摇钱树" and seed_state<3 )  [ RunTime:0.000178s ]
+SQL: SELECT * FROM `139_planting_record` WHERE ( seed_type="菠萝" and seed_state<3 )  [ RunTime:0.000196s ]
+SQL: SELECT * FROM `139_planting_record` WHERE ( seed_type="蓝莓" and seed_state<3 )  [ RunTime:0.000179s ]
+SQL: SELECT * FROM `139_planting_record` WHERE ( seed_type="榴莲" and seed_state<3 )  [ RunTime:0.000179s ]
+SQL: SHOW COLUMNS FROM `180_planting_record` [ RunTime:0.000323s ]
+SQL: SELECT * FROM `180_planting_record` WHERE ( seed_type="土豆" and seed_state<3 )  [ RunTime:0.000213s ]
+SQL: SELECT * FROM `180_planting_record` WHERE ( seed_type="草莓" and seed_state<3 )  [ RunTime:0.000155s ]
+SQL: SELECT * FROM `180_planting_record` WHERE ( seed_type="樱桃" and seed_state<3 )  [ RunTime:0.000149s ]
+SQL: SELECT * FROM `180_planting_record` WHERE ( seed_type="稻米" and seed_state<3 )  [ RunTime:0.000138s ]
+SQL: SELECT * FROM `180_planting_record` WHERE ( seed_type="葡萄" and seed_state<3 )  [ RunTime:0.000142s ]
+SQL: SELECT * FROM `180_planting_record` WHERE ( seed_type="番茄" and seed_state<3 )  [ RunTime:0.000195s ]
+SQL: SELECT * FROM `180_planting_record` WHERE ( seed_type="摇钱树" and seed_state<3 )  [ RunTime:0.000179s ]
+SQL: SELECT * FROM `180_planting_record` WHERE ( seed_type="菠萝" and seed_state<3 )  [ RunTime:0.000188s ]
+SQL: SELECT * FROM `180_planting_record` WHERE ( seed_type="蓝莓" and seed_state<3 )  [ RunTime:0.000179s ]
+SQL: SELECT * FROM `180_planting_record` WHERE ( seed_type="榴莲" and seed_state<3 )  [ RunTime:0.000181s ]
+SQL: SHOW COLUMNS FROM `152_planting_record` [ RunTime:0.000336s ]
+SQL: SELECT * FROM `152_planting_record` WHERE ( seed_type="土豆" and seed_state<3 )  [ RunTime:0.000213s ]
+SQL: SELECT * FROM `152_planting_record` WHERE ( seed_type="草莓" and seed_state<3 )  [ RunTime:0.000165s ]
+SQL: SELECT * FROM `152_planting_record` WHERE ( seed_type="樱桃" and seed_state<3 )  [ RunTime:0.000148s ]
+SQL: SELECT * FROM `152_planting_record` WHERE ( seed_type="稻米" and seed_state<3 )  [ RunTime:0.000143s ]
+SQL: SELECT * FROM `152_planting_record` WHERE ( seed_type="葡萄" and seed_state<3 )  [ RunTime:0.000144s ]
+SQL: SELECT * FROM `152_planting_record` WHERE ( seed_type="番茄" and seed_state<3 )  [ RunTime:0.000140s ]
+SQL: SELECT * FROM `152_planting_record` WHERE ( seed_type="摇钱树" and seed_state<3 )  [ RunTime:0.000180s ]
+SQL: SELECT * FROM `152_planting_record` WHERE ( seed_type="菠萝" and seed_state<3 )  [ RunTime:0.000194s ]
+SQL: SELECT * FROM `152_planting_record` WHERE ( seed_type="蓝莓" and seed_state<3 )  [ RunTime:0.000179s ]
+SQL: SELECT * FROM `152_planting_record` WHERE ( seed_type="榴莲" and seed_state<3 )  [ RunTime:0.000180s ]
+SQL: SHOW COLUMNS FROM `177_planting_record` [ RunTime:0.000293s ]
+SQL: SELECT * FROM `177_planting_record` WHERE ( seed_type="土豆" and seed_state<3 )  [ RunTime:0.000168s ]
+SQL: SELECT * FROM `177_planting_record` WHERE ( seed_type="草莓" and seed_state<3 )  [ RunTime:0.000156s ]
+SQL: SELECT * FROM `177_planting_record` WHERE ( seed_type="樱桃" and seed_state<3 )  [ RunTime:0.000142s ]
+SQL: SELECT * FROM `177_planting_record` WHERE ( seed_type="稻米" and seed_state<3 )  [ RunTime:0.000182s ]
+SQL: SELECT * FROM `177_planting_record` WHERE ( seed_type="葡萄" and seed_state<3 )  [ RunTime:0.000205s ]
+SQL: SELECT * FROM `177_planting_record` WHERE ( seed_type="番茄" and seed_state<3 )  [ RunTime:0.000198s ]
+SQL: SELECT * FROM `177_planting_record` WHERE ( seed_type="摇钱树" and seed_state<3 )  [ RunTime:0.000186s ]
+SQL: SELECT * FROM `177_planting_record` WHERE ( seed_type="菠萝" and seed_state<3 )  [ RunTime:0.000222s ]
+SQL: SELECT * FROM `177_planting_record` WHERE ( seed_type="蓝莓" and seed_state<3 )  [ RunTime:0.000194s ]
+SQL: SELECT * FROM `177_planting_record` WHERE ( seed_type="榴莲" and seed_state<3 )  [ RunTime:0.000194s ]
+SQL: SHOW COLUMNS FROM `153_planting_record` [ RunTime:0.000360s ]
+SQL: SELECT * FROM `153_planting_record` WHERE ( seed_type="土豆" and seed_state<3 )  [ RunTime:0.000193s ]
+SQL: SELECT * FROM `153_planting_record` WHERE ( seed_type="草莓" and seed_state<3 )  [ RunTime:0.000172s ]
+SQL: SELECT * FROM `153_planting_record` WHERE ( seed_type="樱桃" and seed_state<3 )  [ RunTime:0.000166s ]
+SQL: SELECT * FROM `153_planting_record` WHERE ( seed_type="稻米" and seed_state<3 )  [ RunTime:0.000161s ]
+SQL: SELECT * FROM `153_planting_record` WHERE ( seed_type="葡萄" and seed_state<3 )  [ RunTime:0.000183s ]
+SQL: SELECT * FROM `153_planting_record` WHERE ( seed_type="番茄" and seed_state<3 )  [ RunTime:0.000155s ]
+SQL: SELECT * FROM `153_planting_record` WHERE ( seed_type="摇钱树" and seed_state<3 )  [ RunTime:0.000139s ]
+SQL: SELECT * FROM `153_planting_record` WHERE ( seed_type="菠萝" and seed_state<3 )  [ RunTime:0.000150s ]
+SQL: SELECT * FROM `153_planting_record` WHERE ( seed_type="蓝莓" and seed_state<3 )  [ RunTime:0.000190s ]
+SQL: SELECT * FROM `153_planting_record` WHERE ( seed_type="榴莲" and seed_state<3 )  [ RunTime:0.000196s ]
+SQL: SHOW COLUMNS FROM `157_planting_record` [ RunTime:0.000352s ]
+SQL: SELECT * FROM `157_planting_record` WHERE ( seed_type="土豆" and seed_state<3 )  [ RunTime:0.000227s ]
+SQL: SELECT * FROM `157_planting_record` WHERE ( seed_type="草莓" and seed_state<3 )  [ RunTime:0.000232s ]
+SQL: SELECT * FROM `157_planting_record` WHERE ( seed_type="樱桃" and seed_state<3 )  [ RunTime:0.000204s ]
+SQL: SELECT * FROM `157_planting_record` WHERE ( seed_type="稻米" and seed_state<3 )  [ RunTime:0.000214s ]
+SQL: SELECT * FROM `157_planting_record` WHERE ( seed_type="葡萄" and seed_state<3 )  [ RunTime:0.000162s ]
+SQL: SELECT * FROM `157_planting_record` WHERE ( seed_type="番茄" and seed_state<3 )  [ RunTime:0.000164s ]
+SQL: SELECT * FROM `157_planting_record` WHERE ( seed_type="摇钱树" and seed_state<3 )  [ RunTime:0.000146s ]
+SQL: SELECT * FROM `157_planting_record` WHERE ( seed_type="菠萝" and seed_state<3 )  [ RunTime:0.000119s ]
+SQL: SELECT * FROM `157_planting_record` WHERE ( seed_type="蓝莓" and seed_state<3 )  [ RunTime:0.000104s ]
+SQL: SELECT * FROM `157_planting_record` WHERE ( seed_type="榴莲" and seed_state<3 )  [ RunTime:0.000161s ]
+SQL: SHOW COLUMNS FROM `151_planting_record` [ RunTime:0.000330s ]
+SQL: SELECT * FROM `151_planting_record` WHERE ( seed_type="土豆" and seed_state<3 )  [ RunTime:0.000240s ]
+SQL: SELECT * FROM `151_planting_record` WHERE ( seed_type="草莓" and seed_state<3 )  [ RunTime:0.000204s ]
+SQL: SELECT * FROM `151_planting_record` WHERE ( seed_type="樱桃" and seed_state<3 )  [ RunTime:0.000174s ]
+SQL: SELECT * FROM `151_planting_record` WHERE ( seed_type="稻米" and seed_state<3 )  [ RunTime:0.000165s ]
+SQL: SELECT * FROM `151_planting_record` WHERE ( seed_type="葡萄" and seed_state<3 )  [ RunTime:0.000170s ]
+SQL: SELECT * FROM `151_planting_record` WHERE ( seed_type="番茄" and seed_state<3 )  [ RunTime:0.000186s ]
+SQL: SELECT * FROM `151_planting_record` WHERE ( seed_type="摇钱树" and seed_state<3 )  [ RunTime:0.000146s ]
+SQL: SELECT * FROM `151_planting_record` WHERE ( seed_type="菠萝" and seed_state<3 )  [ RunTime:0.000159s ]
+SQL: SELECT * FROM `151_planting_record` WHERE ( seed_type="蓝莓" and seed_state<3 )  [ RunTime:0.000112s ]
+SQL: SELECT * FROM `151_planting_record` WHERE ( seed_type="榴莲" and seed_state<3 )  [ RunTime:0.000195s ]
+SQL: SHOW COLUMNS FROM `182_planting_record` [ RunTime:0.000372s ]
+SQL: SELECT * FROM `182_planting_record` WHERE ( seed_type="土豆" and seed_state<3 )  [ RunTime:0.000247s ]
+SQL: SELECT * FROM `182_planting_record` WHERE ( seed_type="草莓" and seed_state<3 )  [ RunTime:0.000220s ]
+SQL: SELECT * FROM `182_planting_record` WHERE ( seed_type="樱桃" and seed_state<3 )  [ RunTime:0.000187s ]
+SQL: SELECT * FROM `182_planting_record` WHERE ( seed_type="稻米" and seed_state<3 )  [ RunTime:0.000182s ]
+SQL: SELECT * FROM `182_planting_record` WHERE ( seed_type="葡萄" and seed_state<3 )  [ RunTime:0.000156s ]
+SQL: SELECT * FROM `182_planting_record` WHERE ( seed_type="番茄" and seed_state<3 )  [ RunTime:0.000214s ]
+SQL: SELECT * FROM `182_planting_record` WHERE ( seed_type="摇钱树" and seed_state<3 )  [ RunTime:0.000197s ]
+SQL: SELECT * FROM `182_planting_record` WHERE ( seed_type="菠萝" and seed_state<3 )  [ RunTime:0.000208s ]
+SQL: SELECT * FROM `182_planting_record` WHERE ( seed_type="蓝莓" and seed_state<3 )  [ RunTime:0.000205s ]
+SQL: SELECT * FROM `182_planting_record` WHERE ( seed_type="榴莲" and seed_state<3 )  [ RunTime:0.000173s ]
+SQL: SHOW COLUMNS FROM `137_planting_record` [ RunTime:0.000340s ]
+SQL: SELECT * FROM `137_planting_record` WHERE ( seed_type="土豆" and seed_state<3 )  [ RunTime:0.000199s ]
+SQL: SELECT * FROM `137_planting_record` WHERE ( seed_type="草莓" and seed_state<3 )  [ RunTime:0.000240s ]
+SQL: SELECT * FROM `137_planting_record` WHERE ( seed_type="樱桃" and seed_state<3 )  [ RunTime:0.000227s ]
+SQL: SELECT * FROM `137_planting_record` WHERE ( seed_type="稻米" and seed_state<3 )  [ RunTime:0.000223s ]
+SQL: SELECT * FROM `137_planting_record` WHERE ( seed_type="葡萄" and seed_state<3 )  [ RunTime:0.000180s ]
+SQL: SELECT * FROM `137_planting_record` WHERE ( seed_type="番茄" and seed_state<3 )  [ RunTime:0.000165s ]
+SQL: SELECT * FROM `137_planting_record` WHERE ( seed_type="摇钱树" and seed_state<3 )  [ RunTime:0.000147s ]
+SQL: SELECT * FROM `137_planting_record` WHERE ( seed_type="菠萝" and seed_state<3 )  [ RunTime:0.000159s ]
+SQL: SELECT * FROM `137_planting_record` WHERE ( seed_type="蓝莓" and seed_state<3 )  [ RunTime:0.000158s ]
+SQL: SELECT * FROM `137_planting_record` WHERE ( seed_type="榴莲" and seed_state<3 )  [ RunTime:0.000165s ]
+SQL: SHOW COLUMNS FROM `189_planting_record` [ RunTime:0.000341s ]
+SQL: SELECT * FROM `189_planting_record` WHERE ( seed_type="土豆" and seed_state<3 )  [ RunTime:0.000193s ]
+SQL: SELECT * FROM `189_planting_record` WHERE ( seed_type="草莓" and seed_state<3 )  [ RunTime:0.000231s ]
+SQL: SELECT * FROM `189_planting_record` WHERE ( seed_type="樱桃" and seed_state<3 )  [ RunTime:0.000224s ]
+SQL: SELECT * FROM `189_planting_record` WHERE ( seed_type="稻米" and seed_state<3 )  [ RunTime:0.000219s ]
+SQL: SELECT * FROM `189_planting_record` WHERE ( seed_type="葡萄" and seed_state<3 )  [ RunTime:0.000180s ]
+SQL: SELECT * FROM `189_planting_record` WHERE ( seed_type="番茄" and seed_state<3 )  [ RunTime:0.000158s ]
+SQL: SELECT * FROM `189_planting_record` WHERE ( seed_type="摇钱树" and seed_state<3 )  [ RunTime:0.000146s ]
+SQL: SELECT * FROM `189_planting_record` WHERE ( seed_type="菠萝" and seed_state<3 )  [ RunTime:0.000153s ]
+SQL: SELECT * FROM `189_planting_record` WHERE ( seed_type="蓝莓" and seed_state<3 )  [ RunTime:0.000147s ]
+SQL: SELECT * FROM `189_planting_record` WHERE ( seed_type="榴莲" and seed_state<3 )  [ RunTime:0.000141s ]
+SQL: SHOW COLUMNS FROM `187_planting_record` [ RunTime:0.000372s ]
+SQL: SELECT * FROM `187_planting_record` WHERE ( seed_type="土豆" and seed_state<3 )  [ RunTime:0.000240s ]
+SQL: SELECT * FROM `187_planting_record` WHERE ( seed_type="草莓" and seed_state<3 )  [ RunTime:0.000231s ]
+SQL: SELECT * FROM `187_planting_record` WHERE ( seed_type="樱桃" and seed_state<3 )  [ RunTime:0.000229s ]
+SQL: SELECT * FROM `187_planting_record` WHERE ( seed_type="稻米" and seed_state<3 )  [ RunTime:0.000226s ]
+SQL: SELECT * FROM `187_planting_record` WHERE ( seed_type="葡萄" and seed_state<3 )  [ RunTime:0.000222s ]
+SQL: SELECT * FROM `187_planting_record` WHERE ( seed_type="番茄" and seed_state<3 )  [ RunTime:0.000221s ]
+SQL: SELECT * FROM `187_planting_record` WHERE ( seed_type="摇钱树" and seed_state<3 )  [ RunTime:0.000208s ]
+SQL: SELECT * FROM `187_planting_record` WHERE ( seed_type="菠萝" and seed_state<3 )  [ RunTime:0.000193s ]
+SQL: SELECT * FROM `187_planting_record` WHERE ( seed_type="蓝莓" and seed_state<3 )  [ RunTime:0.000170s ]
+SQL: SELECT * FROM `187_planting_record` WHERE ( seed_type="榴莲" and seed_state<3 )  [ RunTime:0.000145s ]
+SQL: SHOW COLUMNS FROM `183_planting_record` [ RunTime:0.000334s ]
+SQL: SELECT * FROM `183_planting_record` WHERE ( seed_type="土豆" and seed_state<3 )  [ RunTime:0.000210s ]
+SQL: SELECT * FROM `183_planting_record` WHERE ( seed_type="草莓" and seed_state<3 )  [ RunTime:0.000227s ]
+SQL: SELECT * FROM `183_planting_record` WHERE ( seed_type="樱桃" and seed_state<3 )  [ RunTime:0.000226s ]
+SQL: SELECT * FROM `183_planting_record` WHERE ( seed_type="稻米" and seed_state<3 )  [ RunTime:0.000205s ]
+SQL: SELECT * FROM `183_planting_record` WHERE ( seed_type="葡萄" and seed_state<3 )  [ RunTime:0.000193s ]
+SQL: SELECT * FROM `183_planting_record` WHERE ( seed_type="番茄" and seed_state<3 )  [ RunTime:0.000171s ]
+SQL: SELECT * FROM `183_planting_record` WHERE ( seed_type="摇钱树" and seed_state<3 )  [ RunTime:0.000146s ]
+SQL: SELECT * FROM `183_planting_record` WHERE ( seed_type="菠萝" and seed_state<3 )  [ RunTime:0.000158s ]
+SQL: SELECT * FROM `183_planting_record` WHERE ( seed_type="蓝莓" and seed_state<3 )  [ RunTime:0.000171s ]
+SQL: SELECT * FROM `183_planting_record` WHERE ( seed_type="榴莲" and seed_state<3 )  [ RunTime:0.000143s ]
+SQL: SHOW COLUMNS FROM `136_planting_record` [ RunTime:0.000340s ]
+SQL: SELECT * FROM `136_planting_record` WHERE ( seed_type="土豆" and seed_state<3 )  [ RunTime:0.000247s ]
+SQL: SELECT * FROM `136_planting_record` WHERE ( seed_type="草莓" and seed_state<3 )  [ RunTime:0.000232s ]
+SQL: SELECT * FROM `136_planting_record` WHERE ( seed_type="樱桃" and seed_state<3 )  [ RunTime:0.000232s ]
+SQL: SELECT * FROM `136_planting_record` WHERE ( seed_type="稻米" and seed_state<3 )  [ RunTime:0.000182s ]
+SQL: SELECT * FROM `136_planting_record` WHERE ( seed_type="葡萄" and seed_state<3 )  [ RunTime:0.000176s ]
+SQL: SELECT * FROM `136_planting_record` WHERE ( seed_type="番茄" and seed_state<3 )  [ RunTime:0.000167s ]
+SQL: SELECT * FROM `136_planting_record` WHERE ( seed_type="摇钱树" and seed_state<3 )  [ RunTime:0.000147s ]
+SQL: SELECT * FROM `136_planting_record` WHERE ( seed_type="菠萝" and seed_state<3 )  [ RunTime:0.000159s ]
+SQL: SELECT * FROM `136_planting_record` WHERE ( seed_type="蓝莓" and seed_state<3 )  [ RunTime:0.000168s ]
+SQL: SELECT * FROM `136_planting_record` WHERE ( seed_type="榴莲" and seed_state<3 )  [ RunTime:0.000143s ]
+SQL: SHOW COLUMNS FROM `132_planting_record` [ RunTime:0.000339s ]
+SQL: SELECT * FROM `132_planting_record` WHERE ( seed_type="土豆" and seed_state<3 )  [ RunTime:0.000242s ]
+SQL: SELECT * FROM `132_planting_record` WHERE ( seed_type="草莓" and seed_state<3 )  [ RunTime:0.000227s ]
+SQL: SELECT * FROM `132_planting_record` WHERE ( seed_type="樱桃" and seed_state<3 )  [ RunTime:0.000219s ]
+SQL: SELECT * FROM `132_planting_record` WHERE ( seed_type="稻米" and seed_state<3 )  [ RunTime:0.000210s ]
+SQL: SELECT * FROM `132_planting_record` WHERE ( seed_type="葡萄" and seed_state<3 )  [ RunTime:0.000177s ]
+SQL: SELECT * FROM `132_planting_record` WHERE ( seed_type="番茄" and seed_state<3 )  [ RunTime:0.000160s ]
+SQL: SELECT * FROM `132_planting_record` WHERE ( seed_type="摇钱树" and seed_state<3 )  [ RunTime:0.000159s ]
+SQL: SELECT * FROM `132_planting_record` WHERE ( seed_type="菠萝" and seed_state<3 )  [ RunTime:0.000158s ]
+SQL: SELECT * FROM `132_planting_record` WHERE ( seed_type="蓝莓" and seed_state<3 )  [ RunTime:0.000165s ]
+SQL: SELECT * FROM `132_planting_record` WHERE ( seed_type="榴莲" and seed_state<3 )  [ RunTime:0.000142s ]
+SQL: SHOW COLUMNS FROM `131_planting_record` [ RunTime:0.000339s ]
+SQL: SELECT * FROM `131_planting_record` WHERE ( seed_type="土豆" and seed_state<3 )  [ RunTime:0.000227s ]
+SQL: SELECT * FROM `131_planting_record` WHERE ( seed_type="草莓" and seed_state<3 )  [ RunTime:0.000232s ]
+SQL: SELECT * FROM `131_planting_record` WHERE ( seed_type="樱桃" and seed_state<3 )  [ RunTime:0.000222s ]
+SQL: SELECT * FROM `131_planting_record` WHERE ( seed_type="稻米" and seed_state<3 )  [ RunTime:0.000184s ]
+SQL: SELECT * FROM `131_planting_record` WHERE ( seed_type="葡萄" and seed_state<3 )  [ RunTime:0.000166s ]
+SQL: SELECT * FROM `131_planting_record` WHERE ( seed_type="番茄" and seed_state<3 )  [ RunTime:0.000163s ]
+SQL: SELECT * FROM `131_planting_record` WHERE ( seed_type="摇钱树" and seed_state<3 )  [ RunTime:0.000150s ]
+SQL: SELECT * FROM `131_planting_record` WHERE ( seed_type="菠萝" and seed_state<3 )  [ RunTime:0.000154s ]
+SQL: SELECT * FROM `131_planting_record` WHERE ( seed_type="蓝莓" and seed_state<3 )  [ RunTime:0.000165s ]
+SQL: SELECT * FROM `131_planting_record` WHERE ( seed_type="榴莲" and seed_state<3 )  [ RunTime:0.000141s ]
+SQL: SHOW COLUMNS FROM `135_planting_record` [ RunTime:0.000337s ]
+SQL: SELECT * FROM `135_planting_record` WHERE ( seed_type="土豆" and seed_state<3 )  [ RunTime:0.000261s ]
+SQL: SELECT * FROM `135_planting_record` WHERE ( seed_type="草莓" and seed_state<3 )  [ RunTime:0.000234s ]
+SQL: SELECT * FROM `135_planting_record` WHERE ( seed_type="樱桃" and seed_state<3 )  [ RunTime:0.000220s ]
+SQL: SELECT * FROM `135_planting_record` WHERE ( seed_type="稻米" and seed_state<3 )  [ RunTime:0.000234s ]
+SQL: SELECT * FROM `135_planting_record` WHERE ( seed_type="葡萄" and seed_state<3 )  [ RunTime:0.000226s ]
+SQL: SELECT * FROM `135_planting_record` WHERE ( seed_type="番茄" and seed_state<3 )  [ RunTime:0.000221s ]
+SQL: SELECT * FROM `135_planting_record` WHERE ( seed_type="摇钱树" and seed_state<3 )  [ RunTime:0.000205s ]
+SQL: SELECT * FROM `135_planting_record` WHERE ( seed_type="菠萝" and seed_state<3 )  [ RunTime:0.000218s ]
+SQL: SELECT * FROM `135_planting_record` WHERE ( seed_type="蓝莓" and seed_state<3 )  [ RunTime:0.000199s ]
+SQL: SELECT * FROM `135_planting_record` WHERE ( seed_type="榴莲" and seed_state<3 )  [ RunTime:0.000198s ]
+SQL: SHOW COLUMNS FROM `184_planting_record` [ RunTime:0.000376s ]
+SQL: SELECT * FROM `184_planting_record` WHERE ( seed_type="土豆" and seed_state<3 )  [ RunTime:0.000184s ]
+SQL: SELECT * FROM `184_planting_record` WHERE ( seed_type="草莓" and seed_state<3 )  [ RunTime:0.000171s ]
+SQL: SELECT * FROM `184_planting_record` WHERE ( seed_type="樱桃" and seed_state<3 )  [ RunTime:0.000163s ]
+SQL: SELECT * FROM `184_planting_record` WHERE ( seed_type="稻米" and seed_state<3 )  [ RunTime:0.000178s ]
+SQL: SELECT * FROM `184_planting_record` WHERE ( seed_type="葡萄" and seed_state<3 )  [ RunTime:0.000154s ]
+SQL: SELECT * FROM `184_planting_record` WHERE ( seed_type="番茄" and seed_state<3 )  [ RunTime:0.000160s ]
+SQL: SELECT * FROM `184_planting_record` WHERE ( seed_type="摇钱树" and seed_state<3 )  [ RunTime:0.000139s ]
+SQL: SELECT * FROM `184_planting_record` WHERE ( seed_type="菠萝" and seed_state<3 )  [ RunTime:0.000196s ]
+SQL: SELECT * FROM `184_planting_record` WHERE ( seed_type="蓝莓" and seed_state<3 )  [ RunTime:0.000201s ]
+SQL: SELECT * FROM `184_planting_record` WHERE ( seed_type="榴莲" and seed_state<3 )  [ RunTime:0.000200s ]
+SQL: SHOW COLUMNS FROM `133_planting_record` [ RunTime:0.000377s ]
+SQL: SELECT * FROM `133_planting_record` WHERE ( seed_type="土豆" and seed_state<3 )  [ RunTime:0.000206s ]
+SQL: SELECT * FROM `133_planting_record` WHERE ( seed_type="草莓" and seed_state<3 )  [ RunTime:0.000179s ]
+SQL: SELECT * FROM `133_planting_record` WHERE ( seed_type="樱桃" and seed_state<3 )  [ RunTime:0.000173s ]
+SQL: SELECT * FROM `133_planting_record` WHERE ( seed_type="稻米" and seed_state<3 )  [ RunTime:0.000193s ]
+SQL: SELECT * FROM `133_planting_record` WHERE ( seed_type="葡萄" and seed_state<3 )  [ RunTime:0.000166s ]
+SQL: SELECT * FROM `133_planting_record` WHERE ( seed_type="番茄" and seed_state<3 )  [ RunTime:0.000162s ]
+SQL: SELECT * FROM `133_planting_record` WHERE ( seed_type="摇钱树" and seed_state<3 )  [ RunTime:0.000143s ]
+SQL: SELECT * FROM `133_planting_record` WHERE ( seed_type="菠萝" and seed_state<3 )  [ RunTime:0.000210s ]
+SQL: SELECT * FROM `133_planting_record` WHERE ( seed_type="蓝莓" and seed_state<3 )  [ RunTime:0.000198s ]
+SQL: SELECT * FROM `133_planting_record` WHERE ( seed_type="榴莲" and seed_state<3 )  [ RunTime:0.000207s ]
+SQL: SHOW COLUMNS FROM `159_planting_record` [ RunTime:0.000373s ]
+SQL: SELECT * FROM `159_planting_record` WHERE ( seed_type="土豆" and seed_state<3 )  [ RunTime:0.000200s ]
+SQL: SELECT * FROM `159_planting_record` WHERE ( seed_type="草莓" and seed_state<3 )  [ RunTime:0.000179s ]
+SQL: SELECT * FROM `159_planting_record` WHERE ( seed_type="樱桃" and seed_state<3 )  [ RunTime:0.000175s ]
+SQL: SELECT * FROM `159_planting_record` WHERE ( seed_type="稻米" and seed_state<3 )  [ RunTime:0.000190s ]
+SQL: SELECT * FROM `159_planting_record` WHERE ( seed_type="葡萄" and seed_state<3 )  [ RunTime:0.000163s ]
+SQL: SELECT * FROM `159_planting_record` WHERE ( seed_type="番茄" and seed_state<3 )  [ RunTime:0.000164s ]
+SQL: SELECT * FROM `159_planting_record` WHERE ( seed_type="摇钱树" and seed_state<3 )  [ RunTime:0.000148s ]
+SQL: SELECT * FROM `159_planting_record` WHERE ( seed_type="菠萝" and seed_state<3 )  [ RunTime:0.000216s ]
+SQL: SELECT * FROM `159_planting_record` WHERE ( seed_type="蓝莓" and seed_state<3 )  [ RunTime:0.000197s ]
+SQL: SELECT * FROM `159_planting_record` WHERE ( seed_type="榴莲" and seed_state<3 )  [ RunTime:0.000198s ]
+SQL: SHOW COLUMNS FROM `134_planting_record` [ RunTime:0.000352s ]
+SQL: SELECT * FROM `134_planting_record` WHERE ( seed_type="土豆" and seed_state<3 )  [ RunTime:0.000197s ]
+SQL: SELECT * FROM `134_planting_record` WHERE ( seed_type="草莓" and seed_state<3 )  [ RunTime:0.000178s ]
+SQL: SELECT * FROM `134_planting_record` WHERE ( seed_type="樱桃" and seed_state<3 )  [ RunTime:0.000176s ]
+SQL: SELECT * FROM `134_planting_record` WHERE ( seed_type="稻米" and seed_state<3 )  [ RunTime:0.000193s ]
+SQL: SELECT * FROM `134_planting_record` WHERE ( seed_type="葡萄" and seed_state<3 )  [ RunTime:0.000157s ]
+SQL: SELECT * FROM `134_planting_record` WHERE ( seed_type="番茄" and seed_state<3 )  [ RunTime:0.000161s ]
+SQL: SELECT * FROM `134_planting_record` WHERE ( seed_type="摇钱树" and seed_state<3 )  [ RunTime:0.000143s ]
+SQL: SELECT * FROM `134_planting_record` WHERE ( seed_type="菠萝" and seed_state<3 )  [ RunTime:0.000214s ]
+SQL: SELECT * FROM `134_planting_record` WHERE ( seed_type="蓝莓" and seed_state<3 )  [ RunTime:0.000198s ]
+SQL: SELECT * FROM `134_planting_record` WHERE ( seed_type="榴莲" and seed_state<3 )  [ RunTime:0.000201s ]
+SQL: SHOW COLUMNS FROM `155_planting_record` [ RunTime:0.000378s ]
+SQL: SELECT * FROM `155_planting_record` WHERE ( seed_type="土豆" and seed_state<3 )  [ RunTime:0.000197s ]
+SQL: SELECT * FROM `155_planting_record` WHERE ( seed_type="草莓" and seed_state<3 )  [ RunTime:0.000170s ]
+SQL: SELECT * FROM `155_planting_record` WHERE ( seed_type="樱桃" and seed_state<3 )  [ RunTime:0.000169s ]
+SQL: SELECT * FROM `155_planting_record` WHERE ( seed_type="稻米" and seed_state<3 )  [ RunTime:0.000182s ]
+SQL: SELECT * FROM `155_planting_record` WHERE ( seed_type="葡萄" and seed_state<3 )  [ RunTime:0.000158s ]
+SQL: SELECT * FROM `155_planting_record` WHERE ( seed_type="番茄" and seed_state<3 )  [ RunTime:0.000156s ]
+SQL: SELECT * FROM `155_planting_record` WHERE ( seed_type="摇钱树" and seed_state<3 )  [ RunTime:0.000144s ]
+SQL: SELECT * FROM `155_planting_record` WHERE ( seed_type="菠萝" and seed_state<3 )  [ RunTime:0.000211s ]
+SQL: SELECT * FROM `155_planting_record` WHERE ( seed_type="蓝莓" and seed_state<3 )  [ RunTime:0.000196s ]
+SQL: SELECT * FROM `155_planting_record` WHERE ( seed_type="榴莲" and seed_state<3 )  [ RunTime:0.000198s ]
+SQL: SHOW COLUMNS FROM `181_planting_record` [ RunTime:0.000376s ]
+SQL: SELECT * FROM `181_planting_record` WHERE ( seed_type="土豆" and seed_state<3 )  [ RunTime:0.000207s ]
+SQL: SELECT * FROM `181_planting_record` WHERE ( seed_type="草莓" and seed_state<3 )  [ RunTime:0.000175s ]
+SQL: SELECT * FROM `181_planting_record` WHERE ( seed_type="樱桃" and seed_state<3 )  [ RunTime:0.000176s ]
+SQL: SELECT * FROM `181_planting_record` WHERE ( seed_type="稻米" and seed_state<3 )  [ RunTime:0.000224s ]
+SQL: SELECT * FROM `181_planting_record` WHERE ( seed_type="葡萄" and seed_state<3 )  [ RunTime:0.000221s ]
+SQL: SELECT * FROM `181_planting_record` WHERE ( seed_type="番茄" and seed_state<3 )  [ RunTime:0.000227s ]
+SQL: SELECT * FROM `181_planting_record` WHERE ( seed_type="摇钱树" and seed_state<3 )  [ RunTime:0.000224s ]
+SQL: SELECT * FROM `181_planting_record` WHERE ( seed_type="菠萝" and seed_state<3 )  [ RunTime:0.000213s ]
+SQL: SELECT * FROM `181_planting_record` WHERE ( seed_type="蓝莓" and seed_state<3 )  [ RunTime:0.000200s ]
+SQL: SELECT * FROM `181_planting_record` WHERE ( seed_type="榴莲" and seed_state<3 )  [ RunTime:0.000199s ]
+SQL: SHOW COLUMNS FROM `185_planting_record` [ RunTime:0.000337s ]
+SQL: SELECT * FROM `185_planting_record` WHERE ( seed_type="土豆" and seed_state<3 )  [ RunTime:0.000236s ]
+SQL: SELECT * FROM `185_planting_record` WHERE ( seed_type="草莓" and seed_state<3 )  [ RunTime:0.000236s ]
+SQL: SELECT * FROM `185_planting_record` WHERE ( seed_type="樱桃" and seed_state<3 )  [ RunTime:0.000176s ]
+SQL: SELECT * FROM `185_planting_record` WHERE ( seed_type="稻米" and seed_state<3 )  [ RunTime:0.000168s ]
+SQL: SELECT * FROM `185_planting_record` WHERE ( seed_type="葡萄" and seed_state<3 )  [ RunTime:0.000168s ]
+SQL: SELECT * FROM `185_planting_record` WHERE ( seed_type="番茄" and seed_state<3 )  [ RunTime:0.000156s ]
+SQL: SELECT * FROM `185_planting_record` WHERE ( seed_type="摇钱树" and seed_state<3 )  [ RunTime:0.000168s ]
+SQL: SELECT * FROM `185_planting_record` WHERE ( seed_type="菠萝" and seed_state<3 )  [ RunTime:0.000153s ]
+SQL: SELECT * FROM `185_planting_record` WHERE ( seed_type="蓝莓" and seed_state<3 )  [ RunTime:0.000141s ]
+SQL: SELECT * FROM `185_planting_record` WHERE ( seed_type="榴莲" and seed_state<3 )  [ RunTime:0.000140s ]
+SQL: SHOW COLUMNS FROM `170_planting_record` [ RunTime:0.000341s ]
+SQL: SELECT * FROM `170_planting_record` WHERE ( seed_type="土豆" and seed_state<3 )  [ RunTime:0.000169s ]
+SQL: SELECT * FROM `170_planting_record` WHERE ( seed_type="草莓" and seed_state<3 )  [ RunTime:0.000165s ]
+SQL: SELECT * FROM `170_planting_record` WHERE ( seed_type="樱桃" and seed_state<3 )  [ RunTime:0.000150s ]
+SQL: SELECT * FROM `170_planting_record` WHERE ( seed_type="稻米" and seed_state<3 )  [ RunTime:0.000177s ]
+SQL: SELECT * FROM `170_planting_record` WHERE ( seed_type="葡萄" and seed_state<3 )  [ RunTime:0.000140s ]
+SQL: SELECT * FROM `170_planting_record` WHERE ( seed_type="番茄" and seed_state<3 )  [ RunTime:0.000137s ]
+SQL: SELECT * FROM `170_planting_record` WHERE ( seed_type="摇钱树" and seed_state<3 )  [ RunTime:0.000138s ]
+SQL: SELECT * FROM `170_planting_record` WHERE ( seed_type="菠萝" and seed_state<3 )  [ RunTime:0.000199s ]
+SQL: SELECT * FROM `170_planting_record` WHERE ( seed_type="蓝莓" and seed_state<3 )  [ RunTime:0.000195s ]
+SQL: SELECT * FROM `170_planting_record` WHERE ( seed_type="榴莲" and seed_state<3 )  [ RunTime:0.000200s ]
+SQL: SHOW COLUMNS FROM `178_planting_record` [ RunTime:0.000393s ]
+SQL: SELECT * FROM `178_planting_record` WHERE ( seed_type="土豆" and seed_state<3 )  [ RunTime:0.000191s ]
+SQL: SELECT * FROM `178_planting_record` WHERE ( seed_type="草莓" and seed_state<3 )  [ RunTime:0.000176s ]
+SQL: SELECT * FROM `178_planting_record` WHERE ( seed_type="樱桃" and seed_state<3 )  [ RunTime:0.000166s ]
+SQL: SELECT * FROM `178_planting_record` WHERE ( seed_type="稻米" and seed_state<3 )  [ RunTime:0.000215s ]
+SQL: SELECT * FROM `178_planting_record` WHERE ( seed_type="葡萄" and seed_state<3 )  [ RunTime:0.000211s ]
+SQL: SELECT * FROM `178_planting_record` WHERE ( seed_type="番茄" and seed_state<3 )  [ RunTime:0.000209s ]
+SQL: SELECT * FROM `178_planting_record` WHERE ( seed_type="摇钱树" and seed_state<3 )  [ RunTime:0.000177s ]
+SQL: SELECT * FROM `178_planting_record` WHERE ( seed_type="菠萝" and seed_state<3 )  [ RunTime:0.000171s ]
+SQL: SELECT * FROM `178_planting_record` WHERE ( seed_type="蓝莓" and seed_state<3 )  [ RunTime:0.000143s ]
+SQL: SELECT * FROM `178_planting_record` WHERE ( seed_type="榴莲" and seed_state<3 )  [ RunTime:0.000140s ]
+SQL: SHOW COLUMNS FROM `171_planting_record` [ RunTime:0.000347s ]
+SQL: SELECT * FROM `171_planting_record` WHERE ( seed_type="土豆" and seed_state<3 )  [ RunTime:0.000186s ]
+SQL: SELECT * FROM `171_planting_record` WHERE ( seed_type="草莓" and seed_state<3 )  [ RunTime:0.000155s ]
+SQL: SELECT * FROM `171_planting_record` WHERE ( seed_type="樱桃" and seed_state<3 )  [ RunTime:0.000143s ]
+SQL: SELECT * FROM `171_planting_record` WHERE ( seed_type="稻米" and seed_state<3 )  [ RunTime:0.000147s ]
+SQL: SELECT * FROM `171_planting_record` WHERE ( seed_type="葡萄" and seed_state<3 )  [ RunTime:0.000139s ]
+SQL: SELECT * FROM `171_planting_record` WHERE ( seed_type="番茄" and seed_state<3 )  [ RunTime:0.000143s ]
+SQL: SELECT * FROM `171_planting_record` WHERE ( seed_type="摇钱树" and seed_state<3 )  [ RunTime:0.000139s ]
+SQL: SELECT * FROM `171_planting_record` WHERE ( seed_type="菠萝" and seed_state<3 )  [ RunTime:0.000137s ]
+SQL: SELECT * FROM `171_planting_record` WHERE ( seed_type="蓝莓" and seed_state<3 )  [ RunTime:0.000195s ]
+SQL: SELECT * FROM `171_planting_record` WHERE ( seed_type="榴莲" and seed_state<3 )  [ RunTime:0.000194s ]
+SQL: SHOW COLUMNS FROM `175_planting_record` [ RunTime:0.000369s ]
+SQL: SELECT * FROM `175_planting_record` WHERE ( seed_type="土豆" and seed_state<3 )  [ RunTime:0.000221s ]
+SQL: SELECT * FROM `175_planting_record` WHERE ( seed_type="草莓" and seed_state<3 )  [ RunTime:0.000216s ]
+SQL: SELECT * FROM `175_planting_record` WHERE ( seed_type="樱桃" and seed_state<3 )  [ RunTime:0.000204s ]
+SQL: SELECT * FROM `175_planting_record` WHERE ( seed_type="稻米" and seed_state<3 )  [ RunTime:0.000185s ]
+SQL: SELECT * FROM `175_planting_record` WHERE ( seed_type="葡萄" and seed_state<3 )  [ RunTime:0.000146s ]
+SQL: SELECT * FROM `175_planting_record` WHERE ( seed_type="番茄" and seed_state<3 )  [ RunTime:0.000141s ]
+SQL: SELECT * FROM `175_planting_record` WHERE ( seed_type="摇钱树" and seed_state<3 )  [ RunTime:0.000139s ]
+SQL: SELECT * FROM `175_planting_record` WHERE ( seed_type="菠萝" and seed_state<3 )  [ RunTime:0.000138s ]
+SQL: SELECT * FROM `175_planting_record` WHERE ( seed_type="蓝莓" and seed_state<3 )  [ RunTime:0.000210s ]
+SQL: SELECT * FROM `175_planting_record` WHERE ( seed_type="榴莲" and seed_state<3 )  [ RunTime:0.000195s ]
+SQL: SHOW COLUMNS FROM `147_planting_record` [ RunTime:0.000368s ]
+SQL: SELECT * FROM `147_planting_record` WHERE ( seed_type="土豆" and seed_state<3 )  [ RunTime:0.000222s ]
+SQL: SELECT * FROM `147_planting_record` WHERE ( seed_type="草莓" and seed_state<3 )  [ RunTime:0.000228s ]
+SQL: SELECT * FROM `147_planting_record` WHERE ( seed_type="樱桃" and seed_state<3 )  [ RunTime:0.000215s ]
+SQL: SELECT * FROM `147_planting_record` WHERE ( seed_type="稻米" and seed_state<3 )  [ RunTime:0.000194s ]
+SQL: SELECT * FROM `147_planting_record` WHERE ( seed_type="葡萄" and seed_state<3 )  [ RunTime:0.000153s ]
+SQL: SELECT * FROM `147_planting_record` WHERE ( seed_type="番茄" and seed_state<3 )  [ RunTime:0.000149s ]
+SQL: SELECT * FROM `147_planting_record` WHERE ( seed_type="摇钱树" and seed_state<3 )  [ RunTime:0.000142s ]
+SQL: SELECT * FROM `147_planting_record` WHERE ( seed_type="菠萝" and seed_state<3 )  [ RunTime:0.000160s ]
+SQL: SELECT * FROM `147_planting_record` WHERE ( seed_type="蓝莓" and seed_state<3 )  [ RunTime:0.000195s ]
+SQL: SELECT * FROM `147_planting_record` WHERE ( seed_type="榴莲" and seed_state<3 )  [ RunTime:0.000195s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000292s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000319s ]
+
+[ 2018-02-12T17:53:02+08:00 ]  
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000162s ]
+NOTIC: [8] Undefined index: REQUEST_URI /home/work/www/html/game/farms/ThinkPHP/Library/Think/Dispatcher.class.php 第 132 行.
+NOTIC: [8] Use of undefined constant __ROOT__ - assumed '__ROOT__' /home/work/www/html/game/farms/app/Home/Conf/config.php 第 6 行.
+NOTIC: [8] Use of undefined constant __ROOT__ - assumed '__ROOT__' /home/work/www/html/game/farms/app/Home/Conf/config.php 第 7 行.
+NOTIC: [8] Use of undefined constant __ROOT__ - assumed '__ROOT__' /home/work/www/html/game/farms/app/Home/Conf/config.php 第 8 行.
+NOTIC: [8] Use of undefined constant _PHP_FILE_ - assumed '_PHP_FILE_' /home/work/www/html/game/farms/ThinkPHP/Library/Think/Dispatcher.class.php 第 173 行.
+NOTIC: [8] Undefined index: REQUEST_METHOD /home/work/www/html/game/farms/ThinkPHP/Library/Think/App.class.php 第 30 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000180s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000201s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /home/work/www/html/game/farms/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+NOTIC: [2] mysql_connect(): Headers and client library minor version mismatch. Headers:50552 Library:50637 /home/work/www/html/game/farms/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `global_conf` [ RunTime:0.000356s ]
+SQL: SELECT * FROM `global_conf` WHERE ( cases="poundage" or cases="LimitPricePostion" )  [ RunTime:0.000144s ]
+SQL: SHOW COLUMNS FROM `seeds` [ RunTime:0.000882s ]
+SQL: SELECT * FROM `seeds` WHERE ( varieties!="摇钱树" AND state=0 ) ORDER BY id  [ RunTime:0.000424s ]
+SQL: SET GLOBAL group_concat_max_len=102400 [ RunTime:0.000174s ]
+SQL: SHOW COLUMNS FROM `2018-02_pay` [ RunTime:0.000907s ]
+NOTIC: [8] Undefined variable: order /home/work/www/html/game/farms/ThinkPHP/Library/Org/Our/Matching.class.php 第 147 行.
+SQL: SELECT GROUP_CONCAT(money ORDER BY money desc ) as desc_money FROM `2018-02_pay` WHERE ( `state` < '2' ) AND ( `type` = 1 ) AND ( `seed` = '土豆' ) AND ( `num` > '0' )  [ RunTime:0.000420s ]
+NOTIC: [8] Undefined variable: buy /home/work/www/html/game/farms/ThinkPHP/Library/Org/Our/Matching.class.php 第 152 行.
+SQL: SELECT * FROM `2018-02_pay` WHERE ( state < 2 AND type =1 AND queue=0 AND num>0 AND seed="土豆" ) ORDER BY money DESC  [ RunTime:0.000373s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `2018-02_pay` WHERE ( state < 2 AND type =1 AND queue=0 AND num>0 AND seed="土豆" ) LIMIT 1   [ RunTime:0.000410s ]
+SQL: SET GLOBAL group_concat_max_len=102400 [ RunTime:0.000175s ]
+NOTIC: [8] Undefined variable: order /home/work/www/html/game/farms/ThinkPHP/Library/Org/Our/Matching.class.php 第 147 行.
+SQL: SELECT GROUP_CONCAT(money ORDER BY money desc ) as desc_money FROM `2018-02_pay` WHERE ( `state` < '2' ) AND ( `type` = 1 ) AND ( `seed` = '草莓' ) AND ( `num` > '0' )  [ RunTime:0.000537s ]
+NOTIC: [8] Undefined offset: 0 /home/work/www/html/game/farms/ThinkPHP/Library/Org/Our/Matching.class.php 第 152 行.
+SQL: SELECT * FROM `2018-02_pay` WHERE ( state < 2 AND type =1 AND queue=0 AND num>0 AND seed="草莓" ) ORDER BY money DESC  [ RunTime:0.000521s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `2018-02_pay` WHERE ( state < 2 AND type =1 AND queue=0 AND num>0 AND seed="草莓" ) LIMIT 1   [ RunTime:0.000465s ]
+SQL: SET GLOBAL group_concat_max_len=102400 [ RunTime:0.000237s ]
+NOTIC: [8] Undefined variable: order /home/work/www/html/game/farms/ThinkPHP/Library/Org/Our/Matching.class.php 第 147 行.
+SQL: SELECT GROUP_CONCAT(money ORDER BY money desc ) as desc_money FROM `2018-02_pay` WHERE ( `state` < '2' ) AND ( `type` = 1 ) AND ( `seed` = '樱桃' ) AND ( `num` > '0' )  [ RunTime:0.000451s ]
+NOTIC: [8] Undefined offset: 0 /home/work/www/html/game/farms/ThinkPHP/Library/Org/Our/Matching.class.php 第 152 行.
+SQL: SELECT * FROM `2018-02_pay` WHERE ( state < 2 AND type =1 AND queue=0 AND num>0 AND seed="樱桃" ) ORDER BY money DESC  [ RunTime:0.000475s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `2018-02_pay` WHERE ( state < 2 AND type =1 AND queue=0 AND num>0 AND seed="樱桃" ) LIMIT 1   [ RunTime:0.000417s ]
+SQL: SET GLOBAL group_concat_max_len=102400 [ RunTime:0.000178s ]
+NOTIC: [8] Undefined variable: order /home/work/www/html/game/farms/ThinkPHP/Library/Org/Our/Matching.class.php 第 147 行.
+SQL: SELECT GROUP_CONCAT(money ORDER BY money desc ) as desc_money FROM `2018-02_pay` WHERE ( `state` < '2' ) AND ( `type` = 1 ) AND ( `seed` = '稻米' ) AND ( `num` > '0' )  [ RunTime:0.000382s ]
+NOTIC: [8] Undefined offset: 0 /home/work/www/html/game/farms/ThinkPHP/Library/Org/Our/Matching.class.php 第 152 行.
+SQL: SELECT * FROM `2018-02_pay` WHERE ( state < 2 AND type =1 AND queue=0 AND num>0 AND seed="稻米" ) ORDER BY money DESC  [ RunTime:0.000178s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `2018-02_pay` WHERE ( state < 2 AND type =1 AND queue=0 AND num>0 AND seed="稻米" ) LIMIT 1   [ RunTime:0.000168s ]
+SQL: SET GLOBAL group_concat_max_len=102400 [ RunTime:0.000096s ]
+NOTIC: [8] Undefined variable: order /home/work/www/html/game/farms/ThinkPHP/Library/Org/Our/Matching.class.php 第 147 行.
+SQL: SELECT GROUP_CONCAT(money ORDER BY money desc ) as desc_money FROM `2018-02_pay` WHERE ( `state` < '2' ) AND ( `type` = 1 ) AND ( `seed` = '葡萄' ) AND ( `num` > '0' )  [ RunTime:0.000208s ]
+NOTIC: [8] Undefined offset: 0 /home/work/www/html/game/farms/ThinkPHP/Library/Org/Our/Matching.class.php 第 152 行.
+SQL: SELECT * FROM `2018-02_pay` WHERE ( state < 2 AND type =1 AND queue=0 AND num>0 AND seed="葡萄" ) ORDER BY money DESC  [ RunTime:0.000134s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `2018-02_pay` WHERE ( state < 2 AND type =1 AND queue=0 AND num>0 AND seed="葡萄" ) LIMIT 1   [ RunTime:0.000153s ]
+SQL: SET GLOBAL group_concat_max_len=102400 [ RunTime:0.000082s ]
+NOTIC: [8] Undefined variable: order /home/work/www/html/game/farms/ThinkPHP/Library/Org/Our/Matching.class.php 第 147 行.
+SQL: SELECT GROUP_CONCAT(money ORDER BY money desc ) as desc_money FROM `2018-02_pay` WHERE ( `state` < '2' ) AND ( `type` = 1 ) AND ( `seed` = '番茄' ) AND ( `num` > '0' )  [ RunTime:0.000136s ]
+NOTIC: [8] Undefined offset: 0 /home/work/www/html/game/farms/ThinkPHP/Library/Org/Our/Matching.class.php 第 152 行.
+SQL: SELECT * FROM `2018-02_pay` WHERE ( state < 2 AND type =1 AND queue=0 AND num>0 AND seed="番茄" ) ORDER BY money DESC  [ RunTime:0.000128s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `2018-02_pay` WHERE ( state < 2 AND type =1 AND queue=0 AND num>0 AND seed="番茄" ) LIMIT 1   [ RunTime:0.000084s ]
+SQL: SET GLOBAL group_concat_max_len=102400 [ RunTime:0.000032s ]
+NOTIC: [8] Undefined variable: order /home/work/www/html/game/farms/ThinkPHP/Library/Org/Our/Matching.class.php 第 147 行.
+SQL: SELECT GROUP_CONCAT(money ORDER BY money desc ) as desc_money FROM `2018-02_pay` WHERE ( `state` < '2' ) AND ( `type` = 1 ) AND ( `seed` = '菠萝' ) AND ( `num` > '0' )  [ RunTime:0.000091s ]
+NOTIC: [8] Undefined offset: 0 /home/work/www/html/game/farms/ThinkPHP/Library/Org/Our/Matching.class.php 第 152 行.
+SQL: SELECT * FROM `2018-02_pay` WHERE ( state < 2 AND type =1 AND queue=0 AND num>0 AND seed="菠萝" ) ORDER BY money DESC  [ RunTime:0.000092s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `2018-02_pay` WHERE ( state < 2 AND type =1 AND queue=0 AND num>0 AND seed="菠萝" ) LIMIT 1   [ RunTime:0.000078s ]
+SQL: SET GLOBAL group_concat_max_len=102400 [ RunTime:0.000084s ]
+NOTIC: [8] Undefined variable: order /home/work/www/html/game/farms/ThinkPHP/Library/Org/Our/Matching.class.php 第 147 行.
+SQL: SELECT GROUP_CONCAT(money ORDER BY money desc ) as desc_money FROM `2018-02_pay` WHERE ( `state` < '2' ) AND ( `type` = 1 ) AND ( `seed` = '种子' ) AND ( `num` > '0' )  [ RunTime:0.000137s ]
+NOTIC: [8] Undefined offset: 0 /home/work/www/html/game/farms/ThinkPHP/Library/Org/Our/Matching.class.php 第 152 行.
+SQL: SELECT * FROM `2018-02_pay` WHERE ( state < 2 AND type =1 AND queue=0 AND num>0 AND seed="种子" ) ORDER BY money DESC  [ RunTime:0.000138s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `2018-02_pay` WHERE ( state < 2 AND type =1 AND queue=0 AND num>0 AND seed="种子" ) LIMIT 1   [ RunTime:0.000125s ]
+NOTIC: [2] unlink(/home/work/www/html/game/farms/app/Runtime/Temp/ea2b2676c28c0db26d39331a336c6b92.php): No such file or directory /home/work/www/html/game/farms/ThinkPHP/Library/Think/Cache/Driver/File.class.php 第 157 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000258s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000280s ]
+
+[ 2018-02-12T17:53:06+08:00 ]  
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000161s ]
+NOTIC: [8] Undefined index: REQUEST_URI /home/work/www/html/game/farms/ThinkPHP/Library/Think/Dispatcher.class.php 第 132 行.
+NOTIC: [8] Use of undefined constant __ROOT__ - assumed '__ROOT__' /home/work/www/html/game/farms/app/Home/Conf/config.php 第 6 行.
+NOTIC: [8] Use of undefined constant __ROOT__ - assumed '__ROOT__' /home/work/www/html/game/farms/app/Home/Conf/config.php 第 7 行.
+NOTIC: [8] Use of undefined constant __ROOT__ - assumed '__ROOT__' /home/work/www/html/game/farms/app/Home/Conf/config.php 第 8 行.
+NOTIC: [8] Use of undefined constant _PHP_FILE_ - assumed '_PHP_FILE_' /home/work/www/html/game/farms/ThinkPHP/Library/Think/Dispatcher.class.php 第 173 行.
+NOTIC: [8] Undefined index: REQUEST_METHOD /home/work/www/html/game/farms/ThinkPHP/Library/Think/App.class.php 第 30 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000180s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000200s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /home/work/www/html/game/farms/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+NOTIC: [2] mysql_connect(): Headers and client library minor version mismatch. Headers:50552 Library:50637 /home/work/www/html/game/farms/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `global_conf` [ RunTime:0.000329s ]
+SQL: SELECT * FROM `global_conf` WHERE ( cases="poundage" or cases="LimitPricePostion" )  [ RunTime:0.000143s ]
+SQL: SHOW COLUMNS FROM `seeds` [ RunTime:0.000268s ]
+SQL: SELECT * FROM `seeds` WHERE ( varieties!="摇钱树" AND state=0 ) ORDER BY id  [ RunTime:0.000159s ]
+SQL: SET GLOBAL group_concat_max_len=102400 [ RunTime:0.000035s ]
+SQL: SHOW COLUMNS FROM `2018-02_pay` [ RunTime:0.000266s ]
+NOTIC: [8] Undefined variable: order /home/work/www/html/game/farms/ThinkPHP/Library/Org/Our/Matching.class.php 第 147 行.
+SQL: SELECT GROUP_CONCAT(money ORDER BY money desc ) as desc_money FROM `2018-02_pay` WHERE ( `state` < '2' ) AND ( `type` = 1 ) AND ( `seed` = '土豆' ) AND ( `num` > '0' )  [ RunTime:0.000158s ]
+NOTIC: [8] Undefined variable: buy /home/work/www/html/game/farms/ThinkPHP/Library/Org/Our/Matching.class.php 第 152 行.
+SQL: SELECT * FROM `2018-02_pay` WHERE ( state < 2 AND type =1 AND queue=0 AND num>0 AND seed="土豆" ) ORDER BY money DESC  [ RunTime:0.000133s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `2018-02_pay` WHERE ( state < 2 AND type =1 AND queue=0 AND num>0 AND seed="土豆" ) LIMIT 1   [ RunTime:0.000092s ]
+SQL: SET GLOBAL group_concat_max_len=102400 [ RunTime:0.000088s ]
+NOTIC: [8] Undefined variable: order /home/work/www/html/game/farms/ThinkPHP/Library/Org/Our/Matching.class.php 第 147 行.
+SQL: SELECT GROUP_CONCAT(money ORDER BY money desc ) as desc_money FROM `2018-02_pay` WHERE ( `state` < '2' ) AND ( `type` = 1 ) AND ( `seed` = '草莓' ) AND ( `num` > '0' )  [ RunTime:0.000147s ]
+NOTIC: [8] Undefined offset: 0 /home/work/www/html/game/farms/ThinkPHP/Library/Org/Our/Matching.class.php 第 152 行.
+SQL: SELECT * FROM `2018-02_pay` WHERE ( state < 2 AND type =1 AND queue=0 AND num>0 AND seed="草莓" ) ORDER BY money DESC  [ RunTime:0.000146s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `2018-02_pay` WHERE ( state < 2 AND type =1 AND queue=0 AND num>0 AND seed="草莓" ) LIMIT 1   [ RunTime:0.000135s ]
+SQL: SET GLOBAL group_concat_max_len=102400 [ RunTime:0.000072s ]
+NOTIC: [8] Undefined variable: order /home/work/www/html/game/farms/ThinkPHP/Library/Org/Our/Matching.class.php 第 147 行.
+SQL: SELECT GROUP_CONCAT(money ORDER BY money desc ) as desc_money FROM `2018-02_pay` WHERE ( `state` < '2' ) AND ( `type` = 1 ) AND ( `seed` = '樱桃' ) AND ( `num` > '0' )  [ RunTime:0.000210s ]
+NOTIC: [8] Undefined offset: 0 /home/work/www/html/game/farms/ThinkPHP/Library/Org/Our/Matching.class.php 第 152 行.
+SQL: SELECT * FROM `2018-02_pay` WHERE ( state < 2 AND type =1 AND queue=0 AND num>0 AND seed="樱桃" ) ORDER BY money DESC  [ RunTime:0.000187s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `2018-02_pay` WHERE ( state < 2 AND type =1 AND queue=0 AND num>0 AND seed="樱桃" ) LIMIT 1   [ RunTime:0.000173s ]
+SQL: SET GLOBAL group_concat_max_len=102400 [ RunTime:0.000101s ]
+NOTIC: [8] Undefined variable: order /home/work/www/html/game/farms/ThinkPHP/Library/Org/Our/Matching.class.php 第 147 行.
+SQL: SELECT GROUP_CONCAT(money ORDER BY money desc ) as desc_money FROM `2018-02_pay` WHERE ( `state` < '2' ) AND ( `type` = 1 ) AND ( `seed` = '稻米' ) AND ( `num` > '0' )  [ RunTime:0.000174s ]
+NOTIC: [8] Undefined offset: 0 /home/work/www/html/game/farms/ThinkPHP/Library/Org/Our/Matching.class.php 第 152 行.
+SQL: SELECT * FROM `2018-02_pay` WHERE ( state < 2 AND type =1 AND queue=0 AND num>0 AND seed="稻米" ) ORDER BY money DESC  [ RunTime:0.000150s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `2018-02_pay` WHERE ( state < 2 AND type =1 AND queue=0 AND num>0 AND seed="稻米" ) LIMIT 1   [ RunTime:0.000133s ]
+SQL: SET GLOBAL group_concat_max_len=102400 [ RunTime:0.000073s ]
+NOTIC: [8] Undefined variable: order /home/work/www/html/game/farms/ThinkPHP/Library/Org/Our/Matching.class.php 第 147 行.
+SQL: SELECT GROUP_CONCAT(money ORDER BY money desc ) as desc_money FROM `2018-02_pay` WHERE ( `state` < '2' ) AND ( `type` = 1 ) AND ( `seed` = '葡萄' ) AND ( `num` > '0' )  [ RunTime:0.000144s ]
+NOTIC: [8] Undefined offset: 0 /home/work/www/html/game/farms/ThinkPHP/Library/Org/Our/Matching.class.php 第 152 行.
+SQL: SELECT * FROM `2018-02_pay` WHERE ( state < 2 AND type =1 AND queue=0 AND num>0 AND seed="葡萄" ) ORDER BY money DESC  [ RunTime:0.000167s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `2018-02_pay` WHERE ( state < 2 AND type =1 AND queue=0 AND num>0 AND seed="葡萄" ) LIMIT 1   [ RunTime:0.000133s ]
+SQL: SET GLOBAL group_concat_max_len=102400 [ RunTime:0.000071s ]
+NOTIC: [8] Undefined variable: order /home/work/www/html/game/farms/ThinkPHP/Library/Org/Our/Matching.class.php 第 147 行.
+SQL: SELECT GROUP_CONCAT(money ORDER BY money desc ) as desc_money FROM `2018-02_pay` WHERE ( `state` < '2' ) AND ( `type` = 1 ) AND ( `seed` = '番茄' ) AND ( `num` > '0' )  [ RunTime:0.000148s ]
+NOTIC: [8] Undefined offset: 0 /home/work/www/html/game/farms/ThinkPHP/Library/Org/Our/Matching.class.php 第 152 行.
+SQL: SELECT * FROM `2018-02_pay` WHERE ( state < 2 AND type =1 AND queue=0 AND num>0 AND seed="番茄" ) ORDER BY money DESC  [ RunTime:0.000157s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `2018-02_pay` WHERE ( state < 2 AND type =1 AND queue=0 AND num>0 AND seed="番茄" ) LIMIT 1   [ RunTime:0.000165s ]
+SQL: SET GLOBAL group_concat_max_len=102400 [ RunTime:0.000074s ]
+NOTIC: [8] Undefined variable: order /home/work/www/html/game/farms/ThinkPHP/Library/Org/Our/Matching.class.php 第 147 行.
+SQL: SELECT GROUP_CONCAT(money ORDER BY money desc ) as desc_money FROM `2018-02_pay` WHERE ( `state` < '2' ) AND ( `type` = 1 ) AND ( `seed` = '菠萝' ) AND ( `num` > '0' )  [ RunTime:0.000146s ]
+NOTIC: [8] Undefined offset: 0 /home/work/www/html/game/farms/ThinkPHP/Library/Org/Our/Matching.class.php 第 152 行.
+SQL: SELECT * FROM `2018-02_pay` WHERE ( state < 2 AND type =1 AND queue=0 AND num>0 AND seed="菠萝" ) ORDER BY money DESC  [ RunTime:0.000147s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `2018-02_pay` WHERE ( state < 2 AND type =1 AND queue=0 AND num>0 AND seed="菠萝" ) LIMIT 1   [ RunTime:0.000133s ]
+SQL: SET GLOBAL group_concat_max_len=102400 [ RunTime:0.000098s ]
+NOTIC: [8] Undefined variable: order /home/work/www/html/game/farms/ThinkPHP/Library/Org/Our/Matching.class.php 第 147 行.
+SQL: SELECT GROUP_CONCAT(money ORDER BY money desc ) as desc_money FROM `2018-02_pay` WHERE ( `state` < '2' ) AND ( `type` = 1 ) AND ( `seed` = '种子' ) AND ( `num` > '0' )  [ RunTime:0.000146s ]
+NOTIC: [8] Undefined offset: 0 /home/work/www/html/game/farms/ThinkPHP/Library/Org/Our/Matching.class.php 第 152 行.
+SQL: SELECT * FROM `2018-02_pay` WHERE ( state < 2 AND type =1 AND queue=0 AND num>0 AND seed="种子" ) ORDER BY money DESC  [ RunTime:0.000148s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `2018-02_pay` WHERE ( state < 2 AND type =1 AND queue=0 AND num>0 AND seed="种子" ) LIMIT 1   [ RunTime:0.000132s ]
+NOTIC: [2] unlink(/home/work/www/html/game/farms/app/Runtime/Temp/ea2b2676c28c0db26d39331a336c6b92.php): No such file or directory /home/work/www/html/game/farms/ThinkPHP/Library/Think/Cache/Driver/File.class.php 第 157 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000240s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000264s ]
+
+[ 2018-02-12T17:53:11+08:00 ]  
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000161s ]
+NOTIC: [8] Undefined index: REQUEST_URI /home/work/www/html/game/farms/ThinkPHP/Library/Think/Dispatcher.class.php 第 132 行.
+NOTIC: [8] Use of undefined constant __ROOT__ - assumed '__ROOT__' /home/work/www/html/game/farms/app/Home/Conf/config.php 第 6 行.
+NOTIC: [8] Use of undefined constant __ROOT__ - assumed '__ROOT__' /home/work/www/html/game/farms/app/Home/Conf/config.php 第 7 行.
+NOTIC: [8] Use of undefined constant __ROOT__ - assumed '__ROOT__' /home/work/www/html/game/farms/app/Home/Conf/config.php 第 8 行.
+NOTIC: [8] Use of undefined constant _PHP_FILE_ - assumed '_PHP_FILE_' /home/work/www/html/game/farms/ThinkPHP/Library/Think/Dispatcher.class.php 第 173 行.
+NOTIC: [8] Undefined index: REQUEST_METHOD /home/work/www/html/game/farms/ThinkPHP/Library/Think/App.class.php 第 30 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000184s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000205s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /home/work/www/html/game/farms/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+NOTIC: [2] mysql_connect(): Headers and client library minor version mismatch. Headers:50552 Library:50637 /home/work/www/html/game/farms/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `global_conf` [ RunTime:0.000407s ]
+SQL: SELECT * FROM `global_conf` WHERE ( cases="poundage" or cases="LimitPricePostion" )  [ RunTime:0.000181s ]
+SQL: SHOW COLUMNS FROM `seeds` [ RunTime:0.000279s ]
+SQL: SELECT * FROM `seeds` WHERE ( varieties!="摇钱树" AND state=0 ) ORDER BY id  [ RunTime:0.000127s ]
+SQL: SET GLOBAL group_concat_max_len=102400 [ RunTime:0.000080s ]
+SQL: SHOW COLUMNS FROM `2018-02_pay` [ RunTime:0.000291s ]
+NOTIC: [8] Undefined variable: order /home/work/www/html/game/farms/ThinkPHP/Library/Org/Our/Matching.class.php 第 147 行.
+SQL: SELECT GROUP_CONCAT(money ORDER BY money desc ) as desc_money FROM `2018-02_pay` WHERE ( `state` < '2' ) AND ( `type` = 1 ) AND ( `seed` = '土豆' ) AND ( `num` > '0' )  [ RunTime:0.000164s ]
+NOTIC: [8] Undefined variable: buy /home/work/www/html/game/farms/ThinkPHP/Library/Org/Our/Matching.class.php 第 152 行.
+SQL: SELECT * FROM `2018-02_pay` WHERE ( state < 2 AND type =1 AND queue=0 AND num>0 AND seed="土豆" ) ORDER BY money DESC  [ RunTime:0.000108s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `2018-02_pay` WHERE ( state < 2 AND type =1 AND queue=0 AND num>0 AND seed="土豆" ) LIMIT 1   [ RunTime:0.000149s ]
+SQL: SET GLOBAL group_concat_max_len=102400 [ RunTime:0.000071s ]
+NOTIC: [8] Undefined variable: order /home/work/www/html/game/farms/ThinkPHP/Library/Org/Our/Matching.class.php 第 147 行.
+SQL: SELECT GROUP_CONCAT(money ORDER BY money desc ) as desc_money FROM `2018-02_pay` WHERE ( `state` < '2' ) AND ( `type` = 1 ) AND ( `seed` = '草莓' ) AND ( `num` > '0' )  [ RunTime:0.000161s ]
+NOTIC: [8] Undefined offset: 0 /home/work/www/html/game/farms/ThinkPHP/Library/Org/Our/Matching.class.php 第 152 行.
+SQL: SELECT * FROM `2018-02_pay` WHERE ( state < 2 AND type =1 AND queue=0 AND num>0 AND seed="草莓" ) ORDER BY money DESC  [ RunTime:0.000148s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `2018-02_pay` WHERE ( state < 2 AND type =1 AND queue=0 AND num>0 AND seed="草莓" ) LIMIT 1   [ RunTime:0.000172s ]
+SQL: SET GLOBAL group_concat_max_len=102400 [ RunTime:0.000102s ]
+NOTIC: [8] Undefined variable: order /home/work/www/html/game/farms/ThinkPHP/Library/Org/Our/Matching.class.php 第 147 行.
+SQL: SELECT GROUP_CONCAT(money ORDER BY money desc ) as desc_money FROM `2018-02_pay` WHERE ( `state` < '2' ) AND ( `type` = 1 ) AND ( `seed` = '樱桃' ) AND ( `num` > '0' )  [ RunTime:0.000179s ]
+NOTIC: [8] Undefined offset: 0 /home/work/www/html/game/farms/ThinkPHP/Library/Org/Our/Matching.class.php 第 152 行.
+SQL: SELECT * FROM `2018-02_pay` WHERE ( state < 2 AND type =1 AND queue=0 AND num>0 AND seed="樱桃" ) ORDER BY money DESC  [ RunTime:0.000142s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `2018-02_pay` WHERE ( state < 2 AND type =1 AND queue=0 AND num>0 AND seed="樱桃" ) LIMIT 1   [ RunTime:0.000092s ]
+SQL: SET GLOBAL group_concat_max_len=102400 [ RunTime:0.000035s ]
+NOTIC: [8] Undefined variable: order /home/work/www/html/game/farms/ThinkPHP/Library/Org/Our/Matching.class.php 第 147 行.
+SQL: SELECT GROUP_CONCAT(money ORDER BY money desc ) as desc_money FROM `2018-02_pay` WHERE ( `state` < '2' ) AND ( `type` = 1 ) AND ( `seed` = '稻米' ) AND ( `num` > '0' )  [ RunTime:0.000142s ]
+NOTIC: [8] Undefined offset: 0 /home/work/www/html/game/farms/ThinkPHP/Library/Org/Our/Matching.class.php 第 152 行.
+SQL: SELECT * FROM `2018-02_pay` WHERE ( state < 2 AND type =1 AND queue=0 AND num>0 AND seed="稻米" ) ORDER BY money DESC  [ RunTime:0.000104s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `2018-02_pay` WHERE ( state < 2 AND type =1 AND queue=0 AND num>0 AND seed="稻米" ) LIMIT 1   [ RunTime:0.000132s ]
+SQL: SET GLOBAL group_concat_max_len=102400 [ RunTime:0.000066s ]
+NOTIC: [8] Undefined variable: order /home/work/www/html/game/farms/ThinkPHP/Library/Org/Our/Matching.class.php 第 147 行.
+SQL: SELECT GROUP_CONCAT(money ORDER BY money desc ) as desc_money FROM `2018-02_pay` WHERE ( `state` < '2' ) AND ( `type` = 1 ) AND ( `seed` = '葡萄' ) AND ( `num` > '0' )  [ RunTime:0.000155s ]
+NOTIC: [8] Undefined offset: 0 /home/work/www/html/game/farms/ThinkPHP/Library/Org/Our/Matching.class.php 第 152 行.
+SQL: SELECT * FROM `2018-02_pay` WHERE ( state < 2 AND type =1 AND queue=0 AND num>0 AND seed="葡萄" ) ORDER BY money DESC  [ RunTime:0.000179s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `2018-02_pay` WHERE ( state < 2 AND type =1 AND queue=0 AND num>0 AND seed="葡萄" ) LIMIT 1   [ RunTime:0.000164s ]
+SQL: SET GLOBAL group_concat_max_len=102400 [ RunTime:0.000101s ]
+NOTIC: [8] Undefined variable: order /home/work/www/html/game/farms/ThinkPHP/Library/Org/Our/Matching.class.php 第 147 行.
+SQL: SELECT GROUP_CONCAT(money ORDER BY money desc ) as desc_money FROM `2018-02_pay` WHERE ( `state` < '2' ) AND ( `type` = 1 ) AND ( `seed` = '番茄' ) AND ( `num` > '0' )  [ RunTime:0.000149s ]
+NOTIC: [8] Undefined offset: 0 /home/work/www/html/game/farms/ThinkPHP/Library/Org/Our/Matching.class.php 第 152 行.
+SQL: SELECT * FROM `2018-02_pay` WHERE ( state < 2 AND type =1 AND queue=0 AND num>0 AND seed="番茄" ) ORDER BY money DESC  [ RunTime:0.000148s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `2018-02_pay` WHERE ( state < 2 AND type =1 AND queue=0 AND num>0 AND seed="番茄" ) LIMIT 1   [ RunTime:0.000130s ]
+SQL: SET GLOBAL group_concat_max_len=102400 [ RunTime:0.000068s ]
+NOTIC: [8] Undefined variable: order /home/work/www/html/game/farms/ThinkPHP/Library/Org/Our/Matching.class.php 第 147 行.
+SQL: SELECT GROUP_CONCAT(money ORDER BY money desc ) as desc_money FROM `2018-02_pay` WHERE ( `state` < '2' ) AND ( `type` = 1 ) AND ( `seed` = '菠萝' ) AND ( `num` > '0' )  [ RunTime:0.000145s ]
+NOTIC: [8] Undefined offset: 0 /home/work/www/html/game/farms/ThinkPHP/Library/Org/Our/Matching.class.php 第 152 行.
+SQL: SELECT * FROM `2018-02_pay` WHERE ( state < 2 AND type =1 AND queue=0 AND num>0 AND seed="菠萝" ) ORDER BY money DESC  [ RunTime:0.000144s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `2018-02_pay` WHERE ( state < 2 AND type =1 AND queue=0 AND num>0 AND seed="菠萝" ) LIMIT 1   [ RunTime:0.000150s ]
+SQL: SET GLOBAL group_concat_max_len=102400 [ RunTime:0.000070s ]
+NOTIC: [8] Undefined variable: order /home/work/www/html/game/farms/ThinkPHP/Library/Org/Our/Matching.class.php 第 147 行.
+SQL: SELECT GROUP_CONCAT(money ORDER BY money desc ) as desc_money FROM `2018-02_pay` WHERE ( `state` < '2' ) AND ( `type` = 1 ) AND ( `seed` = '种子' ) AND ( `num` > '0' )  [ RunTime:0.000142s ]
+NOTIC: [8] Undefined offset: 0 /home/work/www/html/game/farms/ThinkPHP/Library/Org/Our/Matching.class.php 第 152 行.
+SQL: SELECT * FROM `2018-02_pay` WHERE ( state < 2 AND type =1 AND queue=0 AND num>0 AND seed="种子" ) ORDER BY money DESC  [ RunTime:0.000146s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `2018-02_pay` WHERE ( state < 2 AND type =1 AND queue=0 AND num>0 AND seed="种子" ) LIMIT 1   [ RunTime:0.000129s ]
+NOTIC: [2] unlink(/home/work/www/html/game/farms/app/Runtime/Temp/ea2b2676c28c0db26d39331a336c6b92.php): No such file or directory /home/work/www/html/game/farms/ThinkPHP/Library/Think/Cache/Driver/File.class.php 第 157 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000234s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000258s ]
+
+[ 2018-02-12T17:53:16+08:00 ]  
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000164s ]
+NOTIC: [8] Undefined index: REQUEST_URI /home/work/www/html/game/farms/ThinkPHP/Library/Think/Dispatcher.class.php 第 132 行.
+NOTIC: [8] Use of undefined constant __ROOT__ - assumed '__ROOT__' /home/work/www/html/game/farms/app/Home/Conf/config.php 第 6 行.
+NOTIC: [8] Use of undefined constant __ROOT__ - assumed '__ROOT__' /home/work/www/html/game/farms/app/Home/Conf/config.php 第 7 行.
+NOTIC: [8] Use of undefined constant __ROOT__ - assumed '__ROOT__' /home/work/www/html/game/farms/app/Home/Conf/config.php 第 8 行.
+NOTIC: [8] Use of undefined constant _PHP_FILE_ - assumed '_PHP_FILE_' /home/work/www/html/game/farms/ThinkPHP/Library/Think/Dispatcher.class.php 第 173 行.
+NOTIC: [8] Undefined index: REQUEST_METHOD /home/work/www/html/game/farms/ThinkPHP/Library/Think/App.class.php 第 30 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000179s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000199s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /home/work/www/html/game/farms/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+NOTIC: [2] mysql_connect(): Headers and client library minor version mismatch. Headers:50552 Library:50637 /home/work/www/html/game/farms/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `global_conf` [ RunTime:0.000344s ]
+SQL: SELECT * FROM `global_conf` WHERE ( cases="poundage" or cases="LimitPricePostion" )  [ RunTime:0.000163s ]
+SQL: SHOW COLUMNS FROM `seeds` [ RunTime:0.000316s ]
+SQL: SELECT * FROM `seeds` WHERE ( varieties!="摇钱树" AND state=0 ) ORDER BY id  [ RunTime:0.000216s ]
+SQL: SET GLOBAL group_concat_max_len=102400 [ RunTime:0.000036s ]
+SQL: SHOW COLUMNS FROM `2018-02_pay` [ RunTime:0.000290s ]
+NOTIC: [8] Undefined variable: order /home/work/www/html/game/farms/ThinkPHP/Library/Org/Our/Matching.class.php 第 147 行.
+SQL: SELECT GROUP_CONCAT(money ORDER BY money desc ) as desc_money FROM `2018-02_pay` WHERE ( `state` < '2' ) AND ( `type` = 1 ) AND ( `seed` = '土豆' ) AND ( `num` > '0' )  [ RunTime:0.000165s ]
+NOTIC: [8] Undefined variable: buy /home/work/www/html/game/farms/ThinkPHP/Library/Org/Our/Matching.class.php 第 152 行.
+SQL: SELECT * FROM `2018-02_pay` WHERE ( state < 2 AND type =1 AND queue=0 AND num>0 AND seed="土豆" ) ORDER BY money DESC  [ RunTime:0.000144s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `2018-02_pay` WHERE ( state < 2 AND type =1 AND queue=0 AND num>0 AND seed="土豆" ) LIMIT 1   [ RunTime:0.000090s ]
+SQL: SET GLOBAL group_concat_max_len=102400 [ RunTime:0.000109s ]
+NOTIC: [8] Undefined variable: order /home/work/www/html/game/farms/ThinkPHP/Library/Org/Our/Matching.class.php 第 147 行.
+SQL: SELECT GROUP_CONCAT(money ORDER BY money desc ) as desc_money FROM `2018-02_pay` WHERE ( `state` < '2' ) AND ( `type` = 1 ) AND ( `seed` = '草莓' ) AND ( `num` > '0' )  [ RunTime:0.000212s ]
+NOTIC: [8] Undefined offset: 0 /home/work/www/html/game/farms/ThinkPHP/Library/Org/Our/Matching.class.php 第 152 行.
+SQL: SELECT * FROM `2018-02_pay` WHERE ( state < 2 AND type =1 AND queue=0 AND num>0 AND seed="草莓" ) ORDER BY money DESC  [ RunTime:0.000189s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `2018-02_pay` WHERE ( state < 2 AND type =1 AND queue=0 AND num>0 AND seed="草莓" ) LIMIT 1   [ RunTime:0.000176s ]
+SQL: SET GLOBAL group_concat_max_len=102400 [ RunTime:0.000102s ]
+NOTIC: [8] Undefined variable: order /home/work/www/html/game/farms/ThinkPHP/Library/Org/Our/Matching.class.php 第 147 行.
+SQL: SELECT GROUP_CONCAT(money ORDER BY money desc ) as desc_money FROM `2018-02_pay` WHERE ( `state` < '2' ) AND ( `type` = 1 ) AND ( `seed` = '樱桃' ) AND ( `num` > '0' )  [ RunTime:0.000148s ]
+NOTIC: [8] Undefined offset: 0 /home/work/www/html/game/farms/ThinkPHP/Library/Org/Our/Matching.class.php 第 152 行.
+SQL: SELECT * FROM `2018-02_pay` WHERE ( state < 2 AND type =1 AND queue=0 AND num>0 AND seed="樱桃" ) ORDER BY money DESC  [ RunTime:0.000147s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `2018-02_pay` WHERE ( state < 2 AND type =1 AND queue=0 AND num>0 AND seed="樱桃" ) LIMIT 1   [ RunTime:0.000134s ]
+SQL: SET GLOBAL group_concat_max_len=102400 [ RunTime:0.000094s ]
+NOTIC: [8] Undefined variable: order /home/work/www/html/game/farms/ThinkPHP/Library/Org/Our/Matching.class.php 第 147 行.
+SQL: SELECT GROUP_CONCAT(money ORDER BY money desc ) as desc_money FROM `2018-02_pay` WHERE ( `state` < '2' ) AND ( `type` = 1 ) AND ( `seed` = '稻米' ) AND ( `num` > '0' )  [ RunTime:0.000167s ]
+NOTIC: [8] Undefined offset: 0 /home/work/www/html/game/farms/ThinkPHP/Library/Org/Our/Matching.class.php 第 152 行.
+SQL: SELECT * FROM `2018-02_pay` WHERE ( state < 2 AND type =1 AND queue=0 AND num>0 AND seed="稻米" ) ORDER BY money DESC  [ RunTime:0.000146s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `2018-02_pay` WHERE ( state < 2 AND type =1 AND queue=0 AND num>0 AND seed="稻米" ) LIMIT 1   [ RunTime:0.000129s ]
+SQL: SET GLOBAL group_concat_max_len=102400 [ RunTime:0.000073s ]
+NOTIC: [8] Undefined variable: order /home/work/www/html/game/farms/ThinkPHP/Library/Org/Our/Matching.class.php 第 147 行.
+SQL: SELECT GROUP_CONCAT(money ORDER BY money desc ) as desc_money FROM `2018-02_pay` WHERE ( `state` < '2' ) AND ( `type` = 1 ) AND ( `seed` = '葡萄' ) AND ( `num` > '0' )  [ RunTime:0.000154s ]
+NOTIC: [8] Undefined offset: 0 /home/work/www/html/game/farms/ThinkPHP/Library/Org/Our/Matching.class.php 第 152 行.
+SQL: SELECT * FROM `2018-02_pay` WHERE ( state < 2 AND type =1 AND queue=0 AND num>0 AND seed="葡萄" ) ORDER BY money DESC  [ RunTime:0.000159s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `2018-02_pay` WHERE ( state < 2 AND type =1 AND queue=0 AND num>0 AND seed="葡萄" ) LIMIT 1   [ RunTime:0.000127s ]
+SQL: SET GLOBAL group_concat_max_len=102400 [ RunTime:0.000065s ]
+NOTIC: [8] Undefined variable: order /home/work/www/html/game/farms/ThinkPHP/Library/Org/Our/Matching.class.php 第 147 行.
+SQL: SELECT GROUP_CONCAT(money ORDER BY money desc ) as desc_money FROM `2018-02_pay` WHERE ( `state` < '2' ) AND ( `type` = 1 ) AND ( `seed` = '番茄' ) AND ( `num` > '0' )  [ RunTime:0.000155s ]
+NOTIC: [8] Undefined offset: 0 /home/work/www/html/game/farms/ThinkPHP/Library/Org/Our/Matching.class.php 第 152 行.
+SQL: SELECT * FROM `2018-02_pay` WHERE ( state < 2 AND type =1 AND queue=0 AND num>0 AND seed="番茄" ) ORDER BY money DESC  [ RunTime:0.000200s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `2018-02_pay` WHERE ( state < 2 AND type =1 AND queue=0 AND num>0 AND seed="番茄" ) LIMIT 1   [ RunTime:0.000161s ]
+SQL: SET GLOBAL group_concat_max_len=102400 [ RunTime:0.000097s ]
+NOTIC: [8] Undefined variable: order /home/work/www/html/game/farms/ThinkPHP/Library/Org/Our/Matching.class.php 第 147 行.
+SQL: SELECT GROUP_CONCAT(money ORDER BY money desc ) as desc_money FROM `2018-02_pay` WHERE ( `state` < '2' ) AND ( `type` = 1 ) AND ( `seed` = '菠萝' ) AND ( `num` > '0' )  [ RunTime:0.000175s ]
+NOTIC: [8] Undefined offset: 0 /home/work/www/html/game/farms/ThinkPHP/Library/Org/Our/Matching.class.php 第 152 行.
+SQL: SELECT * FROM `2018-02_pay` WHERE ( state < 2 AND type =1 AND queue=0 AND num>0 AND seed="菠萝" ) ORDER BY money DESC  [ RunTime:0.000148s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `2018-02_pay` WHERE ( state < 2 AND type =1 AND queue=0 AND num>0 AND seed="菠萝" ) LIMIT 1   [ RunTime:0.000137s ]
+SQL: SET GLOBAL group_concat_max_len=102400 [ RunTime:0.000072s ]
+NOTIC: [8] Undefined variable: order /home/work/www/html/game/farms/ThinkPHP/Library/Org/Our/Matching.class.php 第 147 行.
+SQL: SELECT GROUP_CONCAT(money ORDER BY money desc ) as desc_money FROM `2018-02_pay` WHERE ( `state` < '2' ) AND ( `type` = 1 ) AND ( `seed` = '种子' ) AND ( `num` > '0' )  [ RunTime:0.000145s ]
+NOTIC: [8] Undefined offset: 0 /home/work/www/html/game/farms/ThinkPHP/Library/Org/Our/Matching.class.php 第 152 行.
+SQL: SELECT * FROM `2018-02_pay` WHERE ( state < 2 AND type =1 AND queue=0 AND num>0 AND seed="种子" ) ORDER BY money DESC  [ RunTime:0.000147s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `2018-02_pay` WHERE ( state < 2 AND type =1 AND queue=0 AND num>0 AND seed="种子" ) LIMIT 1   [ RunTime:0.000132s ]
+NOTIC: [2] unlink(/home/work/www/html/game/farms/app/Runtime/Temp/ea2b2676c28c0db26d39331a336c6b92.php): No such file or directory /home/work/www/html/game/farms/ThinkPHP/Library/Think/Cache/Driver/File.class.php 第 157 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000240s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000261s ]
+
+[ 2018-02-12T17:53:21+08:00 ]  
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000192s ]
+NOTIC: [8] Undefined index: REQUEST_URI /home/work/www/html/game/farms/ThinkPHP/Library/Think/Dispatcher.class.php 第 132 行.
+NOTIC: [8] Use of undefined constant __ROOT__ - assumed '__ROOT__' /home/work/www/html/game/farms/app/Home/Conf/config.php 第 6 行.
+NOTIC: [8] Use of undefined constant __ROOT__ - assumed '__ROOT__' /home/work/www/html/game/farms/app/Home/Conf/config.php 第 7 行.
+NOTIC: [8] Use of undefined constant __ROOT__ - assumed '__ROOT__' /home/work/www/html/game/farms/app/Home/Conf/config.php 第 8 行.
+NOTIC: [8] Use of undefined constant _PHP_FILE_ - assumed '_PHP_FILE_' /home/work/www/html/game/farms/ThinkPHP/Library/Think/Dispatcher.class.php 第 173 行.
+NOTIC: [8] Undefined index: REQUEST_METHOD /home/work/www/html/game/farms/ThinkPHP/Library/Think/App.class.php 第 30 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000178s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000199s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /home/work/www/html/game/farms/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+NOTIC: [2] mysql_connect(): Headers and client library minor version mismatch. Headers:50552 Library:50637 /home/work/www/html/game/farms/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `global_conf` [ RunTime:0.000372s ]
+SQL: SELECT * FROM `global_conf` WHERE ( cases="poundage" or cases="LimitPricePostion" )  [ RunTime:0.000182s ]
+SQL: SHOW COLUMNS FROM `seeds` [ RunTime:0.000280s ]
+SQL: SELECT * FROM `seeds` WHERE ( varieties!="摇钱树" AND state=0 ) ORDER BY id  [ RunTime:0.000170s ]
+SQL: SET GLOBAL group_concat_max_len=102400 [ RunTime:0.000035s ]
+SQL: SHOW COLUMNS FROM `2018-02_pay` [ RunTime:0.000327s ]
+NOTIC: [8] Undefined variable: order /home/work/www/html/game/farms/ThinkPHP/Library/Org/Our/Matching.class.php 第 147 行.
+SQL: SELECT GROUP_CONCAT(money ORDER BY money desc ) as desc_money FROM `2018-02_pay` WHERE ( `state` < '2' ) AND ( `type` = 1 ) AND ( `seed` = '土豆' ) AND ( `num` > '0' )  [ RunTime:0.000162s ]
+NOTIC: [8] Undefined variable: buy /home/work/www/html/game/farms/ThinkPHP/Library/Org/Our/Matching.class.php 第 152 行.
+SQL: SELECT * FROM `2018-02_pay` WHERE ( state < 2 AND type =1 AND queue=0 AND num>0 AND seed="土豆" ) ORDER BY money DESC  [ RunTime:0.000143s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `2018-02_pay` WHERE ( state < 2 AND type =1 AND queue=0 AND num>0 AND seed="土豆" ) LIMIT 1   [ RunTime:0.000150s ]
+SQL: SET GLOBAL group_concat_max_len=102400 [ RunTime:0.000098s ]
+NOTIC: [8] Undefined variable: order /home/work/www/html/game/farms/ThinkPHP/Library/Org/Our/Matching.class.php 第 147 行.
+SQL: SELECT GROUP_CONCAT(money ORDER BY money desc ) as desc_money FROM `2018-02_pay` WHERE ( `state` < '2' ) AND ( `type` = 1 ) AND ( `seed` = '草莓' ) AND ( `num` > '0' )  [ RunTime:0.000162s ]
+NOTIC: [8] Undefined offset: 0 /home/work/www/html/game/farms/ThinkPHP/Library/Org/Our/Matching.class.php 第 152 行.
+SQL: SELECT * FROM `2018-02_pay` WHERE ( state < 2 AND type =1 AND queue=0 AND num>0 AND seed="草莓" ) ORDER BY money DESC  [ RunTime:0.000135s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `2018-02_pay` WHERE ( state < 2 AND type =1 AND queue=0 AND num>0 AND seed="草莓" ) LIMIT 1   [ RunTime:0.000121s ]
+SQL: SET GLOBAL group_concat_max_len=102400 [ RunTime:0.000075s ]
+NOTIC: [8] Undefined variable: order /home/work/www/html/game/farms/ThinkPHP/Library/Org/Our/Matching.class.php 第 147 行.
+SQL: SELECT GROUP_CONCAT(money ORDER BY money desc ) as desc_money FROM `2018-02_pay` WHERE ( `state` < '2' ) AND ( `type` = 1 ) AND ( `seed` = '樱桃' ) AND ( `num` > '0' )  [ RunTime:0.000145s ]
+NOTIC: [8] Undefined offset: 0 /home/work/www/html/game/farms/ThinkPHP/Library/Org/Our/Matching.class.php 第 152 行.
+SQL: SELECT * FROM `2018-02_pay` WHERE ( state < 2 AND type =1 AND queue=0 AND num>0 AND seed="樱桃" ) ORDER BY money DESC  [ RunTime:0.000150s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `2018-02_pay` WHERE ( state < 2 AND type =1 AND queue=0 AND num>0 AND seed="樱桃" ) LIMIT 1   [ RunTime:0.000132s ]
+SQL: SET GLOBAL group_concat_max_len=102400 [ RunTime:0.000036s ]
+NOTIC: [8] Undefined variable: order /home/work/www/html/game/farms/ThinkPHP/Library/Org/Our/Matching.class.php 第 147 行.
+SQL: SELECT GROUP_CONCAT(money ORDER BY money desc ) as desc_money FROM `2018-02_pay` WHERE ( `state` < '2' ) AND ( `type` = 1 ) AND ( `seed` = '稻米' ) AND ( `num` > '0' )  [ RunTime:0.000160s ]
+NOTIC: [8] Undefined offset: 0 /home/work/www/html/game/farms/ThinkPHP/Library/Org/Our/Matching.class.php 第 152 行.
+SQL: SELECT * FROM `2018-02_pay` WHERE ( state < 2 AND type =1 AND queue=0 AND num>0 AND seed="稻米" ) ORDER BY money DESC  [ RunTime:0.000139s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `2018-02_pay` WHERE ( state < 2 AND type =1 AND queue=0 AND num>0 AND seed="稻米" ) LIMIT 1   [ RunTime:0.000125s ]
+SQL: SET GLOBAL group_concat_max_len=102400 [ RunTime:0.000067s ]
+NOTIC: [8] Undefined variable: order /home/work/www/html/game/farms/ThinkPHP/Library/Org/Our/Matching.class.php 第 147 行.
+SQL: SELECT GROUP_CONCAT(money ORDER BY money desc ) as desc_money FROM `2018-02_pay` WHERE ( `state` < '2' ) AND ( `type` = 1 ) AND ( `seed` = '葡萄' ) AND ( `num` > '0' )  [ RunTime:0.000136s ]
+NOTIC: [8] Undefined offset: 0 /home/work/www/html/game/farms/ThinkPHP/Library/Org/Our/Matching.class.php 第 152 行.
+SQL: SELECT * FROM `2018-02_pay` WHERE ( state < 2 AND type =1 AND queue=0 AND num>0 AND seed="葡萄" ) ORDER BY money DESC  [ RunTime:0.000166s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `2018-02_pay` WHERE ( state < 2 AND type =1 AND queue=0 AND num>0 AND seed="葡萄" ) LIMIT 1   [ RunTime:0.000122s ]
+SQL: SET GLOBAL group_concat_max_len=102400 [ RunTime:0.000072s ]
+NOTIC: [8] Undefined variable: order /home/work/www/html/game/farms/ThinkPHP/Library/Org/Our/Matching.class.php 第 147 行.
+SQL: SELECT GROUP_CONCAT(money ORDER BY money desc ) as desc_money FROM `2018-02_pay` WHERE ( `state` < '2' ) AND ( `type` = 1 ) AND ( `seed` = '番茄' ) AND ( `num` > '0' )  [ RunTime:0.000128s ]
+NOTIC: [8] Undefined offset: 0 /home/work/www/html/game/farms/ThinkPHP/Library/Org/Our/Matching.class.php 第 152 行.
+SQL: SELECT * FROM `2018-02_pay` WHERE ( state < 2 AND type =1 AND queue=0 AND num>0 AND seed="番茄" ) ORDER BY money DESC  [ RunTime:0.000100s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `2018-02_pay` WHERE ( state < 2 AND type =1 AND queue=0 AND num>0 AND seed="番茄" ) LIMIT 1   [ RunTime:0.000116s ]
+SQL: SET GLOBAL group_concat_max_len=102400 [ RunTime:0.000071s ]
+NOTIC: [8] Undefined variable: order /home/work/www/html/game/farms/ThinkPHP/Library/Org/Our/Matching.class.php 第 147 行.
+SQL: SELECT GROUP_CONCAT(money ORDER BY money desc ) as desc_money FROM `2018-02_pay` WHERE ( `state` < '2' ) AND ( `type` = 1 ) AND ( `seed` = '菠萝' ) AND ( `num` > '0' )  [ RunTime:0.000148s ]
+NOTIC: [8] Undefined offset: 0 /home/work/www/html/game/farms/ThinkPHP/Library/Org/Our/Matching.class.php 第 152 行.
+SQL: SELECT * FROM `2018-02_pay` WHERE ( state < 2 AND type =1 AND queue=0 AND num>0 AND seed="菠萝" ) ORDER BY money DESC  [ RunTime:0.000146s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `2018-02_pay` WHERE ( state < 2 AND type =1 AND queue=0 AND num>0 AND seed="菠萝" ) LIMIT 1   [ RunTime:0.000135s ]
+SQL: SET GLOBAL group_concat_max_len=102400 [ RunTime:0.000076s ]
+NOTIC: [8] Undefined variable: order /home/work/www/html/game/farms/ThinkPHP/Library/Org/Our/Matching.class.php 第 147 行.
+SQL: SELECT GROUP_CONCAT(money ORDER BY money desc ) as desc_money FROM `2018-02_pay` WHERE ( `state` < '2' ) AND ( `type` = 1 ) AND ( `seed` = '种子' ) AND ( `num` > '0' )  [ RunTime:0.000139s ]
+NOTIC: [8] Undefined offset: 0 /home/work/www/html/game/farms/ThinkPHP/Library/Org/Our/Matching.class.php 第 152 行.
+SQL: SELECT * FROM `2018-02_pay` WHERE ( state < 2 AND type =1 AND queue=0 AND num>0 AND seed="种子" ) ORDER BY money DESC  [ RunTime:0.000138s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `2018-02_pay` WHERE ( state < 2 AND type =1 AND queue=0 AND num>0 AND seed="种子" ) LIMIT 1   [ RunTime:0.000124s ]
+NOTIC: [2] unlink(/home/work/www/html/game/farms/app/Runtime/Temp/ea2b2676c28c0db26d39331a336c6b92.php): No such file or directory /home/work/www/html/game/farms/ThinkPHP/Library/Think/Cache/Driver/File.class.php 第 157 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000271s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000292s ]
+
+[ 2018-02-12T17:53:26+08:00 ]  
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000164s ]
+NOTIC: [8] Undefined index: REQUEST_URI /home/work/www/html/game/farms/ThinkPHP/Library/Think/Dispatcher.class.php 第 132 行.
+NOTIC: [8] Use of undefined constant __ROOT__ - assumed '__ROOT__' /home/work/www/html/game/farms/app/Home/Conf/config.php 第 6 行.
+NOTIC: [8] Use of undefined constant __ROOT__ - assumed '__ROOT__' /home/work/www/html/game/farms/app/Home/Conf/config.php 第 7 行.
+NOTIC: [8] Use of undefined constant __ROOT__ - assumed '__ROOT__' /home/work/www/html/game/farms/app/Home/Conf/config.php 第 8 行.
+NOTIC: [8] Use of undefined constant _PHP_FILE_ - assumed '_PHP_FILE_' /home/work/www/html/game/farms/ThinkPHP/Library/Think/Dispatcher.class.php 第 173 行.
+NOTIC: [8] Undefined index: REQUEST_METHOD /home/work/www/html/game/farms/ThinkPHP/Library/Think/App.class.php 第 30 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000181s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000203s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /home/work/www/html/game/farms/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+NOTIC: [2] mysql_connect(): Headers and client library minor version mismatch. Headers:50552 Library:50637 /home/work/www/html/game/farms/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `global_conf` [ RunTime:0.000295s ]
+SQL: SELECT * FROM `global_conf` WHERE ( cases="poundage" or cases="LimitPricePostion" )  [ RunTime:0.000107s ]
+SQL: SHOW COLUMNS FROM `seeds` [ RunTime:0.000312s ]
+SQL: SELECT * FROM `seeds` WHERE ( varieties!="摇钱树" AND state=0 ) ORDER BY id  [ RunTime:0.000123s ]
+SQL: SET GLOBAL group_concat_max_len=102400 [ RunTime:0.000033s ]
+SQL: SHOW COLUMNS FROM `2018-02_pay` [ RunTime:0.000285s ]
+NOTIC: [8] Undefined variable: order /home/work/www/html/game/farms/ThinkPHP/Library/Org/Our/Matching.class.php 第 147 行.
+SQL: SELECT GROUP_CONCAT(money ORDER BY money desc ) as desc_money FROM `2018-02_pay` WHERE ( `state` < '2' ) AND ( `type` = 1 ) AND ( `seed` = '土豆' ) AND ( `num` > '0' )  [ RunTime:0.000174s ]
+NOTIC: [8] Undefined variable: buy /home/work/www/html/game/farms/ThinkPHP/Library/Org/Our/Matching.class.php 第 152 行.
+SQL: SELECT * FROM `2018-02_pay` WHERE ( state < 2 AND type =1 AND queue=0 AND num>0 AND seed="土豆" ) ORDER BY money DESC  [ RunTime:0.000152s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `2018-02_pay` WHERE ( state < 2 AND type =1 AND queue=0 AND num>0 AND seed="土豆" ) LIMIT 1   [ RunTime:0.000133s ]
+SQL: SET GLOBAL group_concat_max_len=102400 [ RunTime:0.000040s ]
+NOTIC: [8] Undefined variable: order /home/work/www/html/game/farms/ThinkPHP/Library/Org/Our/Matching.class.php 第 147 行.
+SQL: SELECT GROUP_CONCAT(money ORDER BY money desc ) as desc_money FROM `2018-02_pay` WHERE ( `state` < '2' ) AND ( `type` = 1 ) AND ( `seed` = '草莓' ) AND ( `num` > '0' )  [ RunTime:0.000125s ]
+NOTIC: [8] Undefined offset: 0 /home/work/www/html/game/farms/ThinkPHP/Library/Org/Our/Matching.class.php 第 152 行.
+SQL: SELECT * FROM `2018-02_pay` WHERE ( state < 2 AND type =1 AND queue=0 AND num>0 AND seed="草莓" ) ORDER BY money DESC  [ RunTime:0.000136s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `2018-02_pay` WHERE ( state < 2 AND type =1 AND queue=0 AND num>0 AND seed="草莓" ) LIMIT 1   [ RunTime:0.000115s ]
+SQL: SET GLOBAL group_concat_max_len=102400 [ RunTime:0.000060s ]
+NOTIC: [8] Undefined variable: order /home/work/www/html/game/farms/ThinkPHP/Library/Org/Our/Matching.class.php 第 147 行.
+SQL: SELECT GROUP_CONCAT(money ORDER BY money desc ) as desc_money FROM `2018-02_pay` WHERE ( `state` < '2' ) AND ( `type` = 1 ) AND ( `seed` = '樱桃' ) AND ( `num` > '0' )  [ RunTime:0.000126s ]
+NOTIC: [8] Undefined offset: 0 /home/work/www/html/game/farms/ThinkPHP/Library/Org/Our/Matching.class.php 第 152 行.
+SQL: SELECT * FROM `2018-02_pay` WHERE ( state < 2 AND type =1 AND queue=0 AND num>0 AND seed="樱桃" ) ORDER BY money DESC  [ RunTime:0.000140s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `2018-02_pay` WHERE ( state < 2 AND type =1 AND queue=0 AND num>0 AND seed="樱桃" ) LIMIT 1   [ RunTime:0.000151s ]
+SQL: SET GLOBAL group_concat_max_len=102400 [ RunTime:0.000084s ]
+NOTIC: [8] Undefined variable: order /home/work/www/html/game/farms/ThinkPHP/Library/Org/Our/Matching.class.php 第 147 行.
+SQL: SELECT GROUP_CONCAT(money ORDER BY money desc ) as desc_money FROM `2018-02_pay` WHERE ( `state` < '2' ) AND ( `type` = 1 ) AND ( `seed` = '稻米' ) AND ( `num` > '0' )  [ RunTime:0.000093s ]
+NOTIC: [8] Undefined offset: 0 /home/work/www/html/game/farms/ThinkPHP/Library/Org/Our/Matching.class.php 第 152 行.
+SQL: SELECT * FROM `2018-02_pay` WHERE ( state < 2 AND type =1 AND queue=0 AND num>0 AND seed="稻米" ) ORDER BY money DESC  [ RunTime:0.000149s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `2018-02_pay` WHERE ( state < 2 AND type =1 AND queue=0 AND num>0 AND seed="稻米" ) LIMIT 1   [ RunTime:0.000128s ]
+SQL: SET GLOBAL group_concat_max_len=102400 [ RunTime:0.000071s ]
+NOTIC: [8] Undefined variable: order /home/work/www/html/game/farms/ThinkPHP/Library/Org/Our/Matching.class.php 第 147 行.
+SQL: SELECT GROUP_CONCAT(money ORDER BY money desc ) as desc_money FROM `2018-02_pay` WHERE ( `state` < '2' ) AND ( `type` = 1 ) AND ( `seed` = '葡萄' ) AND ( `num` > '0' )  [ RunTime:0.000138s ]
+NOTIC: [8] Undefined offset: 0 /home/work/www/html/game/farms/ThinkPHP/Library/Org/Our/Matching.class.php 第 152 行.
+SQL: SELECT * FROM `2018-02_pay` WHERE ( state < 2 AND type =1 AND queue=0 AND num>0 AND seed="葡萄" ) ORDER BY money DESC  [ RunTime:0.000140s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `2018-02_pay` WHERE ( state < 2 AND type =1 AND queue=0 AND num>0 AND seed="葡萄" ) LIMIT 1   [ RunTime:0.000118s ]
+SQL: SET GLOBAL group_concat_max_len=102400 [ RunTime:0.000088s ]
+NOTIC: [8] Undefined variable: order /home/work/www/html/game/farms/ThinkPHP/Library/Org/Our/Matching.class.php 第 147 行.
+SQL: SELECT GROUP_CONCAT(money ORDER BY money desc ) as desc_money FROM `2018-02_pay` WHERE ( `state` < '2' ) AND ( `type` = 1 ) AND ( `seed` = '番茄' ) AND ( `num` > '0' )  [ RunTime:0.000128s ]
+NOTIC: [8] Undefined offset: 0 /home/work/www/html/game/farms/ThinkPHP/Library/Org/Our/Matching.class.php 第 152 行.
+SQL: SELECT * FROM `2018-02_pay` WHERE ( state < 2 AND type =1 AND queue=0 AND num>0 AND seed="番茄" ) ORDER BY money DESC  [ RunTime:0.000127s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `2018-02_pay` WHERE ( state < 2 AND type =1 AND queue=0 AND num>0 AND seed="番茄" ) LIMIT 1   [ RunTime:0.000118s ]
+SQL: SET GLOBAL group_concat_max_len=102400 [ RunTime:0.000038s ]
+NOTIC: [8] Undefined variable: order /home/work/www/html/game/farms/ThinkPHP/Library/Org/Our/Matching.class.php 第 147 行.
+SQL: SELECT GROUP_CONCAT(money ORDER BY money desc ) as desc_money FROM `2018-02_pay` WHERE ( `state` < '2' ) AND ( `type` = 1 ) AND ( `seed` = '菠萝' ) AND ( `num` > '0' )  [ RunTime:0.000140s ]
+NOTIC: [8] Undefined offset: 0 /home/work/www/html/game/farms/ThinkPHP/Library/Org/Our/Matching.class.php 第 152 行.
+SQL: SELECT * FROM `2018-02_pay` WHERE ( state < 2 AND type =1 AND queue=0 AND num>0 AND seed="菠萝" ) ORDER BY money DESC  [ RunTime:0.000125s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `2018-02_pay` WHERE ( state < 2 AND type =1 AND queue=0 AND num>0 AND seed="菠萝" ) LIMIT 1   [ RunTime:0.000116s ]
+SQL: SET GLOBAL group_concat_max_len=102400 [ RunTime:0.000065s ]
+NOTIC: [8] Undefined variable: order /home/work/www/html/game/farms/ThinkPHP/Library/Org/Our/Matching.class.php 第 147 行.
+SQL: SELECT GROUP_CONCAT(money ORDER BY money desc ) as desc_money FROM `2018-02_pay` WHERE ( `state` < '2' ) AND ( `type` = 1 ) AND ( `seed` = '种子' ) AND ( `num` > '0' )  [ RunTime:0.000095s ]
+NOTIC: [8] Undefined offset: 0 /home/work/www/html/game/farms/ThinkPHP/Library/Org/Our/Matching.class.php 第 152 行.
+SQL: SELECT * FROM `2018-02_pay` WHERE ( state < 2 AND type =1 AND queue=0 AND num>0 AND seed="种子" ) ORDER BY money DESC  [ RunTime:0.000091s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `2018-02_pay` WHERE ( state < 2 AND type =1 AND queue=0 AND num>0 AND seed="种子" ) LIMIT 1   [ RunTime:0.000133s ]
+NOTIC: [2] unlink(/home/work/www/html/game/farms/app/Runtime/Temp/ea2b2676c28c0db26d39331a336c6b92.php): No such file or directory /home/work/www/html/game/farms/ThinkPHP/Library/Think/Cache/Driver/File.class.php 第 157 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000242s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000265s ]
+
+[ 2018-02-12T17:53:31+08:00 ]  
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000158s ]
+NOTIC: [8] Undefined index: REQUEST_URI /home/work/www/html/game/farms/ThinkPHP/Library/Think/Dispatcher.class.php 第 132 行.
+NOTIC: [8] Use of undefined constant __ROOT__ - assumed '__ROOT__' /home/work/www/html/game/farms/app/Home/Conf/config.php 第 6 行.
+NOTIC: [8] Use of undefined constant __ROOT__ - assumed '__ROOT__' /home/work/www/html/game/farms/app/Home/Conf/config.php 第 7 行.
+NOTIC: [8] Use of undefined constant __ROOT__ - assumed '__ROOT__' /home/work/www/html/game/farms/app/Home/Conf/config.php 第 8 行.
+NOTIC: [8] Use of undefined constant _PHP_FILE_ - assumed '_PHP_FILE_' /home/work/www/html/game/farms/ThinkPHP/Library/Think/Dispatcher.class.php 第 173 行.
+NOTIC: [8] Undefined index: REQUEST_METHOD /home/work/www/html/game/farms/ThinkPHP/Library/Think/App.class.php 第 30 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000212s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000233s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /home/work/www/html/game/farms/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+NOTIC: [2] mysql_connect(): Headers and client library minor version mismatch. Headers:50552 Library:50637 /home/work/www/html/game/farms/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `global_conf` [ RunTime:0.000367s ]
+SQL: SELECT * FROM `global_conf` WHERE ( cases="poundage" or cases="LimitPricePostion" )  [ RunTime:0.000159s ]
+SQL: SHOW COLUMNS FROM `seeds` [ RunTime:0.000279s ]
+SQL: SELECT * FROM `seeds` WHERE ( varieties!="摇钱树" AND state=0 ) ORDER BY id  [ RunTime:0.000187s ]
+SQL: SET GLOBAL group_concat_max_len=102400 [ RunTime:0.000101s ]
+SQL: SHOW COLUMNS FROM `2018-02_pay` [ RunTime:0.000283s ]
+NOTIC: [8] Undefined variable: order /home/work/www/html/game/farms/ThinkPHP/Library/Org/Our/Matching.class.php 第 147 行.
+SQL: SELECT GROUP_CONCAT(money ORDER BY money desc ) as desc_money FROM `2018-02_pay` WHERE ( `state` < '2' ) AND ( `type` = 1 ) AND ( `seed` = '土豆' ) AND ( `num` > '0' )  [ RunTime:0.000132s ]
+NOTIC: [8] Undefined variable: buy /home/work/www/html/game/farms/ThinkPHP/Library/Org/Our/Matching.class.php 第 152 行.
+SQL: SELECT * FROM `2018-02_pay` WHERE ( state < 2 AND type =1 AND queue=0 AND num>0 AND seed="土豆" ) ORDER BY money DESC  [ RunTime:0.000160s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `2018-02_pay` WHERE ( state < 2 AND type =1 AND queue=0 AND num>0 AND seed="土豆" ) LIMIT 1   [ RunTime:0.000132s ]
+SQL: SET GLOBAL group_concat_max_len=102400 [ RunTime:0.000071s ]
+NOTIC: [8] Undefined variable: order /home/work/www/html/game/farms/ThinkPHP/Library/Org/Our/Matching.class.php 第 147 行.
+SQL: SELECT GROUP_CONCAT(money ORDER BY money desc ) as desc_money FROM `2018-02_pay` WHERE ( `state` < '2' ) AND ( `type` = 1 ) AND ( `seed` = '草莓' ) AND ( `num` > '0' )  [ RunTime:0.000144s ]
+NOTIC: [8] Undefined offset: 0 /home/work/www/html/game/farms/ThinkPHP/Library/Org/Our/Matching.class.php 第 152 行.
+SQL: SELECT * FROM `2018-02_pay` WHERE ( state < 2 AND type =1 AND queue=0 AND num>0 AND seed="草莓" ) ORDER BY money DESC  [ RunTime:0.000169s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `2018-02_pay` WHERE ( state < 2 AND type =1 AND queue=0 AND num>0 AND seed="草莓" ) LIMIT 1   [ RunTime:0.000156s ]
+SQL: SET GLOBAL group_concat_max_len=102400 [ RunTime:0.000099s ]
+NOTIC: [8] Undefined variable: order /home/work/www/html/game/farms/ThinkPHP/Library/Org/Our/Matching.class.php 第 147 行.
+SQL: SELECT GROUP_CONCAT(money ORDER BY money desc ) as desc_money FROM `2018-02_pay` WHERE ( `state` < '2' ) AND ( `type` = 1 ) AND ( `seed` = '樱桃' ) AND ( `num` > '0' )  [ RunTime:0.000172s ]
+NOTIC: [8] Undefined offset: 0 /home/work/www/html/game/farms/ThinkPHP/Library/Org/Our/Matching.class.php 第 152 行.
+SQL: SELECT * FROM `2018-02_pay` WHERE ( state < 2 AND type =1 AND queue=0 AND num>0 AND seed="樱桃" ) ORDER BY money DESC  [ RunTime:0.000164s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `2018-02_pay` WHERE ( state < 2 AND type =1 AND queue=0 AND num>0 AND seed="樱桃" ) LIMIT 1   [ RunTime:0.000164s ]
+SQL: SET GLOBAL group_concat_max_len=102400 [ RunTime:0.000067s ]
+NOTIC: [8] Undefined variable: order /home/work/www/html/game/farms/ThinkPHP/Library/Org/Our/Matching.class.php 第 147 行.
+SQL: SELECT GROUP_CONCAT(money ORDER BY money desc ) as desc_money FROM `2018-02_pay` WHERE ( `state` < '2' ) AND ( `type` = 1 ) AND ( `seed` = '稻米' ) AND ( `num` > '0' )  [ RunTime:0.000138s ]
+NOTIC: [8] Undefined offset: 0 /home/work/www/html/game/farms/ThinkPHP/Library/Org/Our/Matching.class.php 第 152 行.
+SQL: SELECT * FROM `2018-02_pay` WHERE ( state < 2 AND type =1 AND queue=0 AND num>0 AND seed="稻米" ) ORDER BY money DESC  [ RunTime:0.000140s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `2018-02_pay` WHERE ( state < 2 AND type =1 AND queue=0 AND num>0 AND seed="稻米" ) LIMIT 1   [ RunTime:0.000127s ]
+SQL: SET GLOBAL group_concat_max_len=102400 [ RunTime:0.000107s ]
+NOTIC: [8] Undefined variable: order /home/work/www/html/game/farms/ThinkPHP/Library/Org/Our/Matching.class.php 第 147 行.
+SQL: SELECT GROUP_CONCAT(money ORDER BY money desc ) as desc_money FROM `2018-02_pay` WHERE ( `state` < '2' ) AND ( `type` = 1 ) AND ( `seed` = '葡萄' ) AND ( `num` > '0' )  [ RunTime:0.000139s ]
+NOTIC: [8] Undefined offset: 0 /home/work/www/html/game/farms/ThinkPHP/Library/Org/Our/Matching.class.php 第 152 行.
+SQL: SELECT * FROM `2018-02_pay` WHERE ( state < 2 AND type =1 AND queue=0 AND num>0 AND seed="葡萄" ) ORDER BY money DESC  [ RunTime:0.000145s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `2018-02_pay` WHERE ( state < 2 AND type =1 AND queue=0 AND num>0 AND seed="葡萄" ) LIMIT 1   [ RunTime:0.000126s ]
+SQL: SET GLOBAL group_concat_max_len=102400 [ RunTime:0.000065s ]
+NOTIC: [8] Undefined variable: order /home/work/www/html/game/farms/ThinkPHP/Library/Org/Our/Matching.class.php 第 147 行.
+SQL: SELECT GROUP_CONCAT(money ORDER BY money desc ) as desc_money FROM `2018-02_pay` WHERE ( `state` < '2' ) AND ( `type` = 1 ) AND ( `seed` = '番茄' ) AND ( `num` > '0' )  [ RunTime:0.000199s ]
+NOTIC: [8] Undefined offset: 0 /home/work/www/html/game/farms/ThinkPHP/Library/Org/Our/Matching.class.php 第 152 行.
+SQL: SELECT * FROM `2018-02_pay` WHERE ( state < 2 AND type =1 AND queue=0 AND num>0 AND seed="番茄" ) ORDER BY money DESC  [ RunTime:0.000190s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `2018-02_pay` WHERE ( state < 2 AND type =1 AND queue=0 AND num>0 AND seed="番茄" ) LIMIT 1   [ RunTime:0.000141s ]
+SQL: SET GLOBAL group_concat_max_len=102400 [ RunTime:0.000072s ]
+NOTIC: [8] Undefined variable: order /home/work/www/html/game/farms/ThinkPHP/Library/Org/Our/Matching.class.php 第 147 行.
+SQL: SELECT GROUP_CONCAT(money ORDER BY money desc ) as desc_money FROM `2018-02_pay` WHERE ( `state` < '2' ) AND ( `type` = 1 ) AND ( `seed` = '菠萝' ) AND ( `num` > '0' )  [ RunTime:0.000196s ]
+NOTIC: [8] Undefined offset: 0 /home/work/www/html/game/farms/ThinkPHP/Library/Org/Our/Matching.class.php 第 152 行.
+SQL: SELECT * FROM `2018-02_pay` WHERE ( state < 2 AND type =1 AND queue=0 AND num>0 AND seed="菠萝" ) ORDER BY money DESC  [ RunTime:0.000183s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `2018-02_pay` WHERE ( state < 2 AND type =1 AND queue=0 AND num>0 AND seed="菠萝" ) LIMIT 1   [ RunTime:0.000167s ]
+SQL: SET GLOBAL group_concat_max_len=102400 [ RunTime:0.000101s ]
+NOTIC: [8] Undefined variable: order /home/work/www/html/game/farms/ThinkPHP/Library/Org/Our/Matching.class.php 第 147 行.
+SQL: SELECT GROUP_CONCAT(money ORDER BY money desc ) as desc_money FROM `2018-02_pay` WHERE ( `state` < '2' ) AND ( `type` = 1 ) AND ( `seed` = '种子' ) AND ( `num` > '0' )  [ RunTime:0.000162s ]
+NOTIC: [8] Undefined offset: 0 /home/work/www/html/game/farms/ThinkPHP/Library/Org/Our/Matching.class.php 第 152 行.
+SQL: SELECT * FROM `2018-02_pay` WHERE ( state < 2 AND type =1 AND queue=0 AND num>0 AND seed="种子" ) ORDER BY money DESC  [ RunTime:0.000142s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `2018-02_pay` WHERE ( state < 2 AND type =1 AND queue=0 AND num>0 AND seed="种子" ) LIMIT 1   [ RunTime:0.000127s ]
+NOTIC: [2] unlink(/home/work/www/html/game/farms/app/Runtime/Temp/ea2b2676c28c0db26d39331a336c6b92.php): No such file or directory /home/work/www/html/game/farms/ThinkPHP/Library/Think/Cache/Driver/File.class.php 第 157 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000243s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000266s ]
+
+[ 2018-02-12T17:53:36+08:00 ]  
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000164s ]
+NOTIC: [8] Undefined index: REQUEST_URI /home/work/www/html/game/farms/ThinkPHP/Library/Think/Dispatcher.class.php 第 132 行.
+NOTIC: [8] Use of undefined constant __ROOT__ - assumed '__ROOT__' /home/work/www/html/game/farms/app/Home/Conf/config.php 第 6 行.
+NOTIC: [8] Use of undefined constant __ROOT__ - assumed '__ROOT__' /home/work/www/html/game/farms/app/Home/Conf/config.php 第 7 行.
+NOTIC: [8] Use of undefined constant __ROOT__ - assumed '__ROOT__' /home/work/www/html/game/farms/app/Home/Conf/config.php 第 8 行.
+NOTIC: [8] Use of undefined constant _PHP_FILE_ - assumed '_PHP_FILE_' /home/work/www/html/game/farms/ThinkPHP/Library/Think/Dispatcher.class.php 第 173 行.
+NOTIC: [8] Undefined index: REQUEST_METHOD /home/work/www/html/game/farms/ThinkPHP/Library/Think/App.class.php 第 30 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000181s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000202s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /home/work/www/html/game/farms/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+NOTIC: [2] mysql_connect(): Headers and client library minor version mismatch. Headers:50552 Library:50637 /home/work/www/html/game/farms/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `global_conf` [ RunTime:0.000350s ]
+SQL: SELECT * FROM `global_conf` WHERE ( cases="poundage" or cases="LimitPricePostion" )  [ RunTime:0.000189s ]
+SQL: SHOW COLUMNS FROM `seeds` [ RunTime:0.000336s ]
+SQL: SELECT * FROM `seeds` WHERE ( varieties!="摇钱树" AND state=0 ) ORDER BY id  [ RunTime:0.000164s ]
+SQL: SET GLOBAL group_concat_max_len=102400 [ RunTime:0.000075s ]
+SQL: SHOW COLUMNS FROM `2018-02_pay` [ RunTime:0.000310s ]
+NOTIC: [8] Undefined variable: order /home/work/www/html/game/farms/ThinkPHP/Library/Org/Our/Matching.class.php 第 147 行.
+SQL: SELECT GROUP_CONCAT(money ORDER BY money desc ) as desc_money FROM `2018-02_pay` WHERE ( `state` < '2' ) AND ( `type` = 1 ) AND ( `seed` = '土豆' ) AND ( `num` > '0' )  [ RunTime:0.000182s ]
+NOTIC: [8] Undefined variable: buy /home/work/www/html/game/farms/ThinkPHP/Library/Org/Our/Matching.class.php 第 152 行.
+SQL: SELECT * FROM `2018-02_pay` WHERE ( state < 2 AND type =1 AND queue=0 AND num>0 AND seed="土豆" ) ORDER BY money DESC  [ RunTime:0.000155s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `2018-02_pay` WHERE ( state < 2 AND type =1 AND queue=0 AND num>0 AND seed="土豆" ) LIMIT 1   [ RunTime:0.000092s ]
+SQL: SET GLOBAL group_concat_max_len=102400 [ RunTime:0.000067s ]
+NOTIC: [8] Undefined variable: order /home/work/www/html/game/farms/ThinkPHP/Library/Org/Our/Matching.class.php 第 147 行.
+SQL: SELECT GROUP_CONCAT(money ORDER BY money desc ) as desc_money FROM `2018-02_pay` WHERE ( `state` < '2' ) AND ( `type` = 1 ) AND ( `seed` = '草莓' ) AND ( `num` > '0' )  [ RunTime:0.000141s ]
+NOTIC: [8] Undefined offset: 0 /home/work/www/html/game/farms/ThinkPHP/Library/Org/Our/Matching.class.php 第 152 行.
+SQL: SELECT * FROM `2018-02_pay` WHERE ( state < 2 AND type =1 AND queue=0 AND num>0 AND seed="草莓" ) ORDER BY money DESC  [ RunTime:0.000146s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `2018-02_pay` WHERE ( state < 2 AND type =1 AND queue=0 AND num>0 AND seed="草莓" ) LIMIT 1   [ RunTime:0.000130s ]
+SQL: SET GLOBAL group_concat_max_len=102400 [ RunTime:0.000073s ]
+NOTIC: [8] Undefined variable: order /home/work/www/html/game/farms/ThinkPHP/Library/Org/Our/Matching.class.php 第 147 行.
+SQL: SELECT GROUP_CONCAT(money ORDER BY money desc ) as desc_money FROM `2018-02_pay` WHERE ( `state` < '2' ) AND ( `type` = 1 ) AND ( `seed` = '樱桃' ) AND ( `num` > '0' )  [ RunTime:0.000147s ]
+NOTIC: [8] Undefined offset: 0 /home/work/www/html/game/farms/ThinkPHP/Library/Org/Our/Matching.class.php 第 152 行.
+SQL: SELECT * FROM `2018-02_pay` WHERE ( state < 2 AND type =1 AND queue=0 AND num>0 AND seed="樱桃" ) ORDER BY money DESC  [ RunTime:0.000171s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `2018-02_pay` WHERE ( state < 2 AND type =1 AND queue=0 AND num>0 AND seed="樱桃" ) LIMIT 1   [ RunTime:0.000122s ]
+SQL: SET GLOBAL group_concat_max_len=102400 [ RunTime:0.000072s ]
+NOTIC: [8] Undefined variable: order /home/work/www/html/game/farms/ThinkPHP/Library/Org/Our/Matching.class.php 第 147 行.
+SQL: SELECT GROUP_CONCAT(money ORDER BY money desc ) as desc_money FROM `2018-02_pay` WHERE ( `state` < '2' ) AND ( `type` = 1 ) AND ( `seed` = '稻米' ) AND ( `num` > '0' )  [ RunTime:0.000122s ]
+NOTIC: [8] Undefined offset: 0 /home/work/www/html/game/farms/ThinkPHP/Library/Org/Our/Matching.class.php 第 152 行.
+SQL: SELECT * FROM `2018-02_pay` WHERE ( state < 2 AND type =1 AND queue=0 AND num>0 AND seed="稻米" ) ORDER BY money DESC  [ RunTime:0.000209s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `2018-02_pay` WHERE ( state < 2 AND type =1 AND queue=0 AND num>0 AND seed="稻米" ) LIMIT 1   [ RunTime:0.000133s ]
+SQL: SET GLOBAL group_concat_max_len=102400 [ RunTime:0.000071s ]
+NOTIC: [8] Undefined variable: order /home/work/www/html/game/farms/ThinkPHP/Library/Org/Our/Matching.class.php 第 147 行.
+SQL: SELECT GROUP_CONCAT(money ORDER BY money desc ) as desc_money FROM `2018-02_pay` WHERE ( `state` < '2' ) AND ( `type` = 1 ) AND ( `seed` = '葡萄' ) AND ( `num` > '0' )  [ RunTime:0.000142s ]
+NOTIC: [8] Undefined offset: 0 /home/work/www/html/game/farms/ThinkPHP/Library/Org/Our/Matching.class.php 第 152 行.
+SQL: SELECT * FROM `2018-02_pay` WHERE ( state < 2 AND type =1 AND queue=0 AND num>0 AND seed="葡萄" ) ORDER BY money DESC  [ RunTime:0.000132s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `2018-02_pay` WHERE ( state < 2 AND type =1 AND queue=0 AND num>0 AND seed="葡萄" ) LIMIT 1   [ RunTime:0.000159s ]
+SQL: SET GLOBAL group_concat_max_len=102400 [ RunTime:0.000073s ]
+NOTIC: [8] Undefined variable: order /home/work/www/html/game/farms/ThinkPHP/Library/Org/Our/Matching.class.php 第 147 行.
+SQL: SELECT GROUP_CONCAT(money ORDER BY money desc ) as desc_money FROM `2018-02_pay` WHERE ( `state` < '2' ) AND ( `type` = 1 ) AND ( `seed` = '番茄' ) AND ( `num` > '0' )  [ RunTime:0.000142s ]
+NOTIC: [8] Undefined offset: 0 /home/work/www/html/game/farms/ThinkPHP/Library/Org/Our/Matching.class.php 第 152 行.
+SQL: SELECT * FROM `2018-02_pay` WHERE ( state < 2 AND type =1 AND queue=0 AND num>0 AND seed="番茄" ) ORDER BY money DESC  [ RunTime:0.000185s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `2018-02_pay` WHERE ( state < 2 AND type =1 AND queue=0 AND num>0 AND seed="番茄" ) LIMIT 1   [ RunTime:0.000121s ]
+SQL: SET GLOBAL group_concat_max_len=102400 [ RunTime:0.000085s ]
+NOTIC: [8] Undefined variable: order /home/work/www/html/game/farms/ThinkPHP/Library/Org/Our/Matching.class.php 第 147 行.
+SQL: SELECT GROUP_CONCAT(money ORDER BY money desc ) as desc_money FROM `2018-02_pay` WHERE ( `state` < '2' ) AND ( `type` = 1 ) AND ( `seed` = '菠萝' ) AND ( `num` > '0' )  [ RunTime:0.000140s ]
+NOTIC: [8] Undefined offset: 0 /home/work/www/html/game/farms/ThinkPHP/Library/Org/Our/Matching.class.php 第 152 行.
+SQL: SELECT * FROM `2018-02_pay` WHERE ( state < 2 AND type =1 AND queue=0 AND num>0 AND seed="菠萝" ) ORDER BY money DESC  [ RunTime:0.000139s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `2018-02_pay` WHERE ( state < 2 AND type =1 AND queue=0 AND num>0 AND seed="菠萝" ) LIMIT 1   [ RunTime:0.000148s ]
+SQL: SET GLOBAL group_concat_max_len=102400 [ RunTime:0.000065s ]
+NOTIC: [8] Undefined variable: order /home/work/www/html/game/farms/ThinkPHP/Library/Org/Our/Matching.class.php 第 147 行.
+SQL: SELECT GROUP_CONCAT(money ORDER BY money desc ) as desc_money FROM `2018-02_pay` WHERE ( `state` < '2' ) AND ( `type` = 1 ) AND ( `seed` = '种子' ) AND ( `num` > '0' )  [ RunTime:0.000160s ]
+NOTIC: [8] Undefined offset: 0 /home/work/www/html/game/farms/ThinkPHP/Library/Org/Our/Matching.class.php 第 152 行.
+SQL: SELECT * FROM `2018-02_pay` WHERE ( state < 2 AND type =1 AND queue=0 AND num>0 AND seed="种子" ) ORDER BY money DESC  [ RunTime:0.000139s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `2018-02_pay` WHERE ( state < 2 AND type =1 AND queue=0 AND num>0 AND seed="种子" ) LIMIT 1   [ RunTime:0.000125s ]
+NOTIC: [2] unlink(/home/work/www/html/game/farms/app/Runtime/Temp/ea2b2676c28c0db26d39331a336c6b92.php): No such file or directory /home/work/www/html/game/farms/ThinkPHP/Library/Think/Cache/Driver/File.class.php 第 157 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000237s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000260s ]
+
+[ 2018-02-12T17:53:41+08:00 ]  
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000163s ]
+NOTIC: [8] Undefined index: REQUEST_URI /home/work/www/html/game/farms/ThinkPHP/Library/Think/Dispatcher.class.php 第 132 行.
+NOTIC: [8] Use of undefined constant __ROOT__ - assumed '__ROOT__' /home/work/www/html/game/farms/app/Home/Conf/config.php 第 6 行.
+NOTIC: [8] Use of undefined constant __ROOT__ - assumed '__ROOT__' /home/work/www/html/game/farms/app/Home/Conf/config.php 第 7 行.
+NOTIC: [8] Use of undefined constant __ROOT__ - assumed '__ROOT__' /home/work/www/html/game/farms/app/Home/Conf/config.php 第 8 行.
+NOTIC: [8] Use of undefined constant _PHP_FILE_ - assumed '_PHP_FILE_' /home/work/www/html/game/farms/ThinkPHP/Library/Think/Dispatcher.class.php 第 173 行.
+NOTIC: [8] Undefined index: REQUEST_METHOD /home/work/www/html/game/farms/ThinkPHP/Library/Think/App.class.php 第 30 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000183s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000203s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /home/work/www/html/game/farms/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+NOTIC: [2] mysql_connect(): Headers and client library minor version mismatch. Headers:50552 Library:50637 /home/work/www/html/game/farms/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `global_conf` [ RunTime:0.000334s ]
+SQL: SELECT * FROM `global_conf` WHERE ( cases="poundage" or cases="LimitPricePostion" )  [ RunTime:0.000191s ]
+SQL: SHOW COLUMNS FROM `seeds` [ RunTime:0.000287s ]
+SQL: SELECT * FROM `seeds` WHERE ( varieties!="摇钱树" AND state=0 ) ORDER BY id  [ RunTime:0.000157s ]
+SQL: SET GLOBAL group_concat_max_len=102400 [ RunTime:0.000115s ]
+SQL: SHOW COLUMNS FROM `2018-02_pay` [ RunTime:0.000287s ]
+NOTIC: [8] Undefined variable: order /home/work/www/html/game/farms/ThinkPHP/Library/Org/Our/Matching.class.php 第 147 行.
+SQL: SELECT GROUP_CONCAT(money ORDER BY money desc ) as desc_money FROM `2018-02_pay` WHERE ( `state` < '2' ) AND ( `type` = 1 ) AND ( `seed` = '土豆' ) AND ( `num` > '0' )  [ RunTime:0.000163s ]
+NOTIC: [8] Undefined variable: buy /home/work/www/html/game/farms/ThinkPHP/Library/Org/Our/Matching.class.php 第 152 行.
+SQL: SELECT * FROM `2018-02_pay` WHERE ( state < 2 AND type =1 AND queue=0 AND num>0 AND seed="土豆" ) ORDER BY money DESC  [ RunTime:0.000128s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `2018-02_pay` WHERE ( state < 2 AND type =1 AND queue=0 AND num>0 AND seed="土豆" ) LIMIT 1   [ RunTime:0.000145s ]
+SQL: SET GLOBAL group_concat_max_len=102400 [ RunTime:0.000075s ]
+NOTIC: [8] Undefined variable: order /home/work/www/html/game/farms/ThinkPHP/Library/Org/Our/Matching.class.php 第 147 行.
+SQL: SELECT GROUP_CONCAT(money ORDER BY money desc ) as desc_money FROM `2018-02_pay` WHERE ( `state` < '2' ) AND ( `type` = 1 ) AND ( `seed` = '草莓' ) AND ( `num` > '0' )  [ RunTime:0.000164s ]
+NOTIC: [8] Undefined offset: 0 /home/work/www/html/game/farms/ThinkPHP/Library/Org/Our/Matching.class.php 第 152 行.
+SQL: SELECT * FROM `2018-02_pay` WHERE ( state < 2 AND type =1 AND queue=0 AND num>0 AND seed="草莓" ) ORDER BY money DESC  [ RunTime:0.000153s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `2018-02_pay` WHERE ( state < 2 AND type =1 AND queue=0 AND num>0 AND seed="草莓" ) LIMIT 1   [ RunTime:0.000184s ]
+SQL: SET GLOBAL group_concat_max_len=102400 [ RunTime:0.000105s ]
+NOTIC: [8] Undefined variable: order /home/work/www/html/game/farms/ThinkPHP/Library/Org/Our/Matching.class.php 第 147 行.
+SQL: SELECT GROUP_CONCAT(money ORDER BY money desc ) as desc_money FROM `2018-02_pay` WHERE ( `state` < '2' ) AND ( `type` = 1 ) AND ( `seed` = '樱桃' ) AND ( `num` > '0' )  [ RunTime:0.000177s ]
+NOTIC: [8] Undefined offset: 0 /home/work/www/html/game/farms/ThinkPHP/Library/Org/Our/Matching.class.php 第 152 行.
+SQL: SELECT * FROM `2018-02_pay` WHERE ( state < 2 AND type =1 AND queue=0 AND num>0 AND seed="樱桃" ) ORDER BY money DESC  [ RunTime:0.000179s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `2018-02_pay` WHERE ( state < 2 AND type =1 AND queue=0 AND num>0 AND seed="樱桃" ) LIMIT 1   [ RunTime:0.000200s ]
+SQL: SET GLOBAL group_concat_max_len=102400 [ RunTime:0.000091s ]
+NOTIC: [8] Undefined variable: order /home/work/www/html/game/farms/ThinkPHP/Library/Org/Our/Matching.class.php 第 147 行.
+SQL: SELECT GROUP_CONCAT(money ORDER BY money desc ) as desc_money FROM `2018-02_pay` WHERE ( `state` < '2' ) AND ( `type` = 1 ) AND ( `seed` = '稻米' ) AND ( `num` > '0' )  [ RunTime:0.000132s ]
+NOTIC: [8] Undefined offset: 0 /home/work/www/html/game/farms/ThinkPHP/Library/Org/Our/Matching.class.php 第 152 行.
+SQL: SELECT * FROM `2018-02_pay` WHERE ( state < 2 AND type =1 AND queue=0 AND num>0 AND seed="稻米" ) ORDER BY money DESC  [ RunTime:0.000132s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `2018-02_pay` WHERE ( state < 2 AND type =1 AND queue=0 AND num>0 AND seed="稻米" ) LIMIT 1   [ RunTime:0.000112s ]
+SQL: SET GLOBAL group_concat_max_len=102400 [ RunTime:0.000051s ]
+NOTIC: [8] Undefined variable: order /home/work/www/html/game/farms/ThinkPHP/Library/Org/Our/Matching.class.php 第 147 行.
+SQL: SELECT GROUP_CONCAT(money ORDER BY money desc ) as desc_money FROM `2018-02_pay` WHERE ( `state` < '2' ) AND ( `type` = 1 ) AND ( `seed` = '葡萄' ) AND ( `num` > '0' )  [ RunTime:0.000173s ]
+NOTIC: [8] Undefined offset: 0 /home/work/www/html/game/farms/ThinkPHP/Library/Org/Our/Matching.class.php 第 152 行.
+SQL: SELECT * FROM `2018-02_pay` WHERE ( state < 2 AND type =1 AND queue=0 AND num>0 AND seed="葡萄" ) ORDER BY money DESC  [ RunTime:0.000180s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `2018-02_pay` WHERE ( state < 2 AND type =1 AND queue=0 AND num>0 AND seed="葡萄" ) LIMIT 1   [ RunTime:0.000165s ]
+SQL: SET GLOBAL group_concat_max_len=102400 [ RunTime:0.000080s ]
+NOTIC: [8] Undefined variable: order /home/work/www/html/game/farms/ThinkPHP/Library/Org/Our/Matching.class.php 第 147 行.
+SQL: SELECT GROUP_CONCAT(money ORDER BY money desc ) as desc_money FROM `2018-02_pay` WHERE ( `state` < '2' ) AND ( `type` = 1 ) AND ( `seed` = '番茄' ) AND ( `num` > '0' )  [ RunTime:0.000206s ]
+NOTIC: [8] Undefined offset: 0 /home/work/www/html/game/farms/ThinkPHP/Library/Org/Our/Matching.class.php 第 152 行.
+SQL: SELECT * FROM `2018-02_pay` WHERE ( state < 2 AND type =1 AND queue=0 AND num>0 AND seed="番茄" ) ORDER BY money DESC  [ RunTime:0.000153s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `2018-02_pay` WHERE ( state < 2 AND type =1 AND queue=0 AND num>0 AND seed="番茄" ) LIMIT 1   [ RunTime:0.000136s ]
+SQL: SET GLOBAL group_concat_max_len=102400 [ RunTime:0.000074s ]
+NOTIC: [8] Undefined variable: order /home/work/www/html/game/farms/ThinkPHP/Library/Org/Our/Matching.class.php 第 147 行.
+SQL: SELECT GROUP_CONCAT(money ORDER BY money desc ) as desc_money FROM `2018-02_pay` WHERE ( `state` < '2' ) AND ( `type` = 1 ) AND ( `seed` = '菠萝' ) AND ( `num` > '0' )  [ RunTime:0.000156s ]
+NOTIC: [8] Undefined offset: 0 /home/work/www/html/game/farms/ThinkPHP/Library/Org/Our/Matching.class.php 第 152 行.
+SQL: SELECT * FROM `2018-02_pay` WHERE ( state < 2 AND type =1 AND queue=0 AND num>0 AND seed="菠萝" ) ORDER BY money DESC  [ RunTime:0.000132s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `2018-02_pay` WHERE ( state < 2 AND type =1 AND queue=0 AND num>0 AND seed="菠萝" ) LIMIT 1   [ RunTime:0.000118s ]
+SQL: SET GLOBAL group_concat_max_len=102400 [ RunTime:0.000063s ]
+NOTIC: [8] Undefined variable: order /home/work/www/html/game/farms/ThinkPHP/Library/Org/Our/Matching.class.php 第 147 行.
+SQL: SELECT GROUP_CONCAT(money ORDER BY money desc ) as desc_money FROM `2018-02_pay` WHERE ( `state` < '2' ) AND ( `type` = 1 ) AND ( `seed` = '种子' ) AND ( `num` > '0' )  [ RunTime:0.000133s ]
+NOTIC: [8] Undefined offset: 0 /home/work/www/html/game/farms/ThinkPHP/Library/Org/Our/Matching.class.php 第 152 行.
+SQL: SELECT * FROM `2018-02_pay` WHERE ( state < 2 AND type =1 AND queue=0 AND num>0 AND seed="种子" ) ORDER BY money DESC  [ RunTime:0.000131s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `2018-02_pay` WHERE ( state < 2 AND type =1 AND queue=0 AND num>0 AND seed="种子" ) LIMIT 1   [ RunTime:0.000116s ]
+NOTIC: [2] unlink(/home/work/www/html/game/farms/app/Runtime/Temp/ea2b2676c28c0db26d39331a336c6b92.php): No such file or directory /home/work/www/html/game/farms/ThinkPHP/Library/Think/Cache/Driver/File.class.php 第 157 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000240s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000264s ]
+
+[ 2018-02-12T17:53:46+08:00 ]  
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000190s ]
+NOTIC: [8] Undefined index: REQUEST_URI /home/work/www/html/game/farms/ThinkPHP/Library/Think/Dispatcher.class.php 第 132 行.
+NOTIC: [8] Use of undefined constant __ROOT__ - assumed '__ROOT__' /home/work/www/html/game/farms/app/Home/Conf/config.php 第 6 行.
+NOTIC: [8] Use of undefined constant __ROOT__ - assumed '__ROOT__' /home/work/www/html/game/farms/app/Home/Conf/config.php 第 7 行.
+NOTIC: [8] Use of undefined constant __ROOT__ - assumed '__ROOT__' /home/work/www/html/game/farms/app/Home/Conf/config.php 第 8 行.
+NOTIC: [8] Use of undefined constant _PHP_FILE_ - assumed '_PHP_FILE_' /home/work/www/html/game/farms/ThinkPHP/Library/Think/Dispatcher.class.php 第 173 行.
+NOTIC: [8] Undefined index: REQUEST_METHOD /home/work/www/html/game/farms/ThinkPHP/Library/Think/App.class.php 第 30 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000180s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000201s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /home/work/www/html/game/farms/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+NOTIC: [2] mysql_connect(): Headers and client library minor version mismatch. Headers:50552 Library:50637 /home/work/www/html/game/farms/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `global_conf` [ RunTime:0.000301s ]
+SQL: SELECT * FROM `global_conf` WHERE ( cases="poundage" or cases="LimitPricePostion" )  [ RunTime:0.000143s ]
+SQL: SHOW COLUMNS FROM `seeds` [ RunTime:0.000268s ]
+SQL: SELECT * FROM `seeds` WHERE ( varieties!="摇钱树" AND state=0 ) ORDER BY id  [ RunTime:0.000158s ]
+SQL: SET GLOBAL group_concat_max_len=102400 [ RunTime:0.000037s ]
+SQL: SHOW COLUMNS FROM `2018-02_pay` [ RunTime:0.000269s ]
+NOTIC: [8] Undefined variable: order /home/work/www/html/game/farms/ThinkPHP/Library/Org/Our/Matching.class.php 第 147 行.
+SQL: SELECT GROUP_CONCAT(money ORDER BY money desc ) as desc_money FROM `2018-02_pay` WHERE ( `state` < '2' ) AND ( `type` = 1 ) AND ( `seed` = '土豆' ) AND ( `num` > '0' )  [ RunTime:0.000159s ]
+NOTIC: [8] Undefined variable: buy /home/work/www/html/game/farms/ThinkPHP/Library/Org/Our/Matching.class.php 第 152 行.
+SQL: SELECT * FROM `2018-02_pay` WHERE ( state < 2 AND type =1 AND queue=0 AND num>0 AND seed="土豆" ) ORDER BY money DESC  [ RunTime:0.000134s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `2018-02_pay` WHERE ( state < 2 AND type =1 AND queue=0 AND num>0 AND seed="土豆" ) LIMIT 1   [ RunTime:0.000092s ]
+SQL: SET GLOBAL group_concat_max_len=102400 [ RunTime:0.000077s ]
+NOTIC: [8] Undefined variable: order /home/work/www/html/game/farms/ThinkPHP/Library/Org/Our/Matching.class.php 第 147 行.
+SQL: SELECT GROUP_CONCAT(money ORDER BY money desc ) as desc_money FROM `2018-02_pay` WHERE ( `state` < '2' ) AND ( `type` = 1 ) AND ( `seed` = '草莓' ) AND ( `num` > '0' )  [ RunTime:0.000183s ]
+NOTIC: [8] Undefined offset: 0 /home/work/www/html/game/farms/ThinkPHP/Library/Org/Our/Matching.class.php 第 152 行.
+SQL: SELECT * FROM `2018-02_pay` WHERE ( state < 2 AND type =1 AND queue=0 AND num>0 AND seed="草莓" ) ORDER BY money DESC  [ RunTime:0.000181s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `2018-02_pay` WHERE ( state < 2 AND type =1 AND queue=0 AND num>0 AND seed="草莓" ) LIMIT 1   [ RunTime:0.000169s ]
+SQL: SET GLOBAL group_concat_max_len=102400 [ RunTime:0.000074s ]
+NOTIC: [8] Undefined variable: order /home/work/www/html/game/farms/ThinkPHP/Library/Org/Our/Matching.class.php 第 147 行.
+SQL: SELECT GROUP_CONCAT(money ORDER BY money desc ) as desc_money FROM `2018-02_pay` WHERE ( `state` < '2' ) AND ( `type` = 1 ) AND ( `seed` = '樱桃' ) AND ( `num` > '0' )  [ RunTime:0.000161s ]
+NOTIC: [8] Undefined offset: 0 /home/work/www/html/game/farms/ThinkPHP/Library/Org/Our/Matching.class.php 第 152 行.
+SQL: SELECT * FROM `2018-02_pay` WHERE ( state < 2 AND type =1 AND queue=0 AND num>0 AND seed="樱桃" ) ORDER BY money DESC  [ RunTime:0.000135s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `2018-02_pay` WHERE ( state < 2 AND type =1 AND queue=0 AND num>0 AND seed="樱桃" ) LIMIT 1   [ RunTime:0.000115s ]
+SQL: SET GLOBAL group_concat_max_len=102400 [ RunTime:0.000038s ]
+NOTIC: [8] Undefined variable: order /home/work/www/html/game/farms/ThinkPHP/Library/Org/Our/Matching.class.php 第 147 行.
+SQL: SELECT GROUP_CONCAT(money ORDER BY money desc ) as desc_money FROM `2018-02_pay` WHERE ( `state` < '2' ) AND ( `type` = 1 ) AND ( `seed` = '稻米' ) AND ( `num` > '0' )  [ RunTime:0.000135s ]
+NOTIC: [8] Undefined offset: 0 /home/work/www/html/game/farms/ThinkPHP/Library/Org/Our/Matching.class.php 第 152 行.
+SQL: SELECT * FROM `2018-02_pay` WHERE ( state < 2 AND type =1 AND queue=0 AND num>0 AND seed="稻米" ) ORDER BY money DESC  [ RunTime:0.000153s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `2018-02_pay` WHERE ( state < 2 AND type =1 AND queue=0 AND num>0 AND seed="稻米" ) LIMIT 1   [ RunTime:0.000113s ]
+SQL: SET GLOBAL group_concat_max_len=102400 [ RunTime:0.000064s ]
+NOTIC: [8] Undefined variable: order /home/work/www/html/game/farms/ThinkPHP/Library/Org/Our/Matching.class.php 第 147 行.
+SQL: SELECT GROUP_CONCAT(money ORDER BY money desc ) as desc_money FROM `2018-02_pay` WHERE ( `state` < '2' ) AND ( `type` = 1 ) AND ( `seed` = '葡萄' ) AND ( `num` > '0' )  [ RunTime:0.000112s ]
+NOTIC: [8] Undefined offset: 0 /home/work/www/html/game/farms/ThinkPHP/Library/Org/Our/Matching.class.php 第 152 行.
+SQL: SELECT * FROM `2018-02_pay` WHERE ( state < 2 AND type =1 AND queue=0 AND num>0 AND seed="葡萄" ) ORDER BY money DESC  [ RunTime:0.000154s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `2018-02_pay` WHERE ( state < 2 AND type =1 AND queue=0 AND num>0 AND seed="葡萄" ) LIMIT 1   [ RunTime:0.000140s ]
+SQL: SET GLOBAL group_concat_max_len=102400 [ RunTime:0.000063s ]
+NOTIC: [8] Undefined variable: order /home/work/www/html/game/farms/ThinkPHP/Library/Org/Our/Matching.class.php 第 147 行.
+SQL: SELECT GROUP_CONCAT(money ORDER BY money desc ) as desc_money FROM `2018-02_pay` WHERE ( `state` < '2' ) AND ( `type` = 1 ) AND ( `seed` = '番茄' ) AND ( `num` > '0' )  [ RunTime:0.000119s ]
+NOTIC: [8] Undefined offset: 0 /home/work/www/html/game/farms/ThinkPHP/Library/Org/Our/Matching.class.php 第 152 行.
+SQL: SELECT * FROM `2018-02_pay` WHERE ( state < 2 AND type =1 AND queue=0 AND num>0 AND seed="番茄" ) ORDER BY money DESC  [ RunTime:0.000114s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `2018-02_pay` WHERE ( state < 2 AND type =1 AND queue=0 AND num>0 AND seed="番茄" ) LIMIT 1   [ RunTime:0.000130s ]
+SQL: SET GLOBAL group_concat_max_len=102400 [ RunTime:0.000092s ]
+NOTIC: [8] Undefined variable: order /home/work/www/html/game/farms/ThinkPHP/Library/Org/Our/Matching.class.php 第 147 行.
+SQL: SELECT GROUP_CONCAT(money ORDER BY money desc ) as desc_money FROM `2018-02_pay` WHERE ( `state` < '2' ) AND ( `type` = 1 ) AND ( `seed` = '菠萝' ) AND ( `num` > '0' )  [ RunTime:0.000122s ]
+NOTIC: [8] Undefined offset: 0 /home/work/www/html/game/farms/ThinkPHP/Library/Org/Our/Matching.class.php 第 152 行.
+SQL: SELECT * FROM `2018-02_pay` WHERE ( state < 2 AND type =1 AND queue=0 AND num>0 AND seed="菠萝" ) ORDER BY money DESC  [ RunTime:0.000126s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `2018-02_pay` WHERE ( state < 2 AND type =1 AND queue=0 AND num>0 AND seed="菠萝" ) LIMIT 1   [ RunTime:0.000108s ]
+SQL: SET GLOBAL group_concat_max_len=102400 [ RunTime:0.000036s ]
+NOTIC: [8] Undefined variable: order /home/work/www/html/game/farms/ThinkPHP/Library/Org/Our/Matching.class.php 第 147 行.
+SQL: SELECT GROUP_CONCAT(money ORDER BY money desc ) as desc_money FROM `2018-02_pay` WHERE ( `state` < '2' ) AND ( `type` = 1 ) AND ( `seed` = '种子' ) AND ( `num` > '0' )  [ RunTime:0.000086s ]
+NOTIC: [8] Undefined offset: 0 /home/work/www/html/game/farms/ThinkPHP/Library/Org/Our/Matching.class.php 第 152 行.
+SQL: SELECT * FROM `2018-02_pay` WHERE ( state < 2 AND type =1 AND queue=0 AND num>0 AND seed="种子" ) ORDER BY money DESC  [ RunTime:0.000144s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `2018-02_pay` WHERE ( state < 2 AND type =1 AND queue=0 AND num>0 AND seed="种子" ) LIMIT 1   [ RunTime:0.000131s ]
+NOTIC: [2] unlink(/home/work/www/html/game/farms/app/Runtime/Temp/ea2b2676c28c0db26d39331a336c6b92.php): No such file or directory /home/work/www/html/game/farms/ThinkPHP/Library/Think/Cache/Driver/File.class.php 第 157 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000239s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000262s ]
+
+[ 2018-02-12T17:53:51+08:00 ]  
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000162s ]
+NOTIC: [8] Undefined index: REQUEST_URI /home/work/www/html/game/farms/ThinkPHP/Library/Think/Dispatcher.class.php 第 132 行.
+NOTIC: [8] Use of undefined constant __ROOT__ - assumed '__ROOT__' /home/work/www/html/game/farms/app/Home/Conf/config.php 第 6 行.
+NOTIC: [8] Use of undefined constant __ROOT__ - assumed '__ROOT__' /home/work/www/html/game/farms/app/Home/Conf/config.php 第 7 行.
+NOTIC: [8] Use of undefined constant __ROOT__ - assumed '__ROOT__' /home/work/www/html/game/farms/app/Home/Conf/config.php 第 8 行.
+NOTIC: [8] Use of undefined constant _PHP_FILE_ - assumed '_PHP_FILE_' /home/work/www/html/game/farms/ThinkPHP/Library/Think/Dispatcher.class.php 第 173 行.
+NOTIC: [8] Undefined index: REQUEST_METHOD /home/work/www/html/game/farms/ThinkPHP/Library/Think/App.class.php 第 30 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000179s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000199s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /home/work/www/html/game/farms/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+NOTIC: [2] mysql_connect(): Headers and client library minor version mismatch. Headers:50552 Library:50637 /home/work/www/html/game/farms/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `global_conf` [ RunTime:0.000342s ]
+SQL: SELECT * FROM `global_conf` WHERE ( cases="poundage" or cases="LimitPricePostion" )  [ RunTime:0.000163s ]
+SQL: SHOW COLUMNS FROM `seeds` [ RunTime:0.000278s ]
+SQL: SELECT * FROM `seeds` WHERE ( varieties!="摇钱树" AND state=0 ) ORDER BY id  [ RunTime:0.000172s ]
+SQL: SET GLOBAL group_concat_max_len=102400 [ RunTime:0.000036s ]
+SQL: SHOW COLUMNS FROM `2018-02_pay` [ RunTime:0.000265s ]
+NOTIC: [8] Undefined variable: order /home/work/www/html/game/farms/ThinkPHP/Library/Org/Our/Matching.class.php 第 147 行.
+SQL: SELECT GROUP_CONCAT(money ORDER BY money desc ) as desc_money FROM `2018-02_pay` WHERE ( `state` < '2' ) AND ( `type` = 1 ) AND ( `seed` = '土豆' ) AND ( `num` > '0' )  [ RunTime:0.000158s ]
+NOTIC: [8] Undefined variable: buy /home/work/www/html/game/farms/ThinkPHP/Library/Org/Our/Matching.class.php 第 152 行.
+SQL: SELECT * FROM `2018-02_pay` WHERE ( state < 2 AND type =1 AND queue=0 AND num>0 AND seed="土豆" ) ORDER BY money DESC  [ RunTime:0.000134s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `2018-02_pay` WHERE ( state < 2 AND type =1 AND queue=0 AND num>0 AND seed="土豆" ) LIMIT 1   [ RunTime:0.000091s ]
+SQL: SET GLOBAL group_concat_max_len=102400 [ RunTime:0.000089s ]
+NOTIC: [8] Undefined variable: order /home/work/www/html/game/farms/ThinkPHP/Library/Org/Our/Matching.class.php 第 147 行.
+SQL: SELECT GROUP_CONCAT(money ORDER BY money desc ) as desc_money FROM `2018-02_pay` WHERE ( `state` < '2' ) AND ( `type` = 1 ) AND ( `seed` = '草莓' ) AND ( `num` > '0' )  [ RunTime:0.000146s ]
+NOTIC: [8] Undefined offset: 0 /home/work/www/html/game/farms/ThinkPHP/Library/Org/Our/Matching.class.php 第 152 行.
+SQL: SELECT * FROM `2018-02_pay` WHERE ( state < 2 AND type =1 AND queue=0 AND num>0 AND seed="草莓" ) ORDER BY money DESC  [ RunTime:0.000146s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `2018-02_pay` WHERE ( state < 2 AND type =1 AND queue=0 AND num>0 AND seed="草莓" ) LIMIT 1   [ RunTime:0.000130s ]
+SQL: SET GLOBAL group_concat_max_len=102400 [ RunTime:0.000060s ]
+NOTIC: [8] Undefined variable: order /home/work/www/html/game/farms/ThinkPHP/Library/Org/Our/Matching.class.php 第 147 行.
+SQL: SELECT GROUP_CONCAT(money ORDER BY money desc ) as desc_money FROM `2018-02_pay` WHERE ( `state` < '2' ) AND ( `type` = 1 ) AND ( `seed` = '樱桃' ) AND ( `num` > '0' )  [ RunTime:0.000100s ]
+NOTIC: [8] Undefined offset: 0 /home/work/www/html/game/farms/ThinkPHP/Library/Org/Our/Matching.class.php 第 152 行.
+SQL: SELECT * FROM `2018-02_pay` WHERE ( state < 2 AND type =1 AND queue=0 AND num>0 AND seed="樱桃" ) ORDER BY money DESC  [ RunTime:0.000126s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `2018-02_pay` WHERE ( state < 2 AND type =1 AND queue=0 AND num>0 AND seed="樱桃" ) LIMIT 1   [ RunTime:0.000118s ]
+SQL: SET GLOBAL group_concat_max_len=102400 [ RunTime:0.000065s ]
+NOTIC: [8] Undefined variable: order /home/work/www/html/game/farms/ThinkPHP/Library/Org/Our/Matching.class.php 第 147 行.
+SQL: SELECT GROUP_CONCAT(money ORDER BY money desc ) as desc_money FROM `2018-02_pay` WHERE ( `state` < '2' ) AND ( `type` = 1 ) AND ( `seed` = '稻米' ) AND ( `num` > '0' )  [ RunTime:0.000231s ]
+NOTIC: [8] Undefined offset: 0 /home/work/www/html/game/farms/ThinkPHP/Library/Org/Our/Matching.class.php 第 152 行.
+SQL: SELECT * FROM `2018-02_pay` WHERE ( state < 2 AND type =1 AND queue=0 AND num>0 AND seed="稻米" ) ORDER BY money DESC  [ RunTime:0.000167s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `2018-02_pay` WHERE ( state < 2 AND type =1 AND queue=0 AND num>0 AND seed="稻米" ) LIMIT 1   [ RunTime:0.000132s ]
+SQL: SET GLOBAL group_concat_max_len=102400 [ RunTime:0.000071s ]
+NOTIC: [8] Undefined variable: order /home/work/www/html/game/farms/ThinkPHP/Library/Org/Our/Matching.class.php 第 147 行.
+SQL: SELECT GROUP_CONCAT(money ORDER BY money desc ) as desc_money FROM `2018-02_pay` WHERE ( `state` < '2' ) AND ( `type` = 1 ) AND ( `seed` = '葡萄' ) AND ( `num` > '0' )  [ RunTime:0.000138s ]
+NOTIC: [8] Undefined offset: 0 /home/work/www/html/game/farms/ThinkPHP/Library/Org/Our/Matching.class.php 第 152 行.
+SQL: SELECT * FROM `2018-02_pay` WHERE ( state < 2 AND type =1 AND queue=0 AND num>0 AND seed="葡萄" ) ORDER BY money DESC  [ RunTime:0.000141s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `2018-02_pay` WHERE ( state < 2 AND type =1 AND queue=0 AND num>0 AND seed="葡萄" ) LIMIT 1   [ RunTime:0.000174s ]
+SQL: SET GLOBAL group_concat_max_len=102400 [ RunTime:0.000073s ]
+NOTIC: [8] Undefined variable: order /home/work/www/html/game/farms/ThinkPHP/Library/Org/Our/Matching.class.php 第 147 行.
+SQL: SELECT GROUP_CONCAT(money ORDER BY money desc ) as desc_money FROM `2018-02_pay` WHERE ( `state` < '2' ) AND ( `type` = 1 ) AND ( `seed` = '番茄' ) AND ( `num` > '0' )  [ RunTime:0.000143s ]
+NOTIC: [8] Undefined offset: 0 /home/work/www/html/game/farms/ThinkPHP/Library/Org/Our/Matching.class.php 第 152 行.
+SQL: SELECT * FROM `2018-02_pay` WHERE ( state < 2 AND type =1 AND queue=0 AND num>0 AND seed="番茄" ) ORDER BY money DESC  [ RunTime:0.000144s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `2018-02_pay` WHERE ( state < 2 AND type =1 AND queue=0 AND num>0 AND seed="番茄" ) LIMIT 1   [ RunTime:0.000149s ]
+SQL: SET GLOBAL group_concat_max_len=102400 [ RunTime:0.000095s ]
+NOTIC: [8] Undefined variable: order /home/work/www/html/game/farms/ThinkPHP/Library/Org/Our/Matching.class.php 第 147 行.
+SQL: SELECT GROUP_CONCAT(money ORDER BY money desc ) as desc_money FROM `2018-02_pay` WHERE ( `state` < '2' ) AND ( `type` = 1 ) AND ( `seed` = '菠萝' ) AND ( `num` > '0' )  [ RunTime:0.000147s ]
+NOTIC: [8] Undefined offset: 0 /home/work/www/html/game/farms/ThinkPHP/Library/Org/Our/Matching.class.php 第 152 行.
+SQL: SELECT * FROM `2018-02_pay` WHERE ( state < 2 AND type =1 AND queue=0 AND num>0 AND seed="菠萝" ) ORDER BY money DESC  [ RunTime:0.000147s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `2018-02_pay` WHERE ( state < 2 AND type =1 AND queue=0 AND num>0 AND seed="菠萝" ) LIMIT 1   [ RunTime:0.000133s ]
+SQL: SET GLOBAL group_concat_max_len=102400 [ RunTime:0.000070s ]
+NOTIC: [8] Undefined variable: order /home/work/www/html/game/farms/ThinkPHP/Library/Org/Our/Matching.class.php 第 147 行.
+SQL: SELECT GROUP_CONCAT(money ORDER BY money desc ) as desc_money FROM `2018-02_pay` WHERE ( `state` < '2' ) AND ( `type` = 1 ) AND ( `seed` = '种子' ) AND ( `num` > '0' )  [ RunTime:0.000147s ]
+NOTIC: [8] Undefined offset: 0 /home/work/www/html/game/farms/ThinkPHP/Library/Org/Our/Matching.class.php 第 152 行.
+SQL: SELECT * FROM `2018-02_pay` WHERE ( state < 2 AND type =1 AND queue=0 AND num>0 AND seed="种子" ) ORDER BY money DESC  [ RunTime:0.000142s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `2018-02_pay` WHERE ( state < 2 AND type =1 AND queue=0 AND num>0 AND seed="种子" ) LIMIT 1   [ RunTime:0.000127s ]
+NOTIC: [2] unlink(/home/work/www/html/game/farms/app/Runtime/Temp/ea2b2676c28c0db26d39331a336c6b92.php): No such file or directory /home/work/www/html/game/farms/ThinkPHP/Library/Think/Cache/Driver/File.class.php 第 157 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000242s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000266s ]
+
+[ 2018-02-12T17:53:56+08:00 ]  
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000166s ]
+NOTIC: [8] Undefined index: REQUEST_URI /home/work/www/html/game/farms/ThinkPHP/Library/Think/Dispatcher.class.php 第 132 行.
+NOTIC: [8] Use of undefined constant __ROOT__ - assumed '__ROOT__' /home/work/www/html/game/farms/app/Home/Conf/config.php 第 6 行.
+NOTIC: [8] Use of undefined constant __ROOT__ - assumed '__ROOT__' /home/work/www/html/game/farms/app/Home/Conf/config.php 第 7 行.
+NOTIC: [8] Use of undefined constant __ROOT__ - assumed '__ROOT__' /home/work/www/html/game/farms/app/Home/Conf/config.php 第 8 行.
+NOTIC: [8] Use of undefined constant _PHP_FILE_ - assumed '_PHP_FILE_' /home/work/www/html/game/farms/ThinkPHP/Library/Think/Dispatcher.class.php 第 173 行.
+NOTIC: [8] Undefined index: REQUEST_METHOD /home/work/www/html/game/farms/ThinkPHP/Library/Think/App.class.php 第 30 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000181s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000202s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /home/work/www/html/game/farms/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+NOTIC: [2] mysql_connect(): Headers and client library minor version mismatch. Headers:50552 Library:50637 /home/work/www/html/game/farms/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `global_conf` [ RunTime:0.000331s ]
+SQL: SELECT * FROM `global_conf` WHERE ( cases="poundage" or cases="LimitPricePostion" )  [ RunTime:0.000139s ]
+SQL: SHOW COLUMNS FROM `seeds` [ RunTime:0.000262s ]
+SQL: SELECT * FROM `seeds` WHERE ( varieties!="摇钱树" AND state=0 ) ORDER BY id  [ RunTime:0.000120s ]
+SQL: SET GLOBAL group_concat_max_len=102400 [ RunTime:0.000033s ]
+SQL: SHOW COLUMNS FROM `2018-02_pay` [ RunTime:0.000228s ]
+NOTIC: [8] Undefined variable: order /home/work/www/html/game/farms/ThinkPHP/Library/Org/Our/Matching.class.php 第 147 行.
+SQL: SELECT GROUP_CONCAT(money ORDER BY money desc ) as desc_money FROM `2018-02_pay` WHERE ( `state` < '2' ) AND ( `type` = 1 ) AND ( `seed` = '土豆' ) AND ( `num` > '0' )  [ RunTime:0.000123s ]
+NOTIC: [8] Undefined variable: buy /home/work/www/html/game/farms/ThinkPHP/Library/Org/Our/Matching.class.php 第 152 行.
+SQL: SELECT * FROM `2018-02_pay` WHERE ( state < 2 AND type =1 AND queue=0 AND num>0 AND seed="土豆" ) ORDER BY money DESC  [ RunTime:0.000122s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `2018-02_pay` WHERE ( state < 2 AND type =1 AND queue=0 AND num>0 AND seed="土豆" ) LIMIT 1   [ RunTime:0.000084s ]
+SQL: SET GLOBAL group_concat_max_len=102400 [ RunTime:0.000030s ]
+NOTIC: [8] Undefined variable: order /home/work/www/html/game/farms/ThinkPHP/Library/Org/Our/Matching.class.php 第 147 行.
+SQL: SELECT GROUP_CONCAT(money ORDER BY money desc ) as desc_money FROM `2018-02_pay` WHERE ( `state` < '2' ) AND ( `type` = 1 ) AND ( `seed` = '草莓' ) AND ( `num` > '0' )  [ RunTime:0.000090s ]
+NOTIC: [8] Undefined offset: 0 /home/work/www/html/game/farms/ThinkPHP/Library/Org/Our/Matching.class.php 第 152 行.
+SQL: SELECT * FROM `2018-02_pay` WHERE ( state < 2 AND type =1 AND queue=0 AND num>0 AND seed="草莓" ) ORDER BY money DESC  [ RunTime:0.000097s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `2018-02_pay` WHERE ( state < 2 AND type =1 AND queue=0 AND num>0 AND seed="草莓" ) LIMIT 1   [ RunTime:0.000078s ]
+SQL: SET GLOBAL group_concat_max_len=102400 [ RunTime:0.000042s ]
+NOTIC: [8] Undefined variable: order /home/work/www/html/game/farms/ThinkPHP/Library/Org/Our/Matching.class.php 第 147 行.
+SQL: SELECT GROUP_CONCAT(money ORDER BY money desc ) as desc_money FROM `2018-02_pay` WHERE ( `state` < '2' ) AND ( `type` = 1 ) AND ( `seed` = '樱桃' ) AND ( `num` > '0' )  [ RunTime:0.000157s ]
+NOTIC: [8] Undefined offset: 0 /home/work/www/html/game/farms/ThinkPHP/Library/Org/Our/Matching.class.php 第 152 行.
+SQL: SELECT * FROM `2018-02_pay` WHERE ( state < 2 AND type =1 AND queue=0 AND num>0 AND seed="樱桃" ) ORDER BY money DESC  [ RunTime:0.000128s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `2018-02_pay` WHERE ( state < 2 AND type =1 AND queue=0 AND num>0 AND seed="樱桃" ) LIMIT 1   [ RunTime:0.000080s ]
+SQL: SET GLOBAL group_concat_max_len=102400 [ RunTime:0.000030s ]
+NOTIC: [8] Undefined variable: order /home/work/www/html/game/farms/ThinkPHP/Library/Org/Our/Matching.class.php 第 147 行.
+SQL: SELECT GROUP_CONCAT(money ORDER BY money desc ) as desc_money FROM `2018-02_pay` WHERE ( `state` < '2' ) AND ( `type` = 1 ) AND ( `seed` = '稻米' ) AND ( `num` > '0' )  [ RunTime:0.000086s ]
+NOTIC: [8] Undefined offset: 0 /home/work/www/html/game/farms/ThinkPHP/Library/Org/Our/Matching.class.php 第 152 行.
+SQL: SELECT * FROM `2018-02_pay` WHERE ( state < 2 AND type =1 AND queue=0 AND num>0 AND seed="稻米" ) ORDER BY money DESC  [ RunTime:0.000090s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `2018-02_pay` WHERE ( state < 2 AND type =1 AND queue=0 AND num>0 AND seed="稻米" ) LIMIT 1   [ RunTime:0.000108s ]
+SQL: SET GLOBAL group_concat_max_len=102400 [ RunTime:0.000058s ]
+NOTIC: [8] Undefined variable: order /home/work/www/html/game/farms/ThinkPHP/Library/Org/Our/Matching.class.php 第 147 行.
+SQL: SELECT GROUP_CONCAT(money ORDER BY money desc ) as desc_money FROM `2018-02_pay` WHERE ( `state` < '2' ) AND ( `type` = 1 ) AND ( `seed` = '葡萄' ) AND ( `num` > '0' )  [ RunTime:0.000120s ]
+NOTIC: [8] Undefined offset: 0 /home/work/www/html/game/farms/ThinkPHP/Library/Org/Our/Matching.class.php 第 152 行.
+SQL: SELECT * FROM `2018-02_pay` WHERE ( state < 2 AND type =1 AND queue=0 AND num>0 AND seed="葡萄" ) ORDER BY money DESC  [ RunTime:0.000125s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `2018-02_pay` WHERE ( state < 2 AND type =1 AND queue=0 AND num>0 AND seed="葡萄" ) LIMIT 1   [ RunTime:0.000113s ]
+SQL: SET GLOBAL group_concat_max_len=102400 [ RunTime:0.000148s ]
+NOTIC: [8] Undefined variable: order /home/work/www/html/game/farms/ThinkPHP/Library/Org/Our/Matching.class.php 第 147 行.
+SQL: SELECT GROUP_CONCAT(money ORDER BY money desc ) as desc_money FROM `2018-02_pay` WHERE ( `state` < '2' ) AND ( `type` = 1 ) AND ( `seed` = '番茄' ) AND ( `num` > '0' )  [ RunTime:0.000221s ]
+NOTIC: [8] Undefined offset: 0 /home/work/www/html/game/farms/ThinkPHP/Library/Org/Our/Matching.class.php 第 152 行.
+SQL: SELECT * FROM `2018-02_pay` WHERE ( state < 2 AND type =1 AND queue=0 AND num>0 AND seed="番茄" ) ORDER BY money DESC  [ RunTime:0.000219s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `2018-02_pay` WHERE ( state < 2 AND type =1 AND queue=0 AND num>0 AND seed="番茄" ) LIMIT 1   [ RunTime:0.000203s ]
+SQL: SET GLOBAL group_concat_max_len=102400 [ RunTime:0.000079s ]
+NOTIC: [8] Undefined variable: order /home/work/www/html/game/farms/ThinkPHP/Library/Org/Our/Matching.class.php 第 147 行.
+SQL: SELECT GROUP_CONCAT(money ORDER BY money desc ) as desc_money FROM `2018-02_pay` WHERE ( `state` < '2' ) AND ( `type` = 1 ) AND ( `seed` = '菠萝' ) AND ( `num` > '0' )  [ RunTime:0.000166s ]
+NOTIC: [8] Undefined offset: 0 /home/work/www/html/game/farms/ThinkPHP/Library/Org/Our/Matching.class.php 第 152 行.
+SQL: SELECT * FROM `2018-02_pay` WHERE ( state < 2 AND type =1 AND queue=0 AND num>0 AND seed="菠萝" ) ORDER BY money DESC  [ RunTime:0.000153s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `2018-02_pay` WHERE ( state < 2 AND type =1 AND queue=0 AND num>0 AND seed="菠萝" ) LIMIT 1   [ RunTime:0.000138s ]
+SQL: SET GLOBAL group_concat_max_len=102400 [ RunTime:0.000035s ]
+NOTIC: [8] Undefined variable: order /home/work/www/html/game/farms/ThinkPHP/Library/Org/Our/Matching.class.php 第 147 行.
+SQL: SELECT GROUP_CONCAT(money ORDER BY money desc ) as desc_money FROM `2018-02_pay` WHERE ( `state` < '2' ) AND ( `type` = 1 ) AND ( `seed` = '种子' ) AND ( `num` > '0' )  [ RunTime:0.000167s ]
+NOTIC: [8] Undefined offset: 0 /home/work/www/html/game/farms/ThinkPHP/Library/Org/Our/Matching.class.php 第 152 行.
+SQL: SELECT * FROM `2018-02_pay` WHERE ( state < 2 AND type =1 AND queue=0 AND num>0 AND seed="种子" ) ORDER BY money DESC  [ RunTime:0.000147s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `2018-02_pay` WHERE ( state < 2 AND type =1 AND queue=0 AND num>0 AND seed="种子" ) LIMIT 1   [ RunTime:0.000132s ]
+NOTIC: [2] unlink(/home/work/www/html/game/farms/app/Runtime/Temp/ea2b2676c28c0db26d39331a336c6b92.php): No such file or directory /home/work/www/html/game/farms/ThinkPHP/Library/Think/Cache/Driver/File.class.php 第 157 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000766s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000845s ]
+

@@ -1,0 +1,91 @@
+<extend name="Public/index" />
+<block name="banner">
+    <div class="height_60"></div>
+    <div class="subbanner-small" onclick="LinkTo();">
+        <div class="subbanner-inner">
+            <div class="container">
+                <!--<h1>攻略资料</h1>-->
+                <h1></h1>
+                <!--<h2>Strategy</h2>-->
+                <h2></h2>
+                <img class="col-md-4 col-md-offset-1 col-xs-10 col-xs-offset-1" src="__FILEADD__/content/images/user.png" style="margin-top: 1%;"/>
+            </div>
+        </div>
+    </div>
+	<script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+    <script type="text/javascript">
+        var banners = [];
+        {:W('Banner/Index')}
+        if (banners.length > 0) {
+            $(".subbanner-inner").hide();
+            $(".subbanner-small").attr("style", "cursor:pointer;");
+            images = [];
+            for (i = 0; i < banners.length; i++) {
+                images.push(banners[i]["img"]);
+            }
+        }
+
+        $(function () {
+            $('.subbanner-small').backstretch(images, { fade: 750, duration: 3000 });
+        });
+
+
+		wx.config({
+			debug: false,
+			appId: '<?php echo $argu['appid'];?>',
+			timestamp: <?php echo $argu['timestamp'];?>,
+			nonceStr: '<?php echo $argu['noncestr'];?>',
+			signature: '<?php echo $argu['signature'];?>',
+			jsApiList: [
+			   'onMenuShareTimeline',
+			   'onMenuShareAppMessage',
+			]
+        });
+		
+		wx.ready(function(){
+		
+			wx.onMenuShareTimeline({
+				title: '我正在玩凯撒庄园，空闲时间种种地，还能赚取人民币，你也快来玩吧！', 
+				link: '<?php echo $url['url']; ?>',
+				imgUrl: 'http://lyogame.cn/recom/wx_share_img.png',
+				success: function () { 
+					//用户确认分享后执行的回调函数
+				},
+				cancel: function () { 
+					//用户取消分享后执行的回调函数
+				}
+			}); 
+
+	        wx.onMenuShareAppMessage({
+				title: '我正在玩凯撒庄园，空闲时间种种地，还能赚取人民币，你也快来玩吧！', 
+				desc: '', // 分享描述
+				link: '<?php echo $url['url']; ?>',
+				imgUrl: 'http://lyogame.cn/recom/wx_share_img.png',
+				type: '',
+				dataUrl: '',
+				success: function () { 
+					// 用户确认分享后执行的回调函数
+				},
+				cancel: function () { 
+					// 用户取消分享后执行的回调函数
+				}
+		   });
+		});		
+    </script>
+</block>
+
+<block name="content">
+    <div class="content">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-8 col-md-offset-2" >
+                    <img src="__COMMON__/img/erweima.png" width="100%">
+                    {$url.img}
+					<div style="text-align: center;width: 100%; color: red;">{$str}</div>
+                    <div style="text-align: center;width: 100%; color: red;">{$url.url}</div><br/>
+					<div style="float:left;text-align: center;width: 100%;padding:10px;background:green;color:#FFF">微信内可点击右上角┇发送给好友或分享朋友圈</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</block>
