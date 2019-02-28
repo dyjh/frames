@@ -41,7 +41,7 @@ class LoginController extends Controller{
           $this->assign('number',$number);
 		  $this->assign('confuse_number',$confuse_number);
 		  $this->assign('token',md5($key.$str));
-          $this->display();
+		  $this->display();
       }
 
 	  //验证码

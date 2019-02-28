@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <title></title>
-<link rel="shortcut icon" href="/farms/Public/Home/images/apple-icon.png"/>
+<link rel="shortcut icon" href="/Public/Home/images/apple-icon.png"/>
 <meta name="viewport" content="width=device-width,initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no"/>
 <meta name="apple-mobile-web-app-capable" content="yes" />
 <meta name="format-detection" content="telephone=yes"/>
@@ -21,17 +21,17 @@
 <title>凯撒庄园</title>
 
 
-<script type="text/javascript" src="/farms/Public/Home/js/jquery-3.1.1.min.js"></script>
-<script type="text/javascript" src="/farms/Public/Home/js/md5.js"></script>
+<script type="text/javascript" src="/Public/Home/js/jquery-3.1.1.min.js"></script>
+<script type="text/javascript" src="/Public/Home/js/md5.js"></script>
 
 
 
-<script src="/farms/Public/Home/js/login.js?v=<?php echo rand(1000,9000);?>"></script>
-<script src="/farms/Public/Home/js/code.js?v=<?php echo rand(1000,9000);?>"></script>
+<script src="/Public/Home/js/login.js?v=<?php echo rand(1000,9000);?>"></script>
+<script src="/Public/Home/js/code.js?v=<?php echo rand(1000,9000);?>"></script>
 
 
 
-<link rel="stylesheet" type="text/css" href="/farms/Public/Home/css/login.css?v=<?php echo rand(1000,9999);?>"/>
+<link rel="stylesheet" type="text/css" href="/Public/Home/css/login.css?v=<?php echo rand(1000,9999);?>"/>
 
 
 
@@ -113,17 +113,17 @@
 						</div>
 						<div class="account_box">
 							<div class="account" onclick="record('account')">
-							    <?php if($cook_user != ''): ?><img style="display:block" src="/farms/Public/Home/images/login/xz.png">
+							    <?php if($cook_user != ''): ?><img style="display:block" src="/Public/Home/images/login/xz.png">
 									<input type="hidden" id="record_account" value="1"/>
 								<?php else: ?>
-							        <img src="/farms/Public/Home/images/login/xz.png">
+							        <img src="/Public/Home/images/login/xz.png">
 									<input type="hidden" id="record_account" value="0"/><?php endif; ?> 
 							</div>
 							<div class="password" onclick="record('password')">
-							    <?php if($cook_pass != ''): ?><img style="display:block" src="/farms/Public/Home/images/login/xz.png">
+							    <?php if($cook_pass != ''): ?><img style="display:block" src="/Public/Home/images/login/xz.png">
 									<input type="hidden" id="record_password" value="1"/>
 								<?php else: ?>
-								    <img src="/farms/Public/Home/images/login/xz.png">
+								    <img src="/Public/Home/images/login/xz.png">
 									<input type="hidden" id="record_password" value="0"/><?php endif; ?>
 							</div>
 						</div>
@@ -134,7 +134,7 @@
 									<?php echo ($number['first_number']); ?> + <?php echo ($number['secord_number']); ?> = &nbsp;?
 								</div>
 								<div class="enter_box">
-									<?php $__FOR_START_231006775__=0;$__FOR_END_231006775__=3;for($i=$__FOR_START_231006775__;$i < $__FOR_END_231006775__;$i+=1){ if($confuse_number[$i] == $_SESSION['login_number']): ?><div class="enter_game"><?php echo ($confuse_number[$i]); ?></div>
+									<?php $__FOR_START_1295393896__=0;$__FOR_END_1295393896__=3;for($i=$__FOR_START_1295393896__;$i < $__FOR_END_1295393896__;$i+=1){ if($confuse_number[$i] == $_SESSION['login_number']): ?><div class="enter_game"><?php echo ($confuse_number[$i]); ?></div>
 											  <?php else: ?><div class="et_error"><?php echo ($confuse_number[$i]); ?></div><?php endif; } ?>
 								</div>
 							</div>
@@ -176,7 +176,7 @@
 							<span></span>
 						</div>
 						<div class="success_rompt" id="success">
-							   <img src="/farms/Public/Home/images/login/fanghui.png">
+							   <img src="/Public/Home/images/login/fanghui.png">
 						</div>
 						 </div>
 						 <div class="new_box new_password" style="margin-top: 40%">
@@ -483,22 +483,22 @@
 			<div class="firm_img">
 				<div class="firm_box" style="margin-left: 10%">
 					<a href="<?php echo U('Certificate/index');?>?Certificate_type=1" target="_blank">
-						<img src="/farms/Public/Home/images/login/icp_icon.png">
+						<img src="/Public/Home/images/login/icp_icon.png">
 					</a>
 				</div>
 				<div class="firm_box">
 					<a href="<?php echo U('Certificate/index');?>?Certificate_type=2" target="_blank">
-						<img src="/farms/Public/Home/images/login/gs_icon.png">
+						<img src="/Public/Home/images/login/gs_icon.png">
 					</a>
 				</div>
 				<div class="firm_box">
 					<a href="<?php echo U('Certificate/index');?>?Certificate_type=3" target="_blank">
-						<img src="/farms/Public/Home/images/login/cultrue_icon.png">
+						<img src="/Public/Home/images/login/cultrue_icon.png">
 					</a>
 				</div>
 				<div class="firm_box">
 					<a href="<?php echo U('Certificate/index');?>?Certificate_type=4" target="_blank">
-						<img src="/farms/Public/Home/images/login/copyrights.png">
+						<img src="/Public/Home/images/login/copyrights.png">
 					</a>
 				</div>
 				<div class="firm_box" style="margin-left: 21%;width: 23%;">

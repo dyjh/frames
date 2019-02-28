@@ -48,7 +48,7 @@ class IndexController extends Controller{
 		   /*if(session('user')==15802858094 || session('user')==18228068397|| session('user')==18584084806 || session('user')==18382050570 || session('user')==18780164595 || session('user')==18382077208){
 			    
 		   }else{
-			   echo '系统正在维护';
+			   echo '系统正在维护';;
 			   exit; 
 		   }*/	
 			
